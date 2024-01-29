@@ -1,0 +1,68 @@
+﻿<mesex:Window x:Class="EquipmentManagement.Selector.SelectorEquipment"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="选择设备" 
+        xmlns:mes="http://www.mes.com"
+        xmlns:mesex="http://www.mesex.com">
+    <AdornerDecorator>
+        <Grid x:Name="grid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <mesex:ListGrid Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="车间"/>
+                    <mesex:TextBoxQuery x:Name="txtWorkShop" MetaId="288"/>
+
+                    <TextBlock Text="设备组"/>
+                    <mesex:ComboBox x:Name="cmbEquipmentGroup"  SelectionChanged="cmbEquipmentGroup_SelectionChanged"/>
+
+                    <TextBlock Text="型号"/>
+                    <mesex:ComboBox x:Name="cmbEquipmentModel"/>
+
+                    <TextBlock Text="设备"/>
+                    <mesex:TextBox x:Name="txtEquipmentCode"/>
+
+                    <TextBlock Text="状态"/>
+                    <mesex:ComboBox x:Name="cmbStatus"/>
+
+
+                </mesex:ListGrid>
+
+                <mesex:CircleImageButton x:Name="btnQuery" Grid.Column="1" ImageSource="/EquipmentManagement;component/Images/query.png" Margin="15,0,15,0" Click="btnQuery_Click"/>
+            </Grid>
+
+            <mesex:GridControl x:Name="matrix" Grid.Row="1" >
+                <mesex:GridControl.Columns>
+                    <mesex:GridLinkColumn Header="设备编码" Binding="{Binding EquipmentCode}" LinkClick="GridLinkColumn_LinkClick"/>
+                    <mesex:GridColumn Header="设备组" Binding="{Binding EquipmentGroupName}"/>
+                    <mesex:GridColumn Header="型号" Binding="{Binding EquipmentModelName}"/>
+                    <mesex:GridColumn Header="公司" Binding="{Binding CompanyName}"/>
+                    <mesex:GridColumn Header="工厂" Binding="{Binding FactoryName}"/>
+                    <mesex:GridColumn Header="车间" Binding="{Binding WorkShopName}"/>
+                    <mesex:GridColumn Header="状态" Binding="{Binding StatusName}"/>
+                    <mesex:GridColumn Header="备注" Binding="{Binding EquipmentDesc}"/>
+                </mesex:GridControl.Columns>
+            </mesex:GridControl>
+
+            <mesex:Pager Grid.Row="2" x:Name="pager" UpdateSource="pager_UpdateSource"/>
+        </Grid>
+    </AdornerDecorator>
+</mesex:Window>

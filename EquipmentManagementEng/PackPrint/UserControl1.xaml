@@ -1,0 +1,204 @@
+﻿<u:UserVendor x:Class="PackPrint.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:u="clr-namespace:Component.Controls.User;assembly=Component"
+             xmlns:uc="clr-namespace:Component.Controls.User.GenerateControl;assembly=Component" 
+             xmlns:ug="clr-namespace:Component.Controls.GridControl;assembly=Component" Loaded="UserVendor_Loaded">
+    <Grid Name="root">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" Margin="0,0,3,0" VerticalAlignment="Bottom">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="station：" Grid.Row="0"/>
+            <TextBox Grid.Row="1" Name="tbProcess"  FontSize="15"  Foreground="Blue" FontStyle="Italic"
+                     IsReadOnly="True" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" 
+                     HorizontalAlignment="Left"   TextWrapping="Wrap" />
+
+            <TextBlock Text="Order：" Grid.Row="2"/>
+            <StackPanel Orientation="Horizontal" Grid.Row="3">
+                <TextBox  Grid.Row="1" Name="tbMOCode" FontSize="15"  Foreground="Blue" FontStyle="Italic"
+                     IsReadOnly="True" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" 
+                          HorizontalAlignment="Left" VerticalContentAlignment="Center"/>
+                <Button  Name="btnSelectorMO" Click="btnSelectorMO_Click" Content="Change order" Height="30" Width="80"/>
+            </StackPanel>
+
+            <TextBlock Text="planning quantity：" Grid.Row="4"/>
+            <TextBox Grid.Row="5" Name="tbQty"  FontSize="15"  Foreground="Blue" FontStyle="Italic"
+                     IsReadOnly="True" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" 
+                     HorizontalAlignment="Left" />
+
+            <TextBlock Text="customer：" Grid.Row="6"/>
+            <TextBox Grid.Row="7" Name="tbCustomer"  FontSize="15"  Foreground="Blue" FontStyle="Italic"
+                     IsReadOnly="True" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" 
+                     HorizontalAlignment="Left"   TextWrapping="Wrap" />
+
+            <TextBlock Text="part code ：" Grid.Row="8"/>
+            <TextBox Grid.Row="9" Name="tbItemCode"  FontSize="15"  Foreground="Blue" FontStyle="Italic"
+                     IsReadOnly="True" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" 
+                     HorizontalAlignment="Left" />
+
+            <TextBlock Text="specification：" Grid.Row="10"/>
+            <TextBox Grid.Row="11" Name="tbItemSpec"  FontSize="15"  Foreground="Blue" FontStyle="Italic" 
+                     IsReadOnly="True" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" 
+                     HorizontalAlignment="Left"  TextWrapping="Wrap"   />
+
+            <TextBlock Text="work flow：" Grid.Row="12"/>
+            <TextBox Grid.Row="13" Name="tbWorkflow"  FontSize="15"  Foreground="Blue" FontStyle="Italic"
+                     IsReadOnly="True" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" 
+                     HorizontalAlignment="Left"  TextWrapping="Wrap"   />
+
+            <TextBlock Text="Line：" Grid.Row="14"/>
+            <TextBox Grid.Row="15" Name="tbLine"  FontSize="15"  Foreground="Blue" FontStyle="Italic"
+                     IsReadOnly="True" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" 
+                     HorizontalAlignment="Left"  TextWrapping="Wrap"   />
+
+            <TextBlock Text="operator：" Grid.Row="16"/>
+            <TextBox Grid.Row="17" Name="tbUser" FontSize="15"  Foreground="Blue" FontStyle="Italic"
+                     IsReadOnly="True" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" 
+                     HorizontalAlignment="Left"/>
+
+
+            <Button Name="btnAddPrint" Content="Add" Grid.Row="18" Grid.ColumnSpan="2"
+                                       FontSize="22" FontWeight="Bold"
+                                      VerticalAlignment="Center" HorizontalAlignment="Center"  
+                                       Click="btnAddPrint_Click"  Width="60" Height="40" Visibility="Collapsed"/>
+
+        </Grid>
+        <GridSplitter Width="3" Grid.Column="0"/>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock  FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,20,0,0" Text="Bar code print"/>
+
+
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="120"/>
+                </Grid.RowDefinitions>
+
+                <Image Grid.RowSpan="2" Name="imgResult" HorizontalAlignment="Right" 
+                       VerticalAlignment="Bottom" Width="300" Height="300"/>
+
+                <uc:UPH Grid.Row="0" Name="uph" />
+                
+                <ScrollViewer Grid.Row="1">
+                    <Grid VerticalAlignment="Bottom">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.ColumnSpan="2" Name="gridTemplate" Margin="0,0,0,20" HorizontalAlignment="Left">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                        </Grid>
+
+                        <TextBlock Text="scan type1：" Name="lblScanType1" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" />
+                        <ComboBox DisplayMemberPath="Value" SelectedValuePath="Key" Grid.Row="1" Grid.Column="1" Width="100" 
+                              HorizontalAlignment="Left" Name="cmbType1" SelectionChanged="cmbType1_SelectionChanged" />
+
+                        <TextBlock Name="lblScan1" Text="scan1：" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" />
+                        <uc:TextBox  Name="txtScan1"   Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                             Width="400" FontSize="40" FontWeight="Bold" KeyDown="txtScan1_KeyDown" IsToUpper="True"   Margin="0,5,0,5"/>
+
+                        <CheckBox Name="ckbIsScan2" Content="scan type2" IsChecked="False" 
+                              Grid.Row="3" Grid.Column="1" Checked="ckbIsScan2_Checked" Unchecked="ckbIsScan2_Checked"/>
+                        <TextBlock Text="scan type 2：" Name="lblScanType2" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Visibility="Collapsed"/>
+                        <ComboBox DisplayMemberPath="Value" SelectedValuePath="Key" Grid.Row="4" Grid.Column="1" Width="100" 
+                              HorizontalAlignment="Left" Name="cmbType2" SelectionChanged="cmbType2_SelectionChanged" Visibility="Collapsed"/>
+
+                        <TextBlock Name="lblScan2" Text="scan 2：" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right"
+                               Visibility="Collapsed"/>
+                        <uc:TextBox  Name="txtScan2"   Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                             Width="400" FontSize="40" FontWeight="Bold" KeyDown="txtScan2_KeyDown" Visibility="Collapsed"  IsToUpper="True"  Margin="0,5,0,5"/>
+
+                        <CheckBox Name="ckbIsScan3" Content="scan type3" IsChecked="False" 
+                              Grid.Row="6" Grid.Column="1" Checked="ckbIsScan3_Checked" Unchecked="ckbIsScan3_Checked"/>
+                        <TextBlock Text="scan type 3：" Name="lblScanType3" Grid.Row="7" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Visibility="Collapsed"/>
+                        <ComboBox DisplayMemberPath="Value" SelectedValuePath="Key" Grid.Row="7" Grid.Column="1" Width="100" 
+                              HorizontalAlignment="Left" Name="cmbType3" SelectionChanged="cmbType3_SelectionChanged" Visibility="Collapsed"/>
+
+                        <TextBlock Name="lblScan3" Text="scan 3：" Grid.Row="8" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right"
+                               Visibility="Collapsed"/>
+                        <uc:TextBox   Name="txtScan3"   Grid.Row="8" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                             Width="400" FontSize="40" FontWeight="Bold" KeyDown="txtScan3_KeyDown" Visibility="Collapsed"  IsToUpper="True"  Margin="0,5,0,5"/>
+
+
+                        <CheckBox Name="ckbIsBindEN" Content="binding EN?" IsChecked="False" 
+                              Grid.Row="9" Grid.Column="1" Checked="ckbIsBindEN_Checked" Unchecked="ckbIsBindEN_Checked" Click="CkbIsBindEN_Click"/>
+
+                        <TextBlock Name="lblEN" Text="EN：" Grid.Row="10" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right"
+                               Visibility="Collapsed"/>
+                        <uc:TextBox   Name="txtEN"   Grid.Row="10" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"  
+                             Width="400" FontSize="40" FontWeight="Bold" KeyDown="txtEN_KeyDown" Visibility="Collapsed"  IsToUpper="True"   Margin="0,5,0,5"/>
+                        <CheckBox x:Name="IsConnect" Content="是否连接恢复出厂服务器" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="67,-33,0,0" Checked="CheckBox_Checked" Click="IsConnect_Click" Visibility="Collapsed" />
+
+
+                        <TextBlock Text="附件类型：" Name="attachType" Grid.Row="11" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Visibility="Collapsed"/>
+                        <ComboBox DisplayMemberPath="Value" SelectedValuePath="Key" Grid.Row="11" Grid.Column="1" Width="100" 
+                              HorizontalAlignment="Left" Name="attachCmb"  Visibility="Collapsed" SelectionChanged="AttachCmb_SelectionChanged"/>
+
+
+                        <TextBlock Name="attach" Text="附件条码：" Grid.Row="12" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right"
+                               Visibility="Collapsed"/>
+                        <uc:TextBox   Name="attachCode"   Grid.Row="12" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"  
+                             Width="400" FontSize="40" FontWeight="Bold"  Visibility="Collapsed"  IsToUpper="True"   Margin="0,5,0,5" KeyDown="AttachCode_KeyDown"/>
+                    </Grid>
+                </ScrollViewer>
+
+
+
+                <uc:MessageText Name="txtMessage" Grid.Row="2" Margin="0,3,0,0" />
+                <GridSplitter Grid.Row="2" Height="3" HorizontalAlignment="Stretch" VerticalAlignment="Top" ResizeDirection="Rows"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</u:UserVendor>

@@ -1,0 +1,960 @@
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:36:42.967
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:12.0007
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:38:08.487
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:11.0006
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:38:44.651
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:23.0013
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:38:49.366
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0002
+Sql:SELECT Bas_MO.MOId,
+	                   Bas_MO.ItemId,
+	                   Bas_MO.WorkflowId,
+	                   Bas_MO.CustomerId,
+	                   Bas_MO.MOCode,
+	                   Bas_MO.Qty,
+	                   Bas_Item.ItemCode,
+	                   Bas_Item.ItemSpecification,
+	                   Bas_Workflow.WorkflowCode,
+	                   Bas_Workflow.WorkflowDesc,
+	                   Bas_Customer.CustomerCode,
+	                   Bas_Customer.CustomerDesc,
+	                   Bas_Item.IsCheckTwoDimensionalCode,
+	                   Bas_Item.TwoDimensionalCodeLength
+                FROM dbo.Bas_MO  WITH(NOLOCK) 
+                LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+                LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+                LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+                WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=115
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:38:53.777
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:4.0002
+Sql:Prd_Inp_BindingProductSN
+Params:
+@LotSN=FFFFFFFFFF00
+@GetCode=0500a0021002b9da
+@MOId=115
+@LineId=28
+@ResId=293
+@ShiftTypeId=7
+@UserId=366
+@OPId=70
+@PluginId=0
+@Comment=2020-05-05 13:38:53
+@FocusedParam=null
+@Return_Message=null
+@ReturnValue=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:38:56.287
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:3.0002
+Sql:Prd_Inp_BindingProductSN
+Params:
+@LotSN=FFFFFFFFFF00
+@GetCode=0500a0021002b9da
+@MOId=115
+@LineId=28
+@ResId=293
+@ShiftTypeId=7
+@UserId=366
+@OPId=70
+@PluginId=0
+@Comment=2020-05-05 13:38:56
+@FocusedParam=null
+@Return_Message=null
+@ReturnValue=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:39:53.823
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:4.0002
+Sql:Prd_Inp_BindingProductSN
+Params:
+@LotSN=FFFFFFFFFF00
+@GetCode=0500a0021002b9da
+@MOId=115
+@LineId=28
+@ResId=293
+@ShiftTypeId=7
+@UserId=366
+@OPId=70
+@PluginId=0
+@Comment=2020-05-05 13:39:53
+@FocusedParam=null
+@Return_Message=null
+@ReturnValue=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:41:24.433
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:11.0007
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:41:29.352
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0002
+Sql:SELECT Bas_MO.MOId,
+	                   Bas_MO.ItemId,
+	                   Bas_MO.WorkflowId,
+	                   Bas_MO.CustomerId,
+	                   Bas_MO.MOCode,
+	                   Bas_MO.Qty,
+	                   Bas_Item.ItemCode,
+	                   Bas_Item.ItemSpecification,
+	                   Bas_Workflow.WorkflowCode,
+	                   Bas_Workflow.WorkflowDesc,
+	                   Bas_Customer.CustomerCode,
+	                   Bas_Customer.CustomerDesc,
+	                   Bas_Item.IsCheckTwoDimensionalCode,
+	                   Bas_Item.TwoDimensionalCodeLength
+                FROM dbo.Bas_MO  WITH(NOLOCK) 
+                LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+                LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+                LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+                WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=115
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:41:32.066
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:4.0003
+Sql:Prd_Inp_BindingProductSN
+Params:
+@LotSN=FFFFFFFFFF00
+@GetCode=0500a0021002b9da
+@MOId=115
+@LineId=28
+@ResId=293
+@ShiftTypeId=7
+@UserId=366
+@OPId=70
+@PluginId=0
+@Comment=2020-05-05 13:41:31
+@FocusedParam=null
+@Return_Message=null
+@ReturnValue=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:41:35.476
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:4.0002
+Sql:Prd_Inp_BindingProductSN
+Params:
+@LotSN=FFFFFFFFFF00
+@GetCode=0500a0021002b9da
+@MOId=115
+@LineId=28
+@ResId=293
+@ShiftTypeId=7
+@UserId=366
+@OPId=70
+@PluginId=0
+@Comment=2020-05-05 13:41:35
+@FocusedParam=null
+@Return_Message=null
+@ReturnValue=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:41:37.586
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:3.0002
+Sql:Prd_Inp_BindingProductSN
+Params:
+@LotSN=FFFFFFFFFF00
+@GetCode=0500a0021002b9da
+@MOId=115
+@LineId=28
+@ResId=293
+@ShiftTypeId=7
+@UserId=366
+@OPId=70
+@PluginId=0
+@Comment=2020-05-05 13:41:37
+@FocusedParam=null
+@Return_Message=null
+@ReturnValue=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:42:33.805
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:35.002
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:42:40.723
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0002
+Sql:SELECT Bas_MO.MOId,
+	                   Bas_MO.ItemId,
+	                   Bas_MO.WorkflowId,
+	                   Bas_MO.CustomerId,
+	                   Bas_MO.MOCode,
+	                   Bas_MO.Qty,
+	                   Bas_Item.ItemCode,
+	                   Bas_Item.ItemSpecification,
+	                   Bas_Workflow.WorkflowCode,
+	                   Bas_Workflow.WorkflowDesc,
+	                   Bas_Customer.CustomerCode,
+	                   Bas_Customer.CustomerDesc,
+	                   Bas_Item.IsCheckTwoDimensionalCode,
+	                   Bas_Item.TwoDimensionalCodeLength
+                FROM dbo.Bas_MO  WITH(NOLOCK) 
+                LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+                LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+                LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+                WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=115
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:42:43.533
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:4.0002
+Sql:Prd_Inp_BindingProductSN
+Params:
+@LotSN=FFFFFFFFFF00
+@GetCode=0500a0021002b9da
+@MOId=115
+@LineId=28
+@ResId=293
+@ShiftTypeId=7
+@UserId=366
+@OPId=70
+@PluginId=0
+@Comment=2020-05-05 13:42:43
+@FocusedParam=null
+@Return_Message=null
+@ReturnValue=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:42:45.743
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:4.0002
+Sql:Prd_Inp_BindingProductSN
+Params:
+@LotSN=FFFFFFFFFF00
+@GetCode=0500a0021002b9da
+@MOId=115
+@LineId=28
+@ResId=293
+@ShiftTypeId=7
+@UserId=366
+@OPId=70
+@PluginId=0
+@Comment=2020-05-05 13:42:45
+@FocusedParam=null
+@Return_Message=null
+@ReturnValue=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:42:58.788
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:27.0016
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:43:03.440
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:5.0003
+Sql:SELECT Bas_MO.MOId,
+	                   Bas_MO.ItemId,
+	                   Bas_MO.WorkflowId,
+	                   Bas_MO.CustomerId,
+	                   Bas_MO.MOCode,
+	                   Bas_MO.Qty,
+	                   Bas_Item.ItemCode,
+	                   Bas_Item.ItemSpecification,
+	                   Bas_Workflow.WorkflowCode,
+	                   Bas_Workflow.WorkflowDesc,
+	                   Bas_Customer.CustomerCode,
+	                   Bas_Customer.CustomerDesc,
+	                   Bas_Item.IsCheckTwoDimensionalCode,
+	                   Bas_Item.TwoDimensionalCodeLength
+                FROM dbo.Bas_MO  WITH(NOLOCK) 
+                LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+                LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+                LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+                WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=115
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:43:06.550
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:4.0002
+Sql:Prd_Inp_BindingProductSN
+Params:
+@LotSN=FFFFFFFFFF00
+@GetCode=0500a0021002b9da
+@MOId=115
+@LineId=28
+@ResId=293
+@ShiftTypeId=7
+@UserId=366
+@OPId=70
+@PluginId=0
+@Comment=2020-05-05 13:43:06
+@FocusedParam=null
+@Return_Message=null
+@ReturnValue=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:43:09.260
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:3.0002
+Sql:Prd_Inp_BindingProductSN
+Params:
+@LotSN=FFFFFFFFFF00
+@GetCode=0500a0021002b9da
+@MOId=115
+@LineId=28
+@ResId=293
+@ShiftTypeId=7
+@UserId=366
+@OPId=70
+@PluginId=0
+@Comment=2020-05-05 13:43:09
+@FocusedParam=null
+@Return_Message=null
+@ReturnValue=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:43:11.270
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:4.0002
+Sql:Prd_Inp_BindingProductSN
+Params:
+@LotSN=FFFFFFFFFF00
+@GetCode=0500a0021002b9da
+@MOId=115
+@LineId=28
+@ResId=293
+@ShiftTypeId=7
+@UserId=366
+@OPId=70
+@PluginId=0
+@Comment=2020-05-05 13:43:11
+@FocusedParam=null
+@Return_Message=null
+@ReturnValue=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:43:12.981
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:3.0002
+Sql:Prd_Inp_BindingProductSN
+Params:
+@LotSN=FFFFFFFFFF00
+@GetCode=0500a0021002b9da
+@MOId=115
+@LineId=28
+@ResId=293
+@ShiftTypeId=7
+@UserId=366
+@OPId=70
+@PluginId=0
+@Comment=2020-05-05 13:43:12
+@FocusedParam=null
+@Return_Message=null
+@ReturnValue=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:43:14.691
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:4.0003
+Sql:Prd_Inp_BindingProductSN
+Params:
+@LotSN=FFFFFFFFFF00
+@GetCode=0500a0021002b9da
+@MOId=115
+@LineId=28
+@ResId=293
+@ShiftTypeId=7
+@UserId=366
+@OPId=70
+@PluginId=0
+@Comment=2020-05-05 13:43:14
+@FocusedParam=null
+@Return_Message=null
+@ReturnValue=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:43:17.301
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:4.0003
+Sql:Prd_Inp_BindingProductSN
+Params:
+@LotSN=FFFFFFFFFF00
+@GetCode=0500a0021002b9da
+@MOId=115
+@LineId=28
+@ResId=293
+@ShiftTypeId=7
+@UserId=366
+@OPId=70
+@PluginId=0
+@Comment=2020-05-05 13:43:17
+@FocusedParam=null
+@Return_Message=null
+@ReturnValue=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:43:19.111
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:3.0002
+Sql:Prd_Inp_BindingProductSN
+Params:
+@LotSN=FFFFFFFFFF00
+@GetCode=0500a0021002b9da
+@MOId=115
+@LineId=28
+@ResId=293
+@ShiftTypeId=7
+@UserId=366
+@OPId=70
+@PluginId=0
+@Comment=2020-05-05 13:43:19
+@FocusedParam=null
+@Return_Message=null
+@ReturnValue=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:43:20.921
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:3.0002
+Sql:Prd_Inp_BindingProductSN
+Params:
+@LotSN=FFFFFFFFFF00
+@GetCode=0500a0021002b9da
+@MOId=115
+@LineId=28
+@ResId=293
+@ShiftTypeId=7
+@UserId=366
+@OPId=70
+@PluginId=0
+@Comment=2020-05-05 13:43:20
+@FocusedParam=null
+@Return_Message=null
+@ReturnValue=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:43:22.531
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:3.0001
+Sql:Prd_Inp_BindingProductSN
+Params:
+@LotSN=FFFFFFFFFF00
+@GetCode=0500a0021002b9da
+@MOId=115
+@LineId=28
+@ResId=293
+@ShiftTypeId=7
+@UserId=366
+@OPId=70
+@PluginId=0
+@Comment=2020-05-05 13:43:22
+@FocusedParam=null
+@Return_Message=null
+@ReturnValue=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:43:24.041
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:6.0004
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:43:31.252
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0002
+Sql:SELECT Bas_MO.MOId,
+	                   Bas_MO.ItemId,
+	                   Bas_MO.WorkflowId,
+	                   Bas_MO.CustomerId,
+	                   Bas_MO.MOCode,
+	                   Bas_MO.Qty,
+	                   Bas_Item.ItemCode,
+	                   Bas_Item.ItemSpecification,
+	                   Bas_Workflow.WorkflowCode,
+	                   Bas_Workflow.WorkflowDesc,
+	                   Bas_Customer.CustomerCode,
+	                   Bas_Customer.CustomerDesc,
+	                   Bas_Item.IsCheckTwoDimensionalCode,
+	                   Bas_Item.TwoDimensionalCodeLength
+                FROM dbo.Bas_MO  WITH(NOLOCK) 
+                LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+                LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+                LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+                WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=106
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:43:54.872
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:10.0006
+Sql:Interf_Call
+Params:
+@InterfaceNo=20
+@Params=<document><IsTransferMO>0</IsTransferMO><MOId>106</MOId><LotSNType>Mac</LotSNType><LotSN>42417201710361724</LotSN><LineId>28</LineId><ResId>293</ResId><UserId>366</UserId><OPId>70</OPId></document>
+@AttachParams=
+@OutParams=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:44:11.383
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:10.0005
+Sql:Interf_Call
+Params:
+@InterfaceNo=20
+@Params=<document><IsTransferMO>0</IsTransferMO><MOId>106</MOId><LotSNType>Mac</LotSNType><LotSN>42417201710361724</LotSN><LineId>28</LineId><ResId>293</ResId><UserId>366</UserId><OPId>70</OPId></document>
+@AttachParams=
+@OutParams=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:44:22.895
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:10.0006
+Sql:Interf_Call
+Params:
+@InterfaceNo=20
+@Params=<document><IsTransferMO>0</IsTransferMO><MOId>106</MOId><LotSNType>Mac</LotSNType><LotSN>42417201710361724</LotSN><LineId>28</LineId><ResId>293</ResId><UserId>366</UserId><OPId>70</OPId></document>
+@AttachParams=
+@OutParams=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:44:40.706
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:9.0006
+Sql:Interf_Call
+Params:
+@InterfaceNo=20
+@Params=<document><IsTransferMO>0</IsTransferMO><MOId>106</MOId><LotSNType>Mac</LotSNType><LotSN>42417201710361724</LotSN><LineId>28</LineId><ResId>293</ResId><UserId>366</UserId><OPId>70</OPId></document>
+@AttachParams=
+@OutParams=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:45:02.017
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:11.0006
+Sql:Interf_Call
+Params:
+@InterfaceNo=20
+@Params=<document><IsTransferMO>0</IsTransferMO><MOId>106</MOId><LotSNType>Mac</LotSNType><LotSN>42417201710361724</LotSN><LineId>28</LineId><ResId>293</ResId><UserId>366</UserId><OPId>70</OPId></document>
+@AttachParams=
+@OutParams=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:45:07.827
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:10.0005
+Sql:Interf_Call
+Params:
+@InterfaceNo=20
+@Params=<document><IsTransferMO>0</IsTransferMO><MOId>106</MOId><LotSNType>Mac</LotSNType><LotSN>42417201710361724</LotSN><LineId>28</LineId><ResId>293</ResId><UserId>366</UserId><OPId>70</OPId></document>
+@AttachParams=
+@OutParams=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:45:11.237
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:10.0006
+Sql:Interf_Call
+Params:
+@InterfaceNo=20
+@Params=<document><IsTransferMO>0</IsTransferMO><MOId>106</MOId><LotSNType>Mac</LotSNType><LotSN>42417201710361724</LotSN><LineId>28</LineId><ResId>293</ResId><UserId>366</UserId><OPId>70</OPId></document>
+@AttachParams=
+@OutParams=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:45:15.948
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:10.0006
+Sql:Interf_Call
+Params:
+@InterfaceNo=20
+@Params=<document><IsTransferMO>0</IsTransferMO><MOId>106</MOId><LotSNType>Mac</LotSNType><LotSN>42417201710361724</LotSN><LineId>28</LineId><ResId>293</ResId><UserId>366</UserId><OPId>70</OPId></document>
+@AttachParams=
+@OutParams=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:45:20.159
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:10.0005
+Sql:Interf_Call
+Params:
+@InterfaceNo=20
+@Params=<document><IsTransferMO>0</IsTransferMO><MOId>106</MOId><LotSNType>Mac</LotSNType><LotSN>42417201710361724</LotSN><LineId>28</LineId><ResId>293</ResId><UserId>366</UserId><OPId>70</OPId></document>
+@AttachParams=
+@OutParams=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:45:23.871
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:9.0005
+Sql:Interf_Call
+Params:
+@InterfaceNo=20
+@Params=<document><IsTransferMO>0</IsTransferMO><MOId>106</MOId><LotSNType>Mac</LotSNType><LotSN>42417201710361724</LotSN><LineId>28</LineId><ResId>293</ResId><UserId>366</UserId><OPId>70</OPId></document>
+@AttachParams=
+@OutParams=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:45:27.481
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:10.0006
+Sql:Interf_Call
+Params:
+@InterfaceNo=20
+@Params=<document><IsTransferMO>0</IsTransferMO><MOId>106</MOId><LotSNType>Mac</LotSNType><LotSN>42417201710361724</LotSN><LineId>28</LineId><ResId>293</ResId><UserId>366</UserId><OPId>70</OPId></document>
+@AttachParams=
+@OutParams=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-05 13:45:31.391
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:10.0006
+Sql:Interf_Call
+Params:
+@InterfaceNo=20
+@Params=<document><IsTransferMO>0</IsTransferMO><MOId>106</MOId><LotSNType>Mac</LotSNType><LotSN>42417201710361724</LotSN><LineId>28</LineId><ResId>293</ResId><UserId>366</UserId><OPId>70</OPId></document>
+@AttachParams=
+@OutParams=null
+END===============================================================================================
+
+

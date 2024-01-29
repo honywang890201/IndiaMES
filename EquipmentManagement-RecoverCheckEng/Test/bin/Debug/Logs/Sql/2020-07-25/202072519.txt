@@ -1,0 +1,1444 @@
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 19:07:33.423
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:17.0009
+Sql:Bas_TestPalletSNImport
+Params:
+@UserId=1
+@MOId=147
+@xml=<document>
+	<PalletSN>
+		<item  rowNo="1" PALLETSN="499507001" />
+		<item  rowNo="2" PALLETSN="499507002" />
+		<item  rowNo="3" PALLETSN="499507003" />
+		<item  rowNo="4" PALLETSN="499507004" />
+		<item  rowNo="5" PALLETSN="499507005" />
+		<item  rowNo="6" PALLETSN="499507006" />
+		<item  rowNo="7" PALLETSN="499507007" />
+		<item  rowNo="8" PALLETSN="499507008" />
+		<item  rowNo="9" PALLETSN="499507009" />
+		<item  rowNo="10" PALLETSN="499507010" />
+		<item  rowNo="11" PALLETSN="499507011" />
+		<item  rowNo="12" PALLETSN="499507012" />
+		<item  rowNo="13" PALLETSN="499507013" />
+		<item  rowNo="14" PALLETSN="499507014" />
+		<item  rowNo="15" PALLETSN="499507015" />
+		<item  rowNo="16" PALLETSN="499507016" />
+		<item  rowNo="17" PALLETSN="499507017" />
+		<item  rowNo="18" PALLETSN="499507018" />
+		<item  rowNo="19" PALLETSN="499507019" />
+		<item  rowNo="20" PALLETSN="499507020" />
+		<item  rowNo="21" PALLETSN="499507021" />
+		<item  rowNo="22" PALLETSN="499507022" />
+		<item  rowNo="23" PALLETSN="499507023" />
+		<item  rowNo="24" PALLETSN="499507024" />
+		<item  rowNo="25" PALLETSN="499507025" />
+		<item  rowNo="26" PALLETSN="499507026" />
+		<item  rowNo="27" PALLETSN="499507027" />
+		<item  rowNo="28" PALLETSN="499507028" />
+		<item  rowNo="29" PALLETSN="499507029" />
+		<item  rowNo="30" PALLETSN="499507030" />
+		<item  rowNo="31" PALLETSN="499507031" />
+		<item  rowNo="32" PALLETSN="499507032" />
+		<item  rowNo="33" PALLETSN="499507033" />
+		<item  rowNo="34" PALLETSN="499507034" />
+		<item  rowNo="35" PALLETSN="499507035" />
+		<item  rowNo="36" PALLETSN="499507036" />
+		<item  rowNo="37" PALLETSN="499507037" />
+		<item  rowNo="38" PALLETSN="499507038" />
+		<item  rowNo="39" PALLETSN="499507039" />
+		<item  rowNo="40" PALLETSN="499507040" />
+		<item  rowNo="41" PALLETSN="499507041" />
+		<item  rowNo="42" PALLETSN="499507042" />
+		<item  rowNo="43" PALLETSN="499507043" />
+		<item  rowNo="44" PALLETSN="499507044" />
+		<item  rowNo="45" PALLETSN="499507045" />
+		<item  rowNo="46" PALLETSN="499507046" />
+		<item  rowNo="47" PALLETSN="499507047" />
+		<item  rowNo="48" PALLETSN="499507048" />
+		<item  rowNo="49" PALLETSN="499507049" />
+		<item  rowNo="50" PALLETSN="499507050" />
+		<item  rowNo="51" PALLETSN="499507051" />
+		<item  rowNo="52" PALLETSN="499507052" />
+		<item  rowNo="53" PALLETSN="499507053" />
+		<item  rowNo="54" PALLETSN="499507054" />
+		<item  rowNo="55" PALLETSN="499507055" />
+		<item  rowNo="56" PALLETSN="499507056" />
+		<item  rowNo="57" PALLETSN="499507057" />
+		<item  rowNo="58" PALLETSN="499507058" />
+		<item  rowNo="59" PALLETSN="499507059" />
+		<item  rowNo="60" PALLETSN="499507060" />
+		<item  rowNo="61" PALLETSN="499507061" />
+		<item  rowNo="62" PALLETSN="499507062" />
+		<item  rowNo="63" PALLETSN="499507063" />
+		<item  rowNo="64" PALLETSN="499507064" />
+		<item  rowNo="65" PALLETSN="499507065" />
+		<item  rowNo="66" PALLETSN="499507066" />
+		<item  rowNo="67" PALLETSN="499507067" />
+		<item  rowNo="68" PALLETSN="499507068" />
+		<item  rowNo="69" PALLETSN="499507069" />
+		<item  rowNo="70" PALLETSN="499507070" />
+		<item  rowNo="71" PALLETSN="499507071" />
+		<item  rowNo="72" PALLETSN="499507072" />
+		<item  rowNo="73" PALLETSN="499507073" />
+		<item  rowNo="74" PALLETSN="499507074" />
+		<item  rowNo="75" PALLETSN="499507075" />
+		<item  rowNo="76" PALLETSN="499507076" />
+		<item  rowNo="77" PALLETSN="499507077" />
+		<item  rowNo="78" PALLETSN="499507078" />
+		<item  rowNo="79" PALLETSN="499507079" />
+		<item  rowNo="80" PALLETSN="499507080" />
+		<item  rowNo="81" PALLETSN="499507081" />
+		<item  rowNo="82" PALLETSN="499507082" />
+		<item  rowNo="83" PALLETSN="499507083" />
+		<item  rowNo="84" PALLETSN="499507084" />
+		<item  rowNo="85" PALLETSN="499507085" />
+		<item  rowNo="86" PALLETSN="499507086" />
+		<item  rowNo="87" PALLETSN="499507087" />
+		<item  rowNo="88" PALLETSN="499507088" />
+		<item  rowNo="89" PALLETSN="499507089" />
+		<item  rowNo="90" PALLETSN="499507090" />
+		<item  rowNo="91" PALLETSN="499507091" />
+		<item  rowNo="92" PALLETSN="499507092" />
+		<item  rowNo="93" PALLETSN="499507093" />
+		<item  rowNo="94" PALLETSN="499507094" />
+		<item  rowNo="95" PALLETSN="499507095" />
+		<item  rowNo="96" PALLETSN="499507096" />
+		<item  rowNo="97" PALLETSN="499507097" />
+		<item  rowNo="98" PALLETSN="499507098" />
+		<item  rowNo="99" PALLETSN="499507099" />
+	</PalletSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:对象名 '#t' 无效。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 19:07:40.034
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:5.0002
+Sql:Bas_TestPalletSNImport
+Params:
+@UserId=1
+@MOId=147
+@xml=<document>
+	<PalletSN>
+		<item  rowNo="1" PALLETSN="499507001" />
+		<item  rowNo="2" PALLETSN="499507002" />
+		<item  rowNo="3" PALLETSN="499507003" />
+		<item  rowNo="4" PALLETSN="499507004" />
+		<item  rowNo="5" PALLETSN="499507005" />
+		<item  rowNo="6" PALLETSN="499507006" />
+		<item  rowNo="7" PALLETSN="499507007" />
+		<item  rowNo="8" PALLETSN="499507008" />
+		<item  rowNo="9" PALLETSN="499507009" />
+		<item  rowNo="10" PALLETSN="499507010" />
+		<item  rowNo="11" PALLETSN="499507011" />
+		<item  rowNo="12" PALLETSN="499507012" />
+		<item  rowNo="13" PALLETSN="499507013" />
+		<item  rowNo="14" PALLETSN="499507014" />
+		<item  rowNo="15" PALLETSN="499507015" />
+		<item  rowNo="16" PALLETSN="499507016" />
+		<item  rowNo="17" PALLETSN="499507017" />
+		<item  rowNo="18" PALLETSN="499507018" />
+		<item  rowNo="19" PALLETSN="499507019" />
+		<item  rowNo="20" PALLETSN="499507020" />
+		<item  rowNo="21" PALLETSN="499507021" />
+		<item  rowNo="22" PALLETSN="499507022" />
+		<item  rowNo="23" PALLETSN="499507023" />
+		<item  rowNo="24" PALLETSN="499507024" />
+		<item  rowNo="25" PALLETSN="499507025" />
+		<item  rowNo="26" PALLETSN="499507026" />
+		<item  rowNo="27" PALLETSN="499507027" />
+		<item  rowNo="28" PALLETSN="499507028" />
+		<item  rowNo="29" PALLETSN="499507029" />
+		<item  rowNo="30" PALLETSN="499507030" />
+		<item  rowNo="31" PALLETSN="499507031" />
+		<item  rowNo="32" PALLETSN="499507032" />
+		<item  rowNo="33" PALLETSN="499507033" />
+		<item  rowNo="34" PALLETSN="499507034" />
+		<item  rowNo="35" PALLETSN="499507035" />
+		<item  rowNo="36" PALLETSN="499507036" />
+		<item  rowNo="37" PALLETSN="499507037" />
+		<item  rowNo="38" PALLETSN="499507038" />
+		<item  rowNo="39" PALLETSN="499507039" />
+		<item  rowNo="40" PALLETSN="499507040" />
+		<item  rowNo="41" PALLETSN="499507041" />
+		<item  rowNo="42" PALLETSN="499507042" />
+		<item  rowNo="43" PALLETSN="499507043" />
+		<item  rowNo="44" PALLETSN="499507044" />
+		<item  rowNo="45" PALLETSN="499507045" />
+		<item  rowNo="46" PALLETSN="499507046" />
+		<item  rowNo="47" PALLETSN="499507047" />
+		<item  rowNo="48" PALLETSN="499507048" />
+		<item  rowNo="49" PALLETSN="499507049" />
+		<item  rowNo="50" PALLETSN="499507050" />
+		<item  rowNo="51" PALLETSN="499507051" />
+		<item  rowNo="52" PALLETSN="499507052" />
+		<item  rowNo="53" PALLETSN="499507053" />
+		<item  rowNo="54" PALLETSN="499507054" />
+		<item  rowNo="55" PALLETSN="499507055" />
+		<item  rowNo="56" PALLETSN="499507056" />
+		<item  rowNo="57" PALLETSN="499507057" />
+		<item  rowNo="58" PALLETSN="499507058" />
+		<item  rowNo="59" PALLETSN="499507059" />
+		<item  rowNo="60" PALLETSN="499507060" />
+		<item  rowNo="61" PALLETSN="499507061" />
+		<item  rowNo="62" PALLETSN="499507062" />
+		<item  rowNo="63" PALLETSN="499507063" />
+		<item  rowNo="64" PALLETSN="499507064" />
+		<item  rowNo="65" PALLETSN="499507065" />
+		<item  rowNo="66" PALLETSN="499507066" />
+		<item  rowNo="67" PALLETSN="499507067" />
+		<item  rowNo="68" PALLETSN="499507068" />
+		<item  rowNo="69" PALLETSN="499507069" />
+		<item  rowNo="70" PALLETSN="499507070" />
+		<item  rowNo="71" PALLETSN="499507071" />
+		<item  rowNo="72" PALLETSN="499507072" />
+		<item  rowNo="73" PALLETSN="499507073" />
+		<item  rowNo="74" PALLETSN="499507074" />
+		<item  rowNo="75" PALLETSN="499507075" />
+		<item  rowNo="76" PALLETSN="499507076" />
+		<item  rowNo="77" PALLETSN="499507077" />
+		<item  rowNo="78" PALLETSN="499507078" />
+		<item  rowNo="79" PALLETSN="499507079" />
+		<item  rowNo="80" PALLETSN="499507080" />
+		<item  rowNo="81" PALLETSN="499507081" />
+		<item  rowNo="82" PALLETSN="499507082" />
+		<item  rowNo="83" PALLETSN="499507083" />
+		<item  rowNo="84" PALLETSN="499507084" />
+		<item  rowNo="85" PALLETSN="499507085" />
+		<item  rowNo="86" PALLETSN="499507086" />
+		<item  rowNo="87" PALLETSN="499507087" />
+		<item  rowNo="88" PALLETSN="499507088" />
+		<item  rowNo="89" PALLETSN="499507089" />
+		<item  rowNo="90" PALLETSN="499507090" />
+		<item  rowNo="91" PALLETSN="499507091" />
+		<item  rowNo="92" PALLETSN="499507092" />
+		<item  rowNo="93" PALLETSN="499507093" />
+		<item  rowNo="94" PALLETSN="499507094" />
+		<item  rowNo="95" PALLETSN="499507095" />
+		<item  rowNo="96" PALLETSN="499507096" />
+		<item  rowNo="97" PALLETSN="499507097" />
+		<item  rowNo="98" PALLETSN="499507098" />
+		<item  rowNo="99" PALLETSN="499507099" />
+	</PalletSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:对象名 '#t' 无效。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 19:09:05.155
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:4.0003
+Sql:Bas_TestPalletSNImport
+Params:
+@UserId=1
+@MOId=147
+@xml=<document>
+	<PalletSN>
+		<item  rowNo="1" PALLETSN="499507001" />
+		<item  rowNo="2" PALLETSN="499507002" />
+		<item  rowNo="3" PALLETSN="499507003" />
+		<item  rowNo="4" PALLETSN="499507004" />
+		<item  rowNo="5" PALLETSN="499507005" />
+		<item  rowNo="6" PALLETSN="499507006" />
+		<item  rowNo="7" PALLETSN="499507007" />
+		<item  rowNo="8" PALLETSN="499507008" />
+		<item  rowNo="9" PALLETSN="499507009" />
+		<item  rowNo="10" PALLETSN="499507010" />
+		<item  rowNo="11" PALLETSN="499507011" />
+		<item  rowNo="12" PALLETSN="499507012" />
+		<item  rowNo="13" PALLETSN="499507013" />
+		<item  rowNo="14" PALLETSN="499507014" />
+		<item  rowNo="15" PALLETSN="499507015" />
+		<item  rowNo="16" PALLETSN="499507016" />
+		<item  rowNo="17" PALLETSN="499507017" />
+		<item  rowNo="18" PALLETSN="499507018" />
+		<item  rowNo="19" PALLETSN="499507019" />
+		<item  rowNo="20" PALLETSN="499507020" />
+		<item  rowNo="21" PALLETSN="499507021" />
+		<item  rowNo="22" PALLETSN="499507022" />
+		<item  rowNo="23" PALLETSN="499507023" />
+		<item  rowNo="24" PALLETSN="499507024" />
+		<item  rowNo="25" PALLETSN="499507025" />
+		<item  rowNo="26" PALLETSN="499507026" />
+		<item  rowNo="27" PALLETSN="499507027" />
+		<item  rowNo="28" PALLETSN="499507028" />
+		<item  rowNo="29" PALLETSN="499507029" />
+		<item  rowNo="30" PALLETSN="499507030" />
+		<item  rowNo="31" PALLETSN="499507031" />
+		<item  rowNo="32" PALLETSN="499507032" />
+		<item  rowNo="33" PALLETSN="499507033" />
+		<item  rowNo="34" PALLETSN="499507034" />
+		<item  rowNo="35" PALLETSN="499507035" />
+		<item  rowNo="36" PALLETSN="499507036" />
+		<item  rowNo="37" PALLETSN="499507037" />
+		<item  rowNo="38" PALLETSN="499507038" />
+		<item  rowNo="39" PALLETSN="499507039" />
+		<item  rowNo="40" PALLETSN="499507040" />
+		<item  rowNo="41" PALLETSN="499507041" />
+		<item  rowNo="42" PALLETSN="499507042" />
+		<item  rowNo="43" PALLETSN="499507043" />
+		<item  rowNo="44" PALLETSN="499507044" />
+		<item  rowNo="45" PALLETSN="499507045" />
+		<item  rowNo="46" PALLETSN="499507046" />
+		<item  rowNo="47" PALLETSN="499507047" />
+		<item  rowNo="48" PALLETSN="499507048" />
+		<item  rowNo="49" PALLETSN="499507049" />
+		<item  rowNo="50" PALLETSN="499507050" />
+		<item  rowNo="51" PALLETSN="499507051" />
+		<item  rowNo="52" PALLETSN="499507052" />
+		<item  rowNo="53" PALLETSN="499507053" />
+		<item  rowNo="54" PALLETSN="499507054" />
+		<item  rowNo="55" PALLETSN="499507055" />
+		<item  rowNo="56" PALLETSN="499507056" />
+		<item  rowNo="57" PALLETSN="499507057" />
+		<item  rowNo="58" PALLETSN="499507058" />
+		<item  rowNo="59" PALLETSN="499507059" />
+		<item  rowNo="60" PALLETSN="499507060" />
+		<item  rowNo="61" PALLETSN="499507061" />
+		<item  rowNo="62" PALLETSN="499507062" />
+		<item  rowNo="63" PALLETSN="499507063" />
+		<item  rowNo="64" PALLETSN="499507064" />
+		<item  rowNo="65" PALLETSN="499507065" />
+		<item  rowNo="66" PALLETSN="499507066" />
+		<item  rowNo="67" PALLETSN="499507067" />
+		<item  rowNo="68" PALLETSN="499507068" />
+		<item  rowNo="69" PALLETSN="499507069" />
+		<item  rowNo="70" PALLETSN="499507070" />
+		<item  rowNo="71" PALLETSN="499507071" />
+		<item  rowNo="72" PALLETSN="499507072" />
+		<item  rowNo="73" PALLETSN="499507073" />
+		<item  rowNo="74" PALLETSN="499507074" />
+		<item  rowNo="75" PALLETSN="499507075" />
+		<item  rowNo="76" PALLETSN="499507076" />
+		<item  rowNo="77" PALLETSN="499507077" />
+		<item  rowNo="78" PALLETSN="499507078" />
+		<item  rowNo="79" PALLETSN="499507079" />
+		<item  rowNo="80" PALLETSN="499507080" />
+		<item  rowNo="81" PALLETSN="499507081" />
+		<item  rowNo="82" PALLETSN="499507082" />
+		<item  rowNo="83" PALLETSN="499507083" />
+		<item  rowNo="84" PALLETSN="499507084" />
+		<item  rowNo="85" PALLETSN="499507085" />
+		<item  rowNo="86" PALLETSN="499507086" />
+		<item  rowNo="87" PALLETSN="499507087" />
+		<item  rowNo="88" PALLETSN="499507088" />
+		<item  rowNo="89" PALLETSN="499507089" />
+		<item  rowNo="90" PALLETSN="499507090" />
+		<item  rowNo="91" PALLETSN="499507091" />
+		<item  rowNo="92" PALLETSN="499507092" />
+		<item  rowNo="93" PALLETSN="499507093" />
+		<item  rowNo="94" PALLETSN="499507094" />
+		<item  rowNo="95" PALLETSN="499507095" />
+		<item  rowNo="96" PALLETSN="499507096" />
+		<item  rowNo="97" PALLETSN="499507097" />
+		<item  rowNo="98" PALLETSN="499507098" />
+		<item  rowNo="99" PALLETSN="499507099" />
+	</PalletSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:对象名 '#t' 无效。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 19:11:30.776
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:50.0029
+Sql:Bas_TestPalletSNImport
+Params:
+@UserId=1
+@MOId=147
+@xml=<document>
+	<PalletSN>
+		<item  rowNo="1" PALLETSN="499507001" />
+		<item  rowNo="2" PALLETSN="499507002" />
+		<item  rowNo="3" PALLETSN="499507003" />
+		<item  rowNo="4" PALLETSN="499507004" />
+		<item  rowNo="5" PALLETSN="499507005" />
+		<item  rowNo="6" PALLETSN="499507006" />
+		<item  rowNo="7" PALLETSN="499507007" />
+		<item  rowNo="8" PALLETSN="499507008" />
+		<item  rowNo="9" PALLETSN="499507009" />
+		<item  rowNo="10" PALLETSN="499507010" />
+		<item  rowNo="11" PALLETSN="499507011" />
+		<item  rowNo="12" PALLETSN="499507012" />
+		<item  rowNo="13" PALLETSN="499507013" />
+		<item  rowNo="14" PALLETSN="499507014" />
+		<item  rowNo="15" PALLETSN="499507015" />
+		<item  rowNo="16" PALLETSN="499507016" />
+		<item  rowNo="17" PALLETSN="499507017" />
+		<item  rowNo="18" PALLETSN="499507018" />
+		<item  rowNo="19" PALLETSN="499507019" />
+		<item  rowNo="20" PALLETSN="499507020" />
+		<item  rowNo="21" PALLETSN="499507021" />
+		<item  rowNo="22" PALLETSN="499507022" />
+		<item  rowNo="23" PALLETSN="499507023" />
+		<item  rowNo="24" PALLETSN="499507024" />
+		<item  rowNo="25" PALLETSN="499507025" />
+		<item  rowNo="26" PALLETSN="499507026" />
+		<item  rowNo="27" PALLETSN="499507027" />
+		<item  rowNo="28" PALLETSN="499507028" />
+		<item  rowNo="29" PALLETSN="499507029" />
+		<item  rowNo="30" PALLETSN="499507030" />
+		<item  rowNo="31" PALLETSN="499507031" />
+		<item  rowNo="32" PALLETSN="499507032" />
+		<item  rowNo="33" PALLETSN="499507033" />
+		<item  rowNo="34" PALLETSN="499507034" />
+		<item  rowNo="35" PALLETSN="499507035" />
+		<item  rowNo="36" PALLETSN="499507036" />
+		<item  rowNo="37" PALLETSN="499507037" />
+		<item  rowNo="38" PALLETSN="499507038" />
+		<item  rowNo="39" PALLETSN="499507039" />
+		<item  rowNo="40" PALLETSN="499507040" />
+		<item  rowNo="41" PALLETSN="499507041" />
+		<item  rowNo="42" PALLETSN="499507042" />
+		<item  rowNo="43" PALLETSN="499507043" />
+		<item  rowNo="44" PALLETSN="499507044" />
+		<item  rowNo="45" PALLETSN="499507045" />
+		<item  rowNo="46" PALLETSN="499507046" />
+		<item  rowNo="47" PALLETSN="499507047" />
+		<item  rowNo="48" PALLETSN="499507048" />
+		<item  rowNo="49" PALLETSN="499507049" />
+		<item  rowNo="50" PALLETSN="499507050" />
+		<item  rowNo="51" PALLETSN="499507051" />
+		<item  rowNo="52" PALLETSN="499507052" />
+		<item  rowNo="53" PALLETSN="499507053" />
+		<item  rowNo="54" PALLETSN="499507054" />
+		<item  rowNo="55" PALLETSN="499507055" />
+		<item  rowNo="56" PALLETSN="499507056" />
+		<item  rowNo="57" PALLETSN="499507057" />
+		<item  rowNo="58" PALLETSN="499507058" />
+		<item  rowNo="59" PALLETSN="499507059" />
+		<item  rowNo="60" PALLETSN="499507060" />
+		<item  rowNo="61" PALLETSN="499507061" />
+		<item  rowNo="62" PALLETSN="499507062" />
+		<item  rowNo="63" PALLETSN="499507063" />
+		<item  rowNo="64" PALLETSN="499507064" />
+		<item  rowNo="65" PALLETSN="499507065" />
+		<item  rowNo="66" PALLETSN="499507066" />
+		<item  rowNo="67" PALLETSN="499507067" />
+		<item  rowNo="68" PALLETSN="499507068" />
+		<item  rowNo="69" PALLETSN="499507069" />
+		<item  rowNo="70" PALLETSN="499507070" />
+		<item  rowNo="71" PALLETSN="499507071" />
+		<item  rowNo="72" PALLETSN="499507072" />
+		<item  rowNo="73" PALLETSN="499507073" />
+		<item  rowNo="74" PALLETSN="499507074" />
+		<item  rowNo="75" PALLETSN="499507075" />
+		<item  rowNo="76" PALLETSN="499507076" />
+		<item  rowNo="77" PALLETSN="499507077" />
+		<item  rowNo="78" PALLETSN="499507078" />
+		<item  rowNo="79" PALLETSN="499507079" />
+		<item  rowNo="80" PALLETSN="499507080" />
+		<item  rowNo="81" PALLETSN="499507081" />
+		<item  rowNo="82" PALLETSN="499507082" />
+		<item  rowNo="83" PALLETSN="499507083" />
+		<item  rowNo="84" PALLETSN="499507084" />
+		<item  rowNo="85" PALLETSN="499507085" />
+		<item  rowNo="86" PALLETSN="499507086" />
+		<item  rowNo="87" PALLETSN="499507087" />
+		<item  rowNo="88" PALLETSN="499507088" />
+		<item  rowNo="89" PALLETSN="499507089" />
+		<item  rowNo="90" PALLETSN="499507090" />
+		<item  rowNo="91" PALLETSN="499507091" />
+		<item  rowNo="92" PALLETSN="499507092" />
+		<item  rowNo="93" PALLETSN="499507093" />
+		<item  rowNo="94" PALLETSN="499507094" />
+		<item  rowNo="95" PALLETSN="499507095" />
+		<item  rowNo="96" PALLETSN="499507096" />
+		<item  rowNo="97" PALLETSN="499507097" />
+		<item  rowNo="98" PALLETSN="499507098" />
+		<item  rowNo="99" PALLETSN="499507099" />
+	</PalletSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:列名 'rownumber' 无效。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 19:11:44.387
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:58.0033
+Sql:Bas_TestPalletSNImport
+Params:
+@UserId=1
+@MOId=147
+@xml=<document>
+	<PalletSN>
+		<item  rowNo="1" PALLETSN="499507001" />
+		<item  rowNo="2" PALLETSN="499507002" />
+		<item  rowNo="3" PALLETSN="499507003" />
+		<item  rowNo="4" PALLETSN="499507004" />
+		<item  rowNo="5" PALLETSN="499507005" />
+		<item  rowNo="6" PALLETSN="499507006" />
+		<item  rowNo="7" PALLETSN="499507007" />
+		<item  rowNo="8" PALLETSN="499507008" />
+		<item  rowNo="9" PALLETSN="499507009" />
+		<item  rowNo="10" PALLETSN="499507010" />
+		<item  rowNo="11" PALLETSN="499507011" />
+		<item  rowNo="12" PALLETSN="499507012" />
+		<item  rowNo="13" PALLETSN="499507013" />
+		<item  rowNo="14" PALLETSN="499507014" />
+		<item  rowNo="15" PALLETSN="499507015" />
+		<item  rowNo="16" PALLETSN="499507016" />
+		<item  rowNo="17" PALLETSN="499507017" />
+		<item  rowNo="18" PALLETSN="499507018" />
+		<item  rowNo="19" PALLETSN="499507019" />
+		<item  rowNo="20" PALLETSN="499507020" />
+		<item  rowNo="21" PALLETSN="499507021" />
+		<item  rowNo="22" PALLETSN="499507022" />
+		<item  rowNo="23" PALLETSN="499507023" />
+		<item  rowNo="24" PALLETSN="499507024" />
+		<item  rowNo="25" PALLETSN="499507025" />
+		<item  rowNo="26" PALLETSN="499507026" />
+		<item  rowNo="27" PALLETSN="499507027" />
+		<item  rowNo="28" PALLETSN="499507028" />
+		<item  rowNo="29" PALLETSN="499507029" />
+		<item  rowNo="30" PALLETSN="499507030" />
+		<item  rowNo="31" PALLETSN="499507031" />
+		<item  rowNo="32" PALLETSN="499507032" />
+		<item  rowNo="33" PALLETSN="499507033" />
+		<item  rowNo="34" PALLETSN="499507034" />
+		<item  rowNo="35" PALLETSN="499507035" />
+		<item  rowNo="36" PALLETSN="499507036" />
+		<item  rowNo="37" PALLETSN="499507037" />
+		<item  rowNo="38" PALLETSN="499507038" />
+		<item  rowNo="39" PALLETSN="499507039" />
+		<item  rowNo="40" PALLETSN="499507040" />
+		<item  rowNo="41" PALLETSN="499507041" />
+		<item  rowNo="42" PALLETSN="499507042" />
+		<item  rowNo="43" PALLETSN="499507043" />
+		<item  rowNo="44" PALLETSN="499507044" />
+		<item  rowNo="45" PALLETSN="499507045" />
+		<item  rowNo="46" PALLETSN="499507046" />
+		<item  rowNo="47" PALLETSN="499507047" />
+		<item  rowNo="48" PALLETSN="499507048" />
+		<item  rowNo="49" PALLETSN="499507049" />
+		<item  rowNo="50" PALLETSN="499507050" />
+		<item  rowNo="51" PALLETSN="499507051" />
+		<item  rowNo="52" PALLETSN="499507052" />
+		<item  rowNo="53" PALLETSN="499507053" />
+		<item  rowNo="54" PALLETSN="499507054" />
+		<item  rowNo="55" PALLETSN="499507055" />
+		<item  rowNo="56" PALLETSN="499507056" />
+		<item  rowNo="57" PALLETSN="499507057" />
+		<item  rowNo="58" PALLETSN="499507058" />
+		<item  rowNo="59" PALLETSN="499507059" />
+		<item  rowNo="60" PALLETSN="499507060" />
+		<item  rowNo="61" PALLETSN="499507061" />
+		<item  rowNo="62" PALLETSN="499507062" />
+		<item  rowNo="63" PALLETSN="499507063" />
+		<item  rowNo="64" PALLETSN="499507064" />
+		<item  rowNo="65" PALLETSN="499507065" />
+		<item  rowNo="66" PALLETSN="499507066" />
+		<item  rowNo="67" PALLETSN="499507067" />
+		<item  rowNo="68" PALLETSN="499507068" />
+		<item  rowNo="69" PALLETSN="499507069" />
+		<item  rowNo="70" PALLETSN="499507070" />
+		<item  rowNo="71" PALLETSN="499507071" />
+		<item  rowNo="72" PALLETSN="499507072" />
+		<item  rowNo="73" PALLETSN="499507073" />
+		<item  rowNo="74" PALLETSN="499507074" />
+		<item  rowNo="75" PALLETSN="499507075" />
+		<item  rowNo="76" PALLETSN="499507076" />
+		<item  rowNo="77" PALLETSN="499507077" />
+		<item  rowNo="78" PALLETSN="499507078" />
+		<item  rowNo="79" PALLETSN="499507079" />
+		<item  rowNo="80" PALLETSN="499507080" />
+		<item  rowNo="81" PALLETSN="499507081" />
+		<item  rowNo="82" PALLETSN="499507082" />
+		<item  rowNo="83" PALLETSN="499507083" />
+		<item  rowNo="84" PALLETSN="499507084" />
+		<item  rowNo="85" PALLETSN="499507085" />
+		<item  rowNo="86" PALLETSN="499507086" />
+		<item  rowNo="87" PALLETSN="499507087" />
+		<item  rowNo="88" PALLETSN="499507088" />
+		<item  rowNo="89" PALLETSN="499507089" />
+		<item  rowNo="90" PALLETSN="499507090" />
+		<item  rowNo="91" PALLETSN="499507091" />
+		<item  rowNo="92" PALLETSN="499507092" />
+		<item  rowNo="93" PALLETSN="499507093" />
+		<item  rowNo="94" PALLETSN="499507094" />
+		<item  rowNo="95" PALLETSN="499507095" />
+		<item  rowNo="96" PALLETSN="499507096" />
+		<item  rowNo="97" PALLETSN="499507097" />
+		<item  rowNo="98" PALLETSN="499507098" />
+		<item  rowNo="99" PALLETSN="499507099" />
+	</PalletSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 19:12:30.909
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:28.0016
+Sql:Bas_TestPalletSNImport
+Params:
+@UserId=1
+@MOId=147
+@xml=<document>
+	<PalletSN>
+		<item  rowNo="1" PALLETSN="499507001" />
+		<item  rowNo="2" PALLETSN="499507002" />
+		<item  rowNo="3" PALLETSN="499507003" />
+		<item  rowNo="4" PALLETSN="499507004" />
+		<item  rowNo="5" PALLETSN="499507005" />
+		<item  rowNo="6" PALLETSN="499507006" />
+		<item  rowNo="7" PALLETSN="499507007" />
+		<item  rowNo="8" PALLETSN="499507008" />
+		<item  rowNo="9" PALLETSN="499507009" />
+		<item  rowNo="10" PALLETSN="499507010" />
+		<item  rowNo="11" PALLETSN="499507011" />
+		<item  rowNo="12" PALLETSN="499507012" />
+		<item  rowNo="13" PALLETSN="499507013" />
+		<item  rowNo="14" PALLETSN="499507014" />
+		<item  rowNo="15" PALLETSN="499507015" />
+		<item  rowNo="16" PALLETSN="499507016" />
+		<item  rowNo="17" PALLETSN="499507017" />
+		<item  rowNo="18" PALLETSN="499507018" />
+		<item  rowNo="19" PALLETSN="499507019" />
+		<item  rowNo="20" PALLETSN="499507020" />
+		<item  rowNo="21" PALLETSN="499507021" />
+		<item  rowNo="22" PALLETSN="499507022" />
+		<item  rowNo="23" PALLETSN="499507023" />
+		<item  rowNo="24" PALLETSN="499507024" />
+		<item  rowNo="25" PALLETSN="499507025" />
+		<item  rowNo="26" PALLETSN="499507026" />
+		<item  rowNo="27" PALLETSN="499507027" />
+		<item  rowNo="28" PALLETSN="499507028" />
+		<item  rowNo="29" PALLETSN="499507029" />
+		<item  rowNo="30" PALLETSN="499507030" />
+		<item  rowNo="31" PALLETSN="499507031" />
+		<item  rowNo="32" PALLETSN="499507032" />
+		<item  rowNo="33" PALLETSN="499507033" />
+		<item  rowNo="34" PALLETSN="499507034" />
+		<item  rowNo="35" PALLETSN="499507035" />
+		<item  rowNo="36" PALLETSN="499507036" />
+		<item  rowNo="37" PALLETSN="499507037" />
+		<item  rowNo="38" PALLETSN="499507038" />
+		<item  rowNo="39" PALLETSN="499507039" />
+		<item  rowNo="40" PALLETSN="499507040" />
+		<item  rowNo="41" PALLETSN="499507041" />
+		<item  rowNo="42" PALLETSN="499507042" />
+		<item  rowNo="43" PALLETSN="499507043" />
+		<item  rowNo="44" PALLETSN="499507044" />
+		<item  rowNo="45" PALLETSN="499507045" />
+		<item  rowNo="46" PALLETSN="499507046" />
+		<item  rowNo="47" PALLETSN="499507047" />
+		<item  rowNo="48" PALLETSN="499507048" />
+		<item  rowNo="49" PALLETSN="499507049" />
+		<item  rowNo="50" PALLETSN="499507050" />
+		<item  rowNo="51" PALLETSN="499507051" />
+		<item  rowNo="52" PALLETSN="499507052" />
+		<item  rowNo="53" PALLETSN="499507053" />
+		<item  rowNo="54" PALLETSN="499507054" />
+		<item  rowNo="55" PALLETSN="499507055" />
+		<item  rowNo="56" PALLETSN="499507056" />
+		<item  rowNo="57" PALLETSN="499507057" />
+		<item  rowNo="58" PALLETSN="499507058" />
+		<item  rowNo="59" PALLETSN="499507059" />
+		<item  rowNo="60" PALLETSN="499507060" />
+		<item  rowNo="61" PALLETSN="499507061" />
+		<item  rowNo="62" PALLETSN="499507062" />
+		<item  rowNo="63" PALLETSN="499507063" />
+		<item  rowNo="64" PALLETSN="499507064" />
+		<item  rowNo="65" PALLETSN="499507065" />
+		<item  rowNo="66" PALLETSN="499507066" />
+		<item  rowNo="67" PALLETSN="499507067" />
+		<item  rowNo="68" PALLETSN="499507068" />
+		<item  rowNo="69" PALLETSN="499507069" />
+		<item  rowNo="70" PALLETSN="499507070" />
+		<item  rowNo="71" PALLETSN="499507071" />
+		<item  rowNo="72" PALLETSN="499507072" />
+		<item  rowNo="73" PALLETSN="499507073" />
+		<item  rowNo="74" PALLETSN="499507074" />
+		<item  rowNo="75" PALLETSN="499507075" />
+		<item  rowNo="76" PALLETSN="499507076" />
+		<item  rowNo="77" PALLETSN="499507077" />
+		<item  rowNo="78" PALLETSN="499507078" />
+		<item  rowNo="79" PALLETSN="499507079" />
+		<item  rowNo="80" PALLETSN="499507080" />
+		<item  rowNo="81" PALLETSN="499507081" />
+		<item  rowNo="82" PALLETSN="499507082" />
+		<item  rowNo="83" PALLETSN="499507083" />
+		<item  rowNo="84" PALLETSN="499507084" />
+		<item  rowNo="85" PALLETSN="499507085" />
+		<item  rowNo="86" PALLETSN="499507086" />
+		<item  rowNo="87" PALLETSN="499507087" />
+		<item  rowNo="88" PALLETSN="499507088" />
+		<item  rowNo="89" PALLETSN="499507089" />
+		<item  rowNo="90" PALLETSN="499507090" />
+		<item  rowNo="91" PALLETSN="499507091" />
+		<item  rowNo="92" PALLETSN="499507092" />
+		<item  rowNo="93" PALLETSN="499507093" />
+		<item  rowNo="94" PALLETSN="499507094" />
+		<item  rowNo="95" PALLETSN="499507095" />
+		<item  rowNo="96" PALLETSN="499507096" />
+		<item  rowNo="97" PALLETSN="499507097" />
+		<item  rowNo="98" PALLETSN="499507098" />
+		<item  rowNo="99" PALLETSN="499507099" />
+	</PalletSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 19:15:51.448
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:59.0034
+Sql:Bas_TestPalletSNImport
+Params:
+@UserId=1
+@MOId=147
+@xml=<document>
+	<PalletSN>
+		<item  rowNo="1" PALLETSN="499507001" />
+		<item  rowNo="2" PALLETSN="499507002" />
+		<item  rowNo="3" PALLETSN="499507003" />
+		<item  rowNo="4" PALLETSN="499507004" />
+		<item  rowNo="5" PALLETSN="499507005" />
+		<item  rowNo="6" PALLETSN="499507006" />
+		<item  rowNo="7" PALLETSN="499507007" />
+		<item  rowNo="8" PALLETSN="499507008" />
+		<item  rowNo="9" PALLETSN="499507009" />
+		<item  rowNo="10" PALLETSN="499507010" />
+		<item  rowNo="11" PALLETSN="499507011" />
+		<item  rowNo="12" PALLETSN="499507012" />
+		<item  rowNo="13" PALLETSN="499507013" />
+		<item  rowNo="14" PALLETSN="499507014" />
+		<item  rowNo="15" PALLETSN="499507015" />
+		<item  rowNo="16" PALLETSN="499507016" />
+		<item  rowNo="17" PALLETSN="499507017" />
+		<item  rowNo="18" PALLETSN="499507018" />
+		<item  rowNo="19" PALLETSN="499507019" />
+		<item  rowNo="20" PALLETSN="499507020" />
+		<item  rowNo="21" PALLETSN="499507021" />
+		<item  rowNo="22" PALLETSN="499507022" />
+		<item  rowNo="23" PALLETSN="499507023" />
+		<item  rowNo="24" PALLETSN="499507024" />
+		<item  rowNo="25" PALLETSN="499507025" />
+		<item  rowNo="26" PALLETSN="499507026" />
+		<item  rowNo="27" PALLETSN="499507027" />
+		<item  rowNo="28" PALLETSN="499507028" />
+		<item  rowNo="29" PALLETSN="499507029" />
+		<item  rowNo="30" PALLETSN="499507030" />
+		<item  rowNo="31" PALLETSN="499507031" />
+		<item  rowNo="32" PALLETSN="499507032" />
+		<item  rowNo="33" PALLETSN="499507033" />
+		<item  rowNo="34" PALLETSN="499507034" />
+		<item  rowNo="35" PALLETSN="499507035" />
+		<item  rowNo="36" PALLETSN="499507036" />
+		<item  rowNo="37" PALLETSN="499507037" />
+		<item  rowNo="38" PALLETSN="499507038" />
+		<item  rowNo="39" PALLETSN="499507039" />
+		<item  rowNo="40" PALLETSN="499507040" />
+		<item  rowNo="41" PALLETSN="499507041" />
+		<item  rowNo="42" PALLETSN="499507042" />
+		<item  rowNo="43" PALLETSN="499507043" />
+		<item  rowNo="44" PALLETSN="499507044" />
+		<item  rowNo="45" PALLETSN="499507045" />
+		<item  rowNo="46" PALLETSN="499507046" />
+		<item  rowNo="47" PALLETSN="499507047" />
+		<item  rowNo="48" PALLETSN="499507048" />
+		<item  rowNo="49" PALLETSN="499507049" />
+		<item  rowNo="50" PALLETSN="499507050" />
+		<item  rowNo="51" PALLETSN="499507051" />
+		<item  rowNo="52" PALLETSN="499507052" />
+		<item  rowNo="53" PALLETSN="499507053" />
+		<item  rowNo="54" PALLETSN="499507054" />
+		<item  rowNo="55" PALLETSN="499507055" />
+		<item  rowNo="56" PALLETSN="499507056" />
+		<item  rowNo="57" PALLETSN="499507057" />
+		<item  rowNo="58" PALLETSN="499507058" />
+		<item  rowNo="59" PALLETSN="499507059" />
+		<item  rowNo="60" PALLETSN="499507060" />
+		<item  rowNo="61" PALLETSN="499507061" />
+		<item  rowNo="62" PALLETSN="499507062" />
+		<item  rowNo="63" PALLETSN="499507063" />
+		<item  rowNo="64" PALLETSN="499507064" />
+		<item  rowNo="65" PALLETSN="499507065" />
+		<item  rowNo="66" PALLETSN="499507066" />
+		<item  rowNo="67" PALLETSN="499507067" />
+		<item  rowNo="68" PALLETSN="499507068" />
+		<item  rowNo="69" PALLETSN="499507069" />
+		<item  rowNo="70" PALLETSN="499507070" />
+		<item  rowNo="71" PALLETSN="499507071" />
+		<item  rowNo="72" PALLETSN="499507072" />
+		<item  rowNo="73" PALLETSN="499507073" />
+		<item  rowNo="74" PALLETSN="499507074" />
+		<item  rowNo="75" PALLETSN="499507075" />
+		<item  rowNo="76" PALLETSN="499507076" />
+		<item  rowNo="77" PALLETSN="499507077" />
+		<item  rowNo="78" PALLETSN="499507078" />
+		<item  rowNo="79" PALLETSN="499507079" />
+		<item  rowNo="80" PALLETSN="499507080" />
+		<item  rowNo="81" PALLETSN="499507081" />
+		<item  rowNo="82" PALLETSN="499507082" />
+		<item  rowNo="83" PALLETSN="499507083" />
+		<item  rowNo="84" PALLETSN="499507084" />
+		<item  rowNo="85" PALLETSN="499507085" />
+		<item  rowNo="86" PALLETSN="499507086" />
+		<item  rowNo="87" PALLETSN="499507087" />
+		<item  rowNo="88" PALLETSN="499507088" />
+		<item  rowNo="89" PALLETSN="499507089" />
+		<item  rowNo="90" PALLETSN="499507090" />
+		<item  rowNo="91" PALLETSN="499507091" />
+		<item  rowNo="92" PALLETSN="499507092" />
+		<item  rowNo="93" PALLETSN="499507093" />
+		<item  rowNo="94" PALLETSN="499507094" />
+		<item  rowNo="95" PALLETSN="499507095" />
+		<item  rowNo="96" PALLETSN="499507096" />
+		<item  rowNo="97" PALLETSN="499507097" />
+		<item  rowNo="98" PALLETSN="499507098" />
+		<item  rowNo="99" PALLETSN="499507099" />
+	</PalletSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 19:17:00.264
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:58.0033
+Sql:Bas_TestPalletSNImport
+Params:
+@UserId=1
+@MOId=147
+@xml=<document>
+	<PalletSN>
+		<item  rowNo="1" PALLETSN="499507001" />
+		<item  rowNo="2" PALLETSN="499507002" />
+		<item  rowNo="3" PALLETSN="499507003" />
+		<item  rowNo="4" PALLETSN="499507004" />
+		<item  rowNo="5" PALLETSN="499507005" />
+		<item  rowNo="6" PALLETSN="499507006" />
+		<item  rowNo="7" PALLETSN="499507007" />
+		<item  rowNo="8" PALLETSN="499507008" />
+		<item  rowNo="9" PALLETSN="499507009" />
+		<item  rowNo="10" PALLETSN="499507010" />
+		<item  rowNo="11" PALLETSN="499507011" />
+		<item  rowNo="12" PALLETSN="499507012" />
+		<item  rowNo="13" PALLETSN="499507013" />
+		<item  rowNo="14" PALLETSN="499507014" />
+		<item  rowNo="15" PALLETSN="499507015" />
+		<item  rowNo="16" PALLETSN="499507016" />
+		<item  rowNo="17" PALLETSN="499507017" />
+		<item  rowNo="18" PALLETSN="499507018" />
+		<item  rowNo="19" PALLETSN="499507019" />
+		<item  rowNo="20" PALLETSN="499507020" />
+		<item  rowNo="21" PALLETSN="499507021" />
+		<item  rowNo="22" PALLETSN="499507022" />
+		<item  rowNo="23" PALLETSN="499507023" />
+		<item  rowNo="24" PALLETSN="499507024" />
+		<item  rowNo="25" PALLETSN="499507025" />
+		<item  rowNo="26" PALLETSN="499507026" />
+		<item  rowNo="27" PALLETSN="499507027" />
+		<item  rowNo="28" PALLETSN="499507028" />
+		<item  rowNo="29" PALLETSN="499507029" />
+		<item  rowNo="30" PALLETSN="499507030" />
+		<item  rowNo="31" PALLETSN="499507031" />
+		<item  rowNo="32" PALLETSN="499507032" />
+		<item  rowNo="33" PALLETSN="499507033" />
+		<item  rowNo="34" PALLETSN="499507034" />
+		<item  rowNo="35" PALLETSN="499507035" />
+		<item  rowNo="36" PALLETSN="499507036" />
+		<item  rowNo="37" PALLETSN="499507037" />
+		<item  rowNo="38" PALLETSN="499507038" />
+		<item  rowNo="39" PALLETSN="499507039" />
+		<item  rowNo="40" PALLETSN="499507040" />
+		<item  rowNo="41" PALLETSN="499507041" />
+		<item  rowNo="42" PALLETSN="499507042" />
+		<item  rowNo="43" PALLETSN="499507043" />
+		<item  rowNo="44" PALLETSN="499507044" />
+		<item  rowNo="45" PALLETSN="499507045" />
+		<item  rowNo="46" PALLETSN="499507046" />
+		<item  rowNo="47" PALLETSN="499507047" />
+		<item  rowNo="48" PALLETSN="499507048" />
+		<item  rowNo="49" PALLETSN="499507049" />
+		<item  rowNo="50" PALLETSN="499507050" />
+		<item  rowNo="51" PALLETSN="499507051" />
+		<item  rowNo="52" PALLETSN="499507052" />
+		<item  rowNo="53" PALLETSN="499507053" />
+		<item  rowNo="54" PALLETSN="499507054" />
+		<item  rowNo="55" PALLETSN="499507055" />
+		<item  rowNo="56" PALLETSN="499507056" />
+		<item  rowNo="57" PALLETSN="499507057" />
+		<item  rowNo="58" PALLETSN="499507058" />
+		<item  rowNo="59" PALLETSN="499507059" />
+		<item  rowNo="60" PALLETSN="499507060" />
+		<item  rowNo="61" PALLETSN="499507061" />
+		<item  rowNo="62" PALLETSN="499507062" />
+		<item  rowNo="63" PALLETSN="499507063" />
+		<item  rowNo="64" PALLETSN="499507064" />
+		<item  rowNo="65" PALLETSN="499507065" />
+		<item  rowNo="66" PALLETSN="499507066" />
+		<item  rowNo="67" PALLETSN="499507067" />
+		<item  rowNo="68" PALLETSN="499507068" />
+		<item  rowNo="69" PALLETSN="499507069" />
+		<item  rowNo="70" PALLETSN="499507070" />
+		<item  rowNo="71" PALLETSN="499507071" />
+		<item  rowNo="72" PALLETSN="499507072" />
+		<item  rowNo="73" PALLETSN="499507073" />
+		<item  rowNo="74" PALLETSN="499507074" />
+		<item  rowNo="75" PALLETSN="499507075" />
+		<item  rowNo="76" PALLETSN="499507076" />
+		<item  rowNo="77" PALLETSN="499507077" />
+		<item  rowNo="78" PALLETSN="499507078" />
+		<item  rowNo="79" PALLETSN="499507079" />
+		<item  rowNo="80" PALLETSN="499507080" />
+		<item  rowNo="81" PALLETSN="499507081" />
+		<item  rowNo="82" PALLETSN="499507082" />
+		<item  rowNo="83" PALLETSN="499507083" />
+		<item  rowNo="84" PALLETSN="499507084" />
+		<item  rowNo="85" PALLETSN="499507085" />
+		<item  rowNo="86" PALLETSN="499507086" />
+		<item  rowNo="87" PALLETSN="499507087" />
+		<item  rowNo="88" PALLETSN="499507088" />
+		<item  rowNo="89" PALLETSN="499507089" />
+		<item  rowNo="90" PALLETSN="499507090" />
+		<item  rowNo="91" PALLETSN="499507091" />
+		<item  rowNo="92" PALLETSN="499507092" />
+		<item  rowNo="93" PALLETSN="499507093" />
+		<item  rowNo="94" PALLETSN="499507094" />
+		<item  rowNo="95" PALLETSN="499507095" />
+		<item  rowNo="96" PALLETSN="499507096" />
+		<item  rowNo="97" PALLETSN="499507097" />
+		<item  rowNo="98" PALLETSN="499507098" />
+		<item  rowNo="99" PALLETSN="499507099" />
+	</PalletSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 19:17:30.675
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:19.0011
+Sql:Bas_TestPalletSNImport
+Params:
+@UserId=1
+@MOId=147
+@xml=<document>
+	<PalletSN>
+		<item  rowNo="1" PALLETSN="499507001" />
+		<item  rowNo="2" PALLETSN="499507002" />
+		<item  rowNo="3" PALLETSN="499507003" />
+		<item  rowNo="4" PALLETSN="499507004" />
+		<item  rowNo="5" PALLETSN="499507005" />
+		<item  rowNo="6" PALLETSN="499507006" />
+		<item  rowNo="7" PALLETSN="499507007" />
+		<item  rowNo="8" PALLETSN="499507008" />
+		<item  rowNo="9" PALLETSN="499507009" />
+		<item  rowNo="10" PALLETSN="499507010" />
+		<item  rowNo="11" PALLETSN="499507011" />
+		<item  rowNo="12" PALLETSN="499507012" />
+		<item  rowNo="13" PALLETSN="499507013" />
+		<item  rowNo="14" PALLETSN="499507014" />
+		<item  rowNo="15" PALLETSN="499507015" />
+		<item  rowNo="16" PALLETSN="499507016" />
+		<item  rowNo="17" PALLETSN="499507017" />
+		<item  rowNo="18" PALLETSN="499507018" />
+		<item  rowNo="19" PALLETSN="499507019" />
+		<item  rowNo="20" PALLETSN="499507020" />
+		<item  rowNo="21" PALLETSN="499507021" />
+		<item  rowNo="22" PALLETSN="499507022" />
+		<item  rowNo="23" PALLETSN="499507023" />
+		<item  rowNo="24" PALLETSN="499507024" />
+		<item  rowNo="25" PALLETSN="499507025" />
+		<item  rowNo="26" PALLETSN="499507026" />
+		<item  rowNo="27" PALLETSN="499507027" />
+		<item  rowNo="28" PALLETSN="499507028" />
+		<item  rowNo="29" PALLETSN="499507029" />
+		<item  rowNo="30" PALLETSN="499507030" />
+		<item  rowNo="31" PALLETSN="499507031" />
+		<item  rowNo="32" PALLETSN="499507032" />
+		<item  rowNo="33" PALLETSN="499507033" />
+		<item  rowNo="34" PALLETSN="499507034" />
+		<item  rowNo="35" PALLETSN="499507035" />
+		<item  rowNo="36" PALLETSN="499507036" />
+		<item  rowNo="37" PALLETSN="499507037" />
+		<item  rowNo="38" PALLETSN="499507038" />
+		<item  rowNo="39" PALLETSN="499507039" />
+		<item  rowNo="40" PALLETSN="499507040" />
+		<item  rowNo="41" PALLETSN="499507041" />
+		<item  rowNo="42" PALLETSN="499507042" />
+		<item  rowNo="43" PALLETSN="499507043" />
+		<item  rowNo="44" PALLETSN="499507044" />
+		<item  rowNo="45" PALLETSN="499507045" />
+		<item  rowNo="46" PALLETSN="499507046" />
+		<item  rowNo="47" PALLETSN="499507047" />
+		<item  rowNo="48" PALLETSN="499507048" />
+		<item  rowNo="49" PALLETSN="499507049" />
+		<item  rowNo="50" PALLETSN="499507050" />
+		<item  rowNo="51" PALLETSN="499507051" />
+		<item  rowNo="52" PALLETSN="499507052" />
+		<item  rowNo="53" PALLETSN="499507053" />
+		<item  rowNo="54" PALLETSN="499507054" />
+		<item  rowNo="55" PALLETSN="499507055" />
+		<item  rowNo="56" PALLETSN="499507056" />
+		<item  rowNo="57" PALLETSN="499507057" />
+		<item  rowNo="58" PALLETSN="499507058" />
+		<item  rowNo="59" PALLETSN="499507059" />
+		<item  rowNo="60" PALLETSN="499507060" />
+		<item  rowNo="61" PALLETSN="499507061" />
+		<item  rowNo="62" PALLETSN="499507062" />
+		<item  rowNo="63" PALLETSN="499507063" />
+		<item  rowNo="64" PALLETSN="499507064" />
+		<item  rowNo="65" PALLETSN="499507065" />
+		<item  rowNo="66" PALLETSN="499507066" />
+		<item  rowNo="67" PALLETSN="499507067" />
+		<item  rowNo="68" PALLETSN="499507068" />
+		<item  rowNo="69" PALLETSN="499507069" />
+		<item  rowNo="70" PALLETSN="499507070" />
+		<item  rowNo="71" PALLETSN="499507071" />
+		<item  rowNo="72" PALLETSN="499507072" />
+		<item  rowNo="73" PALLETSN="499507073" />
+		<item  rowNo="74" PALLETSN="499507074" />
+		<item  rowNo="75" PALLETSN="499507075" />
+		<item  rowNo="76" PALLETSN="499507076" />
+		<item  rowNo="77" PALLETSN="499507077" />
+		<item  rowNo="78" PALLETSN="499507078" />
+		<item  rowNo="79" PALLETSN="499507079" />
+		<item  rowNo="80" PALLETSN="499507080" />
+		<item  rowNo="81" PALLETSN="499507081" />
+		<item  rowNo="82" PALLETSN="499507082" />
+		<item  rowNo="83" PALLETSN="499507083" />
+		<item  rowNo="84" PALLETSN="499507084" />
+		<item  rowNo="85" PALLETSN="499507085" />
+		<item  rowNo="86" PALLETSN="499507086" />
+		<item  rowNo="87" PALLETSN="499507087" />
+		<item  rowNo="88" PALLETSN="499507088" />
+		<item  rowNo="89" PALLETSN="499507089" />
+		<item  rowNo="90" PALLETSN="499507090" />
+		<item  rowNo="91" PALLETSN="499507091" />
+		<item  rowNo="92" PALLETSN="499507092" />
+		<item  rowNo="93" PALLETSN="499507093" />
+		<item  rowNo="94" PALLETSN="499507094" />
+		<item  rowNo="95" PALLETSN="499507095" />
+		<item  rowNo="96" PALLETSN="499507096" />
+		<item  rowNo="97" PALLETSN="499507097" />
+		<item  rowNo="98" PALLETSN="499507098" />
+		<item  rowNo="99" PALLETSN="499507099" />
+	</PalletSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 19:17:56.187
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:61.0035
+Sql:Bas_TestPalletSNImport
+Params:
+@UserId=1
+@MOId=147
+@xml=<document>
+	<PalletSN>
+		<item  rowNo="1" PALLETSN="499507001" />
+		<item  rowNo="2" PALLETSN="499507002" />
+		<item  rowNo="3" PALLETSN="499507003" />
+		<item  rowNo="4" PALLETSN="499507004" />
+		<item  rowNo="5" PALLETSN="499507005" />
+		<item  rowNo="6" PALLETSN="499507006" />
+		<item  rowNo="7" PALLETSN="499507007" />
+		<item  rowNo="8" PALLETSN="499507008" />
+		<item  rowNo="9" PALLETSN="499507009" />
+		<item  rowNo="10" PALLETSN="499507010" />
+		<item  rowNo="11" PALLETSN="499507011" />
+		<item  rowNo="12" PALLETSN="499507012" />
+		<item  rowNo="13" PALLETSN="499507013" />
+		<item  rowNo="14" PALLETSN="499507014" />
+		<item  rowNo="15" PALLETSN="499507015" />
+		<item  rowNo="16" PALLETSN="499507016" />
+		<item  rowNo="17" PALLETSN="499507017" />
+		<item  rowNo="18" PALLETSN="499507018" />
+		<item  rowNo="19" PALLETSN="499507019" />
+		<item  rowNo="20" PALLETSN="499507020" />
+		<item  rowNo="21" PALLETSN="499507021" />
+		<item  rowNo="22" PALLETSN="499507022" />
+		<item  rowNo="23" PALLETSN="499507023" />
+		<item  rowNo="24" PALLETSN="499507024" />
+		<item  rowNo="25" PALLETSN="499507025" />
+		<item  rowNo="26" PALLETSN="499507026" />
+		<item  rowNo="27" PALLETSN="499507027" />
+		<item  rowNo="28" PALLETSN="499507028" />
+		<item  rowNo="29" PALLETSN="499507029" />
+		<item  rowNo="30" PALLETSN="499507030" />
+		<item  rowNo="31" PALLETSN="499507031" />
+		<item  rowNo="32" PALLETSN="499507032" />
+		<item  rowNo="33" PALLETSN="499507033" />
+		<item  rowNo="34" PALLETSN="499507034" />
+		<item  rowNo="35" PALLETSN="499507035" />
+		<item  rowNo="36" PALLETSN="499507036" />
+		<item  rowNo="37" PALLETSN="499507037" />
+		<item  rowNo="38" PALLETSN="499507038" />
+		<item  rowNo="39" PALLETSN="499507039" />
+		<item  rowNo="40" PALLETSN="499507040" />
+		<item  rowNo="41" PALLETSN="499507041" />
+		<item  rowNo="42" PALLETSN="499507042" />
+		<item  rowNo="43" PALLETSN="499507043" />
+		<item  rowNo="44" PALLETSN="499507044" />
+		<item  rowNo="45" PALLETSN="499507045" />
+		<item  rowNo="46" PALLETSN="499507046" />
+		<item  rowNo="47" PALLETSN="499507047" />
+		<item  rowNo="48" PALLETSN="499507048" />
+		<item  rowNo="49" PALLETSN="499507049" />
+		<item  rowNo="50" PALLETSN="499507050" />
+		<item  rowNo="51" PALLETSN="499507051" />
+		<item  rowNo="52" PALLETSN="499507052" />
+		<item  rowNo="53" PALLETSN="499507053" />
+		<item  rowNo="54" PALLETSN="499507054" />
+		<item  rowNo="55" PALLETSN="499507055" />
+		<item  rowNo="56" PALLETSN="499507056" />
+		<item  rowNo="57" PALLETSN="499507057" />
+		<item  rowNo="58" PALLETSN="499507058" />
+		<item  rowNo="59" PALLETSN="499507059" />
+		<item  rowNo="60" PALLETSN="499507060" />
+		<item  rowNo="61" PALLETSN="499507061" />
+		<item  rowNo="62" PALLETSN="499507062" />
+		<item  rowNo="63" PALLETSN="499507063" />
+		<item  rowNo="64" PALLETSN="499507064" />
+		<item  rowNo="65" PALLETSN="499507065" />
+		<item  rowNo="66" PALLETSN="499507066" />
+		<item  rowNo="67" PALLETSN="499507067" />
+		<item  rowNo="68" PALLETSN="499507068" />
+		<item  rowNo="69" PALLETSN="499507069" />
+		<item  rowNo="70" PALLETSN="499507070" />
+		<item  rowNo="71" PALLETSN="499507071" />
+		<item  rowNo="72" PALLETSN="499507072" />
+		<item  rowNo="73" PALLETSN="499507073" />
+		<item  rowNo="74" PALLETSN="499507074" />
+		<item  rowNo="75" PALLETSN="499507075" />
+		<item  rowNo="76" PALLETSN="499507076" />
+		<item  rowNo="77" PALLETSN="499507077" />
+		<item  rowNo="78" PALLETSN="499507078" />
+		<item  rowNo="79" PALLETSN="499507079" />
+		<item  rowNo="80" PALLETSN="499507080" />
+		<item  rowNo="81" PALLETSN="499507081" />
+		<item  rowNo="82" PALLETSN="499507082" />
+		<item  rowNo="83" PALLETSN="499507083" />
+		<item  rowNo="84" PALLETSN="499507084" />
+		<item  rowNo="85" PALLETSN="499507085" />
+		<item  rowNo="86" PALLETSN="499507086" />
+		<item  rowNo="87" PALLETSN="499507087" />
+		<item  rowNo="88" PALLETSN="499507088" />
+		<item  rowNo="89" PALLETSN="499507089" />
+		<item  rowNo="90" PALLETSN="499507090" />
+		<item  rowNo="91" PALLETSN="499507091" />
+		<item  rowNo="92" PALLETSN="499507092" />
+		<item  rowNo="93" PALLETSN="499507093" />
+		<item  rowNo="94" PALLETSN="499507094" />
+		<item  rowNo="95" PALLETSN="499507095" />
+		<item  rowNo="96" PALLETSN="499507096" />
+		<item  rowNo="97" PALLETSN="499507097" />
+		<item  rowNo="98" PALLETSN="499507098" />
+		<item  rowNo="99" PALLETSN="499507099" />
+	</PalletSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 19:18:35.002
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:19.0011
+Sql:Bas_TestPalletSNImport
+Params:
+@UserId=1
+@MOId=147
+@xml=<document>
+	<PalletSN>
+		<item  rowNo="1" PALLETSN="499507001" />
+		<item  rowNo="2" PALLETSN="499507002" />
+		<item  rowNo="3" PALLETSN="499507003" />
+		<item  rowNo="4" PALLETSN="499507004" />
+		<item  rowNo="5" PALLETSN="499507005" />
+		<item  rowNo="6" PALLETSN="499507006" />
+		<item  rowNo="7" PALLETSN="499507007" />
+		<item  rowNo="8" PALLETSN="499507008" />
+		<item  rowNo="9" PALLETSN="499507009" />
+		<item  rowNo="10" PALLETSN="499507010" />
+		<item  rowNo="11" PALLETSN="499507011" />
+		<item  rowNo="12" PALLETSN="499507012" />
+		<item  rowNo="13" PALLETSN="499507013" />
+		<item  rowNo="14" PALLETSN="499507014" />
+		<item  rowNo="15" PALLETSN="499507015" />
+		<item  rowNo="16" PALLETSN="499507016" />
+		<item  rowNo="17" PALLETSN="499507017" />
+		<item  rowNo="18" PALLETSN="499507018" />
+		<item  rowNo="19" PALLETSN="499507019" />
+		<item  rowNo="20" PALLETSN="499507020" />
+		<item  rowNo="21" PALLETSN="499507021" />
+		<item  rowNo="22" PALLETSN="499507022" />
+		<item  rowNo="23" PALLETSN="499507023" />
+		<item  rowNo="24" PALLETSN="499507024" />
+		<item  rowNo="25" PALLETSN="499507025" />
+		<item  rowNo="26" PALLETSN="499507026" />
+		<item  rowNo="27" PALLETSN="499507027" />
+		<item  rowNo="28" PALLETSN="499507028" />
+		<item  rowNo="29" PALLETSN="499507029" />
+		<item  rowNo="30" PALLETSN="499507030" />
+		<item  rowNo="31" PALLETSN="499507031" />
+		<item  rowNo="32" PALLETSN="499507032" />
+		<item  rowNo="33" PALLETSN="499507033" />
+		<item  rowNo="34" PALLETSN="499507034" />
+		<item  rowNo="35" PALLETSN="499507035" />
+		<item  rowNo="36" PALLETSN="499507036" />
+		<item  rowNo="37" PALLETSN="499507037" />
+		<item  rowNo="38" PALLETSN="499507038" />
+		<item  rowNo="39" PALLETSN="499507039" />
+		<item  rowNo="40" PALLETSN="499507040" />
+		<item  rowNo="41" PALLETSN="499507041" />
+		<item  rowNo="42" PALLETSN="499507042" />
+		<item  rowNo="43" PALLETSN="499507043" />
+		<item  rowNo="44" PALLETSN="499507044" />
+		<item  rowNo="45" PALLETSN="499507045" />
+		<item  rowNo="46" PALLETSN="499507046" />
+		<item  rowNo="47" PALLETSN="499507047" />
+		<item  rowNo="48" PALLETSN="499507048" />
+		<item  rowNo="49" PALLETSN="499507049" />
+		<item  rowNo="50" PALLETSN="499507050" />
+		<item  rowNo="51" PALLETSN="499507051" />
+		<item  rowNo="52" PALLETSN="499507052" />
+		<item  rowNo="53" PALLETSN="499507053" />
+		<item  rowNo="54" PALLETSN="499507054" />
+		<item  rowNo="55" PALLETSN="499507055" />
+		<item  rowNo="56" PALLETSN="499507056" />
+		<item  rowNo="57" PALLETSN="499507057" />
+		<item  rowNo="58" PALLETSN="499507058" />
+		<item  rowNo="59" PALLETSN="499507059" />
+		<item  rowNo="60" PALLETSN="499507060" />
+		<item  rowNo="61" PALLETSN="499507061" />
+		<item  rowNo="62" PALLETSN="499507062" />
+		<item  rowNo="63" PALLETSN="499507063" />
+		<item  rowNo="64" PALLETSN="499507064" />
+		<item  rowNo="65" PALLETSN="499507065" />
+		<item  rowNo="66" PALLETSN="499507066" />
+		<item  rowNo="67" PALLETSN="499507067" />
+		<item  rowNo="68" PALLETSN="499507068" />
+		<item  rowNo="69" PALLETSN="499507069" />
+		<item  rowNo="70" PALLETSN="499507070" />
+		<item  rowNo="71" PALLETSN="499507071" />
+		<item  rowNo="72" PALLETSN="499507072" />
+		<item  rowNo="73" PALLETSN="499507073" />
+		<item  rowNo="74" PALLETSN="499507074" />
+		<item  rowNo="75" PALLETSN="499507075" />
+		<item  rowNo="76" PALLETSN="499507076" />
+		<item  rowNo="77" PALLETSN="499507077" />
+		<item  rowNo="78" PALLETSN="499507078" />
+		<item  rowNo="79" PALLETSN="499507079" />
+		<item  rowNo="80" PALLETSN="499507080" />
+		<item  rowNo="81" PALLETSN="499507081" />
+		<item  rowNo="82" PALLETSN="499507082" />
+		<item  rowNo="83" PALLETSN="499507083" />
+		<item  rowNo="84" PALLETSN="499507084" />
+		<item  rowNo="85" PALLETSN="499507085" />
+		<item  rowNo="86" PALLETSN="499507086" />
+		<item  rowNo="87" PALLETSN="499507087" />
+		<item  rowNo="88" PALLETSN="499507088" />
+		<item  rowNo="89" PALLETSN="499507089" />
+		<item  rowNo="90" PALLETSN="499507090" />
+		<item  rowNo="91" PALLETSN="499507091" />
+		<item  rowNo="92" PALLETSN="499507092" />
+		<item  rowNo="93" PALLETSN="499507093" />
+		<item  rowNo="94" PALLETSN="499507094" />
+		<item  rowNo="95" PALLETSN="499507095" />
+		<item  rowNo="96" PALLETSN="499507096" />
+		<item  rowNo="97" PALLETSN="499507097" />
+		<item  rowNo="98" PALLETSN="499507098" />
+		<item  rowNo="99" PALLETSN="499507099" />
+	</PalletSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 19:19:15.815
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:20.0012
+Sql:Bas_TestPalletSNImport
+Params:
+@UserId=1
+@MOId=147
+@xml=<document>
+	<PalletSN>
+		<item  rowNo="1" PALLETSN="499507001" />
+		<item  rowNo="2" PALLETSN="499507002" />
+		<item  rowNo="3" PALLETSN="499507003" />
+		<item  rowNo="4" PALLETSN="499507004" />
+		<item  rowNo="5" PALLETSN="499507005" />
+		<item  rowNo="6" PALLETSN="499507006" />
+		<item  rowNo="7" PALLETSN="499507007" />
+		<item  rowNo="8" PALLETSN="499507008" />
+		<item  rowNo="9" PALLETSN="499507009" />
+		<item  rowNo="10" PALLETSN="499507010" />
+		<item  rowNo="11" PALLETSN="499507011" />
+		<item  rowNo="12" PALLETSN="499507012" />
+		<item  rowNo="13" PALLETSN="499507013" />
+		<item  rowNo="14" PALLETSN="499507014" />
+		<item  rowNo="15" PALLETSN="499507015" />
+		<item  rowNo="16" PALLETSN="499507016" />
+		<item  rowNo="17" PALLETSN="499507017" />
+		<item  rowNo="18" PALLETSN="499507018" />
+		<item  rowNo="19" PALLETSN="499507019" />
+		<item  rowNo="20" PALLETSN="499507020" />
+		<item  rowNo="21" PALLETSN="499507021" />
+		<item  rowNo="22" PALLETSN="499507022" />
+		<item  rowNo="23" PALLETSN="499507023" />
+		<item  rowNo="24" PALLETSN="499507024" />
+		<item  rowNo="25" PALLETSN="499507025" />
+		<item  rowNo="26" PALLETSN="499507026" />
+		<item  rowNo="27" PALLETSN="499507027" />
+		<item  rowNo="28" PALLETSN="499507028" />
+		<item  rowNo="29" PALLETSN="499507029" />
+		<item  rowNo="30" PALLETSN="499507030" />
+		<item  rowNo="31" PALLETSN="499507031" />
+		<item  rowNo="32" PALLETSN="499507032" />
+		<item  rowNo="33" PALLETSN="499507033" />
+		<item  rowNo="34" PALLETSN="499507034" />
+		<item  rowNo="35" PALLETSN="499507035" />
+		<item  rowNo="36" PALLETSN="499507036" />
+		<item  rowNo="37" PALLETSN="499507037" />
+		<item  rowNo="38" PALLETSN="499507038" />
+		<item  rowNo="39" PALLETSN="499507039" />
+		<item  rowNo="40" PALLETSN="499507040" />
+		<item  rowNo="41" PALLETSN="499507041" />
+		<item  rowNo="42" PALLETSN="499507042" />
+		<item  rowNo="43" PALLETSN="499507043" />
+		<item  rowNo="44" PALLETSN="499507044" />
+		<item  rowNo="45" PALLETSN="499507045" />
+		<item  rowNo="46" PALLETSN="499507046" />
+		<item  rowNo="47" PALLETSN="499507047" />
+		<item  rowNo="48" PALLETSN="499507048" />
+		<item  rowNo="49" PALLETSN="499507049" />
+		<item  rowNo="50" PALLETSN="499507050" />
+		<item  rowNo="51" PALLETSN="499507051" />
+		<item  rowNo="52" PALLETSN="499507052" />
+		<item  rowNo="53" PALLETSN="499507053" />
+		<item  rowNo="54" PALLETSN="499507054" />
+		<item  rowNo="55" PALLETSN="499507055" />
+		<item  rowNo="56" PALLETSN="499507056" />
+		<item  rowNo="57" PALLETSN="499507057" />
+		<item  rowNo="58" PALLETSN="499507058" />
+		<item  rowNo="59" PALLETSN="499507059" />
+		<item  rowNo="60" PALLETSN="499507060" />
+		<item  rowNo="61" PALLETSN="499507061" />
+		<item  rowNo="62" PALLETSN="499507062" />
+		<item  rowNo="63" PALLETSN="499507063" />
+		<item  rowNo="64" PALLETSN="499507064" />
+		<item  rowNo="65" PALLETSN="499507065" />
+		<item  rowNo="66" PALLETSN="499507066" />
+		<item  rowNo="67" PALLETSN="499507067" />
+		<item  rowNo="68" PALLETSN="499507068" />
+		<item  rowNo="69" PALLETSN="499507069" />
+		<item  rowNo="70" PALLETSN="499507070" />
+		<item  rowNo="71" PALLETSN="499507071" />
+		<item  rowNo="72" PALLETSN="499507072" />
+		<item  rowNo="73" PALLETSN="499507073" />
+		<item  rowNo="74" PALLETSN="499507074" />
+		<item  rowNo="75" PALLETSN="499507075" />
+		<item  rowNo="76" PALLETSN="499507076" />
+		<item  rowNo="77" PALLETSN="499507077" />
+		<item  rowNo="78" PALLETSN="499507078" />
+		<item  rowNo="79" PALLETSN="499507079" />
+		<item  rowNo="80" PALLETSN="499507080" />
+		<item  rowNo="81" PALLETSN="499507081" />
+		<item  rowNo="82" PALLETSN="499507082" />
+		<item  rowNo="83" PALLETSN="499507083" />
+		<item  rowNo="84" PALLETSN="499507084" />
+		<item  rowNo="85" PALLETSN="499507085" />
+		<item  rowNo="86" PALLETSN="499507086" />
+		<item  rowNo="87" PALLETSN="499507087" />
+		<item  rowNo="88" PALLETSN="499507088" />
+		<item  rowNo="89" PALLETSN="499507089" />
+		<item  rowNo="90" PALLETSN="499507090" />
+		<item  rowNo="91" PALLETSN="499507091" />
+		<item  rowNo="92" PALLETSN="499507092" />
+		<item  rowNo="93" PALLETSN="499507093" />
+		<item  rowNo="94" PALLETSN="499507094" />
+		<item  rowNo="95" PALLETSN="499507095" />
+		<item  rowNo="96" PALLETSN="499507096" />
+		<item  rowNo="97" PALLETSN="499507097" />
+		<item  rowNo="98" PALLETSN="499507098" />
+		<item  rowNo="99" PALLETSN="499507099" />
+	</PalletSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+END===============================================================================================
+
+

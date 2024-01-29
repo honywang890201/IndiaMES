@@ -1,0 +1,2 @@
+D:\work_GS\git_C#_MES\EquipmentManagement\BoxPrint\obj\Release\BoxPrint.csprojAssemblyReference.cache
+D:\work_GS\git_C#_MES\EquipmentManagement\BoxPrint\obj\Release\BoxPrint_MarkupCompile.cache

@@ -1,0 +1,1008 @@
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:03:00.941
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:11.0006
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:03:05.152
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:5.0003
+Sql:SELECT Bas_MO.MOId,
+	                   Bas_MO.ItemId,
+	                   Bas_MO.WorkflowId,
+	                   Bas_MO.CustomerId,
+	                   Bas_MO.MOCode,
+	                   Bas_MO.Qty,
+	                   Bas_Item.ItemCode,
+	                   Bas_Item.ItemSpecification,
+	                   Bas_Workflow.WorkflowCode,
+	                   Bas_Workflow.WorkflowDesc,
+	                   Bas_Customer.CustomerCode,
+	                   Bas_Customer.CustomerDesc,
+	                   Bas_Item.IsCheckTwoDimensionalCode,
+	                   Bas_Item.TwoDimensionalCodeLength
+                FROM dbo.Bas_MO  WITH(NOLOCK) 
+                LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+                LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+                LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+                WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=2
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:03:15.188
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:10.0005
+Sql:Interf_Call
+Params:
+@InterfaceNo=20
+@Params=<document><IsTransferMO>0</IsTransferMO><MOId>2</MOId><LotSNType>Mac</LotSNType><LotSN>42417201710361724</LotSN><LineId>28</LineId><ResId>293</ResId><UserId>366</UserId><OPId>70</OPId></document>
+@AttachParams=
+@OutParams=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:06:22.048
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:10.0005
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:06:24.859
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:5.0003
+Sql:SELECT Bas_MO.MOId,
+	                   Bas_MO.ItemId,
+	                   Bas_MO.WorkflowId,
+	                   Bas_MO.CustomerId,
+	                   Bas_MO.MOCode,
+	                   Bas_MO.Qty,
+	                   Bas_Item.ItemCode,
+	                   Bas_Item.ItemSpecification,
+	                   Bas_Workflow.WorkflowCode,
+	                   Bas_Workflow.WorkflowDesc,
+	                   Bas_Customer.CustomerCode,
+	                   Bas_Customer.CustomerDesc,
+	                   Bas_Item.IsCheckTwoDimensionalCode,
+	                   Bas_Item.TwoDimensionalCodeLength
+                FROM dbo.Bas_MO  WITH(NOLOCK) 
+                LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+                LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+                LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+                WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=2
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:06:41.906
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:10.0006
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:06:45.732
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:5.0003
+Sql:SELECT Bas_MO.MOId,
+	                   Bas_MO.ItemId,
+	                   Bas_MO.WorkflowId,
+	                   Bas_MO.CustomerId,
+	                   Bas_MO.MOCode,
+	                   Bas_MO.Qty,
+	                   Bas_Item.ItemCode,
+	                   Bas_Item.ItemSpecification,
+	                   Bas_Workflow.WorkflowCode,
+	                   Bas_Workflow.WorkflowDesc,
+	                   Bas_Customer.CustomerCode,
+	                   Bas_Customer.CustomerDesc,
+	                   Bas_Item.IsCheckTwoDimensionalCode,
+	                   Bas_Item.TwoDimensionalCodeLength
+                FROM dbo.Bas_MO  WITH(NOLOCK) 
+                LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+                LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+                LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+                WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=2
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:06:58.114
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:10.0006
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:07:00.925
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0002
+Sql:SELECT Bas_MO.MOId,
+	                   Bas_MO.ItemId,
+	                   Bas_MO.WorkflowId,
+	                   Bas_MO.CustomerId,
+	                   Bas_MO.MOCode,
+	                   Bas_MO.Qty,
+	                   Bas_Item.ItemCode,
+	                   Bas_Item.ItemSpecification,
+	                   Bas_Workflow.WorkflowCode,
+	                   Bas_Workflow.WorkflowDesc,
+	                   Bas_Customer.CustomerCode,
+	                   Bas_Customer.CustomerDesc,
+	                   Bas_Item.IsCheckTwoDimensionalCode,
+	                   Bas_Item.TwoDimensionalCodeLength
+                FROM dbo.Bas_MO  WITH(NOLOCK) 
+                LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+                LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+                LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+                WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=2
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:07:09.828
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:13.0008
+Sql:Interf_Call
+Params:
+@InterfaceNo=20
+@Params=<document><IsTransferMO>0</IsTransferMO><MOId>2</MOId><LotSNType>Mac</LotSNType><LotSN>42417201710361724</LotSN><LineId>28</LineId><ResId>293</ResId><UserId>366</UserId><OPId>70</OPId></document>
+@AttachParams=
+@OutParams=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:08:53.999
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:11.0006
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:08:57.910
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:9.0005
+Sql:SELECT Bas_MO.MOId,
+	                   Bas_MO.ItemId,
+	                   Bas_MO.WorkflowId,
+	                   Bas_MO.CustomerId,
+	                   Bas_MO.MOCode,
+	                   Bas_MO.Qty,
+	                   Bas_Item.ItemCode,
+	                   Bas_Item.ItemSpecification,
+	                   Bas_Workflow.WorkflowCode,
+	                   Bas_Workflow.WorkflowDesc,
+	                   Bas_Customer.CustomerCode,
+	                   Bas_Customer.CustomerDesc,
+	                   Bas_Item.IsCheckTwoDimensionalCode,
+	                   Bas_Item.TwoDimensionalCodeLength
+                FROM dbo.Bas_MO  WITH(NOLOCK) 
+                LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+                LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+                LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+                WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=2
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:09:04.053
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:11.0007
+Sql:Interf_Call
+Params:
+@InterfaceNo=20
+@Params=<document><IsTransferMO>0</IsTransferMO><MOId>2</MOId><LotSNType>Mac</LotSNType><LotSN>42417201710361724</LotSN><LineId>28</LineId><ResId>293</ResId><UserId>366</UserId><OPId>70</OPId></document>
+@AttachParams=
+@OutParams=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:09:52.442
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:11.0006
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:09:55.853
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:5.0003
+Sql:SELECT Bas_MO.MOId,
+	                   Bas_MO.ItemId,
+	                   Bas_MO.WorkflowId,
+	                   Bas_MO.CustomerId,
+	                   Bas_MO.MOCode,
+	                   Bas_MO.Qty,
+	                   Bas_Item.ItemCode,
+	                   Bas_Item.ItemSpecification,
+	                   Bas_Workflow.WorkflowCode,
+	                   Bas_Workflow.WorkflowDesc,
+	                   Bas_Customer.CustomerCode,
+	                   Bas_Customer.CustomerDesc,
+	                   Bas_Item.IsCheckTwoDimensionalCode,
+	                   Bas_Item.TwoDimensionalCodeLength
+                FROM dbo.Bas_MO  WITH(NOLOCK) 
+                LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+                LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+                LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+                WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=2
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:10:03.852
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:11.0006
+Sql:Interf_Call
+Params:
+@InterfaceNo=20
+@Params=<document><IsTransferMO>0</IsTransferMO><MOId>2</MOId><LotSNType>Mac</LotSNType><LotSN>42417201710361724</LotSN><LineId>28</LineId><ResId>293</ResId><UserId>366</UserId><OPId>70</OPId></document>
+@AttachParams=
+@OutParams=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:12:10.183
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:10.0006
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:12:14.114
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0002
+Sql:SELECT Bas_MO.MOId,
+	                   Bas_MO.ItemId,
+	                   Bas_MO.WorkflowId,
+	                   Bas_MO.CustomerId,
+	                   Bas_MO.MOCode,
+	                   Bas_MO.Qty,
+	                   Bas_Item.ItemCode,
+	                   Bas_Item.ItemSpecification,
+	                   Bas_Workflow.WorkflowCode,
+	                   Bas_Workflow.WorkflowDesc,
+	                   Bas_Customer.CustomerCode,
+	                   Bas_Customer.CustomerDesc,
+	                   Bas_Item.IsCheckTwoDimensionalCode,
+	                   Bas_Item.TwoDimensionalCodeLength
+                FROM dbo.Bas_MO  WITH(NOLOCK) 
+                LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+                LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+                LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+                WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=2
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:12:20.083
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:11.0006
+Sql:Interf_Call
+Params:
+@InterfaceNo=20
+@Params=<document><IsTransferMO>0</IsTransferMO><MOId>2</MOId><LotSNType>Mac</LotSNType><LotSN>42417201710361724</LotSN><LineId>28</LineId><ResId>293</ResId><UserId>366</UserId><OPId>70</OPId></document>
+@AttachParams=
+@OutParams=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:22:36.430
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:10.0006
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:22:39.759
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0002
+Sql:SELECT Bas_MO.MOId,
+	                   Bas_MO.ItemId,
+	                   Bas_MO.WorkflowId,
+	                   Bas_MO.CustomerId,
+	                   Bas_MO.MOCode,
+	                   Bas_MO.Qty,
+	                   Bas_Item.ItemCode,
+	                   Bas_Item.ItemSpecification,
+	                   Bas_Workflow.WorkflowCode,
+	                   Bas_Workflow.WorkflowDesc,
+	                   Bas_Customer.CustomerCode,
+	                   Bas_Customer.CustomerDesc,
+	                   Bas_Item.IsCheckTwoDimensionalCode,
+	                   Bas_Item.TwoDimensionalCodeLength
+                FROM dbo.Bas_MO  WITH(NOLOCK) 
+                LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+                LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+                LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+                WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=2
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:22:47.509
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:10.0006
+Sql:Interf_Call
+Params:
+@InterfaceNo=20
+@Params=<document><IsTransferMO>0</IsTransferMO><MOId>2</MOId><LotSNType>Mac</LotSNType><LotSN>42417201710361724</LotSN><LineId>28</LineId><ResId>293</ResId><UserId>366</UserId><OPId>70</OPId></document>
+@AttachParams=
+@OutParams=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:23:27.003
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:97.0056
+Sql:Interf_Call
+Params:
+@InterfaceNo=70
+@Params=<document><Order_Number>WX201910250114</Order_Number><CSN>02577778761</CSN><PIN>PIN</PIN><Smartcard_Number>Smartcard_Number</Smartcard_Number><CPd>CPd</CPd><ChipId>00755606629</ChipId><CVC>CVC</CVC><Box_Id>Box_Id</Box_Id><Client_NO>Client_NO</Client_NO><LotId>844415</LotId><MOId>2</MOId><LineId>28</LineId><ResId>293</ResId><ShiftTypeId>7</ShiftTypeId><UserId>366</UserId><OPId>70</OPId></document>
+@AttachParams=
+@OutParams=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:26:20.139
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:421.0241
+Sql:Interf_Call
+Params:
+@InterfaceNo=71
+@Params=<document><MAC>02577778761</MAC></document>
+@AttachParams=
+@OutParams=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:28:29.035
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:9.0005
+Sql:Interf_Call
+Params:
+@InterfaceNo=20
+@Params=<document><IsTransferMO>0</IsTransferMO><MOId>2</MOId><LotSNType>Mac</LotSNType><LotSN>42417201710361724</LotSN><LineId>28</LineId><ResId>293</ResId><UserId>366</UserId><OPId>70</OPId></document>
+@AttachParams=
+@OutParams=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:28:29.164
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:35.002
+Sql:Interf_Call
+Params:
+@InterfaceNo=70
+@Params=<document><Order_Number>WX201910250114</Order_Number><CSN>02577778761</CSN><PIN>PIN</PIN><Smartcard_Number>Smartcard_Number</Smartcard_Number><CPd>CPd</CPd><ChipId>00755606629</ChipId><CVC>CVC</CVC><Box_Id>Box_Id</Box_Id><Client_NO>Client_NO</Client_NO><LotId>844415</LotId><MOId>2</MOId><LineId>28</LineId><ResId>293</ResId><ShiftTypeId>7</ShiftTypeId><UserId>366</UserId><OPId>70</OPId></document>
+@AttachParams=
+@OutParams=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:28:30.893
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:46.0027
+Sql:Interf_Call
+Params:
+@InterfaceNo=71
+@Params=<document><MAC>02577778761</MAC></document>
+@AttachParams=
+@OutParams=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:41:03.803
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:27.0015
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:41:07.436
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:5.0003
+Sql:SELECT Bas_MO.MOId,
+	                   Bas_MO.ItemId,
+	                   Bas_MO.WorkflowId,
+	                   Bas_MO.CustomerId,
+	                   Bas_MO.MOCode,
+	                   Bas_MO.Qty,
+	                   Bas_Item.ItemCode,
+	                   Bas_Item.ItemSpecification,
+	                   Bas_Workflow.WorkflowCode,
+	                   Bas_Workflow.WorkflowDesc,
+	                   Bas_Customer.CustomerCode,
+	                   Bas_Customer.CustomerDesc,
+	                   Bas_Item.IsCheckTwoDimensionalCode,
+	                   Bas_Item.TwoDimensionalCodeLength
+                FROM dbo.Bas_MO  WITH(NOLOCK) 
+                LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+                LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+                LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+                WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=2
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:41:12.347
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:11.0006
+Sql:Interf_Call
+Params:
+@InterfaceNo=20
+@Params=<document><IsTransferMO>0</IsTransferMO><MOId>2</MOId><LotSNType>Mac</LotSNType><LotSN>42417201710361724</LotSN><LineId>28</LineId><ResId>293</ResId><UserId>366</UserId><OPId>70</OPId></document>
+@AttachParams=
+@OutParams=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:41:14.725
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:34.0019
+Sql:Interf_Call
+Params:
+@InterfaceNo=70
+@Params=<document><Order_Number>WX201910250114</Order_Number><CSN>02577778761</CSN><PIN>PIN</PIN><Smartcard_Number>Smartcard_Number</Smartcard_Number><CPd>CPd</CPd><ChipId>00755606629</ChipId><CVC>CVC</CVC><Box_Id>Box_Id</Box_Id><Client_NO>Client_NO</Client_NO><LotId>844415</LotId><MOId>2</MOId><LineId>28</LineId><ResId>293</ResId><ShiftTypeId>7</ShiftTypeId><UserId>366</UserId><OPId>70</OPId></document>
+@AttachParams=
+@OutParams=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:41:21.461
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:53.003
+Sql:Interf_Call
+Params:
+@InterfaceNo=71
+@Params=<document><MAC>02577778761</MAC></document>
+@AttachParams=
+@OutParams=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:49:54.491
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:11.0006
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:49:58.105
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Bas_MO.MOId,
+	                   Bas_MO.ItemId,
+	                   Bas_MO.WorkflowId,
+	                   Bas_MO.CustomerId,
+	                   Bas_MO.MOCode,
+	                   Bas_MO.Qty,
+	                   Bas_Item.ItemCode,
+	                   Bas_Item.ItemSpecification,
+	                   Bas_Workflow.WorkflowCode,
+	                   Bas_Workflow.WorkflowDesc,
+	                   Bas_Customer.CustomerCode,
+	                   Bas_Customer.CustomerDesc,
+	                   Bas_Item.IsCheckTwoDimensionalCode,
+	                   Bas_Item.TwoDimensionalCodeLength
+                FROM dbo.Bas_MO  WITH(NOLOCK) 
+                LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+                LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+                LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+                WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=2
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:51:08.051
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:13.0007
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:51:11.374
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:5.0003
+Sql:SELECT Bas_MO.MOId,
+	                   Bas_MO.ItemId,
+	                   Bas_MO.WorkflowId,
+	                   Bas_MO.CustomerId,
+	                   Bas_MO.MOCode,
+	                   Bas_MO.Qty,
+	                   Bas_Item.ItemCode,
+	                   Bas_Item.ItemSpecification,
+	                   Bas_Workflow.WorkflowCode,
+	                   Bas_Workflow.WorkflowDesc,
+	                   Bas_Customer.CustomerCode,
+	                   Bas_Customer.CustomerDesc,
+	                   Bas_Item.IsCheckTwoDimensionalCode,
+	                   Bas_Item.TwoDimensionalCodeLength
+                FROM dbo.Bas_MO  WITH(NOLOCK) 
+                LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+                LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+                LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+                WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=2
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:51:39.029
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:10.0006
+Sql:Interf_Call
+Params:
+@InterfaceNo=20
+@Params=<document><IsTransferMO>0</IsTransferMO><MOId>2</MOId><LotSNType>Mac</LotSNType><LotSN>42417201710361724</LotSN><LineId>28</LineId><ResId>293</ResId><UserId>366</UserId><OPId>70</OPId></document>
+@AttachParams=
+@OutParams=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:51:39.039
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:35.002
+Sql:Interf_Call
+Params:
+@InterfaceNo=70
+@Params=<document><Order_Number>WX201910250114</Order_Number><CSN>02577778761</CSN><PIN>PIN</PIN><Smartcard_Number>Smartcard_Number</Smartcard_Number><CPd>CPd</CPd><ChipId>00755606629</ChipId><CVC>CVC</CVC><Box_Id>Box_Id</Box_Id><Client_NO>Client_NO</Client_NO><LotId>844415</LotId><MOId>2</MOId><LineId>28</LineId><ResId>293</ResId><ShiftTypeId>7</ShiftTypeId><UserId>366</UserId><OPId>70</OPId></document>
+@AttachParams=
+@OutParams=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:51:39.150
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:47.0026
+Sql:Interf_Call
+Params:
+@InterfaceNo=71
+@Params=<document><MAC>02577778761</MAC></document>
+@AttachParams=
+@OutParams=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:56:53.168
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:11.0006
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:56:57.080
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:5.0003
+Sql:SELECT Bas_MO.MOId,
+	                   Bas_MO.ItemId,
+	                   Bas_MO.WorkflowId,
+	                   Bas_MO.CustomerId,
+	                   Bas_MO.MOCode,
+	                   Bas_MO.Qty,
+	                   Bas_Item.ItemCode,
+	                   Bas_Item.ItemSpecification,
+	                   Bas_Workflow.WorkflowCode,
+	                   Bas_Workflow.WorkflowDesc,
+	                   Bas_Customer.CustomerCode,
+	                   Bas_Customer.CustomerDesc,
+	                   Bas_Item.IsCheckTwoDimensionalCode,
+	                   Bas_Item.TwoDimensionalCodeLength
+                FROM dbo.Bas_MO  WITH(NOLOCK) 
+                LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+                LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+                LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+                WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=2
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:58:40.371
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:11.0006
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:58:43.890
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0002
+Sql:SELECT Bas_MO.MOId,
+	                   Bas_MO.ItemId,
+	                   Bas_MO.WorkflowId,
+	                   Bas_MO.CustomerId,
+	                   Bas_MO.MOCode,
+	                   Bas_MO.Qty,
+	                   Bas_Item.ItemCode,
+	                   Bas_Item.ItemSpecification,
+	                   Bas_Workflow.WorkflowCode,
+	                   Bas_Workflow.WorkflowDesc,
+	                   Bas_Customer.CustomerCode,
+	                   Bas_Customer.CustomerDesc,
+	                   Bas_Item.IsCheckTwoDimensionalCode,
+	                   Bas_Item.TwoDimensionalCodeLength
+                FROM dbo.Bas_MO  WITH(NOLOCK) 
+                LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+                LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+                LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+                WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=2
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-04 15:59:26.149
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:10.0006
+Sql:Interf_Call
+Params:
+@InterfaceNo=20
+@Params=<document><IsTransferMO>0</IsTransferMO><MOId>2</MOId><LotSNType>Mac</LotSNType><LotSN>42417201710361724</LotSN><LineId>28</LineId><ResId>293</ResId><UserId>366</UserId><OPId>70</OPId></document>
+@AttachParams=
+@OutParams=null
+END===============================================================================================
+
+

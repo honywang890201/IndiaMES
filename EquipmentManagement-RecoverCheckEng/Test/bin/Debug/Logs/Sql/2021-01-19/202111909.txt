@@ -1,0 +1,28 @@
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2021-01-19 09:59:34.597
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:14.5018
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2021-01-19 09:59:35.016
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.5003
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+

@@ -1,0 +1,4463 @@
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:12:18.110
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:13.0008
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:12:53.454
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:12.0007
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:13:00.980
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0003
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=113
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:13:01.091
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:13:01.101
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19139
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:13:19.112
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:58.0033
+Sql:SELECT STBNO FROM [dbo].[Bas_MO_Mac] WHERE DSN='MAC22000012' OR DeviceSerialNumber='MAC22000012' OR STBNO='MAC22000012'
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:15:50.905
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:12.0007
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:16:29.358
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0003
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=113
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:16:39.923
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:16:39.933
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19139
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:18:08.138
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:12.0007
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:18:49.691
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0002
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=113
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:18:54.937
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0002
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:19:00.849
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19139
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:19:46.209
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:14.0008
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:19:51.529
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=113
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:19:53.087
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:19:53.098
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19139
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:20:06.709
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:7.0004
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:20:09.234
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0001
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=2
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:20:09.345
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=2
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:20:09.355
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=1
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:20:11.066
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:6.0003
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:20:15.377
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0001
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=113
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:20:15.487
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:20:15.497
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19139
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:22:44.484
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:17.001
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:22:49.698
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0002
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=113
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:22:49.809
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:22:49.819
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19139
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:24:52.613
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:6.0003
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:25:10.241
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=2
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:25:10.351
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=2
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:25:10.361
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=1
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:25:12.571
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:7.0004
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:25:16.781
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=113
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:25:16.791
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:25:16.801
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19139
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:28:29.607
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:13.0007
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:28:34.922
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0003
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=113
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:28:49.678
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:28:49.688
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0002
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19139
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:30:00.992
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:17.0009
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:30:06.045
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=113
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:31:34.447
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0002
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:31:34.458
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19139
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:31:37.972
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:6.0003
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:31:39.984
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=2
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:31:40.117
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=2
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:31:40.127
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=1
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:31:41.338
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:7.0004
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:31:49.607
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0002
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=113
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:32:06.270
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0002
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:32:06.280
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19139
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:33:08.748
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:12.0006
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:33:12.769
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0003
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=2
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:33:12.779
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=2
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:33:12.789
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0002
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=1
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:33:14.000
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:6.0004
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:33:17.810
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0001
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=113
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:33:17.820
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:33:17.832
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19139
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:33:45.263
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:12.0007
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:33:51.100
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0001
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=113
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:33:51.110
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:33:51.121
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19139
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:33:56.332
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:6.0004
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:34:02.842
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=86
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:34:02.852
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=86
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:34:02.863
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:34:49.546
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:16.001
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:34:58.764
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0003
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=86
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:34:58.774
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0002
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=86
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:34:58.785
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:35:03.296
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:6.0003
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:35:10.908
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=44
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:35:10.918
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=44
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:35:10.929
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:35:13.840
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:6.0004
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:35:17.554
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=113
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:35:17.664
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:35:17.674
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19139
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:35:29.367
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:12.0007
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:35:40.317
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0002
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=86
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:35:40.427
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=86
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:35:40.437
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:35:41.747
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:6.0003
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:35:45.257
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0001
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=113
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:35:45.267
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:35:45.278
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19139
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:35:52.088
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:16.0009
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:35:57.107
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0002
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=113
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:35:57.118
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:35:57.134
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0002
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19139
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:36:01.744
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:6.0003
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:36:11.257
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=86
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:36:11.267
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=86
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:36:11.278
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:36:29.390
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:6.0003
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:36:38.684
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=113
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:36:49.973
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:36:49.983
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19139
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:36:52.896
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:6.0004
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:36:56.928
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=113
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:40:30.608
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:40:30.618
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19139
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:40:40.737
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:19.0011
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:40:45.574
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0002
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=113
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:40:45.685
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:40:45.695
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19139
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:41:12.550
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:23.0013
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:41:18.561
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=113
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:41:18.571
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:41:18.582
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19139
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:41:21.992
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:6.0003
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:41:28.209
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=86
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:41:28.219
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=86
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:41:28.229
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:42:07.841
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:8.0005
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:42:21.771
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=113
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:42:21.882
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:42:21.892
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19139
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:42:30.602
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:6.0003
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:42:43.041
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=44
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:42:43.152
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0002
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=44
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:42:43.162
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:43:01.273
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:5.0003
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:43:08.016
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0001
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=113
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:43:08.127
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:43:08.137
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19139
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:44:13.341
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:24.0014
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:44:22.489
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0003
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=113
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:44:24.697
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:44:24.707
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19139
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:44:27.217
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:5.0003
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:44:54.432
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=86
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:44:54.442
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0002
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=86
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:44:54.453
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:44:56.163
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:6.0004
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:45:01.975
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=113
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:45:02.085
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:45:02.095
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19139
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:45:15.006
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:4.0003
+Sql:Prd_Inp_Pack_ScanPrint
+Params:
+@ScanType1=Mac
+@ScanTypeDesc1=MAC
+@ScanCode1=MAC22000012
+@IsScan2=False
+@IsScan3=False
+@IsScanEN=True
+@EN=
+@MOId=113
+@ItemId=19139
+@LineId=24
+@ResId=76
+@ShiftTypeId=7
+@UserId=1
+@OPId=73
+@PluginId=0
+@Return_Message=null
+@Return_Value=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:45:22.117
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:3.0002
+Sql:Prd_Inp_Pack_ScanPrint
+Params:
+@ScanType1=Mac
+@ScanTypeDesc1=MAC
+@ScanCode1=MAC-MAC22000013
+@IsScan2=False
+@IsScan3=False
+@IsScanEN=True
+@EN=
+@MOId=113
+@ItemId=19139
+@LineId=24
+@ResId=76
+@ShiftTypeId=7
+@UserId=1
+@OPId=73
+@PluginId=0
+@Return_Message=null
+@Return_Value=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:45:52.735
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:3.0002
+Sql:Prd_Inp_Pack_ScanPrint
+Params:
+@ScanType1=Mac
+@ScanTypeDesc1=MAC
+@ScanCode1=MAC22000013
+@IsScan2=False
+@IsScan3=False
+@IsScanEN=True
+@EN=
+@MOId=113
+@ItemId=19139
+@LineId=24
+@ResId=76
+@ShiftTypeId=7
+@UserId=1
+@OPId=73
+@PluginId=0
+@Return_Message=null
+@Return_Value=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:45:55.845
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:3.0002
+Sql:Prd_Inp_Pack_ScanPrint
+Params:
+@ScanType1=Mac
+@ScanTypeDesc1=MAC
+@ScanCode1=MAC22000014
+@IsScan2=False
+@IsScan3=False
+@IsScanEN=True
+@EN=
+@MOId=113
+@ItemId=19139
+@LineId=24
+@ResId=76
+@ShiftTypeId=7
+@UserId=1
+@OPId=73
+@PluginId=0
+@Return_Message=null
+@Return_Value=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:46:10.756
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:6.0004
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:46:17.178
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0002
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=86
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:46:17.289
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0002
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=86
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:46:17.299
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:49:18.367
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:6.0004
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:49:55.786
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=86
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:49:55.897
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=86
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:49:55.907
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:49:57.918
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:6.0004
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:50:01.830
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=113
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:50:01.940
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:50:01.950
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19139
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:50:09.560
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:9.0005
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:50:12.971
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0001
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=2
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:50:13.081
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=2
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:50:13.091
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=1
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:50:14.101
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:6.0003
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:50:22.311
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0001
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=86
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:50:22.421
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=86
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:50:22.431
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0002
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:52:20.249
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:6.0003
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:52:35.464
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0001
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=112
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:52:35.574
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=112
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:52:35.584
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19122
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:52:50.195
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:6.0003
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:52:57.009
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0001
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=113
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:52:57.019
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0002
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=113
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:52:57.030
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=19139
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:53:59.243
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:7.0004
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:54:12.325
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:3.0002
+Sql:Prd_Inp_Pack_ScanPrint
+Params:
+@ScanType1=Mac
+@ScanTypeDesc1=MAC
+@ScanCode1=12
+@IsScan2=False
+@IsScan3=False
+@IsScanEN=True
+@EN=
+@MOId=113
+@ItemId=19139
+@LineId=24
+@ResId=76
+@ShiftTypeId=7
+@UserId=1
+@OPId=73
+@PluginId=0
+@Return_Message=null
+@Return_Value=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:54:45.040
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:6.0003
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:54:47.551
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.ENType
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=2
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:54:47.561
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=2
+@OPId=73
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-04-24 09:54:47.572
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Item_Template.ItemTemplateId AS TemplateId,
+	   Bas_Item_Template.TemplateDesc,
+	   Bas_Item_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_Item_Template.Sequence
+FROM dbo.Bas_Item_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_Item_Template.TemplateId=Set_File.FileId
+WHERE ItemId=@ItemId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@ItemId=1
+@OPId=73
+END===============================================================================================
+
+

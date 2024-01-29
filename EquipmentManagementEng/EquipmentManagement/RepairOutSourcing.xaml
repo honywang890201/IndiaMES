@@ -1,0 +1,109 @@
+﻿<mes:UserVendor x:Class="EquipmentManagement.RepairOutSourcing"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EquipmentManagement"
+             xmlns:mes="http://www.mes.com"
+             xmlns:mesex="http://www.mesex.com"
+             DataContextChanged="UserVendor_DataContextChanged">
+
+    <Grid x:Name="grid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="5">
+            <mesex:CircleImageButton x:Name="btnEdit" ImageDiameter="20" Margin="0,0,10,0" ImageSource="Images/edit.png"  
+                                     Content="编辑"  Click="btnEdit_Click" Visibility="Collapsed"/>
+            <mesex:CircleImageButton x:Name="btnCancel" ImageDiameter="20" Margin="0,0,10,0" ImageSource="Images/cancel.png" 
+                                     Content="取消" Visibility="Collapsed" Click="btnCancel_Click"/>
+            <mesex:CircleImageButton x:Name="btnSave" ImageDiameter="20" Margin="0,0,10,0" ImageSource="Images/save.png" 
+                                     Content="保存"  Visibility="Collapsed" Click="btnSave_Click"/>
+            <mesex:CircleImageButton x:Name="btnClose" ImageDiameter="20" Margin="0,0,10,0" ImageSource="Images/yes.png" 
+                                     Content="关闭" Click="btnClose_Click" Visibility="Collapsed"/>
+        </StackPanel>
+
+        <Grid Grid.Row="1" Margin="5">
+            <mesex:ListGrid >
+                <mesex:ListGrid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </mesex:ListGrid.ColumnDefinitions>
+
+
+                <TextBlock Text="委外维修单" FontSize="15" HorizontalAlignment="Center" Grid.ColumnSpan="6"
+                             />
+
+                <TextBlock Text="委外维修单"/>
+                <mesex:ListGridCellGrid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <mesex:TextBox x:Name="txtEquipmentRepairOutSourcingCode" TextChanged="txtEquipmentRepairOutSourcingCode_TextChanged" LostFocus="txtEquipmentRepairOutSourcingCode_LostFocus" />
+                    <mesex:CircleImageButton ImageSource="Images/edit.png" x:Name="btnEquipmentRepairOutSourcing" Click="btnEquipmentRepairOutSourcing_Click" Grid.Column="1"/>
+                </mesex:ListGridCellGrid>
+
+                <TextBlock Text="送修单"/>
+                <mesex:TextBox IsReadOnly="True" Text="{Binding EquipmentRepairInCode}"/>
+
+                <TextBlock Text="状态"/>
+                <mesex:TextBox IsReadOnly="True" Text="{Binding StatusName}"/>
+
+                <TextBlock Text="委外送修人"/>
+                <mesex:TextBox IsReadOnly="True" Text="{Binding SendRepairUserName}"/>
+
+                <TextBlock Text="委外送修时间"/>
+                <mesex:ListGridCellBorder Grid.ColumnSpan="3">
+                    <mesex:TextBox IsReadOnly="True" Text="{Binding SendRepairDateTime,StringFormat='yyyy-MM-dd HH:mm:ss'}"/>
+                </mesex:ListGridCellBorder>
+
+                <TextBlock Text="备注"/>
+                <mesex:ListGridCellBorder Grid.ColumnSpan="5">
+                    <mesex:TextBox x:Name="txtEquipmentRepairOutSourcingDesc" IsReadOnly="True" Text="{Binding EquipmentRepairOutSourcingDesc}"/>
+                </mesex:ListGridCellBorder>
+
+                <TextBlock Text="修改人"/>
+                <mesex:TextBox IsReadOnly="True" Text="{Binding UpdateUserName}"/>
+
+                <TextBlock Text="修改时间"/>
+                <mesex:ListGridCellBorder Grid.ColumnSpan="3">
+                    <mesex:TextBox IsReadOnly="True" Text="{Binding UpdateDateTime,StringFormat='yyyy-MM-dd HH:mm:ss'}"/>
+                </mesex:ListGridCellBorder>
+
+                <TextBlock Text="关闭人"/>
+                <mesex:TextBox IsReadOnly="True" Text="{Binding CloseUserName}"/>
+
+                <TextBlock Text="关闭时间"/>
+                <mesex:ListGridCellBorder Grid.ColumnSpan="3">
+                    <mesex:TextBox IsReadOnly="True" Text="{Binding CloseDateTime,StringFormat='yyyy-MM-dd HH:mm:ss'}"/>
+                </mesex:ListGridCellBorder>
+
+            </mesex:ListGrid>
+            <mesex:Seal Content="{Binding StatusName}" />
+        </Grid>
+
+        <mesex:TabControl x:Name="tab" Grid.Row="2">
+            <mesex:TabItem IsShowClose="False" Header="报废设备">
+                <mesex:GridControl x:Name="matrix1" Grid.Column="1">
+                    <mesex:GridControl.Columns>
+                        <mesex:GridColumn Header="车间" Binding="{Binding WorkShopName}"/>
+                        <mesex:GridColumn Header="设备组" Binding="{Binding EquipmentGroupName}"/>
+                        <mesex:GridColumn Header="型号" Binding="{Binding EquipmentModelName}"/>
+                        <mesex:GridColumn Header="设备编码" Binding="{Binding EquipmentCode}"/>
+                        <mesex:GridTextColumn Header="备注" Binding="{Binding Comment}" IsEnabled="False" x:Name="colComment"/>
+                        <mesex:GridColumn Header="维修结果" Binding="{Binding ResultName}"  x:Name="colResultName"/>
+                        <mesex:GridComboBoxColumn Header="维修结果" Binding="{Binding Result}" IsEnabled="False" x:Name="colResult" Visible="False" ShowInColumnChooser="False" />
+                    </mesex:GridControl.Columns>
+                </mesex:GridControl>
+            </mesex:TabItem>
+        </mesex:TabControl>
+    </Grid>
+</mes:UserVendor>

@@ -1,0 +1,280 @@
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-06-17 18:44:25.850
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:78.0045
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-06-17 18:45:12.726
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0001
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.IsCheckTwoDimensionalCode,
+	   Bas_Item.TwoDimensionalCodeLength
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=121
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-06-17 18:45:23.668
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:96.0054
+Sql:Prd_Inp_AttachAndPower_Binding
+Params:
+@LotSN=123
+@AttachType1=PowerSN
+@AttachCode1=12
+@IsCheckAttach2=True
+@AttachType2=RemoteSN
+@AttachCode2=123
+@MOId=121
+@ItemId=19145
+@LineId=27
+@ResId=346
+@ShiftTypeId=7
+@UserId=1
+@OPId=85
+@PluginId=0
+@Return_Message=null
+@Return_Value=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-06-17 18:46:22.682
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:13.0008
+Sql:Prd_Inp_AttachAndPower_Binding
+Params:
+@LotSN=00:00:00:D6:2F:DA
+@AttachType1=PowerSN
+@AttachCode1=110
+@IsCheckAttach2=True
+@AttachType2=RemoteSN
+@AttachCode2=220
+@MOId=121
+@ItemId=19145
+@LineId=27
+@ResId=346
+@ShiftTypeId=7
+@UserId=1
+@OPId=85
+@PluginId=0
+@Return_Message=null
+@Return_Value=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-06-17 18:52:24.613
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:4.0002
+Sql:Prd_Inp_AttachAndPower_Binding
+Params:
+@LotSN=00:00:00:D6:2F:DB
+@AttachType1=PowerSN
+@AttachCode1=220
+@IsCheckAttach2=True
+@AttachType2=RemoteSN
+@AttachCode2=110
+@MOId=121
+@ItemId=19145
+@LineId=27
+@ResId=346
+@ShiftTypeId=7
+@UserId=1
+@OPId=85
+@PluginId=0
+@Return_Message=null
+@Return_Value=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-06-17 18:52:43.826
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:16.0009
+Sql:Prd_Inp_AttachAndPower_Binding
+Params:
+@LotSN=00:00:00:D6:2F:DB
+@AttachType1=PowerSN
+@AttachCode1=111
+@IsCheckAttach2=True
+@AttachType2=RemoteSN
+@AttachCode2=110
+@MOId=121
+@ItemId=19145
+@LineId=27
+@ResId=346
+@ShiftTypeId=7
+@UserId=1
+@OPId=85
+@PluginId=0
+@Return_Message=null
+@Return_Value=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-06-17 18:53:19.738
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:2.0001
+Sql:Prd_Inp_AttachAndPower_Binding
+Params:
+@LotSN=00:00:00:D6:2F:DC
+@AttachType1=PowerSN
+@AttachCode1=2203
+@IsCheckAttach2=True
+@AttachType2=RemoteSN
+@AttachCode2=0013
+@MOId=121
+@ItemId=19145
+@LineId=27
+@ResId=346
+@ShiftTypeId=7
+@UserId=1
+@OPId=85
+@PluginId=0
+@Return_Message=null
+@Return_Value=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-06-17 18:53:50.850
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:2.0002
+Sql:Prd_Inp_AttachAndPower_Binding
+Params:
+@LotSN=00:00:00:D6:2F:DC
+@AttachType1=RemoteSN
+@AttachCode1=110
+@IsCheckAttach2=False
+@MOId=121
+@ItemId=19145
+@LineId=27
+@ResId=346
+@ShiftTypeId=7
+@UserId=1
+@OPId=85
+@PluginId=0
+@Return_Message=null
+@Return_Value=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-06-17 18:53:57.961
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:12.0007
+Sql:Prd_Inp_AttachAndPower_Binding
+Params:
+@LotSN=00:00:00:D6:2F:DC
+@AttachType1=RemoteSN
+@AttachCode1=550
+@IsCheckAttach2=False
+@MOId=121
+@ItemId=19145
+@LineId=27
+@ResId=346
+@ShiftTypeId=7
+@UserId=1
+@OPId=85
+@PluginId=0
+@Return_Message=null
+@Return_Value=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-06-17 18:56:01.079
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:11.0006
+Sql:Prd_Inp_AttachAndPower_Binding
+Params:
+@LotSN=00:00:00:D6:2F:DD
+@AttachType1=RemoteSN
+@AttachCode1=55
+@IsCheckAttach2=False
+@MOId=121
+@ItemId=19145
+@LineId=27
+@ResId=346
+@ShiftTypeId=7
+@UserId=1
+@OPId=85
+@PluginId=0
+@Return_Message=null
+@Return_Value=null
+END===============================================================================================
+
+

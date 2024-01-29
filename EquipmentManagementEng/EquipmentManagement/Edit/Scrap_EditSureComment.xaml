@@ -1,0 +1,32 @@
+﻿<mesex:Window x:Class="EquipmentManagement.Edit.Scrap_EditSureComment"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="确认备注" 
+        xmlns:mes="http://www.mes.com"
+        xmlns:mesex="http://www.mesex.com" SizeToContent="WidthAndHeight" MinWidth="700">
+    <AdornerDecorator>
+        <Grid x:Name="grid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <mesex:ListGrid >
+                <mesex:ListGrid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </mesex:ListGrid.ColumnDefinitions>
+
+
+                <TextBlock x:Name="tbTitle" Text="确认备注" FontSize="15" HorizontalAlignment="Center" Grid.ColumnSpan="2" />
+
+                <TextBlock x:Name="tbComment" Text="确认备注"/>
+                <mesex:TextBox x:Name="txtSureComment" />
+
+            </mesex:ListGrid>
+
+            <mesex:CircleImageButton x:Name="btnSure" Grid.Row="1" HorizontalAlignment="Center" Margin="15" Content="确认" ImageSource="/EquipmentManagement;component/Images/yes.png"
+                                     Click="CircleImageButton_Click"/>
+        </Grid>
+    </AdornerDecorator>
+</mesex:Window>

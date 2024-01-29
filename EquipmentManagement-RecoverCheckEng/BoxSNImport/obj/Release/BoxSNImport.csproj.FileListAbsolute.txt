@@ -1,0 +1,2 @@
+E:\Code\Mes\BoxSNImport\obj\Release\BoxSNImport.csprojResolveAssemblyReference.cache
+E:\Code\Mes\BoxSNImport\obj\Release\BoxSNImport_MarkupCompile.cache

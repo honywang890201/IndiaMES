@@ -1,0 +1,83 @@
+﻿<mes:UserVendor x:Class="EquipmentManagement.EquipmentRepairIns"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EquipmentManagement"
+             xmlns:mes="http://www.mes.com"
+             xmlns:mesex="http://www.mesex.com">
+    <Grid Name="grid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal"  VerticalAlignment="Center" HorizontalAlignment="Center" >
+            <TextBlock Grid.Row="1" Margin="0,5,0,5" 
+                   Text="送修单" VerticalAlignment="Center" 
+                   FontSize="20" FontWeight="Bold" Foreground="#FF959799" HorizontalAlignment="Center" />
+        </StackPanel>
+
+
+        <mesex:Grid Grid.Row="2"  ChildMargin="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <mesex:ListGrid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition />
+                    <ColumnDefinition/>
+                    <ColumnDefinition />
+                    <ColumnDefinition/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="送修单"/>
+                <mesex:TextBox x:Name="txtEquipmentRepairInCode"/>
+
+                <TextBlock Text="维修类型"/>
+                <mesex:ComboBox x:Name="cmbRepairType"/>
+
+                <TextBlock Text="类型"/>
+                <mesex:ComboBox x:Name="cmbType"/>
+
+                <TextBlock Text="状态"/>
+                <mesex:ComboBox x:Name="cmbStatus"/>
+
+                <TextBlock Text="主维修人"/>
+                <mesex:TextBoxQuery x:Name="txtMainRepairUser" MetaId="283"/>
+
+                <TextBlock Text="送修人"/>
+                <mesex:TextBoxQuery x:Name="txtSendRepairUser" MetaId="25"/>
+            </mesex:ListGrid>
+
+            <mesex:CircleImageButton Grid.Column="1" ImageDiameter="20" VerticalAlignment="Center" HorizontalAlignment="Center" 
+                                    ImageSource="Images/query.png" Click="btnQuery_Click"  Content="查询"
+                                     Margin="15,0,15,0"/>
+
+
+        </mesex:Grid>
+
+        <mesex:GridControl x:Name="matrix" Grid.Row="3"  >
+            <mesex:GridControl.Columns>
+                <mesex:GridLinkColumn Header="送修单" Binding="{Binding EquipmentRepairInCode}" LinkClick="GridLinkColumn_LinkClick"/>
+                <mesex:GridColumn Header="维修类型" Binding="{Binding RepairTypeName}"/>
+                <mesex:GridColumn Header="类型" Binding="{Binding Type}"/>
+                <mesex:GridColumn Header="状态" Binding="{Binding StatusName}"/>
+                <mesex:GridColumn Header="主维修人" Binding="{Binding MainRepairUserName}"/>
+                <mesex:GridColumn Header="送修人" Binding="{Binding SendRepairUserName}"/>
+                <mesex:GridDatePickerColumn Header="送修时间" Binding="{Binding SendRepairDateTime}" FormatString="yyyy-MM-dd HH:mm:ss"/>
+                <mesex:GridColumn Header="备注" Binding="{Binding EquipmentRepairInDesc}"/>
+            </mesex:GridControl.Columns>
+        </mesex:GridControl>
+
+        <mesex:Pager x:Name="pager" Grid.Row="4" UpdateSource="pager_UpdateSource"/>
+
+    </Grid>
+</mes:UserVendor>

@@ -1,0 +1,126 @@
+﻿<mes:UserVendor x:Class="EquipmentManagement.EquipmentChecking"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EquipmentManagement"
+             xmlns:mes="http://www.mes.com"
+             xmlns:mesex="http://www.mesex.com"
+             DataContextChanged="UserVendor_DataContextChanged">
+    <mes:UserVendor.Resources>
+        <local:VisibilityConverter x:Key="converter1"/>
+        <local:BrushesConverter x:Key="converter2"/>
+    </mes:UserVendor.Resources>
+
+    <Grid x:Name="grid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="5">
+            <mesex:CircleImageButton x:Name="btnSubmit" ImageDiameter="20" Margin="0,0,10,0" ImageSource="Images/save.png" 
+                                     Content="提交" Click="btnSubmit_Click"/>
+        </StackPanel>
+
+        <Grid Grid.Row="1" Margin="5">
+            <mesex:ListGrid >
+                <mesex:ListGrid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </mesex:ListGrid.ColumnDefinitions>
+
+
+                <TextBlock Text="设备巡检" FontSize="15" HorizontalAlignment="Center" Grid.ColumnSpan="6"
+                             />
+
+                <TextBlock Text="设备"/>
+                <mesex:ListGridCellGrid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <mesex:TextBox x:Name="txtEquipmentCode" TextChanged="txtEquipmentCode_TextChanged" LostFocus="txtEquipmentCode_LostFocus" />
+                    <mesex:CircleImageButton ImageSource="Images/edit.png" x:Name="btnEquipment" Click="btnEquipment_Click" Grid.Column="1"/>
+                </mesex:ListGridCellGrid>
+                
+                <TextBlock Text="设备组"/>
+                <mesex:TextBox IsReadOnly="True" Text="{Binding EquipmentGroupName}"/>
+
+                <TextBlock Text="型号"/>
+                <mesex:TextBox IsReadOnly="True" Text="{Binding EquipmentModelName}"/>
+
+                <TextBlock Text="公司"/>
+                <mesex:TextBox IsReadOnly="True" Text="{Binding CompanyName}"/>
+
+                <TextBlock Text="工厂"/>
+                <mesex:TextBox IsReadOnly="True" Text="{Binding FactoryName}"/>
+
+                <TextBlock Text="车间"/>
+                <mesex:TextBox IsReadOnly="True" Text="{Binding WorkShopName}"/>
+
+                <TextBlock Text="设备描述"/>
+                <mesex:ListGridCellBorder Grid.ColumnSpan="5">
+                    <mesex:TextBox IsReadOnly="True" Text="{Binding EquipmentDesc}"/>
+                </mesex:ListGridCellBorder>
+                
+            </mesex:ListGrid>
+            <mesex:Seal Content="{Binding StatusName}"/>
+        </Grid>
+
+
+        <mesex:TabControl Grid.Row="2">
+            <mesex:TabItem IsShowClose="False" Header="巡检项目">
+                <mesex:GridControl x:Name="matrix1" Grid.Column="1" >
+                    <mesex:GridControl.Columns>
+                        <mesex:GridColumn Header="巡检项目代码" Binding="{Binding EquipmentSpotCheckingItemCode}"/>
+                        <mesex:GridColumn Header="巡检项目描述" Binding="{Binding EquipmentSpotCheckingItemDesc}" />
+                        <mesex:GridComboBoxColumn Header="巡检结果" Binding="{Binding Result}" IsEnabled="True" x:Name="colResult" CellValueChanged="colResult_CellValueChanged" />
+                        <mesex:GridTextColumn Header="巡检分析与总结" Binding="{Binding Summarize}" IsEnabled="True"/>
+                    </mesex:GridControl.Columns>
+                </mesex:GridControl>
+            </mesex:TabItem>
+        </mesex:TabControl>
+
+
+        <Grid Grid.Row="3" Margin="5">
+            <mesex:ListGrid >
+                <mesex:ListGrid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </mesex:ListGrid.ColumnDefinitions>
+
+                <TextBlock Text="开始巡检时间"/>
+                <mesex:DatePicker x:Name="txtStartCheckingDateTime"  FormatString="yyyy-MM-dd HH:mm:ss"/>
+
+                <TextBlock Text="截止巡检时间"/>
+                <mesex:DatePicker x:Name="txtEndCheckingDateTime"   FormatString="yyyy-MM-dd HH:mm:ss"/>
+
+                <TextBlock Text="巡检备注"/>
+                <mesex:ListGridCellBorder Grid.ColumnSpan="3">
+                    <mesex:TextBox MinHeight="50" x:Name="txtCheckingDesc"   AcceptsReturn="True" AcceptsTab="True" VerticalContentAlignment="Top" />
+                </mesex:ListGridCellBorder>
+
+                <TextBlock Text="巡检分析与总结"/>
+                <mesex:ListGridCellBorder Grid.ColumnSpan="3">
+                    <mesex:TextBox MinHeight="50" x:Name="txtSummarize"  AcceptsReturn="True" AcceptsTab="True" VerticalContentAlignment="Top" />
+                </mesex:ListGridCellBorder>
+
+                <TextBlock Text="维修类型"/>
+                <mesex:ComboBox x:Name="cmbRepairType" IsEnabled="False"  SelectionChanged="cmbRepairType_SelectionChanged"/>
+
+                <TextBlock Text="主维修人"/>
+                <mesex:ComboBox x:Name="cmbMainRepairUser" IsEnabled="False" IsEditable="True"/>
+
+            </mesex:ListGrid>
+        </Grid>
+    </Grid>
+</mes:UserVendor>

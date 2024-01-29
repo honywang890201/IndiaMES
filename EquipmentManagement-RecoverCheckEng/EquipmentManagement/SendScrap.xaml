@@ -1,0 +1,158 @@
+﻿<mes:UserVendor x:Class="EquipmentManagement.SendScrap"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EquipmentManagement"
+             xmlns:mes="http://www.mes.com"
+             xmlns:mesex="http://www.mesex.com">
+    <mes:UserVendor.Resources>
+        <local:VisibilityConverter x:Key="converter1"/>
+        <local:BrushesConverter x:Key="converter2"/>
+    </mes:UserVendor.Resources>
+
+    <Grid x:Name="grid" Margin="5,5,5,5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="5">
+            <mesex:CircleImageButton x:Name="btnSubmit" ImageDiameter="20" Margin="0,0,10,0" ImageSource="Images/save.png" 
+                                     Content="报废" Click="btnSubmit_Click"/>
+        </StackPanel>
+
+        <mesex:ListGrid Grid.Row="1" ChildHorizontalAlignment="Center">
+            <TextBlock Text="手工报废" FontSize="15" />
+        </mesex:ListGrid>
+
+        <Grid Grid.Row="2" >
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <mesex:ListGrid Grid.Column="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Text="车间"/>
+                        <mesex:TextBoxQuery x:Name="txtWorkShop" MetaId="288"/>
+
+                        <TextBlock Text="设备组"/>
+                        <mesex:ComboBox x:Name="cmbEquipmentGroup"  SelectionChanged="cmbEquipmentGroup_SelectionChanged"/>
+
+                        <TextBlock Text="型号"/>
+                        <mesex:ComboBox x:Name="cmbEquipmentModel"/>
+
+                        <TextBlock Text="设备"/>
+                        <mesex:TextBox x:Name="txtEquipmentCode"/>
+
+                        <TextBlock Text="状态"/>
+                        <mesex:ComboBox x:Name="cmbStatus"/>
+
+                        <TextBlock Text="设备运行状态"/>
+                        <mesex:ComboBox x:Name="cmbRunStatus"/>
+
+
+                    </mesex:ListGrid>
+
+                    <mesex:CircleImageButton x:Name="btnQuery" Grid.Column="1" ImageSource="/EquipmentManagement;component/Images/query.png" Margin="15,0,15,0" Click="btnQuery_Click"/>
+                </Grid>
+
+                <mesex:TabControl Grid.Row="1">
+                    <mesex:TabItem IsShowClose="False" Header="所有设备">
+                        <mesex:GridControl x:Name="matrix1" Grid.Column="1" >
+                            <mesex:GridControl.Columns>
+                                <mesex:GridLinkColumn Header="设备编码" Binding="{Binding EquipmentCode}" LinkClick="btnAdd_LinkClick"/>
+                                <mesex:GridColumn Header="设备组" Binding="{Binding EquipmentGroupName}"/>
+                                <mesex:GridColumn Header="型号" Binding="{Binding EquipmentModelName}"/>
+                                <mesex:GridColumn Header="公司" Binding="{Binding CompanyName}"/>
+                                <mesex:GridColumn Header="工厂" Binding="{Binding FactoryName}"/>
+                                <mesex:GridColumn Header="车间" Binding="{Binding WorkShopName}"/>
+                                <mesex:GridColumn Header="备注" Binding="{Binding EquipmentDesc}"/>
+                                <mesex:GridColumn Header="状态" Binding="{Binding StatusName}"/>
+                                <mesex:GridColumn Header="运行状态" Binding="{Binding RunStatusName}"/>
+                                <mesex:GridColumn Header="报警信息" Binding="{Binding AbnoInfo}"/>
+                            </mesex:GridControl.Columns>
+                        </mesex:GridControl>
+                    </mesex:TabItem>
+                </mesex:TabControl>
+            </Grid>
+
+            <GridSplitter Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="3"/>
+
+            <Grid Grid.Row="1" Margin="0,3,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,5" HorizontalAlignment="Center">
+                    <mesex:CircleImageButton x:Name="btnAddAll" Content="添加所有行" ImageSource="/EquipmentManagement;component/Images/yes.png" Click="btnAddAll_Click"/>
+                    <mesex:CircleImageButton x:Name="btnAddSelected" Content="添加选中行" ImageSource="/EquipmentManagement;component/Images/yes.png" Margin="20,0,0,0" Click="btnAddSelected_Click"/>
+                    <mesex:CircleImageButton x:Name="btnDeleteAll"  Content="删除所有行" ImageSource="/EquipmentManagement;component/Images/delete.png" Margin="20,0,0,0" Click="btnDeleteAll_Click"/>
+                    <mesex:CircleImageButton x:Name="btnDeleteSelected" Content="删除选中行" ImageSource="/EquipmentManagement;component/Images/delete.png" Margin="20,0,0,0" Click="btnDeleteSelected_Click"/>
+                </StackPanel>
+
+                <mesex:TabControl Grid.Row="2">
+                    <mesex:TabItem IsShowClose="False" Header="已选设备">
+                        <mesex:GridControl x:Name="matrix2" Grid.Column="1" >
+                            <mesex:GridControl.Columns>
+                                <mesex:GridLinkColumn Header="设备编码" Binding="{Binding EquipmentCode}" LinkClick="btnRemove_LinkClick"/>
+                                <mesex:GridColumn Header="设备组" Binding="{Binding EquipmentGroupName}"/>
+                                <mesex:GridColumn Header="型号" Binding="{Binding EquipmentModelName}"/>
+                                <mesex:GridColumn Header="公司" Binding="{Binding CompanyName}"/>
+                                <mesex:GridColumn Header="工厂" Binding="{Binding FactoryName}"/>
+                                <mesex:GridColumn Header="车间" Binding="{Binding WorkShopName}"/>
+                                <mesex:GridColumn Header="备注" Binding="{Binding EquipmentDesc}"/>
+                                <mesex:GridColumn Header="状态" Binding="{Binding StatusName}"/>
+                                <mesex:GridColumn Header="运行状态" Binding="{Binding RunStatusName}"/>
+                                <mesex:GridColumn Header="报警信息" Binding="{Binding AbnoInfo}"/>
+                                <mesex:GridTextColumn Header="报废备注" Binding="{Binding Comment}" IsEnabled="True"/>
+                            </mesex:GridControl.Columns>
+                        </mesex:GridControl>
+                    </mesex:TabItem>
+                </mesex:TabControl>
+            </Grid>
+        </Grid>
+
+
+        <Grid Grid.Row="3" Margin="5">
+            <mesex:ListGrid >
+                <mesex:ListGrid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </mesex:ListGrid.ColumnDefinitions>
+
+                <TextBlock Text="报废备注"/>
+                <mesex:ListGridCellBorder Grid.ColumnSpan="3">
+                    <mesex:TextBox MinHeight="50" x:Name="txtEquipmentScrapDesc"   AcceptsReturn="True" AcceptsTab="True" VerticalContentAlignment="Top" />
+                </mesex:ListGridCellBorder>
+
+            </mesex:ListGrid>
+        </Grid>
+    </Grid>
+</mes:UserVendor>

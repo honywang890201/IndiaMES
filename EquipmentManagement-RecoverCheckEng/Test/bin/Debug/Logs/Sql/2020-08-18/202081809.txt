@@ -1,0 +1,1439 @@
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:01:32.047
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:17.0009
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903001492" OPID="72" OPDESC="装箱" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:列名 'MAC' 无效。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:01:51.662
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:20.0011
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903001492" OPID="72" OPDESC="装箱" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:不能将值 NULL 插入列 'TotalActionBadCount'，表 'Prod.dbo.Test_MO_Mac'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:01:58.472
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:48.0028
+Sql:SELECT  Bas_MO.MOCode,
+				        Bas_MO_Mac.Mac,
+				        Inp_Lot.OPId,
+				        Bas_OP.OPDesc
+				        FROM Bas_MO_Mac
+				        LEFT JOIN Bas_MO on Bas_MO.MOId=Bas_MO_Mac.MOId
+				        LEFT JOIN Inp_Lot ON Inp_Lot.LotSN=Bas_MO_Mac.mac
+				        LEFT JOIN Bas_OP ON  Bas_OP.OPId=Inp_Lot.OPId
+				        WHERE Bas_MO_Mac.Mac='GYSD0701903001492' OR Bas_MO_Mac.DSN='GYSD0701903001492' OR Bas_MO_Mac.DeviceSerialNumber='GYSD0701903001492' OR Bas_MO_Mac.STBNO='GYSD0701903001492'
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:01:59.582
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:8.0005
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903001492" OPID="72" OPDESC="装箱" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:不能将值 NULL 插入列 'TotalActionBadCount'，表 'Prod.dbo.Test_MO_Mac'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:02:01.892
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:5.0003
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903001492" OPID="72" OPDESC="装箱" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:不能将值 NULL 插入列 'TotalActionBadCount'，表 'Prod.dbo.Test_MO_Mac'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:02:32.404
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:20.0011
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903001492" OPID="72" OPDESC="装箱" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:不能将值 NULL 插入列 'TotalActionContinueBadCount'，表 'Prod.dbo.Test_MO_Mac'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:02:50.118
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:21.0012
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903001492" OPID="72" OPDESC="装箱" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:不能将值 NULL 插入列 'TotalActionContinueGoodCount'，表 'Prod.dbo.Test_MO_Mac'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:03:06.333
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:21.0012
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903001492" OPID="72" OPDESC="装箱" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:不能将值 NULL 插入列 'IsUsed'，表 'Prod.dbo.Test_MO_Mac'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:03:32.245
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:22.0012
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903001492" OPID="72" OPDESC="装箱" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:不能将值 NULL 插入列 'CreateUserId'，表 'Prod.dbo.Test_MO_Mac'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:03:59.857
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:21.0012
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903001492" OPID="72" OPDESC="装箱" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:不能将值 NULL 插入列 'LotId'，表 'Prod.dbo.Test_MO_Mac'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:04:14.868
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:21.0012
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903001492" OPID="72" OPDESC="装箱" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:不能将值 NULL 插入列 'UpdateUserId'，表 'Prod.dbo.Test_MO_Mac'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:04:39.280
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:21.0012
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903001492" OPID="72" OPDESC="装箱" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:不能将值 NULL 插入列 'ItemId'，表 'Prod.dbo.Test_MO_Mac'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:04:57.891
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:19.0011
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903001492" OPID="72" OPDESC="装箱" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:不能将值 NULL 插入列 'IsPack'，表 'Prod.dbo.Test_MO_Mac'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:05:10.902
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:21.0012
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903001492" OPID="72" OPDESC="装箱" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:不能将值 NULL 插入列 'IsPackComplete'，表 'Prod.dbo.Test_MO_Mac'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:05:24.513
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:22.0012
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903001492" OPID="72" OPDESC="装箱" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:不能将值 NULL 插入列 'Status'，表 'Prod.dbo.Test_MO_Mac'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:05:45.725
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:22.0012
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903001492" OPID="72" OPDESC="装箱" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:不能将值 NULL 插入列 'LineId'，表 'Prod.dbo.Test_MO_Mac'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:06:04.036
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:22.0013
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903001492" OPID="72" OPDESC="装箱" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:不能将值 NULL 插入列 'TotalActionCount'，表 'Prod.dbo.Test_MO_Mac'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:06:17.847
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:22.0013
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903001492" OPID="72" OPDESC="装箱" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:06:33.158
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Set_Meta.MetaId,
+	   Set_Meta.MetaCode,
+	   Set_Meta.MetaName,
+	   Set_Meta.IsViewPages,
+	   Set_Meta.ViewCountSqlType,
+	   Set_Meta.ViewCountSql,
+	   dbo.Set_Meta.ViewSqlType,
+	   Set_Meta.ViewSql,
+	   dbo.Set_Meta.MainSqlType,
+	   Set_Meta.MainSql,
+	   dbo.Set_Meta.DeleteSqlType,
+	   Set_Meta.DeleteSql,
+	   dbo.Set_Meta.SaveSqlType,
+	   Set_Meta.SaveSql,
+	   Set_Meta.MetaNote,
+	   Set_Meta.ColumnCount,
+	   Set_Meta.ParentMetaId,
+	   Set_Meta.IdColumnName,
+	   Set_Meta.TextColumnName,
+	   Set_Meta.TableId,
+	   Set_Table.SysTableName as TableName,
+	   Set_Meta.ViewWidth,
+	   Set_Meta.VersionColumnName
+FROM dbo.Set_Meta  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_Table  WITH(NOLOCK)  ON dbo.Set_Table.SysTableId = dbo.Set_Meta.TableId
+WHERE Set_Meta.MetaId=@metaId
+Params:
+@metaId=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:06:33.168
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0002
+Sql:SELECT Set_MetaParam.MetaParamId,
+	   Set_MetaParam.MetaGroupId,
+	   Set_MetaParam.MetaParamCode,
+	   Set_MetaParam.MetaParamName,
+	   Set_MetaParam.MetaParamNote,
+	   Set_MetaParam.MetaParamLength,
+	   Set_ControlTypes.TypeName,
+	   Set_ControlTypes.FullName,
+	   Set_ControlTypes.Params,
+	   Set_MetaParam.ColumnSpan,
+	   Set_MetaParam.RowSpan,
+	   Set_MetaParam.IsEdit,
+	   Set_MetaParam.IsVisible,
+	   Set_MetaParam.IsNotEmpty,
+	   Set_MetaParam.DefaultValue,
+	   Set_MetaParam.DataSourceType,
+	   Set_MetaParam.DataSource,
+	   Set_MetaParam.IsQueryParam,
+	   Set_MetaParam.IsLinkParam,
+	   Set_MetaParam.IsNewRow
+FROM dbo.Set_MetaParam  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_ControlTypes  WITH(NOLOCK) ON Set_MetaParam.MetaParamType=Set_ControlTypes.TypeName
+LEFT JOIN dbo.Set_MetaGroup  WITH(NOLOCK)  ON dbo.Set_MetaGroup.MetaGroupId = dbo.Set_MetaParam.MetaGroupId
+WHERE Set_MetaGroup.MetaId=@metaId
+ORDER BY Set_MetaParam.Sequence
+
+Params:
+@metaId=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:06:33.178
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=51
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:06:33.188
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=183
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:06:33.198
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=185
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:06:33.808
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:5.0003
+Sql:SELECT TOP 200 Bas_MO.MOId,
+			   Bas_MO.MOCode,
+			   Bas_Item.ItemCode,
+			   Bas_Item.ItemName+'/'+Bas_Item.ItemDesc as 'ItemName',
+			   Bas_Order.OrderCode,
+			   Bas_Customer.CustomerCode
+FROM Bas_MO WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=ISNULL(@Id,Bas_MO.MOId)
+AND Bas_MO.MOCode LIKE '%'+ISNULL(@MOCode,Bas_MO.MOCode)+'%'
+AND (@ItemId IS NULL OR Bas_MO.ItemId=@ItemId)
+AND (ISNULL(@OrderCode,'')='' OR (ISNULL(@OrderCode,'')!='' AND Bas_Order.OrderCode LIKE '%'+ISNULL(@OrderCode,Bas_Order.OrderCode)+'%'))
+AND (@CustomerId IS NULL OR Bas_MO.CustomerId=@CustomerId)
+ORDER BY Bas_MO.MOCode
+Params:
+@Id=DBNull
+@MOCode=
+@ItemId=null
+@CustomerId=null
+@OrderCode=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:06:36.318
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Bas_MO.MOId,
+			   Bas_MO.MOCode,
+			   Bas_MO.OrderDetailId,
+			   Bas_MO.CustomerId,
+			   Bas_MO.ItemId,
+			   Bas_Item.ItemCode,
+			   Bas_Item.ItemDesc+'-'+Bas_Item.ItemSpecification as 'ItemDesc',
+			   dbo.Bas_Order.OrderCode,
+			   Bas_MO.Qty,
+			   Bas_MO.PlanStartDate,
+			   Bas_MO.PlanCompleteDate,
+			   Bas_MO.ActualStartDate,
+			   Bas_MO.ActualCompleteDate,
+			   Bas_MO.Status,
+			   Bas_MO.InputQty,
+			   Bas_MO.CompleteQty,
+			   Bas_MO.ErrorQty,
+			   Bas_MO.ScrapQty,
+			   Bas_MO.TurnInQty,
+			   Bas_MO.TurnOutQty,
+			   Bas_MO.WorkflowId,
+			   Bas_MO.IsCheckPowerSN,
+			   Bas_MO.PowerSNLength,
+			   Bas_MO.PowerSNPre,
+			   Bas_MO.IsCheckRemoteControlSN,
+			   Bas_MO.RemoteControlSNLength,
+			   Bas_MO.RemoteControlSNPre,
+			   Bas_MO.SpecSheet,
+			   Bas_MO.ChipScheme,
+			   Bas_MO.SoftwareVersion,
+			   Bas_MO.HardwareVersion,
+			   Bas_MO.AreaCode,
+			   Bas_MO.DeviceType,
+			   Bas_MO.IsCanVirtualInput,
+			   Bas_MO.SideAFeedingStationTableId,
+			   Bas_MO.SideBFeedingStationTableId,
+			   Bas_MO.RowVersion,
+			   Bas_MO.NetWeight,
+			   Bas_MO.GrossWeight
+FROM Bas_MO WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+WHERE Bas_MO.MOId=ISNULL(@Id,Bas_MO.MOId)
+AND Bas_MO.MOCode=ISNULL(@Text,Bas_MO.MOCode)
+Params:
+@UserId=1
+@CpuID=BFEBFBFF000306C3
+@MacAddress=AA:BB:CC:DD:EE:FF
+@IPAddress=192.168.3.2
+@ComputerName=WANG-PC
+@LocalUserName=wang-PC\wang
+@ResourceId=76
+@SettingId=187
+@Id=147
+@Text=DBNull
+@ParentId=DBNull
+@Return_Message=DBNull
+@ReturnValue=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:06:37.234
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Set_Meta.MetaId,
+	   Set_Meta.MetaCode,
+	   Set_Meta.MetaName,
+	   Set_Meta.IsViewPages,
+	   Set_Meta.ViewCountSqlType,
+	   Set_Meta.ViewCountSql,
+	   dbo.Set_Meta.ViewSqlType,
+	   Set_Meta.ViewSql,
+	   dbo.Set_Meta.MainSqlType,
+	   Set_Meta.MainSql,
+	   dbo.Set_Meta.DeleteSqlType,
+	   Set_Meta.DeleteSql,
+	   dbo.Set_Meta.SaveSqlType,
+	   Set_Meta.SaveSql,
+	   Set_Meta.MetaNote,
+	   Set_Meta.ColumnCount,
+	   Set_Meta.ParentMetaId,
+	   Set_Meta.IdColumnName,
+	   Set_Meta.TextColumnName,
+	   Set_Meta.TableId,
+	   Set_Table.SysTableName as TableName,
+	   Set_Meta.ViewWidth,
+	   Set_Meta.VersionColumnName
+FROM dbo.Set_Meta  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_Table  WITH(NOLOCK)  ON dbo.Set_Table.SysTableId = dbo.Set_Meta.TableId
+WHERE Set_Meta.MetaId=@metaId
+Params:
+@metaId=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:06:37.244
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Set_MetaParam.MetaParamId,
+	   Set_MetaParam.MetaGroupId,
+	   Set_MetaParam.MetaParamCode,
+	   Set_MetaParam.MetaParamName,
+	   Set_MetaParam.MetaParamNote,
+	   Set_MetaParam.MetaParamLength,
+	   Set_ControlTypes.TypeName,
+	   Set_ControlTypes.FullName,
+	   Set_ControlTypes.Params,
+	   Set_MetaParam.ColumnSpan,
+	   Set_MetaParam.RowSpan,
+	   Set_MetaParam.IsEdit,
+	   Set_MetaParam.IsVisible,
+	   Set_MetaParam.IsNotEmpty,
+	   Set_MetaParam.DefaultValue,
+	   Set_MetaParam.DataSourceType,
+	   Set_MetaParam.DataSource,
+	   Set_MetaParam.IsQueryParam,
+	   Set_MetaParam.IsLinkParam,
+	   Set_MetaParam.IsNewRow
+FROM dbo.Set_MetaParam  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_ControlTypes  WITH(NOLOCK) ON Set_MetaParam.MetaParamType=Set_ControlTypes.TypeName
+LEFT JOIN dbo.Set_MetaGroup  WITH(NOLOCK)  ON dbo.Set_MetaGroup.MetaGroupId = dbo.Set_MetaParam.MetaGroupId
+WHERE Set_MetaGroup.MetaId=@metaId
+ORDER BY Set_MetaParam.Sequence
+
+Params:
+@metaId=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:06:37.354
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT ViewSql,ViewSqlType,IdColumnName,TextColumnName,MetaId FROM dbo.Set_Meta   WITH(NOLOCK)  WHERE MetaId=@MetaId
+Params:
+@MetaId=180
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:06:37.364
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1.0001
+Sql:SELECT Set_MetaParam.MetaParamId,
+	   Set_MetaParam.MetaGroupId,
+	   Set_MetaParam.MetaParamCode,
+	   Set_MetaParam.MetaParamName,
+	   Set_MetaParam.MetaParamNote,
+	   Set_MetaParam.MetaParamLength,
+	   Set_ControlTypes.TypeName,
+	   Set_ControlTypes.FullName,
+	   Set_ControlTypes.Params,
+	   Set_MetaParam.ColumnSpan,
+	   Set_MetaParam.RowSpan,
+	   Set_MetaParam.IsEdit,
+	   Set_MetaParam.IsVisible,
+	   Set_MetaParam.IsNotEmpty,
+	   Set_MetaParam.DefaultValue,
+	   Set_MetaParam.DataSourceType,
+	   Set_MetaParam.DataSource,
+	   Set_MetaParam.IsQueryParam,
+	   Set_MetaParam.IsLinkParam,
+	   Set_MetaParam.IsNewRow
+FROM dbo.Set_MetaParam  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_ControlTypes  WITH(NOLOCK) ON Set_MetaParam.MetaParamType=Set_ControlTypes.TypeName
+LEFT JOIN dbo.Set_MetaGroup  WITH(NOLOCK)  ON dbo.Set_MetaGroup.MetaGroupId = dbo.Set_MetaParam.MetaGroupId
+WHERE Set_MetaGroup.MetaId=@metaId
+ORDER BY Set_MetaParam.Sequence
+
+Params:
+@metaId=180
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:06:37.374
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Section.SectionId,
+			   Bas_Section.SectionCode,
+			   Bas_Section.SectionDesc
+FROM Bas_Section WITH(NOLOCK) 
+WHERE Bas_Section.SectionId=ISNULL(@Id,Bas_Section.SectionId)
+AND Bas_Section.SectionCode LIKE '%'+ISNULL(@SectionCode,Bas_Section.SectionCode)+'%'
+ORDER BY Bas_Section.Sequence
+Params:
+@Id=DBNull
+@SectionCode=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:06:38.685
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Bas_OP.OPId,
+	          Bas_OP.SectionId,
+			   Bas_Section.SectionCode,
+			   Bas_OP.OPCode,
+			    Bas_OP.OpDesc
+FROM Bas_OP WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Section  WITH(NOLOCK) ON dbo.Bas_Section.SectionId = dbo.Bas_OP.SectionId
+WHERE Bas_OP.OPId=ISNULL(@Id,Bas_OP.OPId)
+AND Bas_OP.OPCode LIKE '%'+ISNULL(@OPCode,Bas_OP.OPCode)+'%'
+AND (@SectionId IS NULL OR dbo.Bas_OP.SectionId=@SectionId)
+ORDER BY Bas_OP.OPCode
+Params:
+@Id=DBNull
+@SectionId=18
+@OPCode=
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:06:40.411
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_OP.OPId,
+	          Bas_OP.SectionId,
+			   Bas_OP.OPCode,
+			   Bas_OP.OPDesc,
+			   Bas_OP.OPImage,
+			   Bas_OP.Sequence,
+			   Bas_OP.IsComplete
+FROM Bas_OP WITH(NOLOCK) 
+WHERE Bas_OP.OPId=ISNULL(@Id,Bas_OP.OPId)
+AND Bas_OP.OPCode=ISNULL(@Text,Bas_OP.OPCode)
+Params:
+@UserId=1
+@CpuID=BFEBFBFF000306C3
+@MacAddress=AA:BB:CC:DD:EE:FF
+@IPAddress=192.168.3.2
+@ComputerName=WANG-PC
+@LocalUserName=wang-PC\wang
+@ResourceId=76
+@SettingId=42
+@Id=72
+@Text=DBNull
+@ParentId=DBNull
+@Return_Message=DBNull
+@ReturnValue=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:06:41.321
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:5.0003
+Sql: SELECT BAS_MO.MOCode,
+                Bas_MO_Mac.Mac,
+				Inp_Lot.OPId,
+				Bas_OP.OPDesc
+                FROM BAS_MO
+                LEFT JOIN Inp_Lot ON Inp_Lot.MOId = BAS_MO.MOId
+                LEFT JOIN Bas_MO_Mac ON Bas_MO_Mac.LotId = Inp_Lot.LotId
+                LEFT JOIN Bas_OP ON Bas_OP.OPId = Inp_Lot.OPId
+                WHERE BAS_MO.MOCode = @MOCode and Bas_OP.OPCode = @OPCode
+Params:
+@MOCode=gast
+@OPCode=F5
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:06:42.731
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:8.0004
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903001492" OPID="72" OPDESC="装箱" />
+		<item  rowNo="2" MOCODE="gast" MAC="GYSD0701903004285" OPID="72" OPDESC="装箱" />
+		<item  rowNo="3" MOCODE="gast" MAC="GYSD0701903009864" OPID="72" OPDESC="装箱" />
+		<item  rowNo="4" MOCODE="gast" MAC="GYSD0701903009865" OPID="72" OPDESC="装箱" />
+		<item  rowNo="5" MOCODE="gast" MAC="GYSD0701903009866" OPID="72" OPDESC="装箱" />
+		<item  rowNo="6" MOCODE="gast" MAC="GYSD0701903009867" OPID="72" OPDESC="装箱" />
+		<item  rowNo="7" MOCODE="gast" MAC="GYSD0701903009868" OPID="72" OPDESC="装箱" />
+		<item  rowNo="8" MOCODE="gast" MAC="GYSD0701903009869" OPID="72" OPDESC="装箱" />
+		<item  rowNo="9" MOCODE="gast" MAC="" OPID="72" OPDESC="装箱" />
+		<item  rowNo="10" MOCODE="gast" MAC="GYSD0701903009886" OPID="72" OPDESC="装箱" />
+		<item  rowNo="11" MOCODE="gast" MAC="GYSD0701903009901" OPID="72" OPDESC="装箱" />
+		<item  rowNo="12" MOCODE="gast" MAC="GYSD0701903009902" OPID="72" OPDESC="装箱" />
+		<item  rowNo="13" MOCODE="gast" MAC="GYSD0701903009903" OPID="72" OPDESC="装箱" />
+		<item  rowNo="14" MOCODE="gast" MAC="GYSD0701903009907" OPID="72" OPDESC="装箱" />
+		<item  rowNo="15" MOCODE="gast" MAC="GYSD0701903009909" OPID="72" OPDESC="装箱" />
+		<item  rowNo="16" MOCODE="gast" MAC="GYSD0701903009910" OPID="72" OPDESC="装箱" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:违反了 PRIMARY KEY 约束“PK__Test_MO___4160EFAD44FE450F”。不能在对象“dbo.Test_MO_Mac”中插入重复键。重复键值为 (0)。
+语句已终止。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:07:04.542
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:9.0005
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903001492" OPID="72" OPDESC="装箱" />
+		<item  rowNo="2" MOCODE="gast" MAC="GYSD0701903004285" OPID="72" OPDESC="装箱" />
+		<item  rowNo="3" MOCODE="gast" MAC="GYSD0701903009864" OPID="72" OPDESC="装箱" />
+		<item  rowNo="4" MOCODE="gast" MAC="GYSD0701903009865" OPID="72" OPDESC="装箱" />
+		<item  rowNo="5" MOCODE="gast" MAC="GYSD0701903009866" OPID="72" OPDESC="装箱" />
+		<item  rowNo="6" MOCODE="gast" MAC="GYSD0701903009867" OPID="72" OPDESC="装箱" />
+		<item  rowNo="7" MOCODE="gast" MAC="GYSD0701903009868" OPID="72" OPDESC="装箱" />
+		<item  rowNo="8" MOCODE="gast" MAC="GYSD0701903009869" OPID="72" OPDESC="装箱" />
+		<item  rowNo="9" MOCODE="gast" MAC="" OPID="72" OPDESC="装箱" />
+		<item  rowNo="10" MOCODE="gast" MAC="GYSD0701903009886" OPID="72" OPDESC="装箱" />
+		<item  rowNo="11" MOCODE="gast" MAC="GYSD0701903009901" OPID="72" OPDESC="装箱" />
+		<item  rowNo="12" MOCODE="gast" MAC="GYSD0701903009902" OPID="72" OPDESC="装箱" />
+		<item  rowNo="13" MOCODE="gast" MAC="GYSD0701903009903" OPID="72" OPDESC="装箱" />
+		<item  rowNo="14" MOCODE="gast" MAC="GYSD0701903009907" OPID="72" OPDESC="装箱" />
+		<item  rowNo="15" MOCODE="gast" MAC="GYSD0701903009909" OPID="72" OPDESC="装箱" />
+		<item  rowNo="16" MOCODE="gast" MAC="GYSD0701903009910" OPID="72" OPDESC="装箱" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:违反了 PRIMARY KEY 约束“PK__Test_MO___4160EFAD44FE450F”。不能在对象“dbo.Test_MO_Mac”中插入重复键。重复键值为 (0)。
+语句已终止。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:08:07.565
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:11.0007
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903001492" OPID="72" OPDESC="装箱" />
+		<item  rowNo="2" MOCODE="gast" MAC="GYSD0701903004285" OPID="72" OPDESC="装箱" />
+		<item  rowNo="3" MOCODE="gast" MAC="GYSD0701903009864" OPID="72" OPDESC="装箱" />
+		<item  rowNo="4" MOCODE="gast" MAC="GYSD0701903009865" OPID="72" OPDESC="装箱" />
+		<item  rowNo="5" MOCODE="gast" MAC="GYSD0701903009866" OPID="72" OPDESC="装箱" />
+		<item  rowNo="6" MOCODE="gast" MAC="GYSD0701903009867" OPID="72" OPDESC="装箱" />
+		<item  rowNo="7" MOCODE="gast" MAC="GYSD0701903009868" OPID="72" OPDESC="装箱" />
+		<item  rowNo="8" MOCODE="gast" MAC="GYSD0701903009869" OPID="72" OPDESC="装箱" />
+		<item  rowNo="9" MOCODE="gast" MAC="" OPID="72" OPDESC="装箱" />
+		<item  rowNo="10" MOCODE="gast" MAC="GYSD0701903009886" OPID="72" OPDESC="装箱" />
+		<item  rowNo="11" MOCODE="gast" MAC="GYSD0701903009901" OPID="72" OPDESC="装箱" />
+		<item  rowNo="12" MOCODE="gast" MAC="GYSD0701903009902" OPID="72" OPDESC="装箱" />
+		<item  rowNo="13" MOCODE="gast" MAC="GYSD0701903009903" OPID="72" OPDESC="装箱" />
+		<item  rowNo="14" MOCODE="gast" MAC="GYSD0701903009907" OPID="72" OPDESC="装箱" />
+		<item  rowNo="15" MOCODE="gast" MAC="GYSD0701903009909" OPID="72" OPDESC="装箱" />
+		<item  rowNo="16" MOCODE="gast" MAC="GYSD0701903009910" OPID="72" OPDESC="装箱" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:08:27.276
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0003
+Sql:SELECT Set_Meta.MetaId,
+	   Set_Meta.MetaCode,
+	   Set_Meta.MetaName,
+	   Set_Meta.IsViewPages,
+	   Set_Meta.ViewCountSqlType,
+	   Set_Meta.ViewCountSql,
+	   dbo.Set_Meta.ViewSqlType,
+	   Set_Meta.ViewSql,
+	   dbo.Set_Meta.MainSqlType,
+	   Set_Meta.MainSql,
+	   dbo.Set_Meta.DeleteSqlType,
+	   Set_Meta.DeleteSql,
+	   dbo.Set_Meta.SaveSqlType,
+	   Set_Meta.SaveSql,
+	   Set_Meta.MetaNote,
+	   Set_Meta.ColumnCount,
+	   Set_Meta.ParentMetaId,
+	   Set_Meta.IdColumnName,
+	   Set_Meta.TextColumnName,
+	   Set_Meta.TableId,
+	   Set_Table.SysTableName as TableName,
+	   Set_Meta.ViewWidth,
+	   Set_Meta.VersionColumnName
+FROM dbo.Set_Meta  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_Table  WITH(NOLOCK)  ON dbo.Set_Table.SysTableId = dbo.Set_Meta.TableId
+WHERE Set_Meta.MetaId=@metaId
+Params:
+@metaId=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:08:27.286
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0001
+Sql:SELECT Set_MetaParam.MetaParamId,
+	   Set_MetaParam.MetaGroupId,
+	   Set_MetaParam.MetaParamCode,
+	   Set_MetaParam.MetaParamName,
+	   Set_MetaParam.MetaParamNote,
+	   Set_MetaParam.MetaParamLength,
+	   Set_ControlTypes.TypeName,
+	   Set_ControlTypes.FullName,
+	   Set_ControlTypes.Params,
+	   Set_MetaParam.ColumnSpan,
+	   Set_MetaParam.RowSpan,
+	   Set_MetaParam.IsEdit,
+	   Set_MetaParam.IsVisible,
+	   Set_MetaParam.IsNotEmpty,
+	   Set_MetaParam.DefaultValue,
+	   Set_MetaParam.DataSourceType,
+	   Set_MetaParam.DataSource,
+	   Set_MetaParam.IsQueryParam,
+	   Set_MetaParam.IsLinkParam,
+	   Set_MetaParam.IsNewRow
+FROM dbo.Set_MetaParam  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_ControlTypes  WITH(NOLOCK) ON Set_MetaParam.MetaParamType=Set_ControlTypes.TypeName
+LEFT JOIN dbo.Set_MetaGroup  WITH(NOLOCK)  ON dbo.Set_MetaGroup.MetaGroupId = dbo.Set_MetaParam.MetaGroupId
+WHERE Set_MetaGroup.MetaId=@metaId
+ORDER BY Set_MetaParam.Sequence
+
+Params:
+@metaId=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:08:27.396
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT ViewSql,ViewSqlType,IdColumnName,TextColumnName,MetaId FROM dbo.Set_Meta   WITH(NOLOCK)  WHERE MetaId=@MetaId
+Params:
+@MetaId=180
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:08:27.406
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Set_MetaParam.MetaParamId,
+	   Set_MetaParam.MetaGroupId,
+	   Set_MetaParam.MetaParamCode,
+	   Set_MetaParam.MetaParamName,
+	   Set_MetaParam.MetaParamNote,
+	   Set_MetaParam.MetaParamLength,
+	   Set_ControlTypes.TypeName,
+	   Set_ControlTypes.FullName,
+	   Set_ControlTypes.Params,
+	   Set_MetaParam.ColumnSpan,
+	   Set_MetaParam.RowSpan,
+	   Set_MetaParam.IsEdit,
+	   Set_MetaParam.IsVisible,
+	   Set_MetaParam.IsNotEmpty,
+	   Set_MetaParam.DefaultValue,
+	   Set_MetaParam.DataSourceType,
+	   Set_MetaParam.DataSource,
+	   Set_MetaParam.IsQueryParam,
+	   Set_MetaParam.IsLinkParam,
+	   Set_MetaParam.IsNewRow
+FROM dbo.Set_MetaParam  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_ControlTypes  WITH(NOLOCK) ON Set_MetaParam.MetaParamType=Set_ControlTypes.TypeName
+LEFT JOIN dbo.Set_MetaGroup  WITH(NOLOCK)  ON dbo.Set_MetaGroup.MetaGroupId = dbo.Set_MetaParam.MetaGroupId
+WHERE Set_MetaGroup.MetaId=@metaId
+ORDER BY Set_MetaParam.Sequence
+
+Params:
+@metaId=180
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:08:27.416
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Section.SectionId,
+			   Bas_Section.SectionCode,
+			   Bas_Section.SectionDesc
+FROM Bas_Section WITH(NOLOCK) 
+WHERE Bas_Section.SectionId=ISNULL(@Id,Bas_Section.SectionId)
+AND Bas_Section.SectionCode LIKE '%'+ISNULL(@SectionCode,Bas_Section.SectionCode)+'%'
+ORDER BY Bas_Section.Sequence
+Params:
+@Id=DBNull
+@SectionCode=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:08:28.226
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Bas_OP.OPId,
+	          Bas_OP.SectionId,
+			   Bas_Section.SectionCode,
+			   Bas_OP.OPCode,
+			    Bas_OP.OpDesc
+FROM Bas_OP WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Section  WITH(NOLOCK) ON dbo.Bas_Section.SectionId = dbo.Bas_OP.SectionId
+WHERE Bas_OP.OPId=ISNULL(@Id,Bas_OP.OPId)
+AND Bas_OP.OPCode LIKE '%'+ISNULL(@OPCode,Bas_OP.OPCode)+'%'
+AND (@SectionId IS NULL OR dbo.Bas_OP.SectionId=@SectionId)
+ORDER BY Bas_OP.OPCode
+Params:
+@Id=DBNull
+@SectionId=18
+@OPCode=
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:08:30.842
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_OP.OPId,
+	          Bas_OP.SectionId,
+			   Bas_OP.OPCode,
+			   Bas_OP.OPDesc,
+			   Bas_OP.OPImage,
+			   Bas_OP.Sequence,
+			   Bas_OP.IsComplete
+FROM Bas_OP WITH(NOLOCK) 
+WHERE Bas_OP.OPId=ISNULL(@Id,Bas_OP.OPId)
+AND Bas_OP.OPCode=ISNULL(@Text,Bas_OP.OPCode)
+Params:
+@UserId=1
+@CpuID=BFEBFBFF000306C3
+@MacAddress=AA:BB:CC:DD:EE:FF
+@IPAddress=192.168.3.2
+@ComputerName=WANG-PC
+@LocalUserName=wang-PC\wang
+@ResourceId=76
+@SettingId=42
+@Id=71
+@Text=DBNull
+@ParentId=DBNull
+@Return_Message=DBNull
+@ReturnValue=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:08:32.052
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:29.0016
+Sql: SELECT BAS_MO.MOCode,
+                Bas_MO_Mac.Mac,
+				Inp_Lot.OPId,
+				Bas_OP.OPDesc
+                FROM BAS_MO
+                LEFT JOIN Inp_Lot ON Inp_Lot.MOId = BAS_MO.MOId
+                LEFT JOIN Bas_MO_Mac ON Bas_MO_Mac.LotId = Inp_Lot.LotId
+                LEFT JOIN Bas_OP ON Bas_OP.OPId = Inp_Lot.OPId
+                WHERE BAS_MO.MOCode = @MOCode and Bas_OP.OPCode = @OPCode
+Params:
+@MOCode=gast
+@OPCode=F4
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:08:33.062
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:16.0009
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903001539" OPID="71" OPDESC="包装" />
+		<item  rowNo="2" MOCODE="gast" MAC="GYSD0701903001568" OPID="71" OPDESC="包装" />
+		<item  rowNo="3" MOCODE="gast" MAC="GYSD0701903003361" OPID="71" OPDESC="包装" />
+		<item  rowNo="4" MOCODE="gast" MAC="GYSD0701903003463" OPID="71" OPDESC="包装" />
+		<item  rowNo="5" MOCODE="gast" MAC="GYSD0701903003985" OPID="71" OPDESC="包装" />
+		<item  rowNo="6" MOCODE="gast" MAC="GYSD0701903004286" OPID="71" OPDESC="包装" />
+		<item  rowNo="7" MOCODE="gast" MAC="GYSD0701903004301" OPID="71" OPDESC="包装" />
+		<item  rowNo="8" MOCODE="gast" MAC="GYSD0701903006065" OPID="71" OPDESC="包装" />
+		<item  rowNo="9" MOCODE="gast" MAC="GYSD0701903007133" OPID="71" OPDESC="包装" />
+		<item  rowNo="10" MOCODE="gast" MAC="GYSD0701903007169" OPID="71" OPDESC="包装" />
+		<item  rowNo="11" MOCODE="gast" MAC="GYSD0701903007214" OPID="71" OPDESC="包装" />
+		<item  rowNo="12" MOCODE="gast" MAC="GYSD0701903007381" OPID="71" OPDESC="包装" />
+		<item  rowNo="13" MOCODE="gast" MAC="GYSD0701903007406" OPID="71" OPDESC="包装" />
+		<item  rowNo="14" MOCODE="gast" MAC="GYSD0701903007407" OPID="71" OPDESC="包装" />
+		<item  rowNo="15" MOCODE="gast" MAC="GYSD0701903007845" OPID="71" OPDESC="包装" />
+		<item  rowNo="16" MOCODE="gast" MAC="GYSD0701903007938" OPID="71" OPDESC="包装" />
+		<item  rowNo="17" MOCODE="gast" MAC="GYSD0701903008671" OPID="71" OPDESC="包装" />
+		<item  rowNo="18" MOCODE="gast" MAC="GYSD0701903008682" OPID="71" OPDESC="包装" />
+		<item  rowNo="19" MOCODE="gast" MAC="GYSD0701903009185" OPID="71" OPDESC="包装" />
+		<item  rowNo="20" MOCODE="gast" MAC="GYSD0701903009257" OPID="71" OPDESC="包装" />
+		<item  rowNo="21" MOCODE="gast" MAC="GYSD0701903009442" OPID="71" OPDESC="包装" />
+		<item  rowNo="22" MOCODE="gast" MAC="GYSD0701903009503" OPID="71" OPDESC="包装" />
+		<item  rowNo="23" MOCODE="gast" MAC="GYSD0701903009592" OPID="71" OPDESC="包装" />
+		<item  rowNo="24" MOCODE="gast" MAC="GYSD0701903009593" OPID="71" OPDESC="包装" />
+		<item  rowNo="25" MOCODE="gast" MAC="GYSD0701903009594" OPID="71" OPDESC="包装" />
+		<item  rowNo="26" MOCODE="gast" MAC="GYSD0701903009595" OPID="71" OPDESC="包装" />
+		<item  rowNo="27" MOCODE="gast" MAC="GYSD0701903009799" OPID="71" OPDESC="包装" />
+		<item  rowNo="28" MOCODE="gast" MAC="GYSD0701903009855" OPID="71" OPDESC="包装" />
+		<item  rowNo="29" MOCODE="gast" MAC="GYSD0701903009856" OPID="71" OPDESC="包装" />
+		<item  rowNo="30" MOCODE="gast" MAC="GYSD0701903009857" OPID="71" OPDESC="包装" />
+		<item  rowNo="31" MOCODE="gast" MAC="GYSD0701903009858" OPID="71" OPDESC="包装" />
+		<item  rowNo="32" MOCODE="gast" MAC="GYSD0701903009859" OPID="71" OPDESC="包装" />
+		<item  rowNo="33" MOCODE="gast" MAC="GYSD0701903009860" OPID="71" OPDESC="包装" />
+		<item  rowNo="34" MOCODE="gast" MAC="GYSD0701903009861" OPID="71" OPDESC="包装" />
+		<item  rowNo="35" MOCODE="gast" MAC="GYSD0701903009862" OPID="71" OPDESC="包装" />
+		<item  rowNo="36" MOCODE="gast" MAC="GYSD0701903009870" OPID="71" OPDESC="包装" />
+		<item  rowNo="37" MOCODE="gast" MAC="GYSD0701903009871" OPID="71" OPDESC="包装" />
+		<item  rowNo="38" MOCODE="gast" MAC="GYSD0701903009872" OPID="71" OPDESC="包装" />
+		<item  rowNo="39" MOCODE="gast" MAC="GYSD0701903009873" OPID="71" OPDESC="包装" />
+		<item  rowNo="40" MOCODE="gast" MAC="GYSD0701903009874" OPID="71" OPDESC="包装" />
+		<item  rowNo="41" MOCODE="gast" MAC="GYSD0701903009875" OPID="71" OPDESC="包装" />
+		<item  rowNo="42" MOCODE="gast" MAC="GYSD0701903009876" OPID="71" OPDESC="包装" />
+		<item  rowNo="43" MOCODE="gast" MAC="GYSD0701903009878" OPID="71" OPDESC="包装" />
+		<item  rowNo="44" MOCODE="gast" MAC="GYSD0701903009879" OPID="71" OPDESC="包装" />
+		<item  rowNo="45" MOCODE="gast" MAC="GYSD0701903009882" OPID="71" OPDESC="包装" />
+		<item  rowNo="46" MOCODE="gast" MAC="GYSD0701903009883" OPID="71" OPDESC="包装" />
+		<item  rowNo="47" MOCODE="gast" MAC="GYSD0701903009888" OPID="71" OPDESC="包装" />
+		<item  rowNo="48" MOCODE="gast" MAC="GYSD0701903009889" OPID="71" OPDESC="包装" />
+		<item  rowNo="49" MOCODE="gast" MAC="GYSD0701903009890" OPID="71" OPDESC="包装" />
+		<item  rowNo="50" MOCODE="gast" MAC="GYSD0701903009891" OPID="71" OPDESC="包装" />
+		<item  rowNo="51" MOCODE="gast" MAC="GYSD0701903009892" OPID="71" OPDESC="包装" />
+		<item  rowNo="52" MOCODE="gast" MAC="GYSD0701903009893" OPID="71" OPDESC="包装" />
+		<item  rowNo="53" MOCODE="gast" MAC="GYSD0701903009894" OPID="71" OPDESC="包装" />
+		<item  rowNo="54" MOCODE="gast" MAC="GYSD0701903009895" OPID="71" OPDESC="包装" />
+		<item  rowNo="55" MOCODE="gast" MAC="GYSD0701903009896" OPID="71" OPDESC="包装" />
+		<item  rowNo="56" MOCODE="gast" MAC="GYSD0701903009897" OPID="71" OPDESC="包装" />
+		<item  rowNo="57" MOCODE="gast" MAC="GYSD0701903009898" OPID="71" OPDESC="包装" />
+		<item  rowNo="58" MOCODE="gast" MAC="GYSD0701903009899" OPID="71" OPDESC="包装" />
+		<item  rowNo="59" MOCODE="gast" MAC="GYSD0701903009900" OPID="71" OPDESC="包装" />
+		<item  rowNo="60" MOCODE="gast" MAC="GYSD0701903009904" OPID="71" OPDESC="包装" />
+		<item  rowNo="61" MOCODE="gast" MAC="GYSD0701903009905" OPID="71" OPDESC="包装" />
+		<item  rowNo="62" MOCODE="gast" MAC="GYSD0701903009906" OPID="71" OPDESC="包装" />
+		<item  rowNo="63" MOCODE="gast" MAC="GYSD0701903009911" OPID="71" OPDESC="包装" />
+		<item  rowNo="64" MOCODE="gast" MAC="GYSD0701903009912" OPID="71" OPDESC="包装" />
+		<item  rowNo="65" MOCODE="gast" MAC="GYSD0701903009913" OPID="71" OPDESC="包装" />
+		<item  rowNo="66" MOCODE="gast" MAC="GYSD0701903009914" OPID="71" OPDESC="包装" />
+		<item  rowNo="67" MOCODE="gast" MAC="GYSD0701903009915" OPID="71" OPDESC="包装" />
+		<item  rowNo="68" MOCODE="gast" MAC="GYSD0701903009916" OPID="71" OPDESC="包装" />
+		<item  rowNo="69" MOCODE="gast" MAC="GYSD0701903009917" OPID="71" OPDESC="包装" />
+		<item  rowNo="70" MOCODE="gast" MAC="GYSD0701903009918" OPID="71" OPDESC="包装" />
+		<item  rowNo="71" MOCODE="gast" MAC="GYSD0701903009919" OPID="71" OPDESC="包装" />
+		<item  rowNo="72" MOCODE="gast" MAC="GYSD0701903009920" OPID="71" OPDESC="包装" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:48:40.834
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:7.0004
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:48:40.845
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:48:40.855
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:48:41.267
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:48:45.179
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:77.0044
+Sql:SELECT  Bas_MO.MOCode,
+				        Bas_MO_Mac.Mac,
+				        Inp_Lot.OPId,
+				        Bas_OP.OPDesc
+				        FROM Bas_MO_Mac
+				        LEFT JOIN Bas_MO on Bas_MO.MOId=Bas_MO_Mac.MOId
+				        LEFT JOIN Inp_Lot ON Inp_Lot.LotSN=Bas_MO_Mac.mac
+				        LEFT JOIN Bas_OP ON  Bas_OP.OPId=Inp_Lot.OPId
+				        WHERE Bas_MO_Mac.Mac='GYSD0701903009861' OR Bas_MO_Mac.DSN='GYSD0701903009861' OR Bas_MO_Mac.DeviceSerialNumber='GYSD0701903009861' OR Bas_MO_Mac.STBNO='GYSD0701903009861'
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:48:46.793
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:5.0003
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@UserId=1
+@LineId=24
+@ResourceId=76
+@ShiftTypeId=7
+@PluginId=1
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903009861" OPID="68" OPDESC="组装投入" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:过程或函数 'Pro_Inp_WorkStation_Return' 需要参数 '@ToWorkStationId'，但未提供该参数。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:49:26.006
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:18.001
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@UserId=1
+@LineId=24
+@ResourceId=76
+@ShiftTypeId=7
+@PluginId=1
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903009861" OPID="68" OPDESC="组装投入" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 09:49:35.816
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:5.0003
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@UserId=1
+@LineId=24
+@ResourceId=76
+@ShiftTypeId=7
+@PluginId=1
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903009861" OPID="68" OPDESC="组装投入" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+END===============================================================================================
+
+

@@ -1,0 +1,92 @@
+﻿<mes:UserVendor x:Class="EquipmentManagement.Scrap"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EquipmentManagement"
+             xmlns:mes="http://www.mes.com"
+             xmlns:mesex="http://www.mesex.com"
+             DataContextChanged="UserVendor_DataContextChanged">
+
+    <Grid x:Name="grid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="5">
+            <mesex:CircleImageButton x:Name="btnReject" ImageDiameter="20" Margin="0,0,10,0" ImageSource="Images/delete.png" 
+                                     Content="驳回" Click="btnReject_Click" Visibility="Collapsed"/>
+            <mesex:CircleImageButton x:Name="btnAgree" ImageDiameter="20" Margin="0,0,10,0" ImageSource="Images/yes.png" 
+                                     Content="同意" Click="btnAgree_Click"  Visibility="Collapsed"/>
+        </StackPanel>
+
+        <Grid Grid.Row="1" Margin="5">
+            <mesex:ListGrid >
+                <mesex:ListGrid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </mesex:ListGrid.ColumnDefinitions>
+
+
+                <TextBlock Text="报废单" FontSize="15" HorizontalAlignment="Center" Grid.ColumnSpan="6"
+                             />
+
+                <TextBlock Text="报废单"/>
+                <mesex:ListGridCellGrid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <mesex:TextBox x:Name="txtEquipmentScrapCode" TextChanged="txtEquipmentScrapCode_TextChanged" LostFocus="txtEquipmentScrapCode_LostFocus" />
+                    <mesex:CircleImageButton ImageSource="Images/edit.png" x:Name="btnEquipmentScrap" Click="btnEquipmentScrap_Click" Grid.Column="1"/>
+                </mesex:ListGridCellGrid>
+
+                <TextBlock Text="类型"/>
+                <mesex:TextBox IsReadOnly="True" Text="{Binding TypeName}"/>
+
+                <TextBlock Text="来源单据"/>
+                <mesex:TextBox IsReadOnly="True" Text="{Binding SourceCode}"/>
+
+                <TextBlock Text="报废人"/>
+                <mesex:TextBox IsReadOnly="True" Text="{Binding ScrapUserName}"/>
+
+                <TextBlock Text="报废时间"/>
+                <mesex:TextBox IsReadOnly="True" Text="{Binding ScrapDateTime,StringFormat='yyyy-MM-dd HH:mm:ss'}"/>
+                
+                <TextBlock Text="报废备注"/>
+                <mesex:TextBox IsReadOnly="True" Text="{Binding EquipmentScrapDesc}"/>
+
+                <TextBlock Text="确认人"/>
+                <mesex:TextBox IsReadOnly="True" Text="{Binding SureUserName}"/>
+
+                <TextBlock Text="确认时间"/>
+                <mesex:TextBox IsReadOnly="True" Text="{Binding SureDateTime,StringFormat='yyyy-MM-dd HH:mm:ss'}"/>
+
+                <TextBlock Text="确认备注"/>
+                <mesex:TextBox IsReadOnly="True" Text="{Binding SureComment}"/>
+
+            </mesex:ListGrid>
+            <mesex:Seal Content="{Binding StatusName}" />
+        </Grid>
+
+        <mesex:TabControl x:Name="tab" Grid.Row="2">
+            <mesex:TabItem IsShowClose="False" Header="报废设备">
+                <mesex:GridControl x:Name="matrix1" Grid.Column="1">
+                    <mesex:GridControl.Columns>
+                        <mesex:GridColumn Header="车间" Binding="{Binding WorkShopName}"/>
+                        <mesex:GridColumn Header="设备组" Binding="{Binding EquipmentGroupName}"/>
+                        <mesex:GridColumn Header="型号" Binding="{Binding EquipmentModelName}"/>
+                        <mesex:GridColumn Header="设备编码" Binding="{Binding EquipmentCode}"/>
+                        <mesex:GridColumn Header="报废备注" Binding="{Binding Comment}"/>
+                    </mesex:GridControl.Columns>
+                </mesex:GridControl>
+            </mesex:TabItem>
+        </mesex:TabControl>
+    </Grid>
+</mes:UserVendor>

@@ -1,0 +1,3888 @@
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:11:55.714
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:7.0004
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:11:55.725
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:11:55.735
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:11:56.045
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:12:01.993
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:52.003
+Sql:SELECT  Bas_MO.MOCode,
+				        Bas_MO_Mac.Mac,
+				        Inp_Lot.OPId,
+				        Bas_OP.OPDesc
+				        FROM Bas_MO_Mac
+				        LEFT JOIN Bas_MO on Bas_MO.MOId=Bas_MO_Mac.MOId
+				        LEFT JOIN Inp_Lot ON Inp_Lot.LotSN=Bas_MO_Mac.mac
+				        LEFT JOIN Bas_OP ON  Bas_OP.OPId=Inp_Lot.OPId
+				        WHERE Bas_MO_Mac.Mac='GYSD0701903001539' OR Bas_MO_Mac.DSN='GYSD0701903001539' OR Bas_MO_Mac.DeviceSerialNumber='GYSD0701903001539' OR Bas_MO_Mac.STBNO='GYSD0701903001539'
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:12:35.777
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:8.0005
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:12:35.788
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:12:35.798
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:12:36.108
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:12:42.535
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:46.0026
+Sql:SELECT  Bas_MO.MOCode,
+				        Bas_MO_Mac.Mac,
+				        Inp_Lot.OPId,
+				        Bas_OP.OPDesc
+				        FROM Bas_MO_Mac
+				        LEFT JOIN Bas_MO on Bas_MO.MOId=Bas_MO_Mac.MOId
+				        LEFT JOIN Inp_Lot ON Inp_Lot.LotSN=Bas_MO_Mac.mac
+				        LEFT JOIN Bas_OP ON  Bas_OP.OPId=Inp_Lot.OPId
+				        WHERE Bas_MO_Mac.Mac='GYSD0701903001539' OR Bas_MO_Mac.DSN='GYSD0701903001539' OR Bas_MO_Mac.DeviceSerialNumber='GYSD0701903001539' OR Bas_MO_Mac.STBNO='GYSD0701903001539'
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:13:34.683
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:11.0006
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:13:34.694
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:13:34.704
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:13:35.014
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:13:40.152
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:46.0027
+Sql:SELECT  Bas_MO.MOCode,
+				        Bas_MO_Mac.Mac,
+				        Inp_Lot.OPId,
+				        Bas_OP.OPDesc
+				        FROM Bas_MO_Mac
+				        LEFT JOIN Bas_MO on Bas_MO.MOId=Bas_MO_Mac.MOId
+				        LEFT JOIN Inp_Lot ON Inp_Lot.LotSN=Bas_MO_Mac.mac
+				        LEFT JOIN Bas_OP ON  Bas_OP.OPId=Inp_Lot.OPId
+				        WHERE Bas_MO_Mac.Mac='GYSD0701903001539' OR Bas_MO_Mac.DSN='GYSD0701903001539' OR Bas_MO_Mac.DeviceSerialNumber='GYSD0701903001539' OR Bas_MO_Mac.STBNO='GYSD0701903001539'
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:47:03.840
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:7.0004
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:47:03.851
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:47:03.861
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:47:04.171
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:47:30.282
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0002
+Sql:SELECT Set_Meta.MetaId,
+	   Set_Meta.MetaCode,
+	   Set_Meta.MetaName,
+	   Set_Meta.IsViewPages,
+	   Set_Meta.ViewCountSqlType,
+	   Set_Meta.ViewCountSql,
+	   dbo.Set_Meta.ViewSqlType,
+	   Set_Meta.ViewSql,
+	   dbo.Set_Meta.MainSqlType,
+	   Set_Meta.MainSql,
+	   dbo.Set_Meta.DeleteSqlType,
+	   Set_Meta.DeleteSql,
+	   dbo.Set_Meta.SaveSqlType,
+	   Set_Meta.SaveSql,
+	   Set_Meta.MetaNote,
+	   Set_Meta.ColumnCount,
+	   Set_Meta.ParentMetaId,
+	   Set_Meta.IdColumnName,
+	   Set_Meta.TextColumnName,
+	   Set_Meta.TableId,
+	   Set_Table.SysTableName as TableName,
+	   Set_Meta.ViewWidth,
+	   Set_Meta.VersionColumnName
+FROM dbo.Set_Meta  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_Table  WITH(NOLOCK)  ON dbo.Set_Table.SysTableId = dbo.Set_Meta.TableId
+WHERE Set_Meta.MetaId=@metaId
+Params:
+@metaId=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:47:30.292
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0003
+Sql:SELECT Set_MetaParam.MetaParamId,
+	   Set_MetaParam.MetaGroupId,
+	   Set_MetaParam.MetaParamCode,
+	   Set_MetaParam.MetaParamName,
+	   Set_MetaParam.MetaParamNote,
+	   Set_MetaParam.MetaParamLength,
+	   Set_ControlTypes.TypeName,
+	   Set_ControlTypes.FullName,
+	   Set_ControlTypes.Params,
+	   Set_MetaParam.ColumnSpan,
+	   Set_MetaParam.RowSpan,
+	   Set_MetaParam.IsEdit,
+	   Set_MetaParam.IsVisible,
+	   Set_MetaParam.IsNotEmpty,
+	   Set_MetaParam.DefaultValue,
+	   Set_MetaParam.DataSourceType,
+	   Set_MetaParam.DataSource,
+	   Set_MetaParam.IsQueryParam,
+	   Set_MetaParam.IsLinkParam,
+	   Set_MetaParam.IsNewRow
+FROM dbo.Set_MetaParam  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_ControlTypes  WITH(NOLOCK) ON Set_MetaParam.MetaParamType=Set_ControlTypes.TypeName
+LEFT JOIN dbo.Set_MetaGroup  WITH(NOLOCK)  ON dbo.Set_MetaGroup.MetaGroupId = dbo.Set_MetaParam.MetaGroupId
+WHERE Set_MetaGroup.MetaId=@metaId
+ORDER BY Set_MetaParam.Sequence
+
+Params:
+@metaId=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:47:30.302
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=51
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:47:30.312
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=183
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:47:30.322
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=185
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:47:32.632
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:5.0003
+Sql:SELECT TOP 200 Bas_MO.MOId,
+			   Bas_MO.MOCode,
+			   Bas_Item.ItemCode,
+			   Bas_Item.ItemName+'/'+Bas_Item.ItemDesc as 'ItemName',
+			   Bas_Order.OrderCode,
+			   Bas_Customer.CustomerCode
+FROM Bas_MO WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=ISNULL(@Id,Bas_MO.MOId)
+AND Bas_MO.MOCode LIKE '%'+ISNULL(@MOCode,Bas_MO.MOCode)+'%'
+AND (@ItemId IS NULL OR Bas_MO.ItemId=@ItemId)
+AND (ISNULL(@OrderCode,'')='' OR (ISNULL(@OrderCode,'')!='' AND Bas_Order.OrderCode LIKE '%'+ISNULL(@OrderCode,Bas_Order.OrderCode)+'%'))
+AND (@CustomerId IS NULL OR Bas_MO.CustomerId=@CustomerId)
+ORDER BY Bas_MO.MOCode
+Params:
+@Id=DBNull
+@MOCode=
+@ItemId=null
+@CustomerId=null
+@OrderCode=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:47:33.842
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO.MOId,
+			   Bas_MO.MOCode,
+			   Bas_MO.OrderDetailId,
+			   Bas_MO.CustomerId,
+			   Bas_MO.ItemId,
+			   Bas_Item.ItemCode,
+			   Bas_Item.ItemDesc+'-'+Bas_Item.ItemSpecification as 'ItemDesc',
+			   dbo.Bas_Order.OrderCode,
+			   Bas_MO.Qty,
+			   Bas_MO.PlanStartDate,
+			   Bas_MO.PlanCompleteDate,
+			   Bas_MO.ActualStartDate,
+			   Bas_MO.ActualCompleteDate,
+			   Bas_MO.Status,
+			   Bas_MO.InputQty,
+			   Bas_MO.CompleteQty,
+			   Bas_MO.ErrorQty,
+			   Bas_MO.ScrapQty,
+			   Bas_MO.TurnInQty,
+			   Bas_MO.TurnOutQty,
+			   Bas_MO.WorkflowId,
+			   Bas_MO.IsCheckPowerSN,
+			   Bas_MO.PowerSNLength,
+			   Bas_MO.PowerSNPre,
+			   Bas_MO.IsCheckRemoteControlSN,
+			   Bas_MO.RemoteControlSNLength,
+			   Bas_MO.RemoteControlSNPre,
+			   Bas_MO.SpecSheet,
+			   Bas_MO.ChipScheme,
+			   Bas_MO.SoftwareVersion,
+			   Bas_MO.HardwareVersion,
+			   Bas_MO.AreaCode,
+			   Bas_MO.DeviceType,
+			   Bas_MO.IsCanVirtualInput,
+			   Bas_MO.SideAFeedingStationTableId,
+			   Bas_MO.SideBFeedingStationTableId,
+			   Bas_MO.RowVersion,
+			   Bas_MO.NetWeight,
+			   Bas_MO.GrossWeight
+FROM Bas_MO WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+WHERE Bas_MO.MOId=ISNULL(@Id,Bas_MO.MOId)
+AND Bas_MO.MOCode=ISNULL(@Text,Bas_MO.MOCode)
+Params:
+@UserId=1
+@CpuID=BFEBFBFF000306C3
+@MacAddress=AA:BB:CC:DD:EE:FF
+@IPAddress=192.168.3.2
+@ComputerName=WANG-PC
+@LocalUserName=wang-PC\wang
+@ResourceId=76
+@SettingId=187
+@Id=147
+@Text=DBNull
+@ParentId=DBNull
+@Return_Message=DBNull
+@ReturnValue=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:47:34.652
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Set_Meta.MetaId,
+	   Set_Meta.MetaCode,
+	   Set_Meta.MetaName,
+	   Set_Meta.IsViewPages,
+	   Set_Meta.ViewCountSqlType,
+	   Set_Meta.ViewCountSql,
+	   dbo.Set_Meta.ViewSqlType,
+	   Set_Meta.ViewSql,
+	   dbo.Set_Meta.MainSqlType,
+	   Set_Meta.MainSql,
+	   dbo.Set_Meta.DeleteSqlType,
+	   Set_Meta.DeleteSql,
+	   dbo.Set_Meta.SaveSqlType,
+	   Set_Meta.SaveSql,
+	   Set_Meta.MetaNote,
+	   Set_Meta.ColumnCount,
+	   Set_Meta.ParentMetaId,
+	   Set_Meta.IdColumnName,
+	   Set_Meta.TextColumnName,
+	   Set_Meta.TableId,
+	   Set_Table.SysTableName as TableName,
+	   Set_Meta.ViewWidth,
+	   Set_Meta.VersionColumnName
+FROM dbo.Set_Meta  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_Table  WITH(NOLOCK)  ON dbo.Set_Table.SysTableId = dbo.Set_Meta.TableId
+WHERE Set_Meta.MetaId=@metaId
+Params:
+@metaId=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:47:34.668
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Set_MetaParam.MetaParamId,
+	   Set_MetaParam.MetaGroupId,
+	   Set_MetaParam.MetaParamCode,
+	   Set_MetaParam.MetaParamName,
+	   Set_MetaParam.MetaParamNote,
+	   Set_MetaParam.MetaParamLength,
+	   Set_ControlTypes.TypeName,
+	   Set_ControlTypes.FullName,
+	   Set_ControlTypes.Params,
+	   Set_MetaParam.ColumnSpan,
+	   Set_MetaParam.RowSpan,
+	   Set_MetaParam.IsEdit,
+	   Set_MetaParam.IsVisible,
+	   Set_MetaParam.IsNotEmpty,
+	   Set_MetaParam.DefaultValue,
+	   Set_MetaParam.DataSourceType,
+	   Set_MetaParam.DataSource,
+	   Set_MetaParam.IsQueryParam,
+	   Set_MetaParam.IsLinkParam,
+	   Set_MetaParam.IsNewRow
+FROM dbo.Set_MetaParam  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_ControlTypes  WITH(NOLOCK) ON Set_MetaParam.MetaParamType=Set_ControlTypes.TypeName
+LEFT JOIN dbo.Set_MetaGroup  WITH(NOLOCK)  ON dbo.Set_MetaGroup.MetaGroupId = dbo.Set_MetaParam.MetaGroupId
+WHERE Set_MetaGroup.MetaId=@metaId
+ORDER BY Set_MetaParam.Sequence
+
+Params:
+@metaId=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:47:34.778
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT ViewSql,ViewSqlType,IdColumnName,TextColumnName,MetaId FROM dbo.Set_Meta   WITH(NOLOCK)  WHERE MetaId=@MetaId
+Params:
+@MetaId=180
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:47:34.788
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Set_MetaParam.MetaParamId,
+	   Set_MetaParam.MetaGroupId,
+	   Set_MetaParam.MetaParamCode,
+	   Set_MetaParam.MetaParamName,
+	   Set_MetaParam.MetaParamNote,
+	   Set_MetaParam.MetaParamLength,
+	   Set_ControlTypes.TypeName,
+	   Set_ControlTypes.FullName,
+	   Set_ControlTypes.Params,
+	   Set_MetaParam.ColumnSpan,
+	   Set_MetaParam.RowSpan,
+	   Set_MetaParam.IsEdit,
+	   Set_MetaParam.IsVisible,
+	   Set_MetaParam.IsNotEmpty,
+	   Set_MetaParam.DefaultValue,
+	   Set_MetaParam.DataSourceType,
+	   Set_MetaParam.DataSource,
+	   Set_MetaParam.IsQueryParam,
+	   Set_MetaParam.IsLinkParam,
+	   Set_MetaParam.IsNewRow
+FROM dbo.Set_MetaParam  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_ControlTypes  WITH(NOLOCK) ON Set_MetaParam.MetaParamType=Set_ControlTypes.TypeName
+LEFT JOIN dbo.Set_MetaGroup  WITH(NOLOCK)  ON dbo.Set_MetaGroup.MetaGroupId = dbo.Set_MetaParam.MetaGroupId
+WHERE Set_MetaGroup.MetaId=@metaId
+ORDER BY Set_MetaParam.Sequence
+
+Params:
+@metaId=180
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:47:34.798
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0002
+Sql:SELECT Bas_Section.SectionId,
+			   Bas_Section.SectionCode,
+			   Bas_Section.SectionDesc
+FROM Bas_Section WITH(NOLOCK) 
+WHERE Bas_Section.SectionId=ISNULL(@Id,Bas_Section.SectionId)
+AND Bas_Section.SectionCode LIKE '%'+ISNULL(@SectionCode,Bas_Section.SectionCode)+'%'
+ORDER BY Bas_Section.Sequence
+Params:
+@Id=DBNull
+@SectionCode=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:47:35.909
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Bas_OP.OPId,
+	          Bas_OP.SectionId,
+			   Bas_Section.SectionCode,
+			   Bas_OP.OPCode,
+			    Bas_OP.OpDesc
+FROM Bas_OP WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Section  WITH(NOLOCK) ON dbo.Bas_Section.SectionId = dbo.Bas_OP.SectionId
+WHERE Bas_OP.OPId=ISNULL(@Id,Bas_OP.OPId)
+AND Bas_OP.OPCode LIKE '%'+ISNULL(@OPCode,Bas_OP.OPCode)+'%'
+AND (@SectionId IS NULL OR dbo.Bas_OP.SectionId=@SectionId)
+ORDER BY Bas_OP.OPCode
+Params:
+@Id=DBNull
+@SectionId=18
+@OPCode=
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:47:38.636
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_OP.OPId,
+	          Bas_OP.SectionId,
+			   Bas_OP.OPCode,
+			   Bas_OP.OPDesc,
+			   Bas_OP.OPImage,
+			   Bas_OP.Sequence,
+			   Bas_OP.IsComplete
+FROM Bas_OP WITH(NOLOCK) 
+WHERE Bas_OP.OPId=ISNULL(@Id,Bas_OP.OPId)
+AND Bas_OP.OPCode=ISNULL(@Text,Bas_OP.OPCode)
+Params:
+@UserId=1
+@CpuID=BFEBFBFF000306C3
+@MacAddress=AA:BB:CC:DD:EE:FF
+@IPAddress=192.168.3.2
+@ComputerName=WANG-PC
+@LocalUserName=wang-PC\wang
+@ResourceId=76
+@SettingId=42
+@Id=72
+@Text=DBNull
+@ParentId=DBNull
+@Return_Message=DBNull
+@ReturnValue=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:47:39.446
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:7.0004
+Sql: SELECT BAS_MO.MOCode,
+                Bas_MO_Mac.Mac,
+				Inp_Lot.OPId,
+				Bas_OP.OPDesc
+                FROM BAS_MO
+                LEFT JOIN Inp_Lot ON Inp_Lot.MOId = BAS_MO.MOId
+                LEFT JOIN Bas_MO_Mac ON Bas_MO_Mac.LotId = Inp_Lot.LotId
+                LEFT JOIN Bas_OP ON Bas_OP.OPId = Inp_Lot.OPId
+                WHERE BAS_MO.MOCode = @MOCode and Bas_OP.OPCode = @OPCode
+Params:
+@MOCode=gast
+@OPCode=F5
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:48:28.052
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:11.0006
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:48:28.063
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:48:28.073
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:48:28.383
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0002
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:48:30.093
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Set_Meta.MetaId,
+	   Set_Meta.MetaCode,
+	   Set_Meta.MetaName,
+	   Set_Meta.IsViewPages,
+	   Set_Meta.ViewCountSqlType,
+	   Set_Meta.ViewCountSql,
+	   dbo.Set_Meta.ViewSqlType,
+	   Set_Meta.ViewSql,
+	   dbo.Set_Meta.MainSqlType,
+	   Set_Meta.MainSql,
+	   dbo.Set_Meta.DeleteSqlType,
+	   Set_Meta.DeleteSql,
+	   dbo.Set_Meta.SaveSqlType,
+	   Set_Meta.SaveSql,
+	   Set_Meta.MetaNote,
+	   Set_Meta.ColumnCount,
+	   Set_Meta.ParentMetaId,
+	   Set_Meta.IdColumnName,
+	   Set_Meta.TextColumnName,
+	   Set_Meta.TableId,
+	   Set_Table.SysTableName as TableName,
+	   Set_Meta.ViewWidth,
+	   Set_Meta.VersionColumnName
+FROM dbo.Set_Meta  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_Table  WITH(NOLOCK)  ON dbo.Set_Table.SysTableId = dbo.Set_Meta.TableId
+WHERE Set_Meta.MetaId=@metaId
+Params:
+@metaId=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:48:30.103
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0002
+Sql:SELECT Set_MetaParam.MetaParamId,
+	   Set_MetaParam.MetaGroupId,
+	   Set_MetaParam.MetaParamCode,
+	   Set_MetaParam.MetaParamName,
+	   Set_MetaParam.MetaParamNote,
+	   Set_MetaParam.MetaParamLength,
+	   Set_ControlTypes.TypeName,
+	   Set_ControlTypes.FullName,
+	   Set_ControlTypes.Params,
+	   Set_MetaParam.ColumnSpan,
+	   Set_MetaParam.RowSpan,
+	   Set_MetaParam.IsEdit,
+	   Set_MetaParam.IsVisible,
+	   Set_MetaParam.IsNotEmpty,
+	   Set_MetaParam.DefaultValue,
+	   Set_MetaParam.DataSourceType,
+	   Set_MetaParam.DataSource,
+	   Set_MetaParam.IsQueryParam,
+	   Set_MetaParam.IsLinkParam,
+	   Set_MetaParam.IsNewRow
+FROM dbo.Set_MetaParam  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_ControlTypes  WITH(NOLOCK) ON Set_MetaParam.MetaParamType=Set_ControlTypes.TypeName
+LEFT JOIN dbo.Set_MetaGroup  WITH(NOLOCK)  ON dbo.Set_MetaGroup.MetaGroupId = dbo.Set_MetaParam.MetaGroupId
+WHERE Set_MetaGroup.MetaId=@metaId
+ORDER BY Set_MetaParam.Sequence
+
+Params:
+@metaId=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:48:30.213
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=51
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:48:30.223
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=183
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:48:30.233
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=185
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:48:32.443
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0002
+Sql:SELECT TOP 200 Bas_MO.MOId,
+			   Bas_MO.MOCode,
+			   Bas_Item.ItemCode,
+			   Bas_Item.ItemName+'/'+Bas_Item.ItemDesc as 'ItemName',
+			   Bas_Order.OrderCode,
+			   Bas_Customer.CustomerCode
+FROM Bas_MO WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=ISNULL(@Id,Bas_MO.MOId)
+AND Bas_MO.MOCode LIKE '%'+ISNULL(@MOCode,Bas_MO.MOCode)+'%'
+AND (@ItemId IS NULL OR Bas_MO.ItemId=@ItemId)
+AND (ISNULL(@OrderCode,'')='' OR (ISNULL(@OrderCode,'')!='' AND Bas_Order.OrderCode LIKE '%'+ISNULL(@OrderCode,Bas_Order.OrderCode)+'%'))
+AND (@CustomerId IS NULL OR Bas_MO.CustomerId=@CustomerId)
+ORDER BY Bas_MO.MOCode
+Params:
+@Id=DBNull
+@MOCode=
+@ItemId=null
+@CustomerId=null
+@OrderCode=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:48:33.977
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Bas_MO.MOId,
+			   Bas_MO.MOCode,
+			   Bas_MO.OrderDetailId,
+			   Bas_MO.CustomerId,
+			   Bas_MO.ItemId,
+			   Bas_Item.ItemCode,
+			   Bas_Item.ItemDesc+'-'+Bas_Item.ItemSpecification as 'ItemDesc',
+			   dbo.Bas_Order.OrderCode,
+			   Bas_MO.Qty,
+			   Bas_MO.PlanStartDate,
+			   Bas_MO.PlanCompleteDate,
+			   Bas_MO.ActualStartDate,
+			   Bas_MO.ActualCompleteDate,
+			   Bas_MO.Status,
+			   Bas_MO.InputQty,
+			   Bas_MO.CompleteQty,
+			   Bas_MO.ErrorQty,
+			   Bas_MO.ScrapQty,
+			   Bas_MO.TurnInQty,
+			   Bas_MO.TurnOutQty,
+			   Bas_MO.WorkflowId,
+			   Bas_MO.IsCheckPowerSN,
+			   Bas_MO.PowerSNLength,
+			   Bas_MO.PowerSNPre,
+			   Bas_MO.IsCheckRemoteControlSN,
+			   Bas_MO.RemoteControlSNLength,
+			   Bas_MO.RemoteControlSNPre,
+			   Bas_MO.SpecSheet,
+			   Bas_MO.ChipScheme,
+			   Bas_MO.SoftwareVersion,
+			   Bas_MO.HardwareVersion,
+			   Bas_MO.AreaCode,
+			   Bas_MO.DeviceType,
+			   Bas_MO.IsCanVirtualInput,
+			   Bas_MO.SideAFeedingStationTableId,
+			   Bas_MO.SideBFeedingStationTableId,
+			   Bas_MO.RowVersion,
+			   Bas_MO.NetWeight,
+			   Bas_MO.GrossWeight
+FROM Bas_MO WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+WHERE Bas_MO.MOId=ISNULL(@Id,Bas_MO.MOId)
+AND Bas_MO.MOCode=ISNULL(@Text,Bas_MO.MOCode)
+Params:
+@UserId=1
+@CpuID=BFEBFBFF000306C3
+@MacAddress=AA:BB:CC:DD:EE:FF
+@IPAddress=192.168.3.2
+@ComputerName=WANG-PC
+@LocalUserName=wang-PC\wang
+@ResourceId=76
+@SettingId=187
+@Id=147
+@Text=DBNull
+@ParentId=DBNull
+@Return_Message=DBNull
+@ReturnValue=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:48:36.589
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Set_Meta.MetaId,
+	   Set_Meta.MetaCode,
+	   Set_Meta.MetaName,
+	   Set_Meta.IsViewPages,
+	   Set_Meta.ViewCountSqlType,
+	   Set_Meta.ViewCountSql,
+	   dbo.Set_Meta.ViewSqlType,
+	   Set_Meta.ViewSql,
+	   dbo.Set_Meta.MainSqlType,
+	   Set_Meta.MainSql,
+	   dbo.Set_Meta.DeleteSqlType,
+	   Set_Meta.DeleteSql,
+	   dbo.Set_Meta.SaveSqlType,
+	   Set_Meta.SaveSql,
+	   Set_Meta.MetaNote,
+	   Set_Meta.ColumnCount,
+	   Set_Meta.ParentMetaId,
+	   Set_Meta.IdColumnName,
+	   Set_Meta.TextColumnName,
+	   Set_Meta.TableId,
+	   Set_Table.SysTableName as TableName,
+	   Set_Meta.ViewWidth,
+	   Set_Meta.VersionColumnName
+FROM dbo.Set_Meta  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_Table  WITH(NOLOCK)  ON dbo.Set_Table.SysTableId = dbo.Set_Meta.TableId
+WHERE Set_Meta.MetaId=@metaId
+Params:
+@metaId=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:48:36.599
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Set_MetaParam.MetaParamId,
+	   Set_MetaParam.MetaGroupId,
+	   Set_MetaParam.MetaParamCode,
+	   Set_MetaParam.MetaParamName,
+	   Set_MetaParam.MetaParamNote,
+	   Set_MetaParam.MetaParamLength,
+	   Set_ControlTypes.TypeName,
+	   Set_ControlTypes.FullName,
+	   Set_ControlTypes.Params,
+	   Set_MetaParam.ColumnSpan,
+	   Set_MetaParam.RowSpan,
+	   Set_MetaParam.IsEdit,
+	   Set_MetaParam.IsVisible,
+	   Set_MetaParam.IsNotEmpty,
+	   Set_MetaParam.DefaultValue,
+	   Set_MetaParam.DataSourceType,
+	   Set_MetaParam.DataSource,
+	   Set_MetaParam.IsQueryParam,
+	   Set_MetaParam.IsLinkParam,
+	   Set_MetaParam.IsNewRow
+FROM dbo.Set_MetaParam  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_ControlTypes  WITH(NOLOCK) ON Set_MetaParam.MetaParamType=Set_ControlTypes.TypeName
+LEFT JOIN dbo.Set_MetaGroup  WITH(NOLOCK)  ON dbo.Set_MetaGroup.MetaGroupId = dbo.Set_MetaParam.MetaGroupId
+WHERE Set_MetaGroup.MetaId=@metaId
+ORDER BY Set_MetaParam.Sequence
+
+Params:
+@metaId=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:48:36.709
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1.0001
+Sql:SELECT ViewSql,ViewSqlType,IdColumnName,TextColumnName,MetaId FROM dbo.Set_Meta   WITH(NOLOCK)  WHERE MetaId=@MetaId
+Params:
+@MetaId=180
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:48:36.719
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0001
+Sql:SELECT Set_MetaParam.MetaParamId,
+	   Set_MetaParam.MetaGroupId,
+	   Set_MetaParam.MetaParamCode,
+	   Set_MetaParam.MetaParamName,
+	   Set_MetaParam.MetaParamNote,
+	   Set_MetaParam.MetaParamLength,
+	   Set_ControlTypes.TypeName,
+	   Set_ControlTypes.FullName,
+	   Set_ControlTypes.Params,
+	   Set_MetaParam.ColumnSpan,
+	   Set_MetaParam.RowSpan,
+	   Set_MetaParam.IsEdit,
+	   Set_MetaParam.IsVisible,
+	   Set_MetaParam.IsNotEmpty,
+	   Set_MetaParam.DefaultValue,
+	   Set_MetaParam.DataSourceType,
+	   Set_MetaParam.DataSource,
+	   Set_MetaParam.IsQueryParam,
+	   Set_MetaParam.IsLinkParam,
+	   Set_MetaParam.IsNewRow
+FROM dbo.Set_MetaParam  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_ControlTypes  WITH(NOLOCK) ON Set_MetaParam.MetaParamType=Set_ControlTypes.TypeName
+LEFT JOIN dbo.Set_MetaGroup  WITH(NOLOCK)  ON dbo.Set_MetaGroup.MetaGroupId = dbo.Set_MetaParam.MetaGroupId
+WHERE Set_MetaGroup.MetaId=@metaId
+ORDER BY Set_MetaParam.Sequence
+
+Params:
+@metaId=180
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:48:36.729
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1.0001
+Sql:SELECT Bas_Section.SectionId,
+			   Bas_Section.SectionCode,
+			   Bas_Section.SectionDesc
+FROM Bas_Section WITH(NOLOCK) 
+WHERE Bas_Section.SectionId=ISNULL(@Id,Bas_Section.SectionId)
+AND Bas_Section.SectionCode LIKE '%'+ISNULL(@SectionCode,Bas_Section.SectionCode)+'%'
+ORDER BY Bas_Section.Sequence
+Params:
+@Id=DBNull
+@SectionCode=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:48:37.446
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0002
+Sql:SELECT Bas_OP.OPId,
+	          Bas_OP.SectionId,
+			   Bas_Section.SectionCode,
+			   Bas_OP.OPCode,
+			    Bas_OP.OpDesc
+FROM Bas_OP WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Section  WITH(NOLOCK) ON dbo.Bas_Section.SectionId = dbo.Bas_OP.SectionId
+WHERE Bas_OP.OPId=ISNULL(@Id,Bas_OP.OPId)
+AND Bas_OP.OPCode LIKE '%'+ISNULL(@OPCode,Bas_OP.OPCode)+'%'
+AND (@SectionId IS NULL OR dbo.Bas_OP.SectionId=@SectionId)
+ORDER BY Bas_OP.OPCode
+Params:
+@Id=DBNull
+@SectionId=18
+@OPCode=
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:48:39.956
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_OP.OPId,
+	          Bas_OP.SectionId,
+			   Bas_OP.OPCode,
+			   Bas_OP.OPDesc,
+			   Bas_OP.OPImage,
+			   Bas_OP.Sequence,
+			   Bas_OP.IsComplete
+FROM Bas_OP WITH(NOLOCK) 
+WHERE Bas_OP.OPId=ISNULL(@Id,Bas_OP.OPId)
+AND Bas_OP.OPCode=ISNULL(@Text,Bas_OP.OPCode)
+Params:
+@UserId=1
+@CpuID=BFEBFBFF000306C3
+@MacAddress=AA:BB:CC:DD:EE:FF
+@IPAddress=192.168.3.2
+@ComputerName=WANG-PC
+@LocalUserName=wang-PC\wang
+@ResourceId=76
+@SettingId=42
+@Id=72
+@Text=DBNull
+@ParentId=DBNull
+@Return_Message=DBNull
+@ReturnValue=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:48:40.566
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:5.0003
+Sql: SELECT BAS_MO.MOCode,
+                Bas_MO_Mac.Mac,
+				Inp_Lot.OPId,
+				Bas_OP.OPDesc
+                FROM BAS_MO
+                LEFT JOIN Inp_Lot ON Inp_Lot.MOId = BAS_MO.MOId
+                LEFT JOIN Bas_MO_Mac ON Bas_MO_Mac.LotId = Inp_Lot.LotId
+                LEFT JOIN Bas_OP ON Bas_OP.OPId = Inp_Lot.OPId
+                WHERE BAS_MO.MOCode = @MOCode and Bas_OP.OPCode = @OPCode
+Params:
+@MOCode=gast
+@OPCode=F5
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:48:44.868
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:35.002
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903001492" OPID="72" OPDESC="装箱" />
+		<item  rowNo="2" MOCODE="gast" MAC="GYSD0701903004285" OPID="72" OPDESC="装箱" />
+		<item  rowNo="3" MOCODE="gast" MAC="GYSD0701903009864" OPID="72" OPDESC="装箱" />
+		<item  rowNo="4" MOCODE="gast" MAC="GYSD0701903009865" OPID="72" OPDESC="装箱" />
+		<item  rowNo="5" MOCODE="gast" MAC="GYSD0701903009866" OPID="72" OPDESC="装箱" />
+		<item  rowNo="6" MOCODE="gast" MAC="GYSD0701903009867" OPID="72" OPDESC="装箱" />
+		<item  rowNo="7" MOCODE="gast" MAC="GYSD0701903009868" OPID="72" OPDESC="装箱" />
+		<item  rowNo="8" MOCODE="gast" MAC="GYSD0701903009869" OPID="72" OPDESC="装箱" />
+		<item  rowNo="9" MOCODE="gast" MAC="" OPID="72" OPDESC="装箱" />
+		<item  rowNo="10" MOCODE="gast" MAC="GYSD0701903009886" OPID="72" OPDESC="装箱" />
+		<item  rowNo="11" MOCODE="gast" MAC="GYSD0701903009901" OPID="72" OPDESC="装箱" />
+		<item  rowNo="12" MOCODE="gast" MAC="GYSD0701903009902" OPID="72" OPDESC="装箱" />
+		<item  rowNo="13" MOCODE="gast" MAC="GYSD0701903009903" OPID="72" OPDESC="装箱" />
+		<item  rowNo="14" MOCODE="gast" MAC="GYSD0701903009907" OPID="72" OPDESC="装箱" />
+		<item  rowNo="15" MOCODE="gast" MAC="GYSD0701903009909" OPID="72" OPDESC="装箱" />
+		<item  rowNo="16" MOCODE="gast" MAC="GYSD0701903009910" OPID="72" OPDESC="装箱" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+ExceptionInfo:形参 "@Return_Message" 未声明为 OUTPUT 参数，但传递进来的实参请求输出。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:49:21.273
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:11.0006
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:49:21.284
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:49:21.294
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:49:21.604
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:49:27.314
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0001
+Sql:SELECT Set_Meta.MetaId,
+	   Set_Meta.MetaCode,
+	   Set_Meta.MetaName,
+	   Set_Meta.IsViewPages,
+	   Set_Meta.ViewCountSqlType,
+	   Set_Meta.ViewCountSql,
+	   dbo.Set_Meta.ViewSqlType,
+	   Set_Meta.ViewSql,
+	   dbo.Set_Meta.MainSqlType,
+	   Set_Meta.MainSql,
+	   dbo.Set_Meta.DeleteSqlType,
+	   Set_Meta.DeleteSql,
+	   dbo.Set_Meta.SaveSqlType,
+	   Set_Meta.SaveSql,
+	   Set_Meta.MetaNote,
+	   Set_Meta.ColumnCount,
+	   Set_Meta.ParentMetaId,
+	   Set_Meta.IdColumnName,
+	   Set_Meta.TextColumnName,
+	   Set_Meta.TableId,
+	   Set_Table.SysTableName as TableName,
+	   Set_Meta.ViewWidth,
+	   Set_Meta.VersionColumnName
+FROM dbo.Set_Meta  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_Table  WITH(NOLOCK)  ON dbo.Set_Table.SysTableId = dbo.Set_Meta.TableId
+WHERE Set_Meta.MetaId=@metaId
+Params:
+@metaId=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:49:27.324
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0003
+Sql:SELECT Set_MetaParam.MetaParamId,
+	   Set_MetaParam.MetaGroupId,
+	   Set_MetaParam.MetaParamCode,
+	   Set_MetaParam.MetaParamName,
+	   Set_MetaParam.MetaParamNote,
+	   Set_MetaParam.MetaParamLength,
+	   Set_ControlTypes.TypeName,
+	   Set_ControlTypes.FullName,
+	   Set_ControlTypes.Params,
+	   Set_MetaParam.ColumnSpan,
+	   Set_MetaParam.RowSpan,
+	   Set_MetaParam.IsEdit,
+	   Set_MetaParam.IsVisible,
+	   Set_MetaParam.IsNotEmpty,
+	   Set_MetaParam.DefaultValue,
+	   Set_MetaParam.DataSourceType,
+	   Set_MetaParam.DataSource,
+	   Set_MetaParam.IsQueryParam,
+	   Set_MetaParam.IsLinkParam,
+	   Set_MetaParam.IsNewRow
+FROM dbo.Set_MetaParam  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_ControlTypes  WITH(NOLOCK) ON Set_MetaParam.MetaParamType=Set_ControlTypes.TypeName
+LEFT JOIN dbo.Set_MetaGroup  WITH(NOLOCK)  ON dbo.Set_MetaGroup.MetaGroupId = dbo.Set_MetaParam.MetaGroupId
+WHERE Set_MetaGroup.MetaId=@metaId
+ORDER BY Set_MetaParam.Sequence
+
+Params:
+@metaId=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:49:27.334
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=51
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:49:27.344
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=183
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:49:27.354
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=185
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:49:29.464
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0002
+Sql:SELECT TOP 200 Bas_MO.MOId,
+			   Bas_MO.MOCode,
+			   Bas_Item.ItemCode,
+			   Bas_Item.ItemName+'/'+Bas_Item.ItemDesc as 'ItemName',
+			   Bas_Order.OrderCode,
+			   Bas_Customer.CustomerCode
+FROM Bas_MO WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=ISNULL(@Id,Bas_MO.MOId)
+AND Bas_MO.MOCode LIKE '%'+ISNULL(@MOCode,Bas_MO.MOCode)+'%'
+AND (@ItemId IS NULL OR Bas_MO.ItemId=@ItemId)
+AND (ISNULL(@OrderCode,'')='' OR (ISNULL(@OrderCode,'')!='' AND Bas_Order.OrderCode LIKE '%'+ISNULL(@OrderCode,Bas_Order.OrderCode)+'%'))
+AND (@CustomerId IS NULL OR Bas_MO.CustomerId=@CustomerId)
+ORDER BY Bas_MO.MOCode
+Params:
+@Id=DBNull
+@MOCode=
+@ItemId=null
+@CustomerId=null
+@OrderCode=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:49:30.774
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO.MOId,
+			   Bas_MO.MOCode,
+			   Bas_MO.OrderDetailId,
+			   Bas_MO.CustomerId,
+			   Bas_MO.ItemId,
+			   Bas_Item.ItemCode,
+			   Bas_Item.ItemDesc+'-'+Bas_Item.ItemSpecification as 'ItemDesc',
+			   dbo.Bas_Order.OrderCode,
+			   Bas_MO.Qty,
+			   Bas_MO.PlanStartDate,
+			   Bas_MO.PlanCompleteDate,
+			   Bas_MO.ActualStartDate,
+			   Bas_MO.ActualCompleteDate,
+			   Bas_MO.Status,
+			   Bas_MO.InputQty,
+			   Bas_MO.CompleteQty,
+			   Bas_MO.ErrorQty,
+			   Bas_MO.ScrapQty,
+			   Bas_MO.TurnInQty,
+			   Bas_MO.TurnOutQty,
+			   Bas_MO.WorkflowId,
+			   Bas_MO.IsCheckPowerSN,
+			   Bas_MO.PowerSNLength,
+			   Bas_MO.PowerSNPre,
+			   Bas_MO.IsCheckRemoteControlSN,
+			   Bas_MO.RemoteControlSNLength,
+			   Bas_MO.RemoteControlSNPre,
+			   Bas_MO.SpecSheet,
+			   Bas_MO.ChipScheme,
+			   Bas_MO.SoftwareVersion,
+			   Bas_MO.HardwareVersion,
+			   Bas_MO.AreaCode,
+			   Bas_MO.DeviceType,
+			   Bas_MO.IsCanVirtualInput,
+			   Bas_MO.SideAFeedingStationTableId,
+			   Bas_MO.SideBFeedingStationTableId,
+			   Bas_MO.RowVersion,
+			   Bas_MO.NetWeight,
+			   Bas_MO.GrossWeight
+FROM Bas_MO WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+WHERE Bas_MO.MOId=ISNULL(@Id,Bas_MO.MOId)
+AND Bas_MO.MOCode=ISNULL(@Text,Bas_MO.MOCode)
+Params:
+@UserId=1
+@CpuID=BFEBFBFF000306C3
+@MacAddress=AA:BB:CC:DD:EE:FF
+@IPAddress=192.168.3.2
+@ComputerName=WANG-PC
+@LocalUserName=wang-PC\wang
+@ResourceId=76
+@SettingId=187
+@Id=147
+@Text=DBNull
+@ParentId=DBNull
+@Return_Message=DBNull
+@ReturnValue=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:49:31.984
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Set_Meta.MetaId,
+	   Set_Meta.MetaCode,
+	   Set_Meta.MetaName,
+	   Set_Meta.IsViewPages,
+	   Set_Meta.ViewCountSqlType,
+	   Set_Meta.ViewCountSql,
+	   dbo.Set_Meta.ViewSqlType,
+	   Set_Meta.ViewSql,
+	   dbo.Set_Meta.MainSqlType,
+	   Set_Meta.MainSql,
+	   dbo.Set_Meta.DeleteSqlType,
+	   Set_Meta.DeleteSql,
+	   dbo.Set_Meta.SaveSqlType,
+	   Set_Meta.SaveSql,
+	   Set_Meta.MetaNote,
+	   Set_Meta.ColumnCount,
+	   Set_Meta.ParentMetaId,
+	   Set_Meta.IdColumnName,
+	   Set_Meta.TextColumnName,
+	   Set_Meta.TableId,
+	   Set_Table.SysTableName as TableName,
+	   Set_Meta.ViewWidth,
+	   Set_Meta.VersionColumnName
+FROM dbo.Set_Meta  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_Table  WITH(NOLOCK)  ON dbo.Set_Table.SysTableId = dbo.Set_Meta.TableId
+WHERE Set_Meta.MetaId=@metaId
+Params:
+@metaId=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:49:31.994
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Set_MetaParam.MetaParamId,
+	   Set_MetaParam.MetaGroupId,
+	   Set_MetaParam.MetaParamCode,
+	   Set_MetaParam.MetaParamName,
+	   Set_MetaParam.MetaParamNote,
+	   Set_MetaParam.MetaParamLength,
+	   Set_ControlTypes.TypeName,
+	   Set_ControlTypes.FullName,
+	   Set_ControlTypes.Params,
+	   Set_MetaParam.ColumnSpan,
+	   Set_MetaParam.RowSpan,
+	   Set_MetaParam.IsEdit,
+	   Set_MetaParam.IsVisible,
+	   Set_MetaParam.IsNotEmpty,
+	   Set_MetaParam.DefaultValue,
+	   Set_MetaParam.DataSourceType,
+	   Set_MetaParam.DataSource,
+	   Set_MetaParam.IsQueryParam,
+	   Set_MetaParam.IsLinkParam,
+	   Set_MetaParam.IsNewRow
+FROM dbo.Set_MetaParam  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_ControlTypes  WITH(NOLOCK) ON Set_MetaParam.MetaParamType=Set_ControlTypes.TypeName
+LEFT JOIN dbo.Set_MetaGroup  WITH(NOLOCK)  ON dbo.Set_MetaGroup.MetaGroupId = dbo.Set_MetaParam.MetaGroupId
+WHERE Set_MetaGroup.MetaId=@metaId
+ORDER BY Set_MetaParam.Sequence
+
+Params:
+@metaId=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:49:32.116
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1.0001
+Sql:SELECT ViewSql,ViewSqlType,IdColumnName,TextColumnName,MetaId FROM dbo.Set_Meta   WITH(NOLOCK)  WHERE MetaId=@MetaId
+Params:
+@MetaId=180
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:49:32.126
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Set_MetaParam.MetaParamId,
+	   Set_MetaParam.MetaGroupId,
+	   Set_MetaParam.MetaParamCode,
+	   Set_MetaParam.MetaParamName,
+	   Set_MetaParam.MetaParamNote,
+	   Set_MetaParam.MetaParamLength,
+	   Set_ControlTypes.TypeName,
+	   Set_ControlTypes.FullName,
+	   Set_ControlTypes.Params,
+	   Set_MetaParam.ColumnSpan,
+	   Set_MetaParam.RowSpan,
+	   Set_MetaParam.IsEdit,
+	   Set_MetaParam.IsVisible,
+	   Set_MetaParam.IsNotEmpty,
+	   Set_MetaParam.DefaultValue,
+	   Set_MetaParam.DataSourceType,
+	   Set_MetaParam.DataSource,
+	   Set_MetaParam.IsQueryParam,
+	   Set_MetaParam.IsLinkParam,
+	   Set_MetaParam.IsNewRow
+FROM dbo.Set_MetaParam  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_ControlTypes  WITH(NOLOCK) ON Set_MetaParam.MetaParamType=Set_ControlTypes.TypeName
+LEFT JOIN dbo.Set_MetaGroup  WITH(NOLOCK)  ON dbo.Set_MetaGroup.MetaGroupId = dbo.Set_MetaParam.MetaGroupId
+WHERE Set_MetaGroup.MetaId=@metaId
+ORDER BY Set_MetaParam.Sequence
+
+Params:
+@metaId=180
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:49:32.136
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1.0001
+Sql:SELECT Bas_Section.SectionId,
+			   Bas_Section.SectionCode,
+			   Bas_Section.SectionDesc
+FROM Bas_Section WITH(NOLOCK) 
+WHERE Bas_Section.SectionId=ISNULL(@Id,Bas_Section.SectionId)
+AND Bas_Section.SectionCode LIKE '%'+ISNULL(@SectionCode,Bas_Section.SectionCode)+'%'
+ORDER BY Bas_Section.Sequence
+Params:
+@Id=DBNull
+@SectionCode=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:49:32.846
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Bas_OP.OPId,
+	          Bas_OP.SectionId,
+			   Bas_Section.SectionCode,
+			   Bas_OP.OPCode,
+			    Bas_OP.OpDesc
+FROM Bas_OP WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Section  WITH(NOLOCK) ON dbo.Bas_Section.SectionId = dbo.Bas_OP.SectionId
+WHERE Bas_OP.OPId=ISNULL(@Id,Bas_OP.OPId)
+AND Bas_OP.OPCode LIKE '%'+ISNULL(@OPCode,Bas_OP.OPCode)+'%'
+AND (@SectionId IS NULL OR dbo.Bas_OP.SectionId=@SectionId)
+ORDER BY Bas_OP.OPCode
+Params:
+@Id=DBNull
+@SectionId=18
+@OPCode=
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:49:34.156
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0001
+Sql:SELECT Bas_OP.OPId,
+	          Bas_OP.SectionId,
+			   Bas_OP.OPCode,
+			   Bas_OP.OPDesc,
+			   Bas_OP.OPImage,
+			   Bas_OP.Sequence,
+			   Bas_OP.IsComplete
+FROM Bas_OP WITH(NOLOCK) 
+WHERE Bas_OP.OPId=ISNULL(@Id,Bas_OP.OPId)
+AND Bas_OP.OPCode=ISNULL(@Text,Bas_OP.OPCode)
+Params:
+@UserId=1
+@CpuID=BFEBFBFF000306C3
+@MacAddress=AA:BB:CC:DD:EE:FF
+@IPAddress=192.168.3.2
+@ComputerName=WANG-PC
+@LocalUserName=wang-PC\wang
+@ResourceId=76
+@SettingId=42
+@Id=72
+@Text=DBNull
+@ParentId=DBNull
+@Return_Message=DBNull
+@ReturnValue=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:49:34.698
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:17.001
+Sql: SELECT BAS_MO.MOCode,
+                Bas_MO_Mac.Mac,
+				Inp_Lot.OPId,
+				Bas_OP.OPDesc
+                FROM BAS_MO
+                LEFT JOIN Inp_Lot ON Inp_Lot.MOId = BAS_MO.MOId
+                LEFT JOIN Bas_MO_Mac ON Bas_MO_Mac.LotId = Inp_Lot.LotId
+                LEFT JOIN Bas_OP ON Bas_OP.OPId = Inp_Lot.OPId
+                WHERE BAS_MO.MOCode = @MOCode and Bas_OP.OPCode = @OPCode
+Params:
+@MOCode=gast
+@OPCode=F5
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:49:37.112
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:20.0011
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903001492" OPID="72" OPDESC="装箱" />
+		<item  rowNo="2" MOCODE="gast" MAC="GYSD0701903004285" OPID="72" OPDESC="装箱" />
+		<item  rowNo="3" MOCODE="gast" MAC="GYSD0701903009864" OPID="72" OPDESC="装箱" />
+		<item  rowNo="4" MOCODE="gast" MAC="GYSD0701903009865" OPID="72" OPDESC="装箱" />
+		<item  rowNo="5" MOCODE="gast" MAC="GYSD0701903009866" OPID="72" OPDESC="装箱" />
+		<item  rowNo="6" MOCODE="gast" MAC="GYSD0701903009867" OPID="72" OPDESC="装箱" />
+		<item  rowNo="7" MOCODE="gast" MAC="GYSD0701903009868" OPID="72" OPDESC="装箱" />
+		<item  rowNo="8" MOCODE="gast" MAC="GYSD0701903009869" OPID="72" OPDESC="装箱" />
+		<item  rowNo="9" MOCODE="gast" MAC="" OPID="72" OPDESC="装箱" />
+		<item  rowNo="10" MOCODE="gast" MAC="GYSD0701903009886" OPID="72" OPDESC="装箱" />
+		<item  rowNo="11" MOCODE="gast" MAC="GYSD0701903009901" OPID="72" OPDESC="装箱" />
+		<item  rowNo="12" MOCODE="gast" MAC="GYSD0701903009902" OPID="72" OPDESC="装箱" />
+		<item  rowNo="13" MOCODE="gast" MAC="GYSD0701903009903" OPID="72" OPDESC="装箱" />
+		<item  rowNo="14" MOCODE="gast" MAC="GYSD0701903009907" OPID="72" OPDESC="装箱" />
+		<item  rowNo="15" MOCODE="gast" MAC="GYSD0701903009909" OPID="72" OPDESC="装箱" />
+		<item  rowNo="16" MOCODE="gast" MAC="GYSD0701903009910" OPID="72" OPDESC="装箱" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+ExceptionInfo:列名 'MAC' 无效。
+列名或所提供值的数目与表定义不匹配。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:51:14.039
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:19.0011
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903001492" OPID="72" OPDESC="装箱" />
+		<item  rowNo="2" MOCODE="gast" MAC="GYSD0701903004285" OPID="72" OPDESC="装箱" />
+		<item  rowNo="3" MOCODE="gast" MAC="GYSD0701903009864" OPID="72" OPDESC="装箱" />
+		<item  rowNo="4" MOCODE="gast" MAC="GYSD0701903009865" OPID="72" OPDESC="装箱" />
+		<item  rowNo="5" MOCODE="gast" MAC="GYSD0701903009866" OPID="72" OPDESC="装箱" />
+		<item  rowNo="6" MOCODE="gast" MAC="GYSD0701903009867" OPID="72" OPDESC="装箱" />
+		<item  rowNo="7" MOCODE="gast" MAC="GYSD0701903009868" OPID="72" OPDESC="装箱" />
+		<item  rowNo="8" MOCODE="gast" MAC="GYSD0701903009869" OPID="72" OPDESC="装箱" />
+		<item  rowNo="9" MOCODE="gast" MAC="" OPID="72" OPDESC="装箱" />
+		<item  rowNo="10" MOCODE="gast" MAC="GYSD0701903009886" OPID="72" OPDESC="装箱" />
+		<item  rowNo="11" MOCODE="gast" MAC="GYSD0701903009901" OPID="72" OPDESC="装箱" />
+		<item  rowNo="12" MOCODE="gast" MAC="GYSD0701903009902" OPID="72" OPDESC="装箱" />
+		<item  rowNo="13" MOCODE="gast" MAC="GYSD0701903009903" OPID="72" OPDESC="装箱" />
+		<item  rowNo="14" MOCODE="gast" MAC="GYSD0701903009907" OPID="72" OPDESC="装箱" />
+		<item  rowNo="15" MOCODE="gast" MAC="GYSD0701903009909" OPID="72" OPDESC="装箱" />
+		<item  rowNo="16" MOCODE="gast" MAC="GYSD0701903009910" OPID="72" OPDESC="装箱" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:51:28.694
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:24.0013
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:51:28.705
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:51:28.715
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:51:29.025
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:51:30.536
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Set_Meta.MetaId,
+	   Set_Meta.MetaCode,
+	   Set_Meta.MetaName,
+	   Set_Meta.IsViewPages,
+	   Set_Meta.ViewCountSqlType,
+	   Set_Meta.ViewCountSql,
+	   dbo.Set_Meta.ViewSqlType,
+	   Set_Meta.ViewSql,
+	   dbo.Set_Meta.MainSqlType,
+	   Set_Meta.MainSql,
+	   dbo.Set_Meta.DeleteSqlType,
+	   Set_Meta.DeleteSql,
+	   dbo.Set_Meta.SaveSqlType,
+	   Set_Meta.SaveSql,
+	   Set_Meta.MetaNote,
+	   Set_Meta.ColumnCount,
+	   Set_Meta.ParentMetaId,
+	   Set_Meta.IdColumnName,
+	   Set_Meta.TextColumnName,
+	   Set_Meta.TableId,
+	   Set_Table.SysTableName as TableName,
+	   Set_Meta.ViewWidth,
+	   Set_Meta.VersionColumnName
+FROM dbo.Set_Meta  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_Table  WITH(NOLOCK)  ON dbo.Set_Table.SysTableId = dbo.Set_Meta.TableId
+WHERE Set_Meta.MetaId=@metaId
+Params:
+@metaId=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:51:30.546
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0002
+Sql:SELECT Set_MetaParam.MetaParamId,
+	   Set_MetaParam.MetaGroupId,
+	   Set_MetaParam.MetaParamCode,
+	   Set_MetaParam.MetaParamName,
+	   Set_MetaParam.MetaParamNote,
+	   Set_MetaParam.MetaParamLength,
+	   Set_ControlTypes.TypeName,
+	   Set_ControlTypes.FullName,
+	   Set_ControlTypes.Params,
+	   Set_MetaParam.ColumnSpan,
+	   Set_MetaParam.RowSpan,
+	   Set_MetaParam.IsEdit,
+	   Set_MetaParam.IsVisible,
+	   Set_MetaParam.IsNotEmpty,
+	   Set_MetaParam.DefaultValue,
+	   Set_MetaParam.DataSourceType,
+	   Set_MetaParam.DataSource,
+	   Set_MetaParam.IsQueryParam,
+	   Set_MetaParam.IsLinkParam,
+	   Set_MetaParam.IsNewRow
+FROM dbo.Set_MetaParam  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_ControlTypes  WITH(NOLOCK) ON Set_MetaParam.MetaParamType=Set_ControlTypes.TypeName
+LEFT JOIN dbo.Set_MetaGroup  WITH(NOLOCK)  ON dbo.Set_MetaGroup.MetaGroupId = dbo.Set_MetaParam.MetaGroupId
+WHERE Set_MetaGroup.MetaId=@metaId
+ORDER BY Set_MetaParam.Sequence
+
+Params:
+@metaId=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:51:30.656
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=51
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:51:30.666
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=183
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:51:30.676
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=185
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:51:32.886
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0002
+Sql:SELECT TOP 200 Bas_MO.MOId,
+			   Bas_MO.MOCode,
+			   Bas_Item.ItemCode,
+			   Bas_Item.ItemName+'/'+Bas_Item.ItemDesc as 'ItemName',
+			   Bas_Order.OrderCode,
+			   Bas_Customer.CustomerCode
+FROM Bas_MO WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=ISNULL(@Id,Bas_MO.MOId)
+AND Bas_MO.MOCode LIKE '%'+ISNULL(@MOCode,Bas_MO.MOCode)+'%'
+AND (@ItemId IS NULL OR Bas_MO.ItemId=@ItemId)
+AND (ISNULL(@OrderCode,'')='' OR (ISNULL(@OrderCode,'')!='' AND Bas_Order.OrderCode LIKE '%'+ISNULL(@OrderCode,Bas_Order.OrderCode)+'%'))
+AND (@CustomerId IS NULL OR Bas_MO.CustomerId=@CustomerId)
+ORDER BY Bas_MO.MOCode
+Params:
+@Id=DBNull
+@MOCode=
+@ItemId=null
+@CustomerId=null
+@OrderCode=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:51:34.496
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0001
+Sql:SELECT Bas_MO.MOId,
+			   Bas_MO.MOCode,
+			   Bas_MO.OrderDetailId,
+			   Bas_MO.CustomerId,
+			   Bas_MO.ItemId,
+			   Bas_Item.ItemCode,
+			   Bas_Item.ItemDesc+'-'+Bas_Item.ItemSpecification as 'ItemDesc',
+			   dbo.Bas_Order.OrderCode,
+			   Bas_MO.Qty,
+			   Bas_MO.PlanStartDate,
+			   Bas_MO.PlanCompleteDate,
+			   Bas_MO.ActualStartDate,
+			   Bas_MO.ActualCompleteDate,
+			   Bas_MO.Status,
+			   Bas_MO.InputQty,
+			   Bas_MO.CompleteQty,
+			   Bas_MO.ErrorQty,
+			   Bas_MO.ScrapQty,
+			   Bas_MO.TurnInQty,
+			   Bas_MO.TurnOutQty,
+			   Bas_MO.WorkflowId,
+			   Bas_MO.IsCheckPowerSN,
+			   Bas_MO.PowerSNLength,
+			   Bas_MO.PowerSNPre,
+			   Bas_MO.IsCheckRemoteControlSN,
+			   Bas_MO.RemoteControlSNLength,
+			   Bas_MO.RemoteControlSNPre,
+			   Bas_MO.SpecSheet,
+			   Bas_MO.ChipScheme,
+			   Bas_MO.SoftwareVersion,
+			   Bas_MO.HardwareVersion,
+			   Bas_MO.AreaCode,
+			   Bas_MO.DeviceType,
+			   Bas_MO.IsCanVirtualInput,
+			   Bas_MO.SideAFeedingStationTableId,
+			   Bas_MO.SideBFeedingStationTableId,
+			   Bas_MO.RowVersion,
+			   Bas_MO.NetWeight,
+			   Bas_MO.GrossWeight
+FROM Bas_MO WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+WHERE Bas_MO.MOId=ISNULL(@Id,Bas_MO.MOId)
+AND Bas_MO.MOCode=ISNULL(@Text,Bas_MO.MOCode)
+Params:
+@UserId=1
+@CpuID=BFEBFBFF000306C3
+@MacAddress=AA:BB:CC:DD:EE:FF
+@IPAddress=192.168.3.2
+@ComputerName=WANG-PC
+@LocalUserName=wang-PC\wang
+@ResourceId=76
+@SettingId=187
+@Id=147
+@Text=DBNull
+@ParentId=DBNull
+@Return_Message=DBNull
+@ReturnValue=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:51:35.219
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0002
+Sql:SELECT Set_Meta.MetaId,
+	   Set_Meta.MetaCode,
+	   Set_Meta.MetaName,
+	   Set_Meta.IsViewPages,
+	   Set_Meta.ViewCountSqlType,
+	   Set_Meta.ViewCountSql,
+	   dbo.Set_Meta.ViewSqlType,
+	   Set_Meta.ViewSql,
+	   dbo.Set_Meta.MainSqlType,
+	   Set_Meta.MainSql,
+	   dbo.Set_Meta.DeleteSqlType,
+	   Set_Meta.DeleteSql,
+	   dbo.Set_Meta.SaveSqlType,
+	   Set_Meta.SaveSql,
+	   Set_Meta.MetaNote,
+	   Set_Meta.ColumnCount,
+	   Set_Meta.ParentMetaId,
+	   Set_Meta.IdColumnName,
+	   Set_Meta.TextColumnName,
+	   Set_Meta.TableId,
+	   Set_Table.SysTableName as TableName,
+	   Set_Meta.ViewWidth,
+	   Set_Meta.VersionColumnName
+FROM dbo.Set_Meta  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_Table  WITH(NOLOCK)  ON dbo.Set_Table.SysTableId = dbo.Set_Meta.TableId
+WHERE Set_Meta.MetaId=@metaId
+Params:
+@metaId=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:51:35.329
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0001
+Sql:SELECT Set_MetaParam.MetaParamId,
+	   Set_MetaParam.MetaGroupId,
+	   Set_MetaParam.MetaParamCode,
+	   Set_MetaParam.MetaParamName,
+	   Set_MetaParam.MetaParamNote,
+	   Set_MetaParam.MetaParamLength,
+	   Set_ControlTypes.TypeName,
+	   Set_ControlTypes.FullName,
+	   Set_ControlTypes.Params,
+	   Set_MetaParam.ColumnSpan,
+	   Set_MetaParam.RowSpan,
+	   Set_MetaParam.IsEdit,
+	   Set_MetaParam.IsVisible,
+	   Set_MetaParam.IsNotEmpty,
+	   Set_MetaParam.DefaultValue,
+	   Set_MetaParam.DataSourceType,
+	   Set_MetaParam.DataSource,
+	   Set_MetaParam.IsQueryParam,
+	   Set_MetaParam.IsLinkParam,
+	   Set_MetaParam.IsNewRow
+FROM dbo.Set_MetaParam  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_ControlTypes  WITH(NOLOCK) ON Set_MetaParam.MetaParamType=Set_ControlTypes.TypeName
+LEFT JOIN dbo.Set_MetaGroup  WITH(NOLOCK)  ON dbo.Set_MetaGroup.MetaGroupId = dbo.Set_MetaParam.MetaGroupId
+WHERE Set_MetaGroup.MetaId=@metaId
+ORDER BY Set_MetaParam.Sequence
+
+Params:
+@metaId=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:51:35.339
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT ViewSql,ViewSqlType,IdColumnName,TextColumnName,MetaId FROM dbo.Set_Meta   WITH(NOLOCK)  WHERE MetaId=@MetaId
+Params:
+@MetaId=180
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:51:35.349
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Set_MetaParam.MetaParamId,
+	   Set_MetaParam.MetaGroupId,
+	   Set_MetaParam.MetaParamCode,
+	   Set_MetaParam.MetaParamName,
+	   Set_MetaParam.MetaParamNote,
+	   Set_MetaParam.MetaParamLength,
+	   Set_ControlTypes.TypeName,
+	   Set_ControlTypes.FullName,
+	   Set_ControlTypes.Params,
+	   Set_MetaParam.ColumnSpan,
+	   Set_MetaParam.RowSpan,
+	   Set_MetaParam.IsEdit,
+	   Set_MetaParam.IsVisible,
+	   Set_MetaParam.IsNotEmpty,
+	   Set_MetaParam.DefaultValue,
+	   Set_MetaParam.DataSourceType,
+	   Set_MetaParam.DataSource,
+	   Set_MetaParam.IsQueryParam,
+	   Set_MetaParam.IsLinkParam,
+	   Set_MetaParam.IsNewRow
+FROM dbo.Set_MetaParam  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_ControlTypes  WITH(NOLOCK) ON Set_MetaParam.MetaParamType=Set_ControlTypes.TypeName
+LEFT JOIN dbo.Set_MetaGroup  WITH(NOLOCK)  ON dbo.Set_MetaGroup.MetaGroupId = dbo.Set_MetaParam.MetaGroupId
+WHERE Set_MetaGroup.MetaId=@metaId
+ORDER BY Set_MetaParam.Sequence
+
+Params:
+@metaId=180
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:51:35.359
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1
+Sql:SELECT Bas_Section.SectionId,
+			   Bas_Section.SectionCode,
+			   Bas_Section.SectionDesc
+FROM Bas_Section WITH(NOLOCK) 
+WHERE Bas_Section.SectionId=ISNULL(@Id,Bas_Section.SectionId)
+AND Bas_Section.SectionCode LIKE '%'+ISNULL(@SectionCode,Bas_Section.SectionCode)+'%'
+ORDER BY Bas_Section.Sequence
+Params:
+@Id=DBNull
+@SectionCode=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:51:35.969
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Bas_OP.OPId,
+	          Bas_OP.SectionId,
+			   Bas_Section.SectionCode,
+			   Bas_OP.OPCode,
+			    Bas_OP.OpDesc
+FROM Bas_OP WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Section  WITH(NOLOCK) ON dbo.Bas_Section.SectionId = dbo.Bas_OP.SectionId
+WHERE Bas_OP.OPId=ISNULL(@Id,Bas_OP.OPId)
+AND Bas_OP.OPCode LIKE '%'+ISNULL(@OPCode,Bas_OP.OPCode)+'%'
+AND (@SectionId IS NULL OR dbo.Bas_OP.SectionId=@SectionId)
+ORDER BY Bas_OP.OPCode
+Params:
+@Id=DBNull
+@SectionId=18
+@OPCode=
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:51:39.080
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_OP.OPId,
+	          Bas_OP.SectionId,
+			   Bas_OP.OPCode,
+			   Bas_OP.OPDesc,
+			   Bas_OP.OPImage,
+			   Bas_OP.Sequence,
+			   Bas_OP.IsComplete
+FROM Bas_OP WITH(NOLOCK) 
+WHERE Bas_OP.OPId=ISNULL(@Id,Bas_OP.OPId)
+AND Bas_OP.OPCode=ISNULL(@Text,Bas_OP.OPCode)
+Params:
+@UserId=1
+@CpuID=BFEBFBFF000306C3
+@MacAddress=AA:BB:CC:DD:EE:FF
+@IPAddress=192.168.3.2
+@ComputerName=WANG-PC
+@LocalUserName=wang-PC\wang
+@ResourceId=76
+@SettingId=42
+@Id=72
+@Text=DBNull
+@ParentId=DBNull
+@Return_Message=DBNull
+@ReturnValue=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:51:40.014
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:29.0017
+Sql: SELECT BAS_MO.MOCode,
+                Bas_MO_Mac.Mac,
+				Inp_Lot.OPId,
+				Bas_OP.OPDesc
+                FROM BAS_MO
+                LEFT JOIN Inp_Lot ON Inp_Lot.MOId = BAS_MO.MOId
+                LEFT JOIN Bas_MO_Mac ON Bas_MO_Mac.LotId = Inp_Lot.LotId
+                LEFT JOIN Bas_OP ON Bas_OP.OPId = Inp_Lot.OPId
+                WHERE BAS_MO.MOCode = @MOCode and Bas_OP.OPCode = @OPCode
+Params:
+@MOCode=gast
+@OPCode=F5
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:51:43.947
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:5.0002
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903001492" OPID="72" OPDESC="装箱" />
+		<item  rowNo="2" MOCODE="gast" MAC="GYSD0701903004285" OPID="72" OPDESC="装箱" />
+		<item  rowNo="3" MOCODE="gast" MAC="GYSD0701903009864" OPID="72" OPDESC="装箱" />
+		<item  rowNo="4" MOCODE="gast" MAC="GYSD0701903009865" OPID="72" OPDESC="装箱" />
+		<item  rowNo="5" MOCODE="gast" MAC="GYSD0701903009866" OPID="72" OPDESC="装箱" />
+		<item  rowNo="6" MOCODE="gast" MAC="GYSD0701903009867" OPID="72" OPDESC="装箱" />
+		<item  rowNo="7" MOCODE="gast" MAC="GYSD0701903009868" OPID="72" OPDESC="装箱" />
+		<item  rowNo="8" MOCODE="gast" MAC="GYSD0701903009869" OPID="72" OPDESC="装箱" />
+		<item  rowNo="9" MOCODE="gast" MAC="" OPID="72" OPDESC="装箱" />
+		<item  rowNo="10" MOCODE="gast" MAC="GYSD0701903009886" OPID="72" OPDESC="装箱" />
+		<item  rowNo="11" MOCODE="gast" MAC="GYSD0701903009901" OPID="72" OPDESC="装箱" />
+		<item  rowNo="12" MOCODE="gast" MAC="GYSD0701903009902" OPID="72" OPDESC="装箱" />
+		<item  rowNo="13" MOCODE="gast" MAC="GYSD0701903009903" OPID="72" OPDESC="装箱" />
+		<item  rowNo="14" MOCODE="gast" MAC="GYSD0701903009907" OPID="72" OPDESC="装箱" />
+		<item  rowNo="15" MOCODE="gast" MAC="GYSD0701903009909" OPID="72" OPDESC="装箱" />
+		<item  rowNo="16" MOCODE="gast" MAC="GYSD0701903009910" OPID="72" OPDESC="装箱" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+ExceptionInfo:过程或函数 'Pro_Inp_WorkStation_Return' 需要参数 '@return_value'，但未提供该参数。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:52:08.178
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:12.0007
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:52:08.189
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0002
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:52:08.199
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:52:08.509
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:52:10.019
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Set_Meta.MetaId,
+	   Set_Meta.MetaCode,
+	   Set_Meta.MetaName,
+	   Set_Meta.IsViewPages,
+	   Set_Meta.ViewCountSqlType,
+	   Set_Meta.ViewCountSql,
+	   dbo.Set_Meta.ViewSqlType,
+	   Set_Meta.ViewSql,
+	   dbo.Set_Meta.MainSqlType,
+	   Set_Meta.MainSql,
+	   dbo.Set_Meta.DeleteSqlType,
+	   Set_Meta.DeleteSql,
+	   dbo.Set_Meta.SaveSqlType,
+	   Set_Meta.SaveSql,
+	   Set_Meta.MetaNote,
+	   Set_Meta.ColumnCount,
+	   Set_Meta.ParentMetaId,
+	   Set_Meta.IdColumnName,
+	   Set_Meta.TextColumnName,
+	   Set_Meta.TableId,
+	   Set_Table.SysTableName as TableName,
+	   Set_Meta.ViewWidth,
+	   Set_Meta.VersionColumnName
+FROM dbo.Set_Meta  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_Table  WITH(NOLOCK)  ON dbo.Set_Table.SysTableId = dbo.Set_Meta.TableId
+WHERE Set_Meta.MetaId=@metaId
+Params:
+@metaId=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:52:10.029
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0003
+Sql:SELECT Set_MetaParam.MetaParamId,
+	   Set_MetaParam.MetaGroupId,
+	   Set_MetaParam.MetaParamCode,
+	   Set_MetaParam.MetaParamName,
+	   Set_MetaParam.MetaParamNote,
+	   Set_MetaParam.MetaParamLength,
+	   Set_ControlTypes.TypeName,
+	   Set_ControlTypes.FullName,
+	   Set_ControlTypes.Params,
+	   Set_MetaParam.ColumnSpan,
+	   Set_MetaParam.RowSpan,
+	   Set_MetaParam.IsEdit,
+	   Set_MetaParam.IsVisible,
+	   Set_MetaParam.IsNotEmpty,
+	   Set_MetaParam.DefaultValue,
+	   Set_MetaParam.DataSourceType,
+	   Set_MetaParam.DataSource,
+	   Set_MetaParam.IsQueryParam,
+	   Set_MetaParam.IsLinkParam,
+	   Set_MetaParam.IsNewRow
+FROM dbo.Set_MetaParam  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_ControlTypes  WITH(NOLOCK) ON Set_MetaParam.MetaParamType=Set_ControlTypes.TypeName
+LEFT JOIN dbo.Set_MetaGroup  WITH(NOLOCK)  ON dbo.Set_MetaGroup.MetaGroupId = dbo.Set_MetaParam.MetaGroupId
+WHERE Set_MetaGroup.MetaId=@metaId
+ORDER BY Set_MetaParam.Sequence
+
+Params:
+@metaId=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:52:10.039
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=51
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:52:10.049
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=183
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:52:10.059
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=185
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:52:12.471
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0002
+Sql:SELECT TOP 200 Bas_MO.MOId,
+			   Bas_MO.MOCode,
+			   Bas_Item.ItemCode,
+			   Bas_Item.ItemName+'/'+Bas_Item.ItemDesc as 'ItemName',
+			   Bas_Order.OrderCode,
+			   Bas_Customer.CustomerCode
+FROM Bas_MO WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=ISNULL(@Id,Bas_MO.MOId)
+AND Bas_MO.MOCode LIKE '%'+ISNULL(@MOCode,Bas_MO.MOCode)+'%'
+AND (@ItemId IS NULL OR Bas_MO.ItemId=@ItemId)
+AND (ISNULL(@OrderCode,'')='' OR (ISNULL(@OrderCode,'')!='' AND Bas_Order.OrderCode LIKE '%'+ISNULL(@OrderCode,Bas_Order.OrderCode)+'%'))
+AND (@CustomerId IS NULL OR Bas_MO.CustomerId=@CustomerId)
+ORDER BY Bas_MO.MOCode
+Params:
+@Id=DBNull
+@MOCode=
+@ItemId=null
+@CustomerId=null
+@OrderCode=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:52:13.881
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Bas_MO.MOId,
+			   Bas_MO.MOCode,
+			   Bas_MO.OrderDetailId,
+			   Bas_MO.CustomerId,
+			   Bas_MO.ItemId,
+			   Bas_Item.ItemCode,
+			   Bas_Item.ItemDesc+'-'+Bas_Item.ItemSpecification as 'ItemDesc',
+			   dbo.Bas_Order.OrderCode,
+			   Bas_MO.Qty,
+			   Bas_MO.PlanStartDate,
+			   Bas_MO.PlanCompleteDate,
+			   Bas_MO.ActualStartDate,
+			   Bas_MO.ActualCompleteDate,
+			   Bas_MO.Status,
+			   Bas_MO.InputQty,
+			   Bas_MO.CompleteQty,
+			   Bas_MO.ErrorQty,
+			   Bas_MO.ScrapQty,
+			   Bas_MO.TurnInQty,
+			   Bas_MO.TurnOutQty,
+			   Bas_MO.WorkflowId,
+			   Bas_MO.IsCheckPowerSN,
+			   Bas_MO.PowerSNLength,
+			   Bas_MO.PowerSNPre,
+			   Bas_MO.IsCheckRemoteControlSN,
+			   Bas_MO.RemoteControlSNLength,
+			   Bas_MO.RemoteControlSNPre,
+			   Bas_MO.SpecSheet,
+			   Bas_MO.ChipScheme,
+			   Bas_MO.SoftwareVersion,
+			   Bas_MO.HardwareVersion,
+			   Bas_MO.AreaCode,
+			   Bas_MO.DeviceType,
+			   Bas_MO.IsCanVirtualInput,
+			   Bas_MO.SideAFeedingStationTableId,
+			   Bas_MO.SideBFeedingStationTableId,
+			   Bas_MO.RowVersion,
+			   Bas_MO.NetWeight,
+			   Bas_MO.GrossWeight
+FROM Bas_MO WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+WHERE Bas_MO.MOId=ISNULL(@Id,Bas_MO.MOId)
+AND Bas_MO.MOCode=ISNULL(@Text,Bas_MO.MOCode)
+Params:
+@UserId=1
+@CpuID=BFEBFBFF000306C3
+@MacAddress=AA:BB:CC:DD:EE:FF
+@IPAddress=192.168.3.2
+@ComputerName=WANG-PC
+@LocalUserName=wang-PC\wang
+@ResourceId=76
+@SettingId=187
+@Id=147
+@Text=DBNull
+@ParentId=DBNull
+@Return_Message=DBNull
+@ReturnValue=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:52:15.192
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Set_Meta.MetaId,
+	   Set_Meta.MetaCode,
+	   Set_Meta.MetaName,
+	   Set_Meta.IsViewPages,
+	   Set_Meta.ViewCountSqlType,
+	   Set_Meta.ViewCountSql,
+	   dbo.Set_Meta.ViewSqlType,
+	   Set_Meta.ViewSql,
+	   dbo.Set_Meta.MainSqlType,
+	   Set_Meta.MainSql,
+	   dbo.Set_Meta.DeleteSqlType,
+	   Set_Meta.DeleteSql,
+	   dbo.Set_Meta.SaveSqlType,
+	   Set_Meta.SaveSql,
+	   Set_Meta.MetaNote,
+	   Set_Meta.ColumnCount,
+	   Set_Meta.ParentMetaId,
+	   Set_Meta.IdColumnName,
+	   Set_Meta.TextColumnName,
+	   Set_Meta.TableId,
+	   Set_Table.SysTableName as TableName,
+	   Set_Meta.ViewWidth,
+	   Set_Meta.VersionColumnName
+FROM dbo.Set_Meta  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_Table  WITH(NOLOCK)  ON dbo.Set_Table.SysTableId = dbo.Set_Meta.TableId
+WHERE Set_Meta.MetaId=@metaId
+Params:
+@metaId=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:52:15.202
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Set_MetaParam.MetaParamId,
+	   Set_MetaParam.MetaGroupId,
+	   Set_MetaParam.MetaParamCode,
+	   Set_MetaParam.MetaParamName,
+	   Set_MetaParam.MetaParamNote,
+	   Set_MetaParam.MetaParamLength,
+	   Set_ControlTypes.TypeName,
+	   Set_ControlTypes.FullName,
+	   Set_ControlTypes.Params,
+	   Set_MetaParam.ColumnSpan,
+	   Set_MetaParam.RowSpan,
+	   Set_MetaParam.IsEdit,
+	   Set_MetaParam.IsVisible,
+	   Set_MetaParam.IsNotEmpty,
+	   Set_MetaParam.DefaultValue,
+	   Set_MetaParam.DataSourceType,
+	   Set_MetaParam.DataSource,
+	   Set_MetaParam.IsQueryParam,
+	   Set_MetaParam.IsLinkParam,
+	   Set_MetaParam.IsNewRow
+FROM dbo.Set_MetaParam  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_ControlTypes  WITH(NOLOCK) ON Set_MetaParam.MetaParamType=Set_ControlTypes.TypeName
+LEFT JOIN dbo.Set_MetaGroup  WITH(NOLOCK)  ON dbo.Set_MetaGroup.MetaGroupId = dbo.Set_MetaParam.MetaGroupId
+WHERE Set_MetaGroup.MetaId=@metaId
+ORDER BY Set_MetaParam.Sequence
+
+Params:
+@metaId=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:52:15.314
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1
+Sql:SELECT ViewSql,ViewSqlType,IdColumnName,TextColumnName,MetaId FROM dbo.Set_Meta   WITH(NOLOCK)  WHERE MetaId=@MetaId
+Params:
+@MetaId=180
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:52:15.324
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0002
+Sql:SELECT Set_MetaParam.MetaParamId,
+	   Set_MetaParam.MetaGroupId,
+	   Set_MetaParam.MetaParamCode,
+	   Set_MetaParam.MetaParamName,
+	   Set_MetaParam.MetaParamNote,
+	   Set_MetaParam.MetaParamLength,
+	   Set_ControlTypes.TypeName,
+	   Set_ControlTypes.FullName,
+	   Set_ControlTypes.Params,
+	   Set_MetaParam.ColumnSpan,
+	   Set_MetaParam.RowSpan,
+	   Set_MetaParam.IsEdit,
+	   Set_MetaParam.IsVisible,
+	   Set_MetaParam.IsNotEmpty,
+	   Set_MetaParam.DefaultValue,
+	   Set_MetaParam.DataSourceType,
+	   Set_MetaParam.DataSource,
+	   Set_MetaParam.IsQueryParam,
+	   Set_MetaParam.IsLinkParam,
+	   Set_MetaParam.IsNewRow
+FROM dbo.Set_MetaParam  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_ControlTypes  WITH(NOLOCK) ON Set_MetaParam.MetaParamType=Set_ControlTypes.TypeName
+LEFT JOIN dbo.Set_MetaGroup  WITH(NOLOCK)  ON dbo.Set_MetaGroup.MetaGroupId = dbo.Set_MetaParam.MetaGroupId
+WHERE Set_MetaGroup.MetaId=@metaId
+ORDER BY Set_MetaParam.Sequence
+
+Params:
+@metaId=180
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:52:15.334
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1
+Sql:SELECT Bas_Section.SectionId,
+			   Bas_Section.SectionCode,
+			   Bas_Section.SectionDesc
+FROM Bas_Section WITH(NOLOCK) 
+WHERE Bas_Section.SectionId=ISNULL(@Id,Bas_Section.SectionId)
+AND Bas_Section.SectionCode LIKE '%'+ISNULL(@SectionCode,Bas_Section.SectionCode)+'%'
+ORDER BY Bas_Section.Sequence
+Params:
+@Id=DBNull
+@SectionCode=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:52:15.749
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_OP.OPId,
+	          Bas_OP.SectionId,
+			   Bas_Section.SectionCode,
+			   Bas_OP.OPCode,
+			    Bas_OP.OpDesc
+FROM Bas_OP WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Section  WITH(NOLOCK) ON dbo.Bas_Section.SectionId = dbo.Bas_OP.SectionId
+WHERE Bas_OP.OPId=ISNULL(@Id,Bas_OP.OPId)
+AND Bas_OP.OPCode LIKE '%'+ISNULL(@OPCode,Bas_OP.OPCode)+'%'
+AND (@SectionId IS NULL OR dbo.Bas_OP.SectionId=@SectionId)
+ORDER BY Bas_OP.OPCode
+Params:
+@Id=DBNull
+@SectionId=18
+@OPCode=
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:52:18.459
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_OP.OPId,
+	          Bas_OP.SectionId,
+			   Bas_OP.OPCode,
+			   Bas_OP.OPDesc,
+			   Bas_OP.OPImage,
+			   Bas_OP.Sequence,
+			   Bas_OP.IsComplete
+FROM Bas_OP WITH(NOLOCK) 
+WHERE Bas_OP.OPId=ISNULL(@Id,Bas_OP.OPId)
+AND Bas_OP.OPCode=ISNULL(@Text,Bas_OP.OPCode)
+Params:
+@UserId=1
+@CpuID=BFEBFBFF000306C3
+@MacAddress=AA:BB:CC:DD:EE:FF
+@IPAddress=192.168.3.2
+@ComputerName=WANG-PC
+@LocalUserName=wang-PC\wang
+@ResourceId=76
+@SettingId=42
+@Id=72
+@Text=DBNull
+@ParentId=DBNull
+@Return_Message=DBNull
+@ReturnValue=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:52:19.169
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0002
+Sql: SELECT BAS_MO.MOCode,
+                Bas_MO_Mac.Mac,
+				Inp_Lot.OPId,
+				Bas_OP.OPDesc
+                FROM BAS_MO
+                LEFT JOIN Inp_Lot ON Inp_Lot.MOId = BAS_MO.MOId
+                LEFT JOIN Bas_MO_Mac ON Bas_MO_Mac.LotId = Inp_Lot.LotId
+                LEFT JOIN Bas_OP ON Bas_OP.OPId = Inp_Lot.OPId
+                WHERE BAS_MO.MOCode = @MOCode and Bas_OP.OPCode = @OPCode
+Params:
+@MOCode=gast
+@OPCode=F5
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:52:20.314
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:4.0002
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903001492" OPID="72" OPDESC="装箱" />
+		<item  rowNo="2" MOCODE="gast" MAC="GYSD0701903004285" OPID="72" OPDESC="装箱" />
+		<item  rowNo="3" MOCODE="gast" MAC="GYSD0701903009864" OPID="72" OPDESC="装箱" />
+		<item  rowNo="4" MOCODE="gast" MAC="GYSD0701903009865" OPID="72" OPDESC="装箱" />
+		<item  rowNo="5" MOCODE="gast" MAC="GYSD0701903009866" OPID="72" OPDESC="装箱" />
+		<item  rowNo="6" MOCODE="gast" MAC="GYSD0701903009867" OPID="72" OPDESC="装箱" />
+		<item  rowNo="7" MOCODE="gast" MAC="GYSD0701903009868" OPID="72" OPDESC="装箱" />
+		<item  rowNo="8" MOCODE="gast" MAC="GYSD0701903009869" OPID="72" OPDESC="装箱" />
+		<item  rowNo="9" MOCODE="gast" MAC="" OPID="72" OPDESC="装箱" />
+		<item  rowNo="10" MOCODE="gast" MAC="GYSD0701903009886" OPID="72" OPDESC="装箱" />
+		<item  rowNo="11" MOCODE="gast" MAC="GYSD0701903009901" OPID="72" OPDESC="装箱" />
+		<item  rowNo="12" MOCODE="gast" MAC="GYSD0701903009902" OPID="72" OPDESC="装箱" />
+		<item  rowNo="13" MOCODE="gast" MAC="GYSD0701903009903" OPID="72" OPDESC="装箱" />
+		<item  rowNo="14" MOCODE="gast" MAC="GYSD0701903009907" OPID="72" OPDESC="装箱" />
+		<item  rowNo="15" MOCODE="gast" MAC="GYSD0701903009909" OPID="72" OPDESC="装箱" />
+		<item  rowNo="16" MOCODE="gast" MAC="GYSD0701903009910" OPID="72" OPDESC="装箱" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:过程或函数 'Pro_Inp_WorkStation_Return' 需要参数 '@return_value'，但未提供该参数。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:53:08.352
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:15.0008
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:53:08.363
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:53:08.381
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:53:08.791
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:53:13.901
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0003
+Sql:SELECT Set_Meta.MetaId,
+	   Set_Meta.MetaCode,
+	   Set_Meta.MetaName,
+	   Set_Meta.IsViewPages,
+	   Set_Meta.ViewCountSqlType,
+	   Set_Meta.ViewCountSql,
+	   dbo.Set_Meta.ViewSqlType,
+	   Set_Meta.ViewSql,
+	   dbo.Set_Meta.MainSqlType,
+	   Set_Meta.MainSql,
+	   dbo.Set_Meta.DeleteSqlType,
+	   Set_Meta.DeleteSql,
+	   dbo.Set_Meta.SaveSqlType,
+	   Set_Meta.SaveSql,
+	   Set_Meta.MetaNote,
+	   Set_Meta.ColumnCount,
+	   Set_Meta.ParentMetaId,
+	   Set_Meta.IdColumnName,
+	   Set_Meta.TextColumnName,
+	   Set_Meta.TableId,
+	   Set_Table.SysTableName as TableName,
+	   Set_Meta.ViewWidth,
+	   Set_Meta.VersionColumnName
+FROM dbo.Set_Meta  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_Table  WITH(NOLOCK)  ON dbo.Set_Table.SysTableId = dbo.Set_Meta.TableId
+WHERE Set_Meta.MetaId=@metaId
+Params:
+@metaId=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:53:13.911
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0002
+Sql:SELECT Set_MetaParam.MetaParamId,
+	   Set_MetaParam.MetaGroupId,
+	   Set_MetaParam.MetaParamCode,
+	   Set_MetaParam.MetaParamName,
+	   Set_MetaParam.MetaParamNote,
+	   Set_MetaParam.MetaParamLength,
+	   Set_ControlTypes.TypeName,
+	   Set_ControlTypes.FullName,
+	   Set_ControlTypes.Params,
+	   Set_MetaParam.ColumnSpan,
+	   Set_MetaParam.RowSpan,
+	   Set_MetaParam.IsEdit,
+	   Set_MetaParam.IsVisible,
+	   Set_MetaParam.IsNotEmpty,
+	   Set_MetaParam.DefaultValue,
+	   Set_MetaParam.DataSourceType,
+	   Set_MetaParam.DataSource,
+	   Set_MetaParam.IsQueryParam,
+	   Set_MetaParam.IsLinkParam,
+	   Set_MetaParam.IsNewRow
+FROM dbo.Set_MetaParam  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_ControlTypes  WITH(NOLOCK) ON Set_MetaParam.MetaParamType=Set_ControlTypes.TypeName
+LEFT JOIN dbo.Set_MetaGroup  WITH(NOLOCK)  ON dbo.Set_MetaGroup.MetaGroupId = dbo.Set_MetaParam.MetaGroupId
+WHERE Set_MetaGroup.MetaId=@metaId
+ORDER BY Set_MetaParam.Sequence
+
+Params:
+@metaId=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:53:13.921
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=51
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:53:13.931
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=183
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:53:13.941
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=185
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:53:16.251
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0003
+Sql:SELECT TOP 200 Bas_MO.MOId,
+			   Bas_MO.MOCode,
+			   Bas_Item.ItemCode,
+			   Bas_Item.ItemName+'/'+Bas_Item.ItemDesc as 'ItemName',
+			   Bas_Order.OrderCode,
+			   Bas_Customer.CustomerCode
+FROM Bas_MO WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=ISNULL(@Id,Bas_MO.MOId)
+AND Bas_MO.MOCode LIKE '%'+ISNULL(@MOCode,Bas_MO.MOCode)+'%'
+AND (@ItemId IS NULL OR Bas_MO.ItemId=@ItemId)
+AND (ISNULL(@OrderCode,'')='' OR (ISNULL(@OrderCode,'')!='' AND Bas_Order.OrderCode LIKE '%'+ISNULL(@OrderCode,Bas_Order.OrderCode)+'%'))
+AND (@CustomerId IS NULL OR Bas_MO.CustomerId=@CustomerId)
+ORDER BY Bas_MO.MOCode
+Params:
+@Id=DBNull
+@MOCode=
+@ItemId=null
+@CustomerId=null
+@OrderCode=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:53:17.676
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO.MOId,
+			   Bas_MO.MOCode,
+			   Bas_MO.OrderDetailId,
+			   Bas_MO.CustomerId,
+			   Bas_MO.ItemId,
+			   Bas_Item.ItemCode,
+			   Bas_Item.ItemDesc+'-'+Bas_Item.ItemSpecification as 'ItemDesc',
+			   dbo.Bas_Order.OrderCode,
+			   Bas_MO.Qty,
+			   Bas_MO.PlanStartDate,
+			   Bas_MO.PlanCompleteDate,
+			   Bas_MO.ActualStartDate,
+			   Bas_MO.ActualCompleteDate,
+			   Bas_MO.Status,
+			   Bas_MO.InputQty,
+			   Bas_MO.CompleteQty,
+			   Bas_MO.ErrorQty,
+			   Bas_MO.ScrapQty,
+			   Bas_MO.TurnInQty,
+			   Bas_MO.TurnOutQty,
+			   Bas_MO.WorkflowId,
+			   Bas_MO.IsCheckPowerSN,
+			   Bas_MO.PowerSNLength,
+			   Bas_MO.PowerSNPre,
+			   Bas_MO.IsCheckRemoteControlSN,
+			   Bas_MO.RemoteControlSNLength,
+			   Bas_MO.RemoteControlSNPre,
+			   Bas_MO.SpecSheet,
+			   Bas_MO.ChipScheme,
+			   Bas_MO.SoftwareVersion,
+			   Bas_MO.HardwareVersion,
+			   Bas_MO.AreaCode,
+			   Bas_MO.DeviceType,
+			   Bas_MO.IsCanVirtualInput,
+			   Bas_MO.SideAFeedingStationTableId,
+			   Bas_MO.SideBFeedingStationTableId,
+			   Bas_MO.RowVersion,
+			   Bas_MO.NetWeight,
+			   Bas_MO.GrossWeight
+FROM Bas_MO WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+WHERE Bas_MO.MOId=ISNULL(@Id,Bas_MO.MOId)
+AND Bas_MO.MOCode=ISNULL(@Text,Bas_MO.MOCode)
+Params:
+@UserId=1
+@CpuID=BFEBFBFF000306C3
+@MacAddress=AA:BB:CC:DD:EE:FF
+@IPAddress=192.168.3.2
+@ComputerName=WANG-PC
+@LocalUserName=wang-PC\wang
+@ResourceId=76
+@SettingId=187
+@Id=147
+@Text=DBNull
+@ParentId=DBNull
+@Return_Message=DBNull
+@ReturnValue=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:53:18.486
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0001
+Sql:SELECT Set_Meta.MetaId,
+	   Set_Meta.MetaCode,
+	   Set_Meta.MetaName,
+	   Set_Meta.IsViewPages,
+	   Set_Meta.ViewCountSqlType,
+	   Set_Meta.ViewCountSql,
+	   dbo.Set_Meta.ViewSqlType,
+	   Set_Meta.ViewSql,
+	   dbo.Set_Meta.MainSqlType,
+	   Set_Meta.MainSql,
+	   dbo.Set_Meta.DeleteSqlType,
+	   Set_Meta.DeleteSql,
+	   dbo.Set_Meta.SaveSqlType,
+	   Set_Meta.SaveSql,
+	   Set_Meta.MetaNote,
+	   Set_Meta.ColumnCount,
+	   Set_Meta.ParentMetaId,
+	   Set_Meta.IdColumnName,
+	   Set_Meta.TextColumnName,
+	   Set_Meta.TableId,
+	   Set_Table.SysTableName as TableName,
+	   Set_Meta.ViewWidth,
+	   Set_Meta.VersionColumnName
+FROM dbo.Set_Meta  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_Table  WITH(NOLOCK)  ON dbo.Set_Table.SysTableId = dbo.Set_Meta.TableId
+WHERE Set_Meta.MetaId=@metaId
+Params:
+@metaId=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:53:18.496
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Set_MetaParam.MetaParamId,
+	   Set_MetaParam.MetaGroupId,
+	   Set_MetaParam.MetaParamCode,
+	   Set_MetaParam.MetaParamName,
+	   Set_MetaParam.MetaParamNote,
+	   Set_MetaParam.MetaParamLength,
+	   Set_ControlTypes.TypeName,
+	   Set_ControlTypes.FullName,
+	   Set_ControlTypes.Params,
+	   Set_MetaParam.ColumnSpan,
+	   Set_MetaParam.RowSpan,
+	   Set_MetaParam.IsEdit,
+	   Set_MetaParam.IsVisible,
+	   Set_MetaParam.IsNotEmpty,
+	   Set_MetaParam.DefaultValue,
+	   Set_MetaParam.DataSourceType,
+	   Set_MetaParam.DataSource,
+	   Set_MetaParam.IsQueryParam,
+	   Set_MetaParam.IsLinkParam,
+	   Set_MetaParam.IsNewRow
+FROM dbo.Set_MetaParam  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_ControlTypes  WITH(NOLOCK) ON Set_MetaParam.MetaParamType=Set_ControlTypes.TypeName
+LEFT JOIN dbo.Set_MetaGroup  WITH(NOLOCK)  ON dbo.Set_MetaGroup.MetaGroupId = dbo.Set_MetaParam.MetaGroupId
+WHERE Set_MetaGroup.MetaId=@metaId
+ORDER BY Set_MetaParam.Sequence
+
+Params:
+@metaId=42
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:53:18.707
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT ViewSql,ViewSqlType,IdColumnName,TextColumnName,MetaId FROM dbo.Set_Meta   WITH(NOLOCK)  WHERE MetaId=@MetaId
+Params:
+@MetaId=180
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:53:18.717
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Set_MetaParam.MetaParamId,
+	   Set_MetaParam.MetaGroupId,
+	   Set_MetaParam.MetaParamCode,
+	   Set_MetaParam.MetaParamName,
+	   Set_MetaParam.MetaParamNote,
+	   Set_MetaParam.MetaParamLength,
+	   Set_ControlTypes.TypeName,
+	   Set_ControlTypes.FullName,
+	   Set_ControlTypes.Params,
+	   Set_MetaParam.ColumnSpan,
+	   Set_MetaParam.RowSpan,
+	   Set_MetaParam.IsEdit,
+	   Set_MetaParam.IsVisible,
+	   Set_MetaParam.IsNotEmpty,
+	   Set_MetaParam.DefaultValue,
+	   Set_MetaParam.DataSourceType,
+	   Set_MetaParam.DataSource,
+	   Set_MetaParam.IsQueryParam,
+	   Set_MetaParam.IsLinkParam,
+	   Set_MetaParam.IsNewRow
+FROM dbo.Set_MetaParam  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_ControlTypes  WITH(NOLOCK) ON Set_MetaParam.MetaParamType=Set_ControlTypes.TypeName
+LEFT JOIN dbo.Set_MetaGroup  WITH(NOLOCK)  ON dbo.Set_MetaGroup.MetaGroupId = dbo.Set_MetaParam.MetaGroupId
+WHERE Set_MetaGroup.MetaId=@metaId
+ORDER BY Set_MetaParam.Sequence
+
+Params:
+@metaId=180
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:53:18.728
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_Section.SectionId,
+			   Bas_Section.SectionCode,
+			   Bas_Section.SectionDesc
+FROM Bas_Section WITH(NOLOCK) 
+WHERE Bas_Section.SectionId=ISNULL(@Id,Bas_Section.SectionId)
+AND Bas_Section.SectionCode LIKE '%'+ISNULL(@SectionCode,Bas_Section.SectionCode)+'%'
+ORDER BY Bas_Section.Sequence
+Params:
+@Id=DBNull
+@SectionCode=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:53:19.238
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0002
+Sql:SELECT Bas_OP.OPId,
+	          Bas_OP.SectionId,
+			   Bas_Section.SectionCode,
+			   Bas_OP.OPCode,
+			    Bas_OP.OpDesc
+FROM Bas_OP WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Section  WITH(NOLOCK) ON dbo.Bas_Section.SectionId = dbo.Bas_OP.SectionId
+WHERE Bas_OP.OPId=ISNULL(@Id,Bas_OP.OPId)
+AND Bas_OP.OPCode LIKE '%'+ISNULL(@OPCode,Bas_OP.OPCode)+'%'
+AND (@SectionId IS NULL OR dbo.Bas_OP.SectionId=@SectionId)
+ORDER BY Bas_OP.OPCode
+Params:
+@Id=DBNull
+@SectionId=18
+@OPCode=
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:53:21.048
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_OP.OPId,
+	          Bas_OP.SectionId,
+			   Bas_OP.OPCode,
+			   Bas_OP.OPDesc,
+			   Bas_OP.OPImage,
+			   Bas_OP.Sequence,
+			   Bas_OP.IsComplete
+FROM Bas_OP WITH(NOLOCK) 
+WHERE Bas_OP.OPId=ISNULL(@Id,Bas_OP.OPId)
+AND Bas_OP.OPCode=ISNULL(@Text,Bas_OP.OPCode)
+Params:
+@UserId=1
+@CpuID=BFEBFBFF000306C3
+@MacAddress=AA:BB:CC:DD:EE:FF
+@IPAddress=192.168.3.2
+@ComputerName=WANG-PC
+@LocalUserName=wang-PC\wang
+@ResourceId=76
+@SettingId=42
+@Id=72
+@Text=DBNull
+@ParentId=DBNull
+@Return_Message=DBNull
+@ReturnValue=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:53:21.558
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:6.0004
+Sql: SELECT BAS_MO.MOCode,
+                Bas_MO_Mac.Mac,
+				Inp_Lot.OPId,
+				Bas_OP.OPDesc
+                FROM BAS_MO
+                LEFT JOIN Inp_Lot ON Inp_Lot.MOId = BAS_MO.MOId
+                LEFT JOIN Bas_MO_Mac ON Bas_MO_Mac.LotId = Inp_Lot.LotId
+                LEFT JOIN Bas_OP ON Bas_OP.OPId = Inp_Lot.OPId
+                WHERE BAS_MO.MOCode = @MOCode and Bas_OP.OPCode = @OPCode
+Params:
+@MOCode=gast
+@OPCode=F5
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:53:22.468
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:4.0002
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903001492" OPID="72" OPDESC="装箱" />
+		<item  rowNo="2" MOCODE="gast" MAC="GYSD0701903004285" OPID="72" OPDESC="装箱" />
+		<item  rowNo="3" MOCODE="gast" MAC="GYSD0701903009864" OPID="72" OPDESC="装箱" />
+		<item  rowNo="4" MOCODE="gast" MAC="GYSD0701903009865" OPID="72" OPDESC="装箱" />
+		<item  rowNo="5" MOCODE="gast" MAC="GYSD0701903009866" OPID="72" OPDESC="装箱" />
+		<item  rowNo="6" MOCODE="gast" MAC="GYSD0701903009867" OPID="72" OPDESC="装箱" />
+		<item  rowNo="7" MOCODE="gast" MAC="GYSD0701903009868" OPID="72" OPDESC="装箱" />
+		<item  rowNo="8" MOCODE="gast" MAC="GYSD0701903009869" OPID="72" OPDESC="装箱" />
+		<item  rowNo="9" MOCODE="gast" MAC="" OPID="72" OPDESC="装箱" />
+		<item  rowNo="10" MOCODE="gast" MAC="GYSD0701903009886" OPID="72" OPDESC="装箱" />
+		<item  rowNo="11" MOCODE="gast" MAC="GYSD0701903009901" OPID="72" OPDESC="装箱" />
+		<item  rowNo="12" MOCODE="gast" MAC="GYSD0701903009902" OPID="72" OPDESC="装箱" />
+		<item  rowNo="13" MOCODE="gast" MAC="GYSD0701903009903" OPID="72" OPDESC="装箱" />
+		<item  rowNo="14" MOCODE="gast" MAC="GYSD0701903009907" OPID="72" OPDESC="装箱" />
+		<item  rowNo="15" MOCODE="gast" MAC="GYSD0701903009909" OPID="72" OPDESC="装箱" />
+		<item  rowNo="16" MOCODE="gast" MAC="GYSD0701903009910" OPID="72" OPDESC="装箱" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:过程或函数 'Pro_Inp_WorkStation_Return' 需要参数 '@return_value'，但未提供该参数。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:53:44.482
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:4.0002
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903001492" OPID="72" OPDESC="装箱" />
+		<item  rowNo="2" MOCODE="gast" MAC="GYSD0701903004285" OPID="72" OPDESC="装箱" />
+		<item  rowNo="3" MOCODE="gast" MAC="GYSD0701903009864" OPID="72" OPDESC="装箱" />
+		<item  rowNo="4" MOCODE="gast" MAC="GYSD0701903009865" OPID="72" OPDESC="装箱" />
+		<item  rowNo="5" MOCODE="gast" MAC="GYSD0701903009866" OPID="72" OPDESC="装箱" />
+		<item  rowNo="6" MOCODE="gast" MAC="GYSD0701903009867" OPID="72" OPDESC="装箱" />
+		<item  rowNo="7" MOCODE="gast" MAC="GYSD0701903009868" OPID="72" OPDESC="装箱" />
+		<item  rowNo="8" MOCODE="gast" MAC="GYSD0701903009869" OPID="72" OPDESC="装箱" />
+		<item  rowNo="9" MOCODE="gast" MAC="" OPID="72" OPDESC="装箱" />
+		<item  rowNo="10" MOCODE="gast" MAC="GYSD0701903009886" OPID="72" OPDESC="装箱" />
+		<item  rowNo="11" MOCODE="gast" MAC="GYSD0701903009901" OPID="72" OPDESC="装箱" />
+		<item  rowNo="12" MOCODE="gast" MAC="GYSD0701903009902" OPID="72" OPDESC="装箱" />
+		<item  rowNo="13" MOCODE="gast" MAC="GYSD0701903009903" OPID="72" OPDESC="装箱" />
+		<item  rowNo="14" MOCODE="gast" MAC="GYSD0701903009907" OPID="72" OPDESC="装箱" />
+		<item  rowNo="15" MOCODE="gast" MAC="GYSD0701903009909" OPID="72" OPDESC="装箱" />
+		<item  rowNo="16" MOCODE="gast" MAC="GYSD0701903009910" OPID="72" OPDESC="装箱" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:过程或函数 'Pro_Inp_WorkStation_Return' 需要参数 '@return_value'，但未提供该参数。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:53:53.992
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:3.0001
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903001492" OPID="72" OPDESC="装箱" />
+		<item  rowNo="2" MOCODE="gast" MAC="GYSD0701903004285" OPID="72" OPDESC="装箱" />
+		<item  rowNo="3" MOCODE="gast" MAC="GYSD0701903009864" OPID="72" OPDESC="装箱" />
+		<item  rowNo="4" MOCODE="gast" MAC="GYSD0701903009865" OPID="72" OPDESC="装箱" />
+		<item  rowNo="5" MOCODE="gast" MAC="GYSD0701903009866" OPID="72" OPDESC="装箱" />
+		<item  rowNo="6" MOCODE="gast" MAC="GYSD0701903009867" OPID="72" OPDESC="装箱" />
+		<item  rowNo="7" MOCODE="gast" MAC="GYSD0701903009868" OPID="72" OPDESC="装箱" />
+		<item  rowNo="8" MOCODE="gast" MAC="GYSD0701903009869" OPID="72" OPDESC="装箱" />
+		<item  rowNo="9" MOCODE="gast" MAC="" OPID="72" OPDESC="装箱" />
+		<item  rowNo="10" MOCODE="gast" MAC="GYSD0701903009886" OPID="72" OPDESC="装箱" />
+		<item  rowNo="11" MOCODE="gast" MAC="GYSD0701903009901" OPID="72" OPDESC="装箱" />
+		<item  rowNo="12" MOCODE="gast" MAC="GYSD0701903009902" OPID="72" OPDESC="装箱" />
+		<item  rowNo="13" MOCODE="gast" MAC="GYSD0701903009903" OPID="72" OPDESC="装箱" />
+		<item  rowNo="14" MOCODE="gast" MAC="GYSD0701903009907" OPID="72" OPDESC="装箱" />
+		<item  rowNo="15" MOCODE="gast" MAC="GYSD0701903009909" OPID="72" OPDESC="装箱" />
+		<item  rowNo="16" MOCODE="gast" MAC="GYSD0701903009910" OPID="72" OPDESC="装箱" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:过程或函数 'Pro_Inp_WorkStation_Return' 需要参数 '@return_value'，但未提供该参数。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:54:00.203
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:19.0011
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903001492" OPID="72" OPDESC="装箱" />
+		<item  rowNo="2" MOCODE="gast" MAC="GYSD0701903004285" OPID="72" OPDESC="装箱" />
+		<item  rowNo="3" MOCODE="gast" MAC="GYSD0701903009864" OPID="72" OPDESC="装箱" />
+		<item  rowNo="4" MOCODE="gast" MAC="GYSD0701903009865" OPID="72" OPDESC="装箱" />
+		<item  rowNo="5" MOCODE="gast" MAC="GYSD0701903009866" OPID="72" OPDESC="装箱" />
+		<item  rowNo="6" MOCODE="gast" MAC="GYSD0701903009867" OPID="72" OPDESC="装箱" />
+		<item  rowNo="7" MOCODE="gast" MAC="GYSD0701903009868" OPID="72" OPDESC="装箱" />
+		<item  rowNo="8" MOCODE="gast" MAC="GYSD0701903009869" OPID="72" OPDESC="装箱" />
+		<item  rowNo="9" MOCODE="gast" MAC="" OPID="72" OPDESC="装箱" />
+		<item  rowNo="10" MOCODE="gast" MAC="GYSD0701903009886" OPID="72" OPDESC="装箱" />
+		<item  rowNo="11" MOCODE="gast" MAC="GYSD0701903009901" OPID="72" OPDESC="装箱" />
+		<item  rowNo="12" MOCODE="gast" MAC="GYSD0701903009902" OPID="72" OPDESC="装箱" />
+		<item  rowNo="13" MOCODE="gast" MAC="GYSD0701903009903" OPID="72" OPDESC="装箱" />
+		<item  rowNo="14" MOCODE="gast" MAC="GYSD0701903009907" OPID="72" OPDESC="装箱" />
+		<item  rowNo="15" MOCODE="gast" MAC="GYSD0701903009909" OPID="72" OPDESC="装箱" />
+		<item  rowNo="16" MOCODE="gast" MAC="GYSD0701903009910" OPID="72" OPDESC="装箱" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:54:53.568
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:19.0011
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903001492" OPID="72" OPDESC="装箱" />
+		<item  rowNo="2" MOCODE="gast" MAC="GYSD0701903004285" OPID="72" OPDESC="装箱" />
+		<item  rowNo="3" MOCODE="gast" MAC="GYSD0701903009864" OPID="72" OPDESC="装箱" />
+		<item  rowNo="4" MOCODE="gast" MAC="GYSD0701903009865" OPID="72" OPDESC="装箱" />
+		<item  rowNo="5" MOCODE="gast" MAC="GYSD0701903009866" OPID="72" OPDESC="装箱" />
+		<item  rowNo="6" MOCODE="gast" MAC="GYSD0701903009867" OPID="72" OPDESC="装箱" />
+		<item  rowNo="7" MOCODE="gast" MAC="GYSD0701903009868" OPID="72" OPDESC="装箱" />
+		<item  rowNo="8" MOCODE="gast" MAC="GYSD0701903009869" OPID="72" OPDESC="装箱" />
+		<item  rowNo="9" MOCODE="gast" MAC="" OPID="72" OPDESC="装箱" />
+		<item  rowNo="10" MOCODE="gast" MAC="GYSD0701903009886" OPID="72" OPDESC="装箱" />
+		<item  rowNo="11" MOCODE="gast" MAC="GYSD0701903009901" OPID="72" OPDESC="装箱" />
+		<item  rowNo="12" MOCODE="gast" MAC="GYSD0701903009902" OPID="72" OPDESC="装箱" />
+		<item  rowNo="13" MOCODE="gast" MAC="GYSD0701903009903" OPID="72" OPDESC="装箱" />
+		<item  rowNo="14" MOCODE="gast" MAC="GYSD0701903009907" OPID="72" OPDESC="装箱" />
+		<item  rowNo="15" MOCODE="gast" MAC="GYSD0701903009909" OPID="72" OPDESC="装箱" />
+		<item  rowNo="16" MOCODE="gast" MAC="GYSD0701903009910" OPID="72" OPDESC="装箱" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:55:29.281
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:6.0004
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903001492" OPID="72" OPDESC="装箱" />
+		<item  rowNo="2" MOCODE="gast" MAC="GYSD0701903004285" OPID="72" OPDESC="装箱" />
+		<item  rowNo="3" MOCODE="gast" MAC="GYSD0701903009864" OPID="72" OPDESC="装箱" />
+		<item  rowNo="4" MOCODE="gast" MAC="GYSD0701903009865" OPID="72" OPDESC="装箱" />
+		<item  rowNo="5" MOCODE="gast" MAC="GYSD0701903009866" OPID="72" OPDESC="装箱" />
+		<item  rowNo="6" MOCODE="gast" MAC="GYSD0701903009867" OPID="72" OPDESC="装箱" />
+		<item  rowNo="7" MOCODE="gast" MAC="GYSD0701903009868" OPID="72" OPDESC="装箱" />
+		<item  rowNo="8" MOCODE="gast" MAC="GYSD0701903009869" OPID="72" OPDESC="装箱" />
+		<item  rowNo="9" MOCODE="gast" MAC="" OPID="72" OPDESC="装箱" />
+		<item  rowNo="10" MOCODE="gast" MAC="GYSD0701903009886" OPID="72" OPDESC="装箱" />
+		<item  rowNo="11" MOCODE="gast" MAC="GYSD0701903009901" OPID="72" OPDESC="装箱" />
+		<item  rowNo="12" MOCODE="gast" MAC="GYSD0701903009902" OPID="72" OPDESC="装箱" />
+		<item  rowNo="13" MOCODE="gast" MAC="GYSD0701903009903" OPID="72" OPDESC="装箱" />
+		<item  rowNo="14" MOCODE="gast" MAC="GYSD0701903009907" OPID="72" OPDESC="装箱" />
+		<item  rowNo="15" MOCODE="gast" MAC="GYSD0701903009909" OPID="72" OPDESC="装箱" />
+		<item  rowNo="16" MOCODE="gast" MAC="GYSD0701903009910" OPID="72" OPDESC="装箱" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:55:46.841
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:19.0011
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903001492" OPID="72" OPDESC="装箱" />
+		<item  rowNo="2" MOCODE="gast" MAC="GYSD0701903004285" OPID="72" OPDESC="装箱" />
+		<item  rowNo="3" MOCODE="gast" MAC="GYSD0701903009864" OPID="72" OPDESC="装箱" />
+		<item  rowNo="4" MOCODE="gast" MAC="GYSD0701903009865" OPID="72" OPDESC="装箱" />
+		<item  rowNo="5" MOCODE="gast" MAC="GYSD0701903009866" OPID="72" OPDESC="装箱" />
+		<item  rowNo="6" MOCODE="gast" MAC="GYSD0701903009867" OPID="72" OPDESC="装箱" />
+		<item  rowNo="7" MOCODE="gast" MAC="GYSD0701903009868" OPID="72" OPDESC="装箱" />
+		<item  rowNo="8" MOCODE="gast" MAC="GYSD0701903009869" OPID="72" OPDESC="装箱" />
+		<item  rowNo="9" MOCODE="gast" MAC="" OPID="72" OPDESC="装箱" />
+		<item  rowNo="10" MOCODE="gast" MAC="GYSD0701903009886" OPID="72" OPDESC="装箱" />
+		<item  rowNo="11" MOCODE="gast" MAC="GYSD0701903009901" OPID="72" OPDESC="装箱" />
+		<item  rowNo="12" MOCODE="gast" MAC="GYSD0701903009902" OPID="72" OPDESC="装箱" />
+		<item  rowNo="13" MOCODE="gast" MAC="GYSD0701903009903" OPID="72" OPDESC="装箱" />
+		<item  rowNo="14" MOCODE="gast" MAC="GYSD0701903009907" OPID="72" OPDESC="装箱" />
+		<item  rowNo="15" MOCODE="gast" MAC="GYSD0701903009909" OPID="72" OPDESC="装箱" />
+		<item  rowNo="16" MOCODE="gast" MAC="GYSD0701903009910" OPID="72" OPDESC="装箱" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:列名 'MAC' 无效。
+列名或所提供值的数目与表定义不匹配。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:56:24.555
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:19.0011
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903001492" OPID="72" OPDESC="装箱" />
+		<item  rowNo="2" MOCODE="gast" MAC="GYSD0701903004285" OPID="72" OPDESC="装箱" />
+		<item  rowNo="3" MOCODE="gast" MAC="GYSD0701903009864" OPID="72" OPDESC="装箱" />
+		<item  rowNo="4" MOCODE="gast" MAC="GYSD0701903009865" OPID="72" OPDESC="装箱" />
+		<item  rowNo="5" MOCODE="gast" MAC="GYSD0701903009866" OPID="72" OPDESC="装箱" />
+		<item  rowNo="6" MOCODE="gast" MAC="GYSD0701903009867" OPID="72" OPDESC="装箱" />
+		<item  rowNo="7" MOCODE="gast" MAC="GYSD0701903009868" OPID="72" OPDESC="装箱" />
+		<item  rowNo="8" MOCODE="gast" MAC="GYSD0701903009869" OPID="72" OPDESC="装箱" />
+		<item  rowNo="9" MOCODE="gast" MAC="" OPID="72" OPDESC="装箱" />
+		<item  rowNo="10" MOCODE="gast" MAC="GYSD0701903009886" OPID="72" OPDESC="装箱" />
+		<item  rowNo="11" MOCODE="gast" MAC="GYSD0701903009901" OPID="72" OPDESC="装箱" />
+		<item  rowNo="12" MOCODE="gast" MAC="GYSD0701903009902" OPID="72" OPDESC="装箱" />
+		<item  rowNo="13" MOCODE="gast" MAC="GYSD0701903009903" OPID="72" OPDESC="装箱" />
+		<item  rowNo="14" MOCODE="gast" MAC="GYSD0701903009907" OPID="72" OPDESC="装箱" />
+		<item  rowNo="15" MOCODE="gast" MAC="GYSD0701903009909" OPID="72" OPDESC="装箱" />
+		<item  rowNo="16" MOCODE="gast" MAC="GYSD0701903009910" OPID="72" OPDESC="装箱" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:列名或所提供值的数目与表定义不匹配。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:58:03.671
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:20.0011
+Sql:Pro_Inp_WorkStation_Return
+Params:
+@xml=<document>
+	<LOTSN>
+		<item  rowNo="1" MOCODE="gast" MAC="GYSD0701903001492" OPID="72" OPDESC="装箱" />
+		<item  rowNo="2" MOCODE="gast" MAC="GYSD0701903004285" OPID="72" OPDESC="装箱" />
+		<item  rowNo="3" MOCODE="gast" MAC="GYSD0701903009864" OPID="72" OPDESC="装箱" />
+		<item  rowNo="4" MOCODE="gast" MAC="GYSD0701903009865" OPID="72" OPDESC="装箱" />
+		<item  rowNo="5" MOCODE="gast" MAC="GYSD0701903009866" OPID="72" OPDESC="装箱" />
+		<item  rowNo="6" MOCODE="gast" MAC="GYSD0701903009867" OPID="72" OPDESC="装箱" />
+		<item  rowNo="7" MOCODE="gast" MAC="GYSD0701903009868" OPID="72" OPDESC="装箱" />
+		<item  rowNo="8" MOCODE="gast" MAC="GYSD0701903009869" OPID="72" OPDESC="装箱" />
+		<item  rowNo="9" MOCODE="gast" MAC="" OPID="72" OPDESC="装箱" />
+		<item  rowNo="10" MOCODE="gast" MAC="GYSD0701903009886" OPID="72" OPDESC="装箱" />
+		<item  rowNo="11" MOCODE="gast" MAC="GYSD0701903009901" OPID="72" OPDESC="装箱" />
+		<item  rowNo="12" MOCODE="gast" MAC="GYSD0701903009902" OPID="72" OPDESC="装箱" />
+		<item  rowNo="13" MOCODE="gast" MAC="GYSD0701903009903" OPID="72" OPDESC="装箱" />
+		<item  rowNo="14" MOCODE="gast" MAC="GYSD0701903009907" OPID="72" OPDESC="装箱" />
+		<item  rowNo="15" MOCODE="gast" MAC="GYSD0701903009909" OPID="72" OPDESC="装箱" />
+		<item  rowNo="16" MOCODE="gast" MAC="GYSD0701903009910" OPID="72" OPDESC="装箱" />
+	</LOTSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:列名或所提供值的数目与表定义不匹配。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:58:20.882
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:5.0003
+Sql: SELECT BAS_MO.MOCode,
+                Bas_MO_Mac.Mac,
+				Inp_Lot.OPId,
+				Bas_OP.OPDesc
+                FROM BAS_MO
+                LEFT JOIN Inp_Lot ON Inp_Lot.MOId = BAS_MO.MOId
+                LEFT JOIN Bas_MO_Mac ON Bas_MO_Mac.LotId = Inp_Lot.LotId
+                LEFT JOIN Bas_OP ON Bas_OP.OPId = Inp_Lot.OPId
+                WHERE BAS_MO.MOCode = @MOCode and Bas_OP.OPCode = @OPCode
+Params:
+@MOCode=gast
+@OPCode=F5
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:58:23.094
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:5.0003
+Sql: SELECT BAS_MO.MOCode,
+                Bas_MO_Mac.Mac,
+				Inp_Lot.OPId,
+				Bas_OP.OPDesc
+                FROM BAS_MO
+                LEFT JOIN Inp_Lot ON Inp_Lot.MOId = BAS_MO.MOId
+                LEFT JOIN Bas_MO_Mac ON Bas_MO_Mac.LotId = Inp_Lot.LotId
+                LEFT JOIN Bas_OP ON Bas_OP.OPId = Inp_Lot.OPId
+                WHERE BAS_MO.MOCode = @MOCode and Bas_OP.OPCode = @OPCode
+Params:
+@MOCode=gast
+@OPCode=F5
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-08-18 08:58:30.004
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:78.0044
+Sql:SELECT  Bas_MO.MOCode,
+				        Bas_MO_Mac.Mac,
+				        Inp_Lot.OPId,
+				        Bas_OP.OPDesc
+				        FROM Bas_MO_Mac
+				        LEFT JOIN Bas_MO on Bas_MO.MOId=Bas_MO_Mac.MOId
+				        LEFT JOIN Inp_Lot ON Inp_Lot.LotSN=Bas_MO_Mac.mac
+				        LEFT JOIN Bas_OP ON  Bas_OP.OPId=Inp_Lot.OPId
+				        WHERE Bas_MO_Mac.Mac='GYSD0701903001492' OR Bas_MO_Mac.DSN='GYSD0701903001492' OR Bas_MO_Mac.DeviceSerialNumber='GYSD0701903001492' OR Bas_MO_Mac.STBNO='GYSD0701903001492'
+END===============================================================================================
+
+

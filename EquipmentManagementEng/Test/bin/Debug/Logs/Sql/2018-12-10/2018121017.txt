@@ -1,0 +1,1239 @@
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:02:20.739
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:35.9762
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=283
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:02:20.765
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:18.9862
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=25
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:02:20.785
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:15.9941
+Sql:DECLARE @t TABLE(rowIndex INT,String NVARCHAR(50))
+INSERT INTO @t
+SELECT rowIndex,String FROM dbo.Ftn_GetTableFromString(@Code,',')
+
+SELECT Code,Name
+FROM dbo.Set_SystemType WITH(NOLOCK) 
+WHERE TypeCode='EquipmentRepairInStatus'
+AND (NOT EXISTS(SELECT * FROM @t) OR EXISTS(SELECT * FROM @t WHERE String=Set_SystemType.Code))
+ORDER BY Sequence
+Params:
+@Code=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:02:20.898
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:11.9957
+Sql:SELECT Code,Name
+FROM dbo.Set_SystemType WITH(NOLOCK) 
+WHERE TypeCode='EquipmentRepairInType'
+ORDER BY Sequence
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:02:20.910
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:11.9753
+Sql:SELECT RepairTypeId,
+	   RepairTypeCode+'-'+ISNULL(RepairTypeName,'') AS RepairTypeName
+FROM dbo.Bas_RepairType
+ORDER BY RepairTypeCode
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:02:23.248
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:21.9979
+Sql:SELECT COUNT(*) FROM dbo.Inp_EquipmentRepairIn WITH(NOLOCK) WHERE 1=1 
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:02:23.260
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:14.8754
+Sql:WITH temp AS (
+SELECT ROW_NUMBER()OVER(ORDER BY Inp_EquipmentRepairIn.EquipmentRepairInCode DESC) AS RowIndex,
+	   Inp_EquipmentRepairIn.EquipmentRepairInId,
+	   Inp_EquipmentRepairIn.EquipmentRepairInCode,
+	   Inp_EquipmentRepairIn.EquipmentRepairInDesc,
+	   Bas_RepairType.RepairTypeCode+'-'+ISNULL(Bas_RepairType.RepairTypeName,'') AS RepairTypeName,
+	   dbo.Ftn_GetStatusName(Inp_EquipmentRepairIn.Type,'EquipmentRepairInType') AS [Type],
+	   dbo.Ftn_GetStatusName(Inp_EquipmentRepairIn.Status,'EquipmentRepairInStatus') AS StatusName,
+	   Inp_EquipmentRepairIn.Status ,
+	   MainRepairUser.SysUserCode+'-'+ISNULL(MainRepairUser.SysUserName,'') AS MainRepairUserName, 
+	   SendRepairUser.SysUserCode+'-'+ISNULL(SendRepairUser.SysUserName,'') AS SendRepairUserName, 
+	   Inp_EquipmentRepairIn.SendRepairDateTime
+FROM dbo.Inp_EquipmentRepairIn WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_RepairType WITH(NOLOCK) ON dbo.Bas_RepairType.RepairTypeId = dbo.Inp_EquipmentRepairIn.RepairTypeId
+LEFT JOIN dbo.Set_User MainRepairUser WITH(NOLOCK) ON Inp_EquipmentRepairIn.MainRepairUserId=MainRepairUser.SysUserId
+LEFT JOIN dbo.Set_User SendRepairUser WITH(NOLOCK) ON Inp_EquipmentRepairIn.SendRepairUserId=SendRepairUser.SysUserId
+WHERE 1=1 
+)
+
+SELECT * 
+FROM temp
+WHERE temp.RowIndex BETWEEN @IndexStart AND @IndexEnd
+ORDER BY RowIndex
+Params:
+@IndexStart=1
+@IndexEnd=20
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:02:30.719
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:21.9876
+Sql:SELECT Inp_EquipmentRepairInDetail.EquipmentRepairInDetailId,
+	   Inp_EquipmentRepairInDetail.EquipmentId,
+	   Bas_Equipment.EquipmentCode,
+	   Bas_Equipment.EquipmentDesc,
+	   Inp_EquipmentRepairInDetail.RepairTypeId,
+	   Bas_RepairType.RepairTypeCode+'-'+ISNULL(Bas_RepairType.RepairTypeName,'') AS RepairTypeName,
+	   Inp_EquipmentRepairInDetail.Status,
+	   dbo.Ftn_GetStatusName(Inp_EquipmentRepairInDetail.Status,'EquipmentRepairInStatus') AS StatusName,
+	   MainRepairUser.SysUserId AS MainRepairUserId,
+	   MainRepairUser.SysUserCode+'-'+ISNULL(MainRepairUser.SysUserName,'') AS MainRepairUserName,
+	   STUFF((
+				SELECT ';'+CAST(Inp_EquipmentRepairInDetail_AssistRepairUser.AssistRepairUserId AS NVARCHAR(50))
+				FROM dbo.Inp_EquipmentRepairInDetail_AssistRepairUser WITH(NOLOCK) 
+				WHERE Inp_EquipmentRepairInDetail_AssistRepairUser.EquipmentRepairInDetailId=Inp_EquipmentRepairInDetail.EquipmentRepairInDetailId
+				FOR XML PATH('')
+		),1,1,'') AS AssistRepairUserId,
+	   STUFF((
+				SELECT ';'+dbo.Set_User.SysUserCode+'-'+ISNULL(dbo.Set_User.SysUserName,'')
+				FROM dbo.Inp_EquipmentRepairInDetail_AssistRepairUser WITH(NOLOCK) 
+				LEFT JOIN dbo.Set_User WITH(NOLOCK) ON Inp_EquipmentRepairInDetail_AssistRepairUser.AssistRepairUserId=Set_User.SysUserId
+				WHERE Inp_EquipmentRepairInDetail_AssistRepairUser.EquipmentRepairInDetailId=Inp_EquipmentRepairInDetail.EquipmentRepairInDetailId
+				FOR XML PATH('')
+		),1,1,'') AS AssistRepairUserName,
+	   DelegateUser.SysUserId AS DelegateUserId,
+	   DelegateUser.SysUserCode+'-'+ISNULL(DelegateUser.SysUserName,'') AS DelegateUserName,
+	   Inp_EquipmentRepairInDetail.DelegateDateTime,
+	   ReceiveUser.SysUserId AS ReceiveUserId,
+	   ReceiveUser.SysUserCode+'-'+ISNULL(ReceiveUser.SysUserName,'') AS ReceiveUserName,
+	   Inp_EquipmentRepairInDetail.ReceiveDateTime,
+	   RepairCompleteUser.SysUserId AS RepairCompleteUserId,
+	   RepairCompleteUser.SysUserCode+'-'+ISNULL(RepairCompleteUser.SysUserName,'') AS RepairCompleteUserName,
+	   Inp_EquipmentRepairInDetail.RepairCompleteDateTime,
+	   Inp_EquipmentRepairInDetail.SendRepairComment,
+	   Inp_EquipmentRepairInDetail.DelegateComment,
+	   Inp_EquipmentRepairInDetail.RejectDateTime,
+	   Inp_EquipmentRepairInDetail.RejectComment,
+	   Inp_EquipmentRepairInDetail.ReDelegateDateTime,
+	   Inp_EquipmentRepairInDetail.ReDelegateComment,
+	   Inp_EquipmentRepairInDetail.OutSourcingDateTime,
+	   Inp_EquipmentRepairInDetail.OutSourcingComment,
+	   Inp_EquipmentRepairInDetail.ScrapDateTime,
+	   Inp_EquipmentRepairInDetail.ScrapComment,
+	   SureUser.SysUserId AS SureUserId,
+	   SureUser.SysUserCode+'-'+ISNULL(SureUser.SysUserName,'') AS SureUserName,
+	   Inp_EquipmentRepairInDetail.SureDateTime,
+	   Inp_EquipmentRepairInDetail.NotAgreeComment,
+       0 AS EditFlag,--0：未编辑  1：委派   2：接受    3：驳回   4：抢单   5：同意   6：拒绝   7：重新委派   8：委外维修    9：报废
+	   0 AS EditAssistRepairUserFlag ,--0：未编辑  1：已修改
+       '' AS GetText,--抢单文本
+       '' AS DelegateText,--委派文本
+       '' AS ReceiveText,--接受驳回文本
+       '' AS ReceiveForeground,--接受驳回文本颜色
+       '' AS AgreeText,--同意拒绝文本
+       '' AS AgreeForeground,--同意拒绝文本颜色
+       '' AS ReDelegateText,--重新委派文本
+       '' AS OutSourcingText,--委外维修文本
+       '' AS ScrapText,--报废文本
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'')='WaitDelegate' THEN 'Visible' ELSE 'Collapsed' END AS CanGetOrder, --抢单
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'')='Delegate' AND Inp_EquipmentRepairInDetail.MainRepairUserId=@UserId THEN 'Visible' ELSE 'Collapsed' END AS CanReceive,--接受驳回
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'') IN('WaitRejectSure','WaitReDelegateSure','WaitOutSourcingSure','WaitScrapSure') THEN 'Visible' ELSE 'Collapsed' END AS CanAgree,--同意拒绝
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'')='WaitDelegate' THEN 'Visible' ELSE 'Collapsed' END AS CanDelegate, --委派
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'')!='Close' THEN 'Visible' ELSE 'Collapsed' END AS CanAddAssistRepairUser, --添加维修协助人
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'') IN('WaitRepair','Repair') AND Inp_EquipmentRepairInDetail.MainRepairUserId=@UserId THEN 'Visible' ELSE 'Collapsed' END AS CanReDelegate,--重新委派
+	   CASE WHEN (@IsManager=1 AND ISNULL(Inp_EquipmentRepairInDetail.Status,'')='WaitDelegate') OR (@IsManager=0 AND Inp_EquipmentRepairInDetail.MainRepairUserId=@UserId AND ISNULL(Inp_EquipmentRepairInDetail.Status,'') IN('WaitRepair','Repair')) THEN 'Visible' ELSE 'Collapsed' END AS CanOutSourcing,--外协
+	   CASE WHEN (@IsManager=1 AND ISNULL(Inp_EquipmentRepairInDetail.Status,'')='WaitDelegate') OR (@IsManager=0 AND Inp_EquipmentRepairInDetail.MainRepairUserId=@UserId AND ISNULL(Inp_EquipmentRepairInDetail.Status,'') IN('WaitRepair','Repair')) THEN 'Visible' ELSE 'Collapsed' END AS CanScrap--报废
+FROM dbo.Inp_EquipmentRepairInDetail WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Equipment WITH(NOLOCK) ON dbo.Bas_Equipment.EquipmentId = dbo.Inp_EquipmentRepairInDetail.EquipmentId
+LEFT JOIN dbo.Bas_RepairType WITH(NOLOCK) ON dbo.Bas_RepairType.RepairTypeId = dbo.Inp_EquipmentRepairInDetail.RepairTypeId
+LEFT JOIN dbo.Set_User MainRepairUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.MainRepairUserId=MainRepairUser.SysUserId
+LEFT JOIN dbo.Set_User DelegateUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.DelegateUserId=DelegateUser.SysUserId
+LEFT JOIN dbo.Set_User ReceiveUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.ReceiveUserId=ReceiveUser.SysUserId
+LEFT JOIN dbo.Set_User RepairCompleteUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.RepairCompleteUserId=RepairCompleteUser.SysUserId
+LEFT JOIN dbo.Set_User SureUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.SureUserId=SureUser.SysUserId
+WHERE Inp_EquipmentRepairInDetail.EquipmentRepairInId=@EquipmentRepairInId
+
+Params:
+@EquipmentRepairInId=19
+@UserId=3558
+@IsManager=True
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:05:36.914
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:44.9864
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=283
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:05:36.927
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:16.995
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=25
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:05:36.939
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:19.6513
+Sql:DECLARE @t TABLE(rowIndex INT,String NVARCHAR(50))
+INSERT INTO @t
+SELECT rowIndex,String FROM dbo.Ftn_GetTableFromString(@Code,',')
+
+SELECT Code,Name
+FROM dbo.Set_SystemType WITH(NOLOCK) 
+WHERE TypeCode='EquipmentRepairInStatus'
+AND (NOT EXISTS(SELECT * FROM @t) OR EXISTS(SELECT * FROM @t WHERE String=Set_SystemType.Code))
+ORDER BY Sequence
+Params:
+@Code=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:05:36.951
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:12.0064
+Sql:SELECT Code,Name
+FROM dbo.Set_SystemType WITH(NOLOCK) 
+WHERE TypeCode='EquipmentRepairInType'
+ORDER BY Sequence
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:05:39.581
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:20.0055
+Sql:SELECT COUNT(*) FROM dbo.Inp_EquipmentRepairIn WITH(NOLOCK) WHERE 1=1 
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:05:39.694
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:16.9921
+Sql:WITH temp AS (
+SELECT ROW_NUMBER()OVER(ORDER BY Inp_EquipmentRepairIn.EquipmentRepairInCode DESC) AS RowIndex,
+	   Inp_EquipmentRepairIn.EquipmentRepairInId,
+	   Inp_EquipmentRepairIn.EquipmentRepairInCode,
+	   Inp_EquipmentRepairIn.EquipmentRepairInDesc,
+	   Bas_RepairType.RepairTypeCode+'-'+ISNULL(Bas_RepairType.RepairTypeName,'') AS RepairTypeName,
+	   dbo.Ftn_GetStatusName(Inp_EquipmentRepairIn.Type,'EquipmentRepairInType') AS [Type],
+	   dbo.Ftn_GetStatusName(Inp_EquipmentRepairIn.Status,'EquipmentRepairInStatus') AS StatusName,
+	   Inp_EquipmentRepairIn.Status ,
+	   MainRepairUser.SysUserCode+'-'+ISNULL(MainRepairUser.SysUserName,'') AS MainRepairUserName, 
+	   SendRepairUser.SysUserCode+'-'+ISNULL(SendRepairUser.SysUserName,'') AS SendRepairUserName, 
+	   Inp_EquipmentRepairIn.SendRepairDateTime
+FROM dbo.Inp_EquipmentRepairIn WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_RepairType WITH(NOLOCK) ON dbo.Bas_RepairType.RepairTypeId = dbo.Inp_EquipmentRepairIn.RepairTypeId
+LEFT JOIN dbo.Set_User MainRepairUser WITH(NOLOCK) ON Inp_EquipmentRepairIn.MainRepairUserId=MainRepairUser.SysUserId
+LEFT JOIN dbo.Set_User SendRepairUser WITH(NOLOCK) ON Inp_EquipmentRepairIn.SendRepairUserId=SendRepairUser.SysUserId
+WHERE 1=1 
+)
+
+SELECT * 
+FROM temp
+WHERE temp.RowIndex BETWEEN @IndexStart AND @IndexEnd
+ORDER BY RowIndex
+Params:
+@IndexStart=1
+@IndexEnd=20
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:05:44.638
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:14.9911
+Sql:SELECT Inp_EquipmentRepairInDetail.EquipmentRepairInDetailId,
+	   Inp_EquipmentRepairInDetail.EquipmentId,
+	   Bas_Equipment.EquipmentCode,
+	   Bas_Equipment.EquipmentDesc,
+	   Inp_EquipmentRepairInDetail.RepairTypeId,
+	   Bas_RepairType.RepairTypeCode+'-'+ISNULL(Bas_RepairType.RepairTypeName,'') AS RepairTypeName,
+	   Inp_EquipmentRepairInDetail.Status,
+	   dbo.Ftn_GetStatusName(Inp_EquipmentRepairInDetail.Status,'EquipmentRepairInStatus') AS StatusName,
+	   MainRepairUser.SysUserId AS MainRepairUserId,
+	   MainRepairUser.SysUserCode+'-'+ISNULL(MainRepairUser.SysUserName,'') AS MainRepairUserName,
+	   STUFF((
+				SELECT ';'+CAST(Inp_EquipmentRepairInDetail_AssistRepairUser.AssistRepairUserId AS NVARCHAR(50))
+				FROM dbo.Inp_EquipmentRepairInDetail_AssistRepairUser WITH(NOLOCK) 
+				WHERE Inp_EquipmentRepairInDetail_AssistRepairUser.EquipmentRepairInDetailId=Inp_EquipmentRepairInDetail.EquipmentRepairInDetailId
+				FOR XML PATH('')
+		),1,1,'') AS AssistRepairUserId,
+	   STUFF((
+				SELECT ';'+dbo.Set_User.SysUserCode+'-'+ISNULL(dbo.Set_User.SysUserName,'')
+				FROM dbo.Inp_EquipmentRepairInDetail_AssistRepairUser WITH(NOLOCK) 
+				LEFT JOIN dbo.Set_User WITH(NOLOCK) ON Inp_EquipmentRepairInDetail_AssistRepairUser.AssistRepairUserId=Set_User.SysUserId
+				WHERE Inp_EquipmentRepairInDetail_AssistRepairUser.EquipmentRepairInDetailId=Inp_EquipmentRepairInDetail.EquipmentRepairInDetailId
+				FOR XML PATH('')
+		),1,1,'') AS AssistRepairUserName,
+	   DelegateUser.SysUserId AS DelegateUserId,
+	   DelegateUser.SysUserCode+'-'+ISNULL(DelegateUser.SysUserName,'') AS DelegateUserName,
+	   Inp_EquipmentRepairInDetail.DelegateDateTime,
+	   ReceiveUser.SysUserId AS ReceiveUserId,
+	   ReceiveUser.SysUserCode+'-'+ISNULL(ReceiveUser.SysUserName,'') AS ReceiveUserName,
+	   Inp_EquipmentRepairInDetail.ReceiveDateTime,
+	   RepairCompleteUser.SysUserId AS RepairCompleteUserId,
+	   RepairCompleteUser.SysUserCode+'-'+ISNULL(RepairCompleteUser.SysUserName,'') AS RepairCompleteUserName,
+	   Inp_EquipmentRepairInDetail.RepairCompleteDateTime,
+	   Inp_EquipmentRepairInDetail.SendRepairComment,
+	   Inp_EquipmentRepairInDetail.DelegateComment,
+	   Inp_EquipmentRepairInDetail.RejectDateTime,
+	   Inp_EquipmentRepairInDetail.RejectComment,
+	   Inp_EquipmentRepairInDetail.ReDelegateDateTime,
+	   Inp_EquipmentRepairInDetail.ReDelegateComment,
+	   Inp_EquipmentRepairInDetail.OutSourcingDateTime,
+	   Inp_EquipmentRepairInDetail.OutSourcingComment,
+	   Inp_EquipmentRepairInDetail.ScrapDateTime,
+	   Inp_EquipmentRepairInDetail.ScrapComment,
+	   SureUser.SysUserId AS SureUserId,
+	   SureUser.SysUserCode+'-'+ISNULL(SureUser.SysUserName,'') AS SureUserName,
+	   Inp_EquipmentRepairInDetail.SureDateTime,
+	   Inp_EquipmentRepairInDetail.NotAgreeComment,
+       0 AS EditFlag,--0：未编辑  1：委派   2：接受    3：驳回   4：抢单   5：同意   6：拒绝   7：重新委派   8：委外维修    9：报废
+	   0 AS EditAssistRepairUserFlag ,--0：未编辑  1：已修改
+       '' AS GetText,--抢单文本
+       '' AS DelegateText,--委派文本
+       '' AS ReceiveText,--接受驳回文本
+       '' AS ReceiveForeground,--接受驳回文本颜色
+       '' AS AgreeText,--同意拒绝文本
+       '' AS AgreeForeground,--同意拒绝文本颜色
+       '' AS ReDelegateText,--重新委派文本
+       '' AS OutSourcingText,--委外维修文本
+       '' AS ScrapText,--报废文本
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'')='WaitDelegate' THEN 'Visible' ELSE 'Collapsed' END AS CanGetOrder, --抢单
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'')='Delegate' AND Inp_EquipmentRepairInDetail.MainRepairUserId=@UserId THEN 'Visible' ELSE 'Collapsed' END AS CanReceive,--接受驳回
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'') IN('WaitRejectSure','WaitReDelegateSure','WaitOutSourcingSure','WaitScrapSure') THEN 'Visible' ELSE 'Collapsed' END AS CanAgree,--同意拒绝
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'')='WaitDelegate' THEN 'Visible' ELSE 'Collapsed' END AS CanDelegate, --委派
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'')!='Close' THEN 'Visible' ELSE 'Collapsed' END AS CanAddAssistRepairUser, --添加维修协助人
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'') IN('WaitRepair','Repair') AND Inp_EquipmentRepairInDetail.MainRepairUserId=@UserId THEN 'Visible' ELSE 'Collapsed' END AS CanReDelegate,--重新委派
+	   CASE WHEN (@IsManager=1 AND ISNULL(Inp_EquipmentRepairInDetail.Status,'')='WaitDelegate') OR (@IsManager=0 AND Inp_EquipmentRepairInDetail.MainRepairUserId=@UserId AND ISNULL(Inp_EquipmentRepairInDetail.Status,'') IN('WaitRepair','Repair')) THEN 'Visible' ELSE 'Collapsed' END AS CanOutSourcing,--外协
+	   CASE WHEN (@IsManager=1 AND ISNULL(Inp_EquipmentRepairInDetail.Status,'')='WaitDelegate') OR (@IsManager=0 AND Inp_EquipmentRepairInDetail.MainRepairUserId=@UserId AND ISNULL(Inp_EquipmentRepairInDetail.Status,'') IN('WaitRepair','Repair')) THEN 'Visible' ELSE 'Collapsed' END AS CanScrap--报废
+FROM dbo.Inp_EquipmentRepairInDetail WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Equipment WITH(NOLOCK) ON dbo.Bas_Equipment.EquipmentId = dbo.Inp_EquipmentRepairInDetail.EquipmentId
+LEFT JOIN dbo.Bas_RepairType WITH(NOLOCK) ON dbo.Bas_RepairType.RepairTypeId = dbo.Inp_EquipmentRepairInDetail.RepairTypeId
+LEFT JOIN dbo.Set_User MainRepairUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.MainRepairUserId=MainRepairUser.SysUserId
+LEFT JOIN dbo.Set_User DelegateUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.DelegateUserId=DelegateUser.SysUserId
+LEFT JOIN dbo.Set_User ReceiveUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.ReceiveUserId=ReceiveUser.SysUserId
+LEFT JOIN dbo.Set_User RepairCompleteUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.RepairCompleteUserId=RepairCompleteUser.SysUserId
+LEFT JOIN dbo.Set_User SureUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.SureUserId=SureUser.SysUserId
+WHERE Inp_EquipmentRepairInDetail.EquipmentRepairInId=@EquipmentRepairInId
+
+Params:
+@EquipmentRepairInId=19
+@UserId=3558
+@IsManager=True
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:08:26.592
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:36.6688
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=283
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:08:26.604
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:16.8747
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=25
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:08:26.616
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:18.8855
+Sql:DECLARE @t TABLE(rowIndex INT,String NVARCHAR(50))
+INSERT INTO @t
+SELECT rowIndex,String FROM dbo.Ftn_GetTableFromString(@Code,',')
+
+SELECT Code,Name
+FROM dbo.Set_SystemType WITH(NOLOCK) 
+WHERE TypeCode='EquipmentRepairInStatus'
+AND (NOT EXISTS(SELECT * FROM @t) OR EXISTS(SELECT * FROM @t WHERE String=Set_SystemType.Code))
+ORDER BY Sequence
+Params:
+@Code=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:08:26.628
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:12.7598
+Sql:SELECT Code,Name
+FROM dbo.Set_SystemType WITH(NOLOCK) 
+WHERE TypeCode='EquipmentRepairInType'
+ORDER BY Sequence
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:08:28.758
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:19.9755
+Sql:SELECT COUNT(*) FROM dbo.Inp_EquipmentRepairIn WITH(NOLOCK) WHERE 1=1 
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:08:28.878
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:16.9819
+Sql:WITH temp AS (
+SELECT ROW_NUMBER()OVER(ORDER BY Inp_EquipmentRepairIn.EquipmentRepairInCode DESC) AS RowIndex,
+	   Inp_EquipmentRepairIn.EquipmentRepairInId,
+	   Inp_EquipmentRepairIn.EquipmentRepairInCode,
+	   Inp_EquipmentRepairIn.EquipmentRepairInDesc,
+	   Bas_RepairType.RepairTypeCode+'-'+ISNULL(Bas_RepairType.RepairTypeName,'') AS RepairTypeName,
+	   dbo.Ftn_GetStatusName(Inp_EquipmentRepairIn.Type,'EquipmentRepairInType') AS [Type],
+	   dbo.Ftn_GetStatusName(Inp_EquipmentRepairIn.Status,'EquipmentRepairInStatus') AS StatusName,
+	   Inp_EquipmentRepairIn.Status ,
+	   MainRepairUser.SysUserCode+'-'+ISNULL(MainRepairUser.SysUserName,'') AS MainRepairUserName, 
+	   SendRepairUser.SysUserCode+'-'+ISNULL(SendRepairUser.SysUserName,'') AS SendRepairUserName, 
+	   Inp_EquipmentRepairIn.SendRepairDateTime
+FROM dbo.Inp_EquipmentRepairIn WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_RepairType WITH(NOLOCK) ON dbo.Bas_RepairType.RepairTypeId = dbo.Inp_EquipmentRepairIn.RepairTypeId
+LEFT JOIN dbo.Set_User MainRepairUser WITH(NOLOCK) ON Inp_EquipmentRepairIn.MainRepairUserId=MainRepairUser.SysUserId
+LEFT JOIN dbo.Set_User SendRepairUser WITH(NOLOCK) ON Inp_EquipmentRepairIn.SendRepairUserId=SendRepairUser.SysUserId
+WHERE 1=1 
+)
+
+SELECT * 
+FROM temp
+WHERE temp.RowIndex BETWEEN @IndexStart AND @IndexEnd
+ORDER BY RowIndex
+Params:
+@IndexStart=1
+@IndexEnd=20
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:08:30.500
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:41.9752
+Sql:SELECT Inp_EquipmentRepairInDetail.EquipmentRepairInDetailId,
+	   Inp_EquipmentRepairInDetail.EquipmentId,
+	   Bas_Equipment.EquipmentCode,
+	   Bas_Equipment.EquipmentDesc,
+	   Inp_EquipmentRepairInDetail.RepairTypeId,
+	   Bas_RepairType.RepairTypeCode+'-'+ISNULL(Bas_RepairType.RepairTypeName,'') AS RepairTypeName,
+	   Inp_EquipmentRepairInDetail.Status,
+	   dbo.Ftn_GetStatusName(Inp_EquipmentRepairInDetail.Status,'EquipmentRepairInStatus') AS StatusName,
+	   MainRepairUser.SysUserId AS MainRepairUserId,
+	   MainRepairUser.SysUserCode+'-'+ISNULL(MainRepairUser.SysUserName,'') AS MainRepairUserName,
+	   STUFF((
+				SELECT ';'+CAST(Inp_EquipmentRepairInDetail_AssistRepairUser.AssistRepairUserId AS NVARCHAR(50))
+				FROM dbo.Inp_EquipmentRepairInDetail_AssistRepairUser WITH(NOLOCK) 
+				WHERE Inp_EquipmentRepairInDetail_AssistRepairUser.EquipmentRepairInDetailId=Inp_EquipmentRepairInDetail.EquipmentRepairInDetailId
+				FOR XML PATH('')
+		),1,1,'') AS AssistRepairUserId,
+	   STUFF((
+				SELECT ';'+dbo.Set_User.SysUserCode+'-'+ISNULL(dbo.Set_User.SysUserName,'')
+				FROM dbo.Inp_EquipmentRepairInDetail_AssistRepairUser WITH(NOLOCK) 
+				LEFT JOIN dbo.Set_User WITH(NOLOCK) ON Inp_EquipmentRepairInDetail_AssistRepairUser.AssistRepairUserId=Set_User.SysUserId
+				WHERE Inp_EquipmentRepairInDetail_AssistRepairUser.EquipmentRepairInDetailId=Inp_EquipmentRepairInDetail.EquipmentRepairInDetailId
+				FOR XML PATH('')
+		),1,1,'') AS AssistRepairUserName,
+	   DelegateUser.SysUserId AS DelegateUserId,
+	   DelegateUser.SysUserCode+'-'+ISNULL(DelegateUser.SysUserName,'') AS DelegateUserName,
+	   Inp_EquipmentRepairInDetail.DelegateDateTime,
+	   ReceiveUser.SysUserId AS ReceiveUserId,
+	   ReceiveUser.SysUserCode+'-'+ISNULL(ReceiveUser.SysUserName,'') AS ReceiveUserName,
+	   Inp_EquipmentRepairInDetail.ReceiveDateTime,
+	   RepairCompleteUser.SysUserId AS RepairCompleteUserId,
+	   RepairCompleteUser.SysUserCode+'-'+ISNULL(RepairCompleteUser.SysUserName,'') AS RepairCompleteUserName,
+	   Inp_EquipmentRepairInDetail.RepairCompleteDateTime,
+	   Inp_EquipmentRepairInDetail.SendRepairComment,
+	   Inp_EquipmentRepairInDetail.DelegateComment,
+	   Inp_EquipmentRepairInDetail.RejectDateTime,
+	   Inp_EquipmentRepairInDetail.RejectComment,
+	   Inp_EquipmentRepairInDetail.ReDelegateDateTime,
+	   Inp_EquipmentRepairInDetail.ReDelegateComment,
+	   Inp_EquipmentRepairInDetail.OutSourcingDateTime,
+	   Inp_EquipmentRepairInDetail.OutSourcingComment,
+	   Inp_EquipmentRepairInDetail.ScrapDateTime,
+	   Inp_EquipmentRepairInDetail.ScrapComment,
+	   SureUser.SysUserId AS SureUserId,
+	   SureUser.SysUserCode+'-'+ISNULL(SureUser.SysUserName,'') AS SureUserName,
+	   Inp_EquipmentRepairInDetail.SureDateTime,
+	   Inp_EquipmentRepairInDetail.NotAgreeComment,
+       0 AS EditFlag,--0：未编辑  1：委派   2：接受    3：驳回   4：抢单   5：同意   6：拒绝   7：重新委派   8：委外维修    9：报废
+	   0 AS EditAssistRepairUserFlag ,--0：未编辑  1：已修改
+       '' AS GetText,--抢单文本
+       '' AS DelegateText,--委派文本
+       '' AS ReceiveText,--接受驳回文本
+       '' AS ReceiveForeground,--接受驳回文本颜色
+       '' AS AgreeText,--同意拒绝文本
+       '' AS AgreeForeground,--同意拒绝文本颜色
+       '' AS ReDelegateText,--重新委派文本
+       '' AS OutSourcingText,--委外维修文本
+       '' AS ScrapText,--报废文本
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'')='WaitDelegate' THEN 'Visible' ELSE 'Collapsed' END AS CanGetOrder, --抢单
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'')='Delegate' AND Inp_EquipmentRepairInDetail.MainRepairUserId=@UserId THEN 'Visible' ELSE 'Collapsed' END AS CanReceive,--接受驳回
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'') IN('WaitRejectSure','WaitReDelegateSure','WaitOutSourcingSure','WaitScrapSure') THEN 'Visible' ELSE 'Collapsed' END AS CanAgree,--同意拒绝
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'')='WaitDelegate' THEN 'Visible' ELSE 'Collapsed' END AS CanDelegate, --委派
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'')!='Close' THEN 'Visible' ELSE 'Collapsed' END AS CanAddAssistRepairUser, --添加维修协助人
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'') IN('WaitRepair','Repair') AND Inp_EquipmentRepairInDetail.MainRepairUserId=@UserId THEN 'Visible' ELSE 'Collapsed' END AS CanReDelegate,--重新委派
+	   CASE WHEN (@IsManager=1 AND ISNULL(Inp_EquipmentRepairInDetail.Status,'')='WaitDelegate') OR (@IsManager=0 AND Inp_EquipmentRepairInDetail.MainRepairUserId=@UserId AND ISNULL(Inp_EquipmentRepairInDetail.Status,'') IN('WaitRepair','Repair')) THEN 'Visible' ELSE 'Collapsed' END AS CanOutSourcing,--外协
+	   CASE WHEN (@IsManager=1 AND ISNULL(Inp_EquipmentRepairInDetail.Status,'')='WaitDelegate') OR (@IsManager=0 AND Inp_EquipmentRepairInDetail.MainRepairUserId=@UserId AND ISNULL(Inp_EquipmentRepairInDetail.Status,'') IN('WaitRepair','Repair')) THEN 'Visible' ELSE 'Collapsed' END AS CanScrap--报废
+FROM dbo.Inp_EquipmentRepairInDetail WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Equipment WITH(NOLOCK) ON dbo.Bas_Equipment.EquipmentId = dbo.Inp_EquipmentRepairInDetail.EquipmentId
+LEFT JOIN dbo.Bas_RepairType WITH(NOLOCK) ON dbo.Bas_RepairType.RepairTypeId = dbo.Inp_EquipmentRepairInDetail.RepairTypeId
+LEFT JOIN dbo.Set_User MainRepairUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.MainRepairUserId=MainRepairUser.SysUserId
+LEFT JOIN dbo.Set_User DelegateUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.DelegateUserId=DelegateUser.SysUserId
+LEFT JOIN dbo.Set_User ReceiveUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.ReceiveUserId=ReceiveUser.SysUserId
+LEFT JOIN dbo.Set_User RepairCompleteUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.RepairCompleteUserId=RepairCompleteUser.SysUserId
+LEFT JOIN dbo.Set_User SureUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.SureUserId=SureUser.SysUserId
+WHERE Inp_EquipmentRepairInDetail.EquipmentRepairInId=@EquipmentRepairInId
+
+Params:
+@EquipmentRepairInId=19
+@UserId=3558
+@IsManager=True
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:10:30.537
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:48.2339
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=283
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:10:30.567
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:16.9926
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=25
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:10:30.579
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:16.6317
+Sql:DECLARE @t TABLE(rowIndex INT,String NVARCHAR(50))
+INSERT INTO @t
+SELECT rowIndex,String FROM dbo.Ftn_GetTableFromString(@Code,',')
+
+SELECT Code,Name
+FROM dbo.Set_SystemType WITH(NOLOCK) 
+WHERE TypeCode='EquipmentRepairInStatus'
+AND (NOT EXISTS(SELECT * FROM @t) OR EXISTS(SELECT * FROM @t WHERE String=Set_SystemType.Code))
+ORDER BY Sequence
+Params:
+@Code=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:10:30.591
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:11.9941
+Sql:SELECT Code,Name
+FROM dbo.Set_SystemType WITH(NOLOCK) 
+WHERE TypeCode='EquipmentRepairInType'
+ORDER BY Sequence
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:10:33.841
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:18.9898
+Sql:SELECT COUNT(*) FROM dbo.Inp_EquipmentRepairIn WITH(NOLOCK) WHERE 1=1 
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:10:33.853
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:15.9936
+Sql:WITH temp AS (
+SELECT ROW_NUMBER()OVER(ORDER BY Inp_EquipmentRepairIn.EquipmentRepairInCode DESC) AS RowIndex,
+	   Inp_EquipmentRepairIn.EquipmentRepairInId,
+	   Inp_EquipmentRepairIn.EquipmentRepairInCode,
+	   Inp_EquipmentRepairIn.EquipmentRepairInDesc,
+	   Bas_RepairType.RepairTypeCode+'-'+ISNULL(Bas_RepairType.RepairTypeName,'') AS RepairTypeName,
+	   dbo.Ftn_GetStatusName(Inp_EquipmentRepairIn.Type,'EquipmentRepairInType') AS [Type],
+	   dbo.Ftn_GetStatusName(Inp_EquipmentRepairIn.Status,'EquipmentRepairInStatus') AS StatusName,
+	   Inp_EquipmentRepairIn.Status ,
+	   MainRepairUser.SysUserCode+'-'+ISNULL(MainRepairUser.SysUserName,'') AS MainRepairUserName, 
+	   SendRepairUser.SysUserCode+'-'+ISNULL(SendRepairUser.SysUserName,'') AS SendRepairUserName, 
+	   Inp_EquipmentRepairIn.SendRepairDateTime
+FROM dbo.Inp_EquipmentRepairIn WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_RepairType WITH(NOLOCK) ON dbo.Bas_RepairType.RepairTypeId = dbo.Inp_EquipmentRepairIn.RepairTypeId
+LEFT JOIN dbo.Set_User MainRepairUser WITH(NOLOCK) ON Inp_EquipmentRepairIn.MainRepairUserId=MainRepairUser.SysUserId
+LEFT JOIN dbo.Set_User SendRepairUser WITH(NOLOCK) ON Inp_EquipmentRepairIn.SendRepairUserId=SendRepairUser.SysUserId
+WHERE 1=1 
+)
+
+SELECT * 
+FROM temp
+WHERE temp.RowIndex BETWEEN @IndexStart AND @IndexEnd
+ORDER BY RowIndex
+Params:
+@IndexStart=1
+@IndexEnd=20
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:10:37.286
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:15.9903
+Sql:SELECT Inp_EquipmentRepairInDetail.EquipmentRepairInDetailId,
+	   Inp_EquipmentRepairInDetail.EquipmentId,
+	   Bas_Equipment.EquipmentCode,
+	   Bas_Equipment.EquipmentDesc,
+	   Inp_EquipmentRepairInDetail.RepairTypeId,
+	   Bas_RepairType.RepairTypeCode+'-'+ISNULL(Bas_RepairType.RepairTypeName,'') AS RepairTypeName,
+	   Inp_EquipmentRepairInDetail.Status,
+	   dbo.Ftn_GetStatusName(Inp_EquipmentRepairInDetail.Status,'EquipmentRepairInStatus') AS StatusName,
+	   MainRepairUser.SysUserId AS MainRepairUserId,
+	   MainRepairUser.SysUserCode+'-'+ISNULL(MainRepairUser.SysUserName,'') AS MainRepairUserName,
+	   STUFF((
+				SELECT ';'+CAST(Inp_EquipmentRepairInDetail_AssistRepairUser.AssistRepairUserId AS NVARCHAR(50))
+				FROM dbo.Inp_EquipmentRepairInDetail_AssistRepairUser WITH(NOLOCK) 
+				WHERE Inp_EquipmentRepairInDetail_AssistRepairUser.EquipmentRepairInDetailId=Inp_EquipmentRepairInDetail.EquipmentRepairInDetailId
+				FOR XML PATH('')
+		),1,1,'') AS AssistRepairUserId,
+	   STUFF((
+				SELECT ';'+dbo.Set_User.SysUserCode+'-'+ISNULL(dbo.Set_User.SysUserName,'')
+				FROM dbo.Inp_EquipmentRepairInDetail_AssistRepairUser WITH(NOLOCK) 
+				LEFT JOIN dbo.Set_User WITH(NOLOCK) ON Inp_EquipmentRepairInDetail_AssistRepairUser.AssistRepairUserId=Set_User.SysUserId
+				WHERE Inp_EquipmentRepairInDetail_AssistRepairUser.EquipmentRepairInDetailId=Inp_EquipmentRepairInDetail.EquipmentRepairInDetailId
+				FOR XML PATH('')
+		),1,1,'') AS AssistRepairUserName,
+	   DelegateUser.SysUserId AS DelegateUserId,
+	   DelegateUser.SysUserCode+'-'+ISNULL(DelegateUser.SysUserName,'') AS DelegateUserName,
+	   Inp_EquipmentRepairInDetail.DelegateDateTime,
+	   ReceiveUser.SysUserId AS ReceiveUserId,
+	   ReceiveUser.SysUserCode+'-'+ISNULL(ReceiveUser.SysUserName,'') AS ReceiveUserName,
+	   Inp_EquipmentRepairInDetail.ReceiveDateTime,
+	   RepairCompleteUser.SysUserId AS RepairCompleteUserId,
+	   RepairCompleteUser.SysUserCode+'-'+ISNULL(RepairCompleteUser.SysUserName,'') AS RepairCompleteUserName,
+	   Inp_EquipmentRepairInDetail.RepairCompleteDateTime,
+	   Inp_EquipmentRepairInDetail.SendRepairComment,
+	   Inp_EquipmentRepairInDetail.DelegateComment,
+	   Inp_EquipmentRepairInDetail.RejectDateTime,
+	   Inp_EquipmentRepairInDetail.RejectComment,
+	   Inp_EquipmentRepairInDetail.ReDelegateDateTime,
+	   Inp_EquipmentRepairInDetail.ReDelegateComment,
+	   Inp_EquipmentRepairInDetail.OutSourcingDateTime,
+	   Inp_EquipmentRepairInDetail.OutSourcingComment,
+	   Inp_EquipmentRepairInDetail.ScrapDateTime,
+	   Inp_EquipmentRepairInDetail.ScrapComment,
+	   SureUser.SysUserId AS SureUserId,
+	   SureUser.SysUserCode+'-'+ISNULL(SureUser.SysUserName,'') AS SureUserName,
+	   Inp_EquipmentRepairInDetail.SureDateTime,
+	   Inp_EquipmentRepairInDetail.NotAgreeComment,
+       0 AS EditFlag,--0：未编辑  1：委派   2：接受    3：驳回   4：抢单   5：同意   6：拒绝   7：重新委派   8：委外维修    9：报废
+	   0 AS EditAssistRepairUserFlag ,--0：未编辑  1：已修改
+       '' AS GetText,--抢单文本
+       '' AS DelegateText,--委派文本
+       '' AS ReceiveText,--接受驳回文本
+       '' AS ReceiveForeground,--接受驳回文本颜色
+       '' AS AgreeText,--同意拒绝文本
+       '' AS AgreeForeground,--同意拒绝文本颜色
+       '' AS ReDelegateText,--重新委派文本
+       '' AS OutSourcingText,--委外维修文本
+       '' AS ScrapText,--报废文本
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'')='WaitDelegate' THEN 'Visible' ELSE 'Collapsed' END AS CanGetOrder, --抢单
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'')='Delegate' AND Inp_EquipmentRepairInDetail.MainRepairUserId=@UserId THEN 'Visible' ELSE 'Collapsed' END AS CanReceive,--接受驳回
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'') IN('WaitRejectSure','WaitReDelegateSure','WaitOutSourcingSure','WaitScrapSure') THEN 'Visible' ELSE 'Collapsed' END AS CanAgree,--同意拒绝
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'')='WaitDelegate' THEN 'Visible' ELSE 'Collapsed' END AS CanDelegate, --委派
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'')!='Close' THEN 'Visible' ELSE 'Collapsed' END AS CanAddAssistRepairUser, --添加维修协助人
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'') IN('WaitRepair','Repair') AND Inp_EquipmentRepairInDetail.MainRepairUserId=@UserId THEN 'Visible' ELSE 'Collapsed' END AS CanReDelegate,--重新委派
+	   CASE WHEN (@IsManager=1 AND ISNULL(Inp_EquipmentRepairInDetail.Status,'')='WaitDelegate') OR (@IsManager=0 AND Inp_EquipmentRepairInDetail.MainRepairUserId=@UserId AND ISNULL(Inp_EquipmentRepairInDetail.Status,'') IN('WaitRepair','Repair')) THEN 'Visible' ELSE 'Collapsed' END AS CanOutSourcing,--外协
+	   CASE WHEN (@IsManager=1 AND ISNULL(Inp_EquipmentRepairInDetail.Status,'')='WaitDelegate') OR (@IsManager=0 AND Inp_EquipmentRepairInDetail.MainRepairUserId=@UserId AND ISNULL(Inp_EquipmentRepairInDetail.Status,'') IN('WaitRepair','Repair')) THEN 'Visible' ELSE 'Collapsed' END AS CanScrap--报废
+FROM dbo.Inp_EquipmentRepairInDetail WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Equipment WITH(NOLOCK) ON dbo.Bas_Equipment.EquipmentId = dbo.Inp_EquipmentRepairInDetail.EquipmentId
+LEFT JOIN dbo.Bas_RepairType WITH(NOLOCK) ON dbo.Bas_RepairType.RepairTypeId = dbo.Inp_EquipmentRepairInDetail.RepairTypeId
+LEFT JOIN dbo.Set_User MainRepairUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.MainRepairUserId=MainRepairUser.SysUserId
+LEFT JOIN dbo.Set_User DelegateUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.DelegateUserId=DelegateUser.SysUserId
+LEFT JOIN dbo.Set_User ReceiveUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.ReceiveUserId=ReceiveUser.SysUserId
+LEFT JOIN dbo.Set_User RepairCompleteUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.RepairCompleteUserId=RepairCompleteUser.SysUserId
+LEFT JOIN dbo.Set_User SureUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.SureUserId=SureUser.SysUserId
+WHERE Inp_EquipmentRepairInDetail.EquipmentRepairInId=@EquipmentRepairInId
+
+Params:
+@EquipmentRepairInId=19
+@UserId=1
+@IsManager=True
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:17:56.942
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:34.3529
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=283
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:17:56.955
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:19.9747
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=25
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:17:56.967
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:17.9992
+Sql:DECLARE @t TABLE(rowIndex INT,String NVARCHAR(50))
+INSERT INTO @t
+SELECT rowIndex,String FROM dbo.Ftn_GetTableFromString(@Code,',')
+
+SELECT Code,Name
+FROM dbo.Set_SystemType WITH(NOLOCK) 
+WHERE TypeCode='EquipmentRepairInStatus'
+AND (NOT EXISTS(SELECT * FROM @t) OR EXISTS(SELECT * FROM @t WHERE String=Set_SystemType.Code))
+ORDER BY Sequence
+Params:
+@Code=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:17:57.080
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:12.7515
+Sql:SELECT RepairTypeId,
+	   RepairTypeCode+'-'+ISNULL(RepairTypeName,'') AS RepairTypeName
+FROM dbo.Bas_RepairType
+ORDER BY RepairTypeCode
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:18:01.930
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:19.9875
+Sql:SELECT COUNT(*) FROM dbo.Inp_EquipmentRepairIn WITH(NOLOCK) WHERE 1=1 
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:18:02.043
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:68.3437
+Sql:WITH temp AS (
+SELECT ROW_NUMBER()OVER(ORDER BY Inp_EquipmentRepairIn.EquipmentRepairInCode DESC) AS RowIndex,
+	   Inp_EquipmentRepairIn.EquipmentRepairInId,
+	   Inp_EquipmentRepairIn.EquipmentRepairInCode,
+	   Inp_EquipmentRepairIn.EquipmentRepairInDesc,
+	   Bas_RepairType.RepairTypeCode+'-'+ISNULL(Bas_RepairType.RepairTypeName,'') AS RepairTypeName,
+	   dbo.Ftn_GetStatusName(Inp_EquipmentRepairIn.Type,'EquipmentRepairInType') AS [Type],
+	   dbo.Ftn_GetStatusName(Inp_EquipmentRepairIn.Status,'EquipmentRepairInStatus') AS StatusName,
+	   Inp_EquipmentRepairIn.Status ,
+	   MainRepairUser.SysUserCode+'-'+ISNULL(MainRepairUser.SysUserName,'') AS MainRepairUserName, 
+	   SendRepairUser.SysUserCode+'-'+ISNULL(SendRepairUser.SysUserName,'') AS SendRepairUserName, 
+	   Inp_EquipmentRepairIn.SendRepairDateTime
+FROM dbo.Inp_EquipmentRepairIn WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_RepairType WITH(NOLOCK) ON dbo.Bas_RepairType.RepairTypeId = dbo.Inp_EquipmentRepairIn.RepairTypeId
+LEFT JOIN dbo.Set_User MainRepairUser WITH(NOLOCK) ON Inp_EquipmentRepairIn.MainRepairUserId=MainRepairUser.SysUserId
+LEFT JOIN dbo.Set_User SendRepairUser WITH(NOLOCK) ON Inp_EquipmentRepairIn.SendRepairUserId=SendRepairUser.SysUserId
+WHERE 1=1 
+)
+
+SELECT * 
+FROM temp
+WHERE temp.RowIndex BETWEEN @IndexStart AND @IndexEnd
+ORDER BY RowIndex
+Params:
+@IndexStart=1
+@IndexEnd=20
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:18:09.009
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:13.9894
+Sql:SELECT Inp_EquipmentRepairInDetail.EquipmentRepairInDetailId,
+	   Inp_EquipmentRepairInDetail.EquipmentId,
+	   Bas_Equipment.EquipmentCode,
+	   Bas_Equipment.EquipmentDesc,
+	   Inp_EquipmentRepairInDetail.RepairTypeId,
+	   Bas_RepairType.RepairTypeCode+'-'+ISNULL(Bas_RepairType.RepairTypeName,'') AS RepairTypeName,
+	   Inp_EquipmentRepairInDetail.Status,
+	   dbo.Ftn_GetStatusName(Inp_EquipmentRepairInDetail.Status,'EquipmentRepairInStatus') AS StatusName,
+	   MainRepairUser.SysUserId AS MainRepairUserId,
+	   MainRepairUser.SysUserCode+'-'+ISNULL(MainRepairUser.SysUserName,'') AS MainRepairUserName,
+	   STUFF((
+				SELECT ';'+CAST(Inp_EquipmentRepairInDetail_AssistRepairUser.AssistRepairUserId AS NVARCHAR(50))
+				FROM dbo.Inp_EquipmentRepairInDetail_AssistRepairUser WITH(NOLOCK) 
+				WHERE Inp_EquipmentRepairInDetail_AssistRepairUser.EquipmentRepairInDetailId=Inp_EquipmentRepairInDetail.EquipmentRepairInDetailId
+				FOR XML PATH('')
+		),1,1,'') AS AssistRepairUserId,
+	   STUFF((
+				SELECT ';'+dbo.Set_User.SysUserCode+'-'+ISNULL(dbo.Set_User.SysUserName,'')
+				FROM dbo.Inp_EquipmentRepairInDetail_AssistRepairUser WITH(NOLOCK) 
+				LEFT JOIN dbo.Set_User WITH(NOLOCK) ON Inp_EquipmentRepairInDetail_AssistRepairUser.AssistRepairUserId=Set_User.SysUserId
+				WHERE Inp_EquipmentRepairInDetail_AssistRepairUser.EquipmentRepairInDetailId=Inp_EquipmentRepairInDetail.EquipmentRepairInDetailId
+				FOR XML PATH('')
+		),1,1,'') AS AssistRepairUserName,
+	   DelegateUser.SysUserId AS DelegateUserId,
+	   DelegateUser.SysUserCode+'-'+ISNULL(DelegateUser.SysUserName,'') AS DelegateUserName,
+	   Inp_EquipmentRepairInDetail.DelegateDateTime,
+	   ReceiveUser.SysUserId AS ReceiveUserId,
+	   ReceiveUser.SysUserCode+'-'+ISNULL(ReceiveUser.SysUserName,'') AS ReceiveUserName,
+	   Inp_EquipmentRepairInDetail.ReceiveDateTime,
+	   RepairCompleteUser.SysUserId AS RepairCompleteUserId,
+	   RepairCompleteUser.SysUserCode+'-'+ISNULL(RepairCompleteUser.SysUserName,'') AS RepairCompleteUserName,
+	   Inp_EquipmentRepairInDetail.RepairCompleteDateTime,
+	   Inp_EquipmentRepairInDetail.SendRepairComment,
+	   Inp_EquipmentRepairInDetail.DelegateComment,
+	   Inp_EquipmentRepairInDetail.RejectDateTime,
+	   Inp_EquipmentRepairInDetail.RejectComment,
+	   Inp_EquipmentRepairInDetail.ReDelegateDateTime,
+	   Inp_EquipmentRepairInDetail.ReDelegateComment,
+	   Inp_EquipmentRepairInDetail.OutSourcingDateTime,
+	   Inp_EquipmentRepairInDetail.OutSourcingComment,
+	   Inp_EquipmentRepairInDetail.ScrapDateTime,
+	   Inp_EquipmentRepairInDetail.ScrapComment,
+	   SureUser.SysUserId AS SureUserId,
+	   SureUser.SysUserCode+'-'+ISNULL(SureUser.SysUserName,'') AS SureUserName,
+	   Inp_EquipmentRepairInDetail.SureDateTime,
+	   Inp_EquipmentRepairInDetail.NotAgreeComment,
+       0 AS EditFlag,--0：未编辑  1：委派   2：接受    3：驳回   4：抢单   5：同意   6：拒绝   7：重新委派   8：委外维修    9：报废
+	   0 AS EditAssistRepairUserFlag ,--0：未编辑  1：已修改
+       '' AS GetText,--抢单文本
+       '' AS DelegateText,--委派文本
+       '' AS ReceiveText,--接受驳回文本
+       '' AS ReceiveForeground,--接受驳回文本颜色
+       '' AS AgreeText,--同意拒绝文本
+       '' AS AgreeForeground,--同意拒绝文本颜色
+       '' AS ReDelegateText,--重新委派文本
+       '' AS OutSourcingText,--委外维修文本
+       '' AS ScrapText,--报废文本
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'')='WaitDelegate' THEN 'Visible' ELSE 'Collapsed' END AS CanGetOrder, --抢单
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'')='Delegate' AND Inp_EquipmentRepairInDetail.MainRepairUserId=@UserId THEN 'Visible' ELSE 'Collapsed' END AS CanReceive,--接受驳回
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'') IN('WaitRejectSure','WaitReDelegateSure','WaitOutSourcingSure','WaitScrapSure') THEN 'Visible' ELSE 'Collapsed' END AS CanAgree,--同意拒绝
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'')='WaitDelegate' THEN 'Visible' ELSE 'Collapsed' END AS CanDelegate, --委派
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'')!='Close' THEN 'Visible' ELSE 'Collapsed' END AS CanAddAssistRepairUser, --添加维修协助人
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'') IN('WaitRepair','Repair') AND Inp_EquipmentRepairInDetail.MainRepairUserId=@UserId THEN 'Visible' ELSE 'Collapsed' END AS CanReDelegate,--重新委派
+	   CASE WHEN (@IsManager=1 AND ISNULL(Inp_EquipmentRepairInDetail.Status,'')='WaitDelegate') OR (@IsManager=0 AND Inp_EquipmentRepairInDetail.MainRepairUserId=@UserId AND ISNULL(Inp_EquipmentRepairInDetail.Status,'') IN('WaitRepair','Repair')) THEN 'Visible' ELSE 'Collapsed' END AS CanOutSourcing,--外协
+	   CASE WHEN (@IsManager=1 AND ISNULL(Inp_EquipmentRepairInDetail.Status,'')='WaitDelegate') OR (@IsManager=0 AND Inp_EquipmentRepairInDetail.MainRepairUserId=@UserId AND ISNULL(Inp_EquipmentRepairInDetail.Status,'') IN('WaitRepair','Repair')) THEN 'Visible' ELSE 'Collapsed' END AS CanScrap--报废
+FROM dbo.Inp_EquipmentRepairInDetail WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Equipment WITH(NOLOCK) ON dbo.Bas_Equipment.EquipmentId = dbo.Inp_EquipmentRepairInDetail.EquipmentId
+LEFT JOIN dbo.Bas_RepairType WITH(NOLOCK) ON dbo.Bas_RepairType.RepairTypeId = dbo.Inp_EquipmentRepairInDetail.RepairTypeId
+LEFT JOIN dbo.Set_User MainRepairUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.MainRepairUserId=MainRepairUser.SysUserId
+LEFT JOIN dbo.Set_User DelegateUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.DelegateUserId=DelegateUser.SysUserId
+LEFT JOIN dbo.Set_User ReceiveUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.ReceiveUserId=ReceiveUser.SysUserId
+LEFT JOIN dbo.Set_User RepairCompleteUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.RepairCompleteUserId=RepairCompleteUser.SysUserId
+LEFT JOIN dbo.Set_User SureUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.SureUserId=SureUser.SysUserId
+WHERE Inp_EquipmentRepairInDetail.EquipmentRepairInId=@EquipmentRepairInId
+
+Params:
+@EquipmentRepairInId=18
+@UserId=1
+@IsManager=True
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:33:57.077
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:33.3101
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=283
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:33:57.124
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:16.9901
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=25
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:33:57.136
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:16.9893
+Sql:DECLARE @t TABLE(rowIndex INT,String NVARCHAR(50))
+INSERT INTO @t
+SELECT rowIndex,String FROM dbo.Ftn_GetTableFromString(@Code,',')
+
+SELECT Code,Name
+FROM dbo.Set_SystemType WITH(NOLOCK) 
+WHERE TypeCode='EquipmentRepairInStatus'
+AND (NOT EXISTS(SELECT * FROM @t) OR EXISTS(SELECT * FROM @t WHERE String=Set_SystemType.Code))
+ORDER BY Sequence
+Params:
+@Code=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:33:57.249
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:12.9925
+Sql:SELECT RepairTypeId,
+	   RepairTypeCode+'-'+ISNULL(RepairTypeName,'') AS RepairTypeName
+FROM dbo.Bas_RepairType
+ORDER BY RepairTypeCode
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:34:00.078
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:22.0033
+Sql:SELECT COUNT(*) FROM dbo.Inp_EquipmentRepairIn WITH(NOLOCK) WHERE 1=1 
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:34:00.090
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:15.0071
+Sql:WITH temp AS (
+SELECT ROW_NUMBER()OVER(ORDER BY Inp_EquipmentRepairIn.EquipmentRepairInCode DESC) AS RowIndex,
+	   Inp_EquipmentRepairIn.EquipmentRepairInId,
+	   Inp_EquipmentRepairIn.EquipmentRepairInCode,
+	   Inp_EquipmentRepairIn.EquipmentRepairInDesc,
+	   Bas_RepairType.RepairTypeCode+'-'+ISNULL(Bas_RepairType.RepairTypeName,'') AS RepairTypeName,
+	   dbo.Ftn_GetStatusName(Inp_EquipmentRepairIn.Type,'EquipmentRepairInType') AS [Type],
+	   dbo.Ftn_GetStatusName(Inp_EquipmentRepairIn.Status,'EquipmentRepairInStatus') AS StatusName,
+	   Inp_EquipmentRepairIn.Status ,
+	   MainRepairUser.SysUserCode+'-'+ISNULL(MainRepairUser.SysUserName,'') AS MainRepairUserName, 
+	   SendRepairUser.SysUserCode+'-'+ISNULL(SendRepairUser.SysUserName,'') AS SendRepairUserName, 
+	   Inp_EquipmentRepairIn.SendRepairDateTime
+FROM dbo.Inp_EquipmentRepairIn WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_RepairType WITH(NOLOCK) ON dbo.Bas_RepairType.RepairTypeId = dbo.Inp_EquipmentRepairIn.RepairTypeId
+LEFT JOIN dbo.Set_User MainRepairUser WITH(NOLOCK) ON Inp_EquipmentRepairIn.MainRepairUserId=MainRepairUser.SysUserId
+LEFT JOIN dbo.Set_User SendRepairUser WITH(NOLOCK) ON Inp_EquipmentRepairIn.SendRepairUserId=SendRepairUser.SysUserId
+WHERE 1=1 
+)
+
+SELECT * 
+FROM temp
+WHERE temp.RowIndex BETWEEN @IndexStart AND @IndexEnd
+ORDER BY RowIndex
+Params:
+@IndexStart=1
+@IndexEnd=20
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 17:34:03.736
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:19.9875
+Sql:SELECT Inp_EquipmentRepairInDetail.EquipmentRepairInDetailId,
+	   Inp_EquipmentRepairInDetail.EquipmentId,
+	   Bas_Equipment.EquipmentCode,
+	   Bas_Equipment.EquipmentDesc,
+	   Inp_EquipmentRepairInDetail.RepairTypeId,
+	   Bas_RepairType.RepairTypeCode+'-'+ISNULL(Bas_RepairType.RepairTypeName,'') AS RepairTypeName,
+	   Inp_EquipmentRepairInDetail.Status,
+	   dbo.Ftn_GetStatusName(Inp_EquipmentRepairInDetail.Status,'EquipmentRepairInStatus') AS StatusName,
+	   MainRepairUser.SysUserId AS MainRepairUserId,
+	   MainRepairUser.SysUserCode+'-'+ISNULL(MainRepairUser.SysUserName,'') AS MainRepairUserName,
+	   STUFF((
+				SELECT ';'+CAST(Inp_EquipmentRepairInDetail_AssistRepairUser.AssistRepairUserId AS NVARCHAR(50))
+				FROM dbo.Inp_EquipmentRepairInDetail_AssistRepairUser WITH(NOLOCK) 
+				WHERE Inp_EquipmentRepairInDetail_AssistRepairUser.EquipmentRepairInDetailId=Inp_EquipmentRepairInDetail.EquipmentRepairInDetailId
+				FOR XML PATH('')
+		),1,1,'') AS AssistRepairUserId,
+	   STUFF((
+				SELECT ';'+dbo.Set_User.SysUserCode+'-'+ISNULL(dbo.Set_User.SysUserName,'')
+				FROM dbo.Inp_EquipmentRepairInDetail_AssistRepairUser WITH(NOLOCK) 
+				LEFT JOIN dbo.Set_User WITH(NOLOCK) ON Inp_EquipmentRepairInDetail_AssistRepairUser.AssistRepairUserId=Set_User.SysUserId
+				WHERE Inp_EquipmentRepairInDetail_AssistRepairUser.EquipmentRepairInDetailId=Inp_EquipmentRepairInDetail.EquipmentRepairInDetailId
+				FOR XML PATH('')
+		),1,1,'') AS AssistRepairUserName,
+	   DelegateUser.SysUserId AS DelegateUserId,
+	   DelegateUser.SysUserCode+'-'+ISNULL(DelegateUser.SysUserName,'') AS DelegateUserName,
+	   Inp_EquipmentRepairInDetail.DelegateDateTime,
+	   ReceiveUser.SysUserId AS ReceiveUserId,
+	   ReceiveUser.SysUserCode+'-'+ISNULL(ReceiveUser.SysUserName,'') AS ReceiveUserName,
+	   Inp_EquipmentRepairInDetail.ReceiveDateTime,
+	   RepairCompleteUser.SysUserId AS RepairCompleteUserId,
+	   RepairCompleteUser.SysUserCode+'-'+ISNULL(RepairCompleteUser.SysUserName,'') AS RepairCompleteUserName,
+	   Inp_EquipmentRepairInDetail.RepairCompleteDateTime,
+	   Inp_EquipmentRepairInDetail.SendRepairComment,
+	   Inp_EquipmentRepairInDetail.DelegateComment,
+	   Inp_EquipmentRepairInDetail.RejectDateTime,
+	   Inp_EquipmentRepairInDetail.RejectComment,
+	   Inp_EquipmentRepairInDetail.ReDelegateDateTime,
+	   Inp_EquipmentRepairInDetail.ReDelegateComment,
+	   Inp_EquipmentRepairInDetail.OutSourcingDateTime,
+	   Inp_EquipmentRepairInDetail.OutSourcingComment,
+	   Inp_EquipmentRepairInDetail.ScrapDateTime,
+	   Inp_EquipmentRepairInDetail.ScrapComment,
+	   SureUser.SysUserId AS SureUserId,
+	   SureUser.SysUserCode+'-'+ISNULL(SureUser.SysUserName,'') AS SureUserName,
+	   Inp_EquipmentRepairInDetail.SureDateTime,
+	   Inp_EquipmentRepairInDetail.NotAgreeComment,
+       0 AS EditFlag,--0：未编辑  1：委派   2：接受    3：驳回   4：抢单   5：同意   6：拒绝   7：重新委派   8：委外维修    9：报废
+	   0 AS EditAssistRepairUserFlag ,--0：未编辑  1：已修改
+       '' AS GetText,--抢单文本
+       '' AS DelegateText,--委派文本
+       '' AS ReceiveText,--接受驳回文本
+       '' AS ReceiveForeground,--接受驳回文本颜色
+       '' AS AgreeText,--同意拒绝文本
+       '' AS AgreeForeground,--同意拒绝文本颜色
+       '' AS ReDelegateText,--重新委派文本
+       '' AS OutSourcingText,--委外维修文本
+       '' AS ScrapText,--报废文本
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'')='WaitDelegate' THEN 'Visible' ELSE 'Collapsed' END AS CanGetOrder, --抢单
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'')='Delegate' AND Inp_EquipmentRepairInDetail.MainRepairUserId=@UserId THEN 'Visible' ELSE 'Collapsed' END AS CanReceive,--接受驳回
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'') IN('WaitRejectSure','WaitReDelegateSure','WaitOutSourcingSure','WaitScrapSure') THEN 'Visible' ELSE 'Collapsed' END AS CanAgree,--同意拒绝
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'')='WaitDelegate' THEN 'Visible' ELSE 'Collapsed' END AS CanDelegate, --委派
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'')!='Close' THEN 'Visible' ELSE 'Collapsed' END AS CanAddAssistRepairUser, --添加维修协助人
+	   CASE WHEN ISNULL(Inp_EquipmentRepairInDetail.Status,'') IN('WaitRepair','Repair') AND Inp_EquipmentRepairInDetail.MainRepairUserId=@UserId THEN 'Visible' ELSE 'Collapsed' END AS CanReDelegate,--重新委派
+	   CASE WHEN (@IsManager=1 AND ISNULL(Inp_EquipmentRepairInDetail.Status,'')='WaitDelegate') OR (@IsManager=0 AND Inp_EquipmentRepairInDetail.MainRepairUserId=@UserId AND ISNULL(Inp_EquipmentRepairInDetail.Status,'') IN('WaitRepair','Repair')) THEN 'Visible' ELSE 'Collapsed' END AS CanOutSourcing,--外协
+	   CASE WHEN (@IsManager=1 AND ISNULL(Inp_EquipmentRepairInDetail.Status,'')='WaitDelegate') OR (@IsManager=0 AND Inp_EquipmentRepairInDetail.MainRepairUserId=@UserId AND ISNULL(Inp_EquipmentRepairInDetail.Status,'') IN('WaitRepair','Repair')) THEN 'Visible' ELSE 'Collapsed' END AS CanScrap--报废
+FROM dbo.Inp_EquipmentRepairInDetail WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Equipment WITH(NOLOCK) ON dbo.Bas_Equipment.EquipmentId = dbo.Inp_EquipmentRepairInDetail.EquipmentId
+LEFT JOIN dbo.Bas_RepairType WITH(NOLOCK) ON dbo.Bas_RepairType.RepairTypeId = dbo.Inp_EquipmentRepairInDetail.RepairTypeId
+LEFT JOIN dbo.Set_User MainRepairUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.MainRepairUserId=MainRepairUser.SysUserId
+LEFT JOIN dbo.Set_User DelegateUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.DelegateUserId=DelegateUser.SysUserId
+LEFT JOIN dbo.Set_User ReceiveUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.ReceiveUserId=ReceiveUser.SysUserId
+LEFT JOIN dbo.Set_User RepairCompleteUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.RepairCompleteUserId=RepairCompleteUser.SysUserId
+LEFT JOIN dbo.Set_User SureUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.SureUserId=SureUser.SysUserId
+WHERE Inp_EquipmentRepairInDetail.EquipmentRepairInId=@EquipmentRepairInId
+
+Params:
+@EquipmentRepairInId=19
+@UserId=1
+@IsManager=True
+END===============================================================================================
+
+

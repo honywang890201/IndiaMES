@@ -1,0 +1,844 @@
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-07 17:03:45.147
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:36.002
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-07 17:10:02.340
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:16.0009
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-07 17:10:16.756
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0002
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+       Bas_Item.ENType,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.PalletQty
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=115
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-07 17:10:16.866
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0001
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=115
+@OPId=70
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-07 17:10:18.430
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT FileId,
+	   FileName,
+	   FileDesc,
+	   FileServerId,
+	   ServerFileName
+FROM dbo.Set_File  WITH(NOLOCK) 
+WHERE FileId=@FileId
+Params:
+@FileId=2518
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-07 17:10:19.440
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT FileServerId,
+	   FileServerCode,
+	   FileServerName,
+	   FileServerNote,
+	   NetOfficeFileServerAddress,
+	   Net0FileServerAddress,
+	   Net1FileServerAddress,
+	   Net2FileServerAddress,
+	   Net3FileServerAddress,
+	   Net4FileServerAddress,
+	   Net5FileServerAddress,
+	   Net6FileServerAddress,
+	   Net7FileServerAddress,
+	   Net8FileServerAddress,
+	   Net9FileServerAddress,
+	   Net10FileServerAddress,
+	   FileServerUser,
+	   FileServerPwd,
+	   FileServerType
+FROM dbo.Set_FileServer  WITH(NOLOCK) 
+WHERE FileServerId=@FileServerId 
+Params:
+@FileServerId=0
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-07 17:11:18.484
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:4.0003
+Sql:Prd_Inp_Pack_Pallet_Online
+Params:
+@ScanType=BoxSN
+@ScanTypeDesc=外箱条码
+@ScanCode=400507001
+@ScanedBoxs=<xml></xml>
+@MOId=115
+@ItemId=19139
+@ENType=OnLine
+@UserId=366
+@PluginId=0
+@OutBoxId=DBNull
+@OutBoxSN=DBNull
+@OutPalletSN=
+@OutIsCompletePallet=DBNull
+@Return_Message=null
+@Return_Value=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-07 17:11:25.180
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:3.0002
+Sql:Prd_Inp_Pack_Pallet_Online
+Params:
+@ScanType=BoxSN
+@ScanTypeDesc=外箱条码
+@ScanCode=400507002
+@ScanedBoxs=<xml></xml>
+@MOId=115
+@ItemId=19139
+@ENType=OnLine
+@UserId=366
+@PluginId=0
+@OutBoxId=DBNull
+@OutBoxSN=DBNull
+@OutPalletSN=
+@OutIsCompletePallet=DBNull
+@Return_Message=null
+@Return_Value=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-07 17:11:39.346
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:4.0002
+Sql:Prd_Inp_Pack_Pallet_Online
+Params:
+@ScanType=BoxSN
+@ScanTypeDesc=外箱条码
+@ScanCode=400507003
+@ScanedBoxs=<xml></xml>
+@MOId=115
+@ItemId=19139
+@ENType=OnLine
+@UserId=366
+@PluginId=0
+@OutBoxId=DBNull
+@OutBoxSN=DBNull
+@OutPalletSN=
+@OutIsCompletePallet=DBNull
+@Return_Message=null
+@Return_Value=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-07 17:11:47.953
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:4.0002
+Sql:Prd_Inp_Pack_Pallet_Online
+Params:
+@ScanType=BoxSN
+@ScanTypeDesc=外箱条码
+@ScanCode=400507004
+@ScanedBoxs=<xml></xml>
+@MOId=115
+@ItemId=19139
+@ENType=OnLine
+@UserId=366
+@PluginId=0
+@OutBoxId=DBNull
+@OutBoxSN=DBNull
+@OutPalletSN=
+@OutIsCompletePallet=DBNull
+@Return_Message=null
+@Return_Value=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-07 17:11:59.205
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:5.0003
+Sql:Prd_Inp_Pack_Pallet_Online
+Params:
+@ScanType=BoxSN
+@ScanTypeDesc=外箱条码
+@ScanCode=400507005
+@ScanedBoxs=<xml></xml>
+@MOId=115
+@ItemId=19139
+@ENType=OnLine
+@UserId=366
+@PluginId=0
+@OutBoxId=DBNull
+@OutBoxSN=DBNull
+@OutPalletSN=
+@OutIsCompletePallet=DBNull
+@Return_Message=null
+@Return_Value=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-07 17:12:09.096
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:6.0004
+Sql:Prd_Inp_Pack_Pallet_Online
+Params:
+@ScanType=BoxSN
+@ScanTypeDesc=外箱条码
+@ScanCode=400507006
+@ScanedBoxs=<xml><row BoxId="67425" BoxSN="400507005" ScanCode="400507005" /></xml>
+@MOId=115
+@ItemId=19139
+@ENType=OnLine
+@UserId=366
+@PluginId=0
+@OutBoxId=DBNull
+@OutBoxSN=DBNull
+@OutPalletSN=PNDIAN001003
+@OutIsCompletePallet=DBNull
+@Return_Message=null
+@Return_Value=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-07 17:14:05.235
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:89.0051
+Sql:Prd_Inp_Pack_Pallet_Submit_Online
+Params:
+@PalletSN=PNDIAN001003
+@ScanedBoxs=<xml><row BoxId="67425" BoxSN="400507005" ScanCode="400507005" /><row BoxId="67426" BoxSN="400507006" ScanCode="400507006" /></xml>
+@MOId=115
+@ItemId=19139
+@UserId=366
+@PluginId=0
+@Return_Message=null
+@Return_Value=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-07 17:16:22.919
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:4.0003
+Sql:Prd_Inp_Pack_Pallet_Online
+Params:
+@ScanType=BoxSN
+@ScanTypeDesc=外箱条码
+@ScanCode=400507008
+@ScanedBoxs=<xml></xml>
+@MOId=115
+@ItemId=19139
+@ENType=OnLine
+@UserId=366
+@PluginId=0
+@OutBoxId=DBNull
+@OutBoxSN=DBNull
+@OutPalletSN=
+@OutIsCompletePallet=DBNull
+@Return_Message=null
+@Return_Value=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-07 17:17:59.036
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:5.0003
+Sql:Prd_Inp_Pack_Pallet_Online
+Params:
+@ScanType=BoxSN
+@ScanTypeDesc=外箱条码
+@ScanCode=400507008
+@ScanedBoxs=<xml></xml>
+@MOId=115
+@ItemId=19139
+@ENType=OnLine
+@UserId=366
+@PluginId=0
+@OutBoxId=DBNull
+@OutBoxSN=DBNull
+@OutPalletSN=
+@OutIsCompletePallet=DBNull
+@Return_Message=null
+@Return_Value=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-07 17:18:04.346
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:4.0003
+Sql:Prd_Inp_Pack_Pallet_Online
+Params:
+@ScanType=BoxSN
+@ScanTypeDesc=外箱条码
+@ScanCode=400507007
+@ScanedBoxs=<xml></xml>
+@MOId=115
+@ItemId=19139
+@ENType=OnLine
+@UserId=366
+@PluginId=0
+@OutBoxId=DBNull
+@OutBoxSN=DBNull
+@OutPalletSN=
+@OutIsCompletePallet=DBNull
+@Return_Message=null
+@Return_Value=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-07 17:18:08.057
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:6.0003
+Sql:Prd_Inp_Pack_Pallet_Online
+Params:
+@ScanType=BoxSN
+@ScanTypeDesc=外箱条码
+@ScanCode=400507008
+@ScanedBoxs=<xml><row BoxId="67429" BoxSN="400507007" ScanCode="400507007" /></xml>
+@MOId=115
+@ItemId=19139
+@ENType=OnLine
+@UserId=366
+@PluginId=0
+@OutBoxId=DBNull
+@OutBoxSN=DBNull
+@OutPalletSN=PNDIAN001004
+@OutIsCompletePallet=DBNull
+@Return_Message=null
+@Return_Value=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-07 17:19:02.711
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:20.0011
+Sql:Prd_Inp_Pack_Pallet_Submit_Online
+Params:
+@PalletSN=PNDIAN001004
+@ScanedBoxs=<xml><row BoxId="67429" BoxSN="400507007" ScanCode="400507007" /><row BoxId="67430" BoxSN="400507008" ScanCode="400507008" /></xml>
+@MOId=115
+@ItemId=19139
+@UserId=366
+@PluginId=0
+@Return_Message=null
+@Return_Value=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-07 17:39:11.066
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:20.0011
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.MOCode,
+	   Bas_Order.OrderCode,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Bas_MO.Qty
+FROM dbo.Bas_MO  WITH(NOLOCK)
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+ORDER BY Bas_MO.PlanStartDate DESC
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-07 17:39:39.705
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0003
+Sql:SELECT Bas_MO.MOId,
+	   Bas_MO.ItemId,
+	   Bas_MO.WorkflowId,
+	   Bas_MO.CustomerId,
+	   Bas_MO.MOCode,
+	   Bas_MO.Qty,
+	   Bas_Item.ItemCode,
+       Bas_Item.ENType,
+	   Bas_Item.ItemSpecification,
+	   Bas_Workflow.WorkflowCode,
+	   Bas_Workflow.WorkflowDesc,
+	   Bas_Customer.CustomerCode,
+	   Bas_Customer.CustomerDesc,
+	   Bas_Item.PalletQty
+FROM dbo.Bas_MO  WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Workflow  WITH(NOLOCK) ON dbo.Bas_Workflow.WorkflowId = dbo.Bas_MO.WorkflowId
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=@MOId
+Params:
+@MOId=115
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-07 17:39:39.815
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO_Template.MOTemplateId AS TemplateId,
+	   Bas_MO_Template.TemplateDesc,
+	   Bas_MO_Template.Copies,
+	   Set_File.FileId,
+	   Set_File.FileServerId,
+	   Bas_MO_Template.Sequence
+FROM dbo.Bas_MO_Template   WITH(NOLOCK) 
+LEFT JOIN dbo.Set_File  WITH(NOLOCK) ON Bas_MO_Template.TemplateId=Set_File.FileId
+WHERE MOId=@MOId AND OPId=@OPId  ORDER BY Sequence
+Params:
+@MOId=115
+@OPId=70
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-07 17:39:39.825
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0002
+Sql:SELECT FileId,
+	   FileName,
+	   FileDesc,
+	   FileServerId,
+	   ServerFileName
+FROM dbo.Set_File  WITH(NOLOCK) 
+WHERE FileId=@FileId
+Params:
+@FileId=2519
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-07 17:39:39.835
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT FileServerId,
+	   FileServerCode,
+	   FileServerName,
+	   FileServerNote,
+	   NetOfficeFileServerAddress,
+	   Net0FileServerAddress,
+	   Net1FileServerAddress,
+	   Net2FileServerAddress,
+	   Net3FileServerAddress,
+	   Net4FileServerAddress,
+	   Net5FileServerAddress,
+	   Net6FileServerAddress,
+	   Net7FileServerAddress,
+	   Net8FileServerAddress,
+	   Net9FileServerAddress,
+	   Net10FileServerAddress,
+	   FileServerUser,
+	   FileServerPwd,
+	   FileServerType
+FROM dbo.Set_FileServer  WITH(NOLOCK) 
+WHERE FileServerId=@FileServerId 
+Params:
+@FileServerId=0
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-07 17:41:55.852
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:4.0003
+Sql:Prd_Inp_Pack_Pallet_Online
+Params:
+@ScanType=BoxSN
+@ScanTypeDesc=外箱条码
+@ScanCode=400507008
+@ScanedBoxs=<xml></xml>
+@MOId=115
+@ItemId=19139
+@ENType=OnLine
+@UserId=366
+@PluginId=0
+@OutBoxId=DBNull
+@OutBoxSN=DBNull
+@OutPalletSN=
+@OutIsCompletePallet=DBNull
+@Return_Message=null
+@Return_Value=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-07 17:43:40.169
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:6.0003
+Sql:Prd_Inp_Pack_Pallet_Online
+Params:
+@ScanType=BoxSN
+@ScanTypeDesc=外箱条码
+@ScanCode=400507009
+@ScanedBoxs=<xml></xml>
+@MOId=115
+@ItemId=19139
+@ENType=OnLine
+@UserId=366
+@PluginId=0
+@OutBoxId=DBNull
+@OutBoxSN=DBNull
+@OutPalletSN=
+@OutIsCompletePallet=DBNull
+@Return_Message=null
+@Return_Value=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-07 17:43:45.480
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:4.0002
+Sql:Prd_Inp_Pack_Pallet_Online
+Params:
+@ScanType=BoxSN
+@ScanTypeDesc=外箱条码
+@ScanCode=400507010
+@ScanedBoxs=<xml><row BoxId="67431" BoxSN="400507009" ScanCode="400507009" /></xml>
+@MOId=115
+@ItemId=19139
+@ENType=OnLine
+@UserId=366
+@PluginId=0
+@OutBoxId=DBNull
+@OutBoxSN=DBNull
+@OutPalletSN=PNDIAN001005
+@OutIsCompletePallet=DBNull
+@Return_Message=null
+@Return_Value=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-07 17:45:31.196
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:6.0004
+Sql:Prd_Inp_Pack_Pallet_Online
+Params:
+@ScanType=BoxSN
+@ScanTypeDesc=外箱条码
+@ScanCode=400507010
+@ScanedBoxs=<xml><row BoxId="67431" BoxSN="400507009" ScanCode="400507009" /></xml>
+@MOId=115
+@ItemId=19139
+@ENType=OnLine
+@UserId=366
+@PluginId=0
+@OutBoxId=DBNull
+@OutBoxSN=DBNull
+@OutPalletSN=PNDIAN001005
+@OutIsCompletePallet=DBNull
+@Return_Message=null
+@Return_Value=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-07 17:45:36.579
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:92.0053
+Sql:Prd_Inp_Pack_Pallet_Submit_Online
+Params:
+@PalletSN=PNDIAN001005
+@ScanedBoxs=<xml><row BoxId="67431" BoxSN="400507009" ScanCode="400507009" /><row BoxId="67437" BoxSN="400507010" ScanCode="400507010" /></xml>
+@MOId=115
+@ItemId=19139
+@UserId=366
+@PluginId=0
+@Return_Message=null
+@Return_Value=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-07 17:47:32.596
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:6.0004
+Sql:Prd_Inp_Pack_Pallet_Online
+Params:
+@ScanType=BoxSN
+@ScanTypeDesc=外箱条码
+@ScanCode=400507012
+@ScanedBoxs=<xml></xml>
+@MOId=115
+@ItemId=19139
+@ENType=OnLine
+@UserId=366
+@PluginId=0
+@OutBoxId=DBNull
+@OutBoxSN=DBNull
+@OutPalletSN=
+@OutIsCompletePallet=DBNull
+@Return_Message=null
+@Return_Value=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-07 17:47:35.706
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:6.0003
+Sql:Prd_Inp_Pack_Pallet_Online
+Params:
+@ScanType=BoxSN
+@ScanTypeDesc=外箱条码
+@ScanCode=400507011
+@ScanedBoxs=<xml></xml>
+@MOId=115
+@ItemId=19139
+@ENType=OnLine
+@UserId=366
+@PluginId=0
+@OutBoxId=DBNull
+@OutBoxSN=DBNull
+@OutPalletSN=
+@OutIsCompletePallet=DBNull
+@Return_Message=null
+@Return_Value=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-07 17:47:50.117
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:6.0004
+Sql:Prd_Inp_Pack_Pallet_Online
+Params:
+@ScanType=BoxSN
+@ScanTypeDesc=外箱条码
+@ScanCode=400507012
+@ScanedBoxs=<xml><row BoxId="67438" BoxSN="400507011" ScanCode="400507011" /></xml>
+@MOId=115
+@ItemId=19139
+@ENType=OnLine
+@UserId=366
+@PluginId=0
+@OutBoxId=DBNull
+@OutBoxSN=DBNull
+@OutPalletSN=PNDIAN001006
+@OutIsCompletePallet=DBNull
+@Return_Message=null
+@Return_Value=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-05-07 17:47:56.337
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:22.0013
+Sql:Prd_Inp_Pack_Pallet_Submit_Online
+Params:
+@PalletSN=PNDIAN001006
+@ScanedBoxs=<xml><row BoxId="67438" BoxSN="400507011" ScanCode="400507011" /><row BoxId="67439" BoxSN="400507012" ScanCode="400507012" /></xml>
+@MOId=115
+@ItemId=19139
+@UserId=366
+@PluginId=0
+@Return_Message=null
+@Return_Value=null
+END===============================================================================================
+
+

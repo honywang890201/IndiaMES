@@ -1,0 +1,70 @@
+﻿<mesex:Window x:Class="EquipmentManagement.Selector.SelectorScrap"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="选择报废单" 
+        xmlns:mes="http://www.mes.com"
+        xmlns:mesex="http://www.mesex.com">
+    <AdornerDecorator>
+        <Grid x:Name="grid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <mesex:ListGrid Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="报废单"/>
+                    <mesex:TextBox x:Name="txtEquipmentScrapCode" />
+                    
+                    <TextBlock Text="类型"/>
+                    <mesex:ComboBox x:Name="cmbType"/>
+
+                    <TextBlock Text="状态"/>
+                    <mesex:ComboBox x:Name="cmbStatus"/>
+
+                    <TextBlock Text="委外维修单"/>
+                    <mesex:TextBox x:Name="txtEquipmentRepairOutSourcingCode" />
+
+                    <TextBlock Text="送修单"/>
+                    <mesex:TextBox x:Name="txtEquipmentRepairInCode" />
+
+
+                </mesex:ListGrid>
+
+                <mesex:CircleImageButton x:Name="btnQuery" Grid.Column="1" ImageSource="/EquipmentManagement;component/Images/query.png" Margin="15,0,15,0" Click="btnQuery_Click"/>
+            </Grid>
+
+            <mesex:GridControl x:Name="matrix" Grid.Row="1" >
+                <mesex:GridControl.Columns>
+                    <mesex:GridLinkColumn Header="报废单" Binding="{Binding EquipmentScrapCode}" LinkClick="GridLinkColumn_LinkClick"/>
+                    <mesex:GridColumn Header="状态" Binding="{Binding StatusName}"/>
+                    <mesex:GridColumn Header="类型" Binding="{Binding TypeName}"/>
+                    <mesex:GridColumn Header="来源单据" Binding="{Binding SourceCode}"/>
+                    <mesex:GridColumn Header="报废备注" Binding="{Binding EquipmentScrapDesc}"/>
+                    <mesex:GridColumn Header="报废人" Binding="{Binding ScrapUserName}"/>
+                    <mesex:GridColumn Header="报废时间" Binding="{Binding ScrapDateTime,StringFormat='yyyy-MM-dd HH:mm:ss'}"/>
+                    <mesex:GridColumn Header="确认人" Binding="{Binding SureUserName}"/>
+                    <mesex:GridColumn Header="确认时间" Binding="{Binding SureDateTime,StringFormat='yyyy-MM-dd HH:mm:ss'}"/>
+                    <mesex:GridColumn Header="确认备注" Binding="{Binding SureComment}"/>
+                </mesex:GridControl.Columns>
+            </mesex:GridControl>
+
+            <mesex:Pager Grid.Row="2" x:Name="pager" UpdateSource="pager_UpdateSource"/>
+        </Grid>
+    </AdornerDecorator>
+</mesex:Window>

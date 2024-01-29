@@ -1,0 +1,32 @@
+﻿<mesex:Window x:Class="EquipmentManagement.Edit.EquipmentRepairIn_EditReDelegate"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="重新委派" 
+        xmlns:mes="http://www.mes.com"
+        xmlns:mesex="http://www.mesex.com" SizeToContent="WidthAndHeight" MinWidth="700">
+    <AdornerDecorator>
+        <Grid x:Name="grid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <mesex:ListGrid >
+                <mesex:ListGrid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </mesex:ListGrid.ColumnDefinitions>
+
+
+                <TextBlock Text="重新委派" FontSize="15" HorizontalAlignment="Center" Grid.ColumnSpan="2" />
+
+                <TextBlock Text="重新委派备注"/>
+                <mesex:TextBox x:Name="txtReDelegateComment" />
+
+            </mesex:ListGrid>
+
+            <mesex:CircleImageButton Grid.Row="1" HorizontalAlignment="Center" Margin="15" Content="重新委派" ImageSource="/EquipmentManagement;component/Images/yes.png"
+                                     Click="CircleImageButton_Click"/>
+        </Grid>
+    </AdornerDecorator>
+</mesex:Window>

@@ -1,0 +1,3198 @@
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:00:17.346
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:7.0004
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:00:18.260
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:00:22.270
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:8.0004
+Sql:SELECT Set_Meta.MetaId,
+	   Set_Meta.MetaCode,
+	   Set_Meta.MetaName,
+	   Set_Meta.IsViewPages,
+	   Set_Meta.ViewCountSqlType,
+	   Set_Meta.ViewCountSql,
+	   dbo.Set_Meta.ViewSqlType,
+	   Set_Meta.ViewSql,
+	   dbo.Set_Meta.MainSqlType,
+	   Set_Meta.MainSql,
+	   dbo.Set_Meta.DeleteSqlType,
+	   Set_Meta.DeleteSql,
+	   dbo.Set_Meta.SaveSqlType,
+	   Set_Meta.SaveSql,
+	   Set_Meta.MetaNote,
+	   Set_Meta.ColumnCount,
+	   Set_Meta.ParentMetaId,
+	   Set_Meta.IdColumnName,
+	   Set_Meta.TextColumnName,
+	   Set_Meta.TableId,
+	   Set_Table.SysTableName as TableName,
+	   Set_Meta.ViewWidth,
+	   Set_Meta.VersionColumnName
+FROM dbo.Set_Meta  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_Table  WITH(NOLOCK)  ON dbo.Set_Table.SysTableId = dbo.Set_Meta.TableId
+WHERE Set_Meta.MetaId=@metaId
+Params:
+@metaId=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:00:22.280
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:12.0007
+Sql:SELECT Set_MetaParam.MetaParamId,
+	   Set_MetaParam.MetaGroupId,
+	   Set_MetaParam.MetaParamCode,
+	   Set_MetaParam.MetaParamName,
+	   Set_MetaParam.MetaParamNote,
+	   Set_MetaParam.MetaParamLength,
+	   Set_ControlTypes.TypeName,
+	   Set_ControlTypes.FullName,
+	   Set_ControlTypes.Params,
+	   Set_MetaParam.ColumnSpan,
+	   Set_MetaParam.RowSpan,
+	   Set_MetaParam.IsEdit,
+	   Set_MetaParam.IsVisible,
+	   Set_MetaParam.IsNotEmpty,
+	   Set_MetaParam.DefaultValue,
+	   Set_MetaParam.DataSourceType,
+	   Set_MetaParam.DataSource,
+	   Set_MetaParam.IsQueryParam,
+	   Set_MetaParam.IsLinkParam,
+	   Set_MetaParam.IsNewRow
+FROM dbo.Set_MetaParam  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_ControlTypes  WITH(NOLOCK) ON Set_MetaParam.MetaParamType=Set_ControlTypes.TypeName
+LEFT JOIN dbo.Set_MetaGroup  WITH(NOLOCK)  ON dbo.Set_MetaGroup.MetaGroupId = dbo.Set_MetaParam.MetaGroupId
+WHERE Set_MetaGroup.MetaId=@metaId
+ORDER BY Set_MetaParam.Sequence
+
+Params:
+@metaId=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:00:22.390
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=51
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:00:22.400
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=183
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:00:22.410
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=185
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:00:25.626
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0002
+Sql:SELECT TOP 200 Bas_MO.MOId,
+			   Bas_MO.MOCode,
+			   Bas_Item.ItemCode,
+			   Bas_Item.ItemName+'/'+Bas_Item.ItemDesc as 'ItemName',
+			   Bas_Order.OrderCode,
+			   Bas_Customer.CustomerCode
+FROM Bas_MO WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=ISNULL(@Id,Bas_MO.MOId)
+AND Bas_MO.MOCode LIKE '%'+ISNULL(@MOCode,Bas_MO.MOCode)+'%'
+AND (@ItemId IS NULL OR Bas_MO.ItemId=@ItemId)
+AND (ISNULL(@OrderCode,'')='' OR (ISNULL(@OrderCode,'')!='' AND Bas_Order.OrderCode LIKE '%'+ISNULL(@OrderCode,Bas_Order.OrderCode)+'%'))
+AND (@CustomerId IS NULL OR Bas_MO.CustomerId=@CustomerId)
+ORDER BY Bas_MO.MOCode
+Params:
+@Id=DBNull
+@MOCode=
+@ItemId=null
+@CustomerId=null
+@OrderCode=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:00:27.841
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:11.0006
+Sql:SELECT Bas_MO.MOId,
+			   Bas_MO.MOCode,
+			   Bas_MO.OrderDetailId,
+			   Bas_MO.CustomerId,
+			   Bas_MO.ItemId,
+			   Bas_Item.ItemCode,
+			   Bas_Item.ItemDesc+'-'+Bas_Item.ItemSpecification as 'ItemDesc',
+			   dbo.Bas_Order.OrderCode,
+			   Bas_MO.Qty,
+			   Bas_MO.PlanStartDate,
+			   Bas_MO.PlanCompleteDate,
+			   Bas_MO.ActualStartDate,
+			   Bas_MO.ActualCompleteDate,
+			   Bas_MO.Status,
+			   Bas_MO.InputQty,
+			   Bas_MO.CompleteQty,
+			   Bas_MO.ErrorQty,
+			   Bas_MO.ScrapQty,
+			   Bas_MO.TurnInQty,
+			   Bas_MO.TurnOutQty,
+			   Bas_MO.WorkflowId,
+			   Bas_MO.IsCheckPowerSN,
+			   Bas_MO.PowerSNLength,
+			   Bas_MO.PowerSNPre,
+			   Bas_MO.IsCheckRemoteControlSN,
+			   Bas_MO.RemoteControlSNLength,
+			   Bas_MO.RemoteControlSNPre,
+			   Bas_MO.SpecSheet,
+			   Bas_MO.ChipScheme,
+			   Bas_MO.SoftwareVersion,
+			   Bas_MO.HardwareVersion,
+			   Bas_MO.AreaCode,
+			   Bas_MO.DeviceType,
+			   Bas_MO.IsCanVirtualInput,
+			   Bas_MO.SideAFeedingStationTableId,
+			   Bas_MO.SideBFeedingStationTableId,
+			   Bas_MO.RowVersion
+FROM Bas_MO WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+WHERE Bas_MO.MOId=ISNULL(@Id,Bas_MO.MOId)
+AND Bas_MO.MOCode=ISNULL(@Text,Bas_MO.MOCode)
+Params:
+@UserId=1
+@CpuID=BFEBFBFF000306C3
+@MacAddress=AA:BB:CC:DD:EE:FF
+@IPAddress=192.168.3.2
+@ComputerName=WANG-PC
+@LocalUserName=wang-PC\wang
+@ResourceId=76
+@SettingId=187
+@Id=147
+@Text=DBNull
+@ParentId=DBNull
+@Return_Message=DBNull
+@ReturnValue=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:01:40.708
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:9.0005
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:01:41.019
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:01:52.030
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0001
+Sql:SELECT Set_Meta.MetaId,
+	   Set_Meta.MetaCode,
+	   Set_Meta.MetaName,
+	   Set_Meta.IsViewPages,
+	   Set_Meta.ViewCountSqlType,
+	   Set_Meta.ViewCountSql,
+	   dbo.Set_Meta.ViewSqlType,
+	   Set_Meta.ViewSql,
+	   dbo.Set_Meta.MainSqlType,
+	   Set_Meta.MainSql,
+	   dbo.Set_Meta.DeleteSqlType,
+	   Set_Meta.DeleteSql,
+	   dbo.Set_Meta.SaveSqlType,
+	   Set_Meta.SaveSql,
+	   Set_Meta.MetaNote,
+	   Set_Meta.ColumnCount,
+	   Set_Meta.ParentMetaId,
+	   Set_Meta.IdColumnName,
+	   Set_Meta.TextColumnName,
+	   Set_Meta.TableId,
+	   Set_Table.SysTableName as TableName,
+	   Set_Meta.ViewWidth,
+	   Set_Meta.VersionColumnName
+FROM dbo.Set_Meta  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_Table  WITH(NOLOCK)  ON dbo.Set_Table.SysTableId = dbo.Set_Meta.TableId
+WHERE Set_Meta.MetaId=@metaId
+Params:
+@metaId=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:01:52.040
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0002
+Sql:SELECT Set_MetaParam.MetaParamId,
+	   Set_MetaParam.MetaGroupId,
+	   Set_MetaParam.MetaParamCode,
+	   Set_MetaParam.MetaParamName,
+	   Set_MetaParam.MetaParamNote,
+	   Set_MetaParam.MetaParamLength,
+	   Set_ControlTypes.TypeName,
+	   Set_ControlTypes.FullName,
+	   Set_ControlTypes.Params,
+	   Set_MetaParam.ColumnSpan,
+	   Set_MetaParam.RowSpan,
+	   Set_MetaParam.IsEdit,
+	   Set_MetaParam.IsVisible,
+	   Set_MetaParam.IsNotEmpty,
+	   Set_MetaParam.DefaultValue,
+	   Set_MetaParam.DataSourceType,
+	   Set_MetaParam.DataSource,
+	   Set_MetaParam.IsQueryParam,
+	   Set_MetaParam.IsLinkParam,
+	   Set_MetaParam.IsNewRow
+FROM dbo.Set_MetaParam  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_ControlTypes  WITH(NOLOCK) ON Set_MetaParam.MetaParamType=Set_ControlTypes.TypeName
+LEFT JOIN dbo.Set_MetaGroup  WITH(NOLOCK)  ON dbo.Set_MetaGroup.MetaGroupId = dbo.Set_MetaParam.MetaGroupId
+WHERE Set_MetaGroup.MetaId=@metaId
+ORDER BY Set_MetaParam.Sequence
+
+Params:
+@metaId=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:01:52.050
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=51
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:01:52.060
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=183
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:01:52.070
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=185
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:01:54.280
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT TOP 200 Bas_MO.MOId,
+			   Bas_MO.MOCode,
+			   Bas_Item.ItemCode,
+			   Bas_Item.ItemName+'/'+Bas_Item.ItemDesc as 'ItemName',
+			   Bas_Order.OrderCode,
+			   Bas_Customer.CustomerCode
+FROM Bas_MO WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=ISNULL(@Id,Bas_MO.MOId)
+AND Bas_MO.MOCode LIKE '%'+ISNULL(@MOCode,Bas_MO.MOCode)+'%'
+AND (@ItemId IS NULL OR Bas_MO.ItemId=@ItemId)
+AND (ISNULL(@OrderCode,'')='' OR (ISNULL(@OrderCode,'')!='' AND Bas_Order.OrderCode LIKE '%'+ISNULL(@OrderCode,Bas_Order.OrderCode)+'%'))
+AND (@CustomerId IS NULL OR Bas_MO.CustomerId=@CustomerId)
+ORDER BY Bas_MO.MOCode
+Params:
+@Id=DBNull
+@MOCode=
+@ItemId=null
+@CustomerId=null
+@OrderCode=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:01:55.890
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Bas_MO.MOId,
+			   Bas_MO.MOCode,
+			   Bas_MO.OrderDetailId,
+			   Bas_MO.CustomerId,
+			   Bas_MO.ItemId,
+			   Bas_Item.ItemCode,
+			   Bas_Item.ItemDesc+'-'+Bas_Item.ItemSpecification as 'ItemDesc',
+			   dbo.Bas_Order.OrderCode,
+			   Bas_MO.Qty,
+			   Bas_MO.PlanStartDate,
+			   Bas_MO.PlanCompleteDate,
+			   Bas_MO.ActualStartDate,
+			   Bas_MO.ActualCompleteDate,
+			   Bas_MO.Status,
+			   Bas_MO.InputQty,
+			   Bas_MO.CompleteQty,
+			   Bas_MO.ErrorQty,
+			   Bas_MO.ScrapQty,
+			   Bas_MO.TurnInQty,
+			   Bas_MO.TurnOutQty,
+			   Bas_MO.WorkflowId,
+			   Bas_MO.IsCheckPowerSN,
+			   Bas_MO.PowerSNLength,
+			   Bas_MO.PowerSNPre,
+			   Bas_MO.IsCheckRemoteControlSN,
+			   Bas_MO.RemoteControlSNLength,
+			   Bas_MO.RemoteControlSNPre,
+			   Bas_MO.SpecSheet,
+			   Bas_MO.ChipScheme,
+			   Bas_MO.SoftwareVersion,
+			   Bas_MO.HardwareVersion,
+			   Bas_MO.AreaCode,
+			   Bas_MO.DeviceType,
+			   Bas_MO.IsCanVirtualInput,
+			   Bas_MO.SideAFeedingStationTableId,
+			   Bas_MO.SideBFeedingStationTableId,
+			   Bas_MO.RowVersion
+FROM Bas_MO WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+WHERE Bas_MO.MOId=ISNULL(@Id,Bas_MO.MOId)
+AND Bas_MO.MOCode=ISNULL(@Text,Bas_MO.MOCode)
+Params:
+@UserId=1
+@CpuID=BFEBFBFF000306C3
+@MacAddress=AA:BB:CC:DD:EE:FF
+@IPAddress=192.168.3.2
+@ComputerName=WANG-PC
+@LocalUserName=wang-PC\wang
+@ResourceId=76
+@SettingId=187
+@Id=147
+@Text=DBNull
+@ParentId=DBNull
+@Return_Message=DBNull
+@ReturnValue=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:04:37.650
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:9.0005
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:04:38.061
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:04:41.872
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Set_Meta.MetaId,
+	   Set_Meta.MetaCode,
+	   Set_Meta.MetaName,
+	   Set_Meta.IsViewPages,
+	   Set_Meta.ViewCountSqlType,
+	   Set_Meta.ViewCountSql,
+	   dbo.Set_Meta.ViewSqlType,
+	   Set_Meta.ViewSql,
+	   dbo.Set_Meta.MainSqlType,
+	   Set_Meta.MainSql,
+	   dbo.Set_Meta.DeleteSqlType,
+	   Set_Meta.DeleteSql,
+	   dbo.Set_Meta.SaveSqlType,
+	   Set_Meta.SaveSql,
+	   Set_Meta.MetaNote,
+	   Set_Meta.ColumnCount,
+	   Set_Meta.ParentMetaId,
+	   Set_Meta.IdColumnName,
+	   Set_Meta.TextColumnName,
+	   Set_Meta.TableId,
+	   Set_Table.SysTableName as TableName,
+	   Set_Meta.ViewWidth,
+	   Set_Meta.VersionColumnName
+FROM dbo.Set_Meta  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_Table  WITH(NOLOCK)  ON dbo.Set_Table.SysTableId = dbo.Set_Meta.TableId
+WHERE Set_Meta.MetaId=@metaId
+Params:
+@metaId=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:04:41.904
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0002
+Sql:SELECT Set_MetaParam.MetaParamId,
+	   Set_MetaParam.MetaGroupId,
+	   Set_MetaParam.MetaParamCode,
+	   Set_MetaParam.MetaParamName,
+	   Set_MetaParam.MetaParamNote,
+	   Set_MetaParam.MetaParamLength,
+	   Set_ControlTypes.TypeName,
+	   Set_ControlTypes.FullName,
+	   Set_ControlTypes.Params,
+	   Set_MetaParam.ColumnSpan,
+	   Set_MetaParam.RowSpan,
+	   Set_MetaParam.IsEdit,
+	   Set_MetaParam.IsVisible,
+	   Set_MetaParam.IsNotEmpty,
+	   Set_MetaParam.DefaultValue,
+	   Set_MetaParam.DataSourceType,
+	   Set_MetaParam.DataSource,
+	   Set_MetaParam.IsQueryParam,
+	   Set_MetaParam.IsLinkParam,
+	   Set_MetaParam.IsNewRow
+FROM dbo.Set_MetaParam  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_ControlTypes  WITH(NOLOCK) ON Set_MetaParam.MetaParamType=Set_ControlTypes.TypeName
+LEFT JOIN dbo.Set_MetaGroup  WITH(NOLOCK)  ON dbo.Set_MetaGroup.MetaGroupId = dbo.Set_MetaParam.MetaGroupId
+WHERE Set_MetaGroup.MetaId=@metaId
+ORDER BY Set_MetaParam.Sequence
+
+Params:
+@metaId=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:04:41.914
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=51
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:04:41.924
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=183
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:04:41.934
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=185
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:06:06.029
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:8.0004
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:06:06.340
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:06:08.551
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Set_Meta.MetaId,
+	   Set_Meta.MetaCode,
+	   Set_Meta.MetaName,
+	   Set_Meta.IsViewPages,
+	   Set_Meta.ViewCountSqlType,
+	   Set_Meta.ViewCountSql,
+	   dbo.Set_Meta.ViewSqlType,
+	   Set_Meta.ViewSql,
+	   dbo.Set_Meta.MainSqlType,
+	   Set_Meta.MainSql,
+	   dbo.Set_Meta.DeleteSqlType,
+	   Set_Meta.DeleteSql,
+	   dbo.Set_Meta.SaveSqlType,
+	   Set_Meta.SaveSql,
+	   Set_Meta.MetaNote,
+	   Set_Meta.ColumnCount,
+	   Set_Meta.ParentMetaId,
+	   Set_Meta.IdColumnName,
+	   Set_Meta.TextColumnName,
+	   Set_Meta.TableId,
+	   Set_Table.SysTableName as TableName,
+	   Set_Meta.ViewWidth,
+	   Set_Meta.VersionColumnName
+FROM dbo.Set_Meta  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_Table  WITH(NOLOCK)  ON dbo.Set_Table.SysTableId = dbo.Set_Meta.TableId
+WHERE Set_Meta.MetaId=@metaId
+Params:
+@metaId=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:06:08.561
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0002
+Sql:SELECT Set_MetaParam.MetaParamId,
+	   Set_MetaParam.MetaGroupId,
+	   Set_MetaParam.MetaParamCode,
+	   Set_MetaParam.MetaParamName,
+	   Set_MetaParam.MetaParamNote,
+	   Set_MetaParam.MetaParamLength,
+	   Set_ControlTypes.TypeName,
+	   Set_ControlTypes.FullName,
+	   Set_ControlTypes.Params,
+	   Set_MetaParam.ColumnSpan,
+	   Set_MetaParam.RowSpan,
+	   Set_MetaParam.IsEdit,
+	   Set_MetaParam.IsVisible,
+	   Set_MetaParam.IsNotEmpty,
+	   Set_MetaParam.DefaultValue,
+	   Set_MetaParam.DataSourceType,
+	   Set_MetaParam.DataSource,
+	   Set_MetaParam.IsQueryParam,
+	   Set_MetaParam.IsLinkParam,
+	   Set_MetaParam.IsNewRow
+FROM dbo.Set_MetaParam  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_ControlTypes  WITH(NOLOCK) ON Set_MetaParam.MetaParamType=Set_ControlTypes.TypeName
+LEFT JOIN dbo.Set_MetaGroup  WITH(NOLOCK)  ON dbo.Set_MetaGroup.MetaGroupId = dbo.Set_MetaParam.MetaGroupId
+WHERE Set_MetaGroup.MetaId=@metaId
+ORDER BY Set_MetaParam.Sequence
+
+Params:
+@metaId=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:06:08.571
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=51
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:06:08.581
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=183
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:06:08.591
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=185
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:06:10.904
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0002
+Sql:SELECT TOP 200 Bas_MO.MOId,
+			   Bas_MO.MOCode,
+			   Bas_Item.ItemCode,
+			   Bas_Item.ItemName+'/'+Bas_Item.ItemDesc as 'ItemName',
+			   Bas_Order.OrderCode,
+			   Bas_Customer.CustomerCode
+FROM Bas_MO WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=ISNULL(@Id,Bas_MO.MOId)
+AND Bas_MO.MOCode LIKE '%'+ISNULL(@MOCode,Bas_MO.MOCode)+'%'
+AND (@ItemId IS NULL OR Bas_MO.ItemId=@ItemId)
+AND (ISNULL(@OrderCode,'')='' OR (ISNULL(@OrderCode,'')!='' AND Bas_Order.OrderCode LIKE '%'+ISNULL(@OrderCode,Bas_Order.OrderCode)+'%'))
+AND (@CustomerId IS NULL OR Bas_MO.CustomerId=@CustomerId)
+ORDER BY Bas_MO.MOCode
+Params:
+@Id=DBNull
+@MOCode=
+@ItemId=null
+@CustomerId=null
+@OrderCode=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:06:12.523
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO.MOId,
+			   Bas_MO.MOCode,
+			   Bas_MO.OrderDetailId,
+			   Bas_MO.CustomerId,
+			   Bas_MO.ItemId,
+			   Bas_Item.ItemCode,
+			   Bas_Item.ItemDesc+'-'+Bas_Item.ItemSpecification as 'ItemDesc',
+			   dbo.Bas_Order.OrderCode,
+			   Bas_MO.Qty,
+			   Bas_MO.PlanStartDate,
+			   Bas_MO.PlanCompleteDate,
+			   Bas_MO.ActualStartDate,
+			   Bas_MO.ActualCompleteDate,
+			   Bas_MO.Status,
+			   Bas_MO.InputQty,
+			   Bas_MO.CompleteQty,
+			   Bas_MO.ErrorQty,
+			   Bas_MO.ScrapQty,
+			   Bas_MO.TurnInQty,
+			   Bas_MO.TurnOutQty,
+			   Bas_MO.WorkflowId,
+			   Bas_MO.IsCheckPowerSN,
+			   Bas_MO.PowerSNLength,
+			   Bas_MO.PowerSNPre,
+			   Bas_MO.IsCheckRemoteControlSN,
+			   Bas_MO.RemoteControlSNLength,
+			   Bas_MO.RemoteControlSNPre,
+			   Bas_MO.SpecSheet,
+			   Bas_MO.ChipScheme,
+			   Bas_MO.SoftwareVersion,
+			   Bas_MO.HardwareVersion,
+			   Bas_MO.AreaCode,
+			   Bas_MO.DeviceType,
+			   Bas_MO.IsCanVirtualInput,
+			   Bas_MO.SideAFeedingStationTableId,
+			   Bas_MO.SideBFeedingStationTableId,
+			   Bas_MO.RowVersion
+FROM Bas_MO WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+WHERE Bas_MO.MOId=ISNULL(@Id,Bas_MO.MOId)
+AND Bas_MO.MOCode=ISNULL(@Text,Bas_MO.MOCode)
+Params:
+@UserId=1
+@CpuID=BFEBFBFF000306C3
+@MacAddress=AA:BB:CC:DD:EE:FF
+@IPAddress=192.168.3.2
+@ComputerName=WANG-PC
+@LocalUserName=wang-PC\wang
+@ResourceId=76
+@SettingId=187
+@Id=147
+@Text=DBNull
+@ParentId=DBNull
+@Return_Message=DBNull
+@ReturnValue=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:06:28.682
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:35.002
+Sql:Bas_TestPalletSNImport
+Params:
+@UserId=1
+@MOId=147
+@xml=<document>
+	<macs>
+		<item  rowNo="1" BOXSN="499507001" />
+		<item  rowNo="2" BOXSN="499507002" />
+		<item  rowNo="3" BOXSN="499507003" />
+		<item  rowNo="4" BOXSN="499507004" />
+		<item  rowNo="5" BOXSN="499507005" />
+		<item  rowNo="6" BOXSN="499507006" />
+		<item  rowNo="7" BOXSN="499507007" />
+		<item  rowNo="8" BOXSN="499507008" />
+		<item  rowNo="9" BOXSN="499507009" />
+		<item  rowNo="10" BOXSN="499507010" />
+		<item  rowNo="11" BOXSN="499507011" />
+		<item  rowNo="12" BOXSN="499507012" />
+		<item  rowNo="13" BOXSN="499507013" />
+		<item  rowNo="14" BOXSN="499507014" />
+		<item  rowNo="15" BOXSN="499507015" />
+		<item  rowNo="16" BOXSN="499507016" />
+		<item  rowNo="17" BOXSN="499507017" />
+		<item  rowNo="18" BOXSN="499507018" />
+		<item  rowNo="19" BOXSN="499507019" />
+		<item  rowNo="20" BOXSN="499507020" />
+		<item  rowNo="21" BOXSN="499507021" />
+		<item  rowNo="22" BOXSN="499507022" />
+		<item  rowNo="23" BOXSN="499507023" />
+		<item  rowNo="24" BOXSN="499507024" />
+		<item  rowNo="25" BOXSN="499507025" />
+		<item  rowNo="26" BOXSN="499507026" />
+		<item  rowNo="27" BOXSN="499507027" />
+		<item  rowNo="28" BOXSN="499507028" />
+		<item  rowNo="29" BOXSN="499507029" />
+		<item  rowNo="30" BOXSN="499507030" />
+		<item  rowNo="31" BOXSN="499507031" />
+		<item  rowNo="32" BOXSN="499507032" />
+		<item  rowNo="33" BOXSN="499507033" />
+		<item  rowNo="34" BOXSN="499507034" />
+		<item  rowNo="35" BOXSN="499507035" />
+		<item  rowNo="36" BOXSN="499507036" />
+		<item  rowNo="37" BOXSN="499507037" />
+		<item  rowNo="38" BOXSN="499507038" />
+		<item  rowNo="39" BOXSN="499507039" />
+		<item  rowNo="40" BOXSN="499507040" />
+		<item  rowNo="41" BOXSN="499507041" />
+		<item  rowNo="42" BOXSN="499507042" />
+		<item  rowNo="43" BOXSN="499507043" />
+		<item  rowNo="44" BOXSN="499507044" />
+		<item  rowNo="45" BOXSN="499507045" />
+		<item  rowNo="46" BOXSN="499507046" />
+		<item  rowNo="47" BOXSN="499507047" />
+		<item  rowNo="48" BOXSN="499507048" />
+		<item  rowNo="49" BOXSN="499507049" />
+		<item  rowNo="50" BOXSN="499507050" />
+		<item  rowNo="51" BOXSN="499507051" />
+		<item  rowNo="52" BOXSN="499507052" />
+		<item  rowNo="53" BOXSN="499507053" />
+		<item  rowNo="54" BOXSN="499507054" />
+		<item  rowNo="55" BOXSN="499507055" />
+		<item  rowNo="56" BOXSN="499507056" />
+		<item  rowNo="57" BOXSN="499507057" />
+		<item  rowNo="58" BOXSN="499507058" />
+		<item  rowNo="59" BOXSN="499507059" />
+		<item  rowNo="60" BOXSN="499507060" />
+		<item  rowNo="61" BOXSN="499507061" />
+		<item  rowNo="62" BOXSN="499507062" />
+		<item  rowNo="63" BOXSN="499507063" />
+		<item  rowNo="64" BOXSN="499507064" />
+		<item  rowNo="65" BOXSN="499507065" />
+		<item  rowNo="66" BOXSN="499507066" />
+		<item  rowNo="67" BOXSN="499507067" />
+		<item  rowNo="68" BOXSN="499507068" />
+		<item  rowNo="69" BOXSN="499507069" />
+		<item  rowNo="70" BOXSN="499507070" />
+		<item  rowNo="71" BOXSN="499507071" />
+		<item  rowNo="72" BOXSN="499507072" />
+		<item  rowNo="73" BOXSN="499507073" />
+		<item  rowNo="74" BOXSN="499507074" />
+		<item  rowNo="75" BOXSN="499507075" />
+		<item  rowNo="76" BOXSN="499507076" />
+		<item  rowNo="77" BOXSN="499507077" />
+		<item  rowNo="78" BOXSN="499507078" />
+		<item  rowNo="79" BOXSN="499507079" />
+		<item  rowNo="80" BOXSN="499507080" />
+		<item  rowNo="81" BOXSN="499507081" />
+		<item  rowNo="82" BOXSN="499507082" />
+		<item  rowNo="83" BOXSN="499507083" />
+		<item  rowNo="84" BOXSN="499507084" />
+		<item  rowNo="85" BOXSN="499507085" />
+		<item  rowNo="86" BOXSN="499507086" />
+		<item  rowNo="87" BOXSN="499507087" />
+		<item  rowNo="88" BOXSN="499507088" />
+		<item  rowNo="89" BOXSN="499507089" />
+		<item  rowNo="90" BOXSN="499507090" />
+		<item  rowNo="91" BOXSN="499507091" />
+		<item  rowNo="92" BOXSN="499507092" />
+		<item  rowNo="93" BOXSN="499507093" />
+		<item  rowNo="94" BOXSN="499507094" />
+		<item  rowNo="95" BOXSN="499507095" />
+		<item  rowNo="96" BOXSN="499507096" />
+		<item  rowNo="97" BOXSN="499507097" />
+		<item  rowNo="98" BOXSN="499507098" />
+		<item  rowNo="99" BOXSN="499507099" />
+	</macs>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:找不到存储过程 'Bas_TestPalletSNImport'。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:06:32.192
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:6.0004
+Sql:Bas_TestPalletSNImport
+Params:
+@UserId=1
+@MOId=147
+@xml=<document>
+	<macs>
+		<item  rowNo="1" BOXSN="499507001" />
+		<item  rowNo="2" BOXSN="499507002" />
+		<item  rowNo="3" BOXSN="499507003" />
+		<item  rowNo="4" BOXSN="499507004" />
+		<item  rowNo="5" BOXSN="499507005" />
+		<item  rowNo="6" BOXSN="499507006" />
+		<item  rowNo="7" BOXSN="499507007" />
+		<item  rowNo="8" BOXSN="499507008" />
+		<item  rowNo="9" BOXSN="499507009" />
+		<item  rowNo="10" BOXSN="499507010" />
+		<item  rowNo="11" BOXSN="499507011" />
+		<item  rowNo="12" BOXSN="499507012" />
+		<item  rowNo="13" BOXSN="499507013" />
+		<item  rowNo="14" BOXSN="499507014" />
+		<item  rowNo="15" BOXSN="499507015" />
+		<item  rowNo="16" BOXSN="499507016" />
+		<item  rowNo="17" BOXSN="499507017" />
+		<item  rowNo="18" BOXSN="499507018" />
+		<item  rowNo="19" BOXSN="499507019" />
+		<item  rowNo="20" BOXSN="499507020" />
+		<item  rowNo="21" BOXSN="499507021" />
+		<item  rowNo="22" BOXSN="499507022" />
+		<item  rowNo="23" BOXSN="499507023" />
+		<item  rowNo="24" BOXSN="499507024" />
+		<item  rowNo="25" BOXSN="499507025" />
+		<item  rowNo="26" BOXSN="499507026" />
+		<item  rowNo="27" BOXSN="499507027" />
+		<item  rowNo="28" BOXSN="499507028" />
+		<item  rowNo="29" BOXSN="499507029" />
+		<item  rowNo="30" BOXSN="499507030" />
+		<item  rowNo="31" BOXSN="499507031" />
+		<item  rowNo="32" BOXSN="499507032" />
+		<item  rowNo="33" BOXSN="499507033" />
+		<item  rowNo="34" BOXSN="499507034" />
+		<item  rowNo="35" BOXSN="499507035" />
+		<item  rowNo="36" BOXSN="499507036" />
+		<item  rowNo="37" BOXSN="499507037" />
+		<item  rowNo="38" BOXSN="499507038" />
+		<item  rowNo="39" BOXSN="499507039" />
+		<item  rowNo="40" BOXSN="499507040" />
+		<item  rowNo="41" BOXSN="499507041" />
+		<item  rowNo="42" BOXSN="499507042" />
+		<item  rowNo="43" BOXSN="499507043" />
+		<item  rowNo="44" BOXSN="499507044" />
+		<item  rowNo="45" BOXSN="499507045" />
+		<item  rowNo="46" BOXSN="499507046" />
+		<item  rowNo="47" BOXSN="499507047" />
+		<item  rowNo="48" BOXSN="499507048" />
+		<item  rowNo="49" BOXSN="499507049" />
+		<item  rowNo="50" BOXSN="499507050" />
+		<item  rowNo="51" BOXSN="499507051" />
+		<item  rowNo="52" BOXSN="499507052" />
+		<item  rowNo="53" BOXSN="499507053" />
+		<item  rowNo="54" BOXSN="499507054" />
+		<item  rowNo="55" BOXSN="499507055" />
+		<item  rowNo="56" BOXSN="499507056" />
+		<item  rowNo="57" BOXSN="499507057" />
+		<item  rowNo="58" BOXSN="499507058" />
+		<item  rowNo="59" BOXSN="499507059" />
+		<item  rowNo="60" BOXSN="499507060" />
+		<item  rowNo="61" BOXSN="499507061" />
+		<item  rowNo="62" BOXSN="499507062" />
+		<item  rowNo="63" BOXSN="499507063" />
+		<item  rowNo="64" BOXSN="499507064" />
+		<item  rowNo="65" BOXSN="499507065" />
+		<item  rowNo="66" BOXSN="499507066" />
+		<item  rowNo="67" BOXSN="499507067" />
+		<item  rowNo="68" BOXSN="499507068" />
+		<item  rowNo="69" BOXSN="499507069" />
+		<item  rowNo="70" BOXSN="499507070" />
+		<item  rowNo="71" BOXSN="499507071" />
+		<item  rowNo="72" BOXSN="499507072" />
+		<item  rowNo="73" BOXSN="499507073" />
+		<item  rowNo="74" BOXSN="499507074" />
+		<item  rowNo="75" BOXSN="499507075" />
+		<item  rowNo="76" BOXSN="499507076" />
+		<item  rowNo="77" BOXSN="499507077" />
+		<item  rowNo="78" BOXSN="499507078" />
+		<item  rowNo="79" BOXSN="499507079" />
+		<item  rowNo="80" BOXSN="499507080" />
+		<item  rowNo="81" BOXSN="499507081" />
+		<item  rowNo="82" BOXSN="499507082" />
+		<item  rowNo="83" BOXSN="499507083" />
+		<item  rowNo="84" BOXSN="499507084" />
+		<item  rowNo="85" BOXSN="499507085" />
+		<item  rowNo="86" BOXSN="499507086" />
+		<item  rowNo="87" BOXSN="499507087" />
+		<item  rowNo="88" BOXSN="499507088" />
+		<item  rowNo="89" BOXSN="499507089" />
+		<item  rowNo="90" BOXSN="499507090" />
+		<item  rowNo="91" BOXSN="499507091" />
+		<item  rowNo="92" BOXSN="499507092" />
+		<item  rowNo="93" BOXSN="499507093" />
+		<item  rowNo="94" BOXSN="499507094" />
+		<item  rowNo="95" BOXSN="499507095" />
+		<item  rowNo="96" BOXSN="499507096" />
+		<item  rowNo="97" BOXSN="499507097" />
+		<item  rowNo="98" BOXSN="499507098" />
+		<item  rowNo="99" BOXSN="499507099" />
+	</macs>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:找不到存储过程 'Bas_TestPalletSNImport'。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:07:53.407
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:15.0008
+Sql:Bas_TestPalletSNImport
+Params:
+@UserId=1
+@MOId=147
+@xml=<document>
+	<macs>
+		<item  rowNo="1" BOXSN="499507001" />
+		<item  rowNo="2" BOXSN="499507002" />
+		<item  rowNo="3" BOXSN="499507003" />
+		<item  rowNo="4" BOXSN="499507004" />
+		<item  rowNo="5" BOXSN="499507005" />
+		<item  rowNo="6" BOXSN="499507006" />
+		<item  rowNo="7" BOXSN="499507007" />
+		<item  rowNo="8" BOXSN="499507008" />
+		<item  rowNo="9" BOXSN="499507009" />
+		<item  rowNo="10" BOXSN="499507010" />
+		<item  rowNo="11" BOXSN="499507011" />
+		<item  rowNo="12" BOXSN="499507012" />
+		<item  rowNo="13" BOXSN="499507013" />
+		<item  rowNo="14" BOXSN="499507014" />
+		<item  rowNo="15" BOXSN="499507015" />
+		<item  rowNo="16" BOXSN="499507016" />
+		<item  rowNo="17" BOXSN="499507017" />
+		<item  rowNo="18" BOXSN="499507018" />
+		<item  rowNo="19" BOXSN="499507019" />
+		<item  rowNo="20" BOXSN="499507020" />
+		<item  rowNo="21" BOXSN="499507021" />
+		<item  rowNo="22" BOXSN="499507022" />
+		<item  rowNo="23" BOXSN="499507023" />
+		<item  rowNo="24" BOXSN="499507024" />
+		<item  rowNo="25" BOXSN="499507025" />
+		<item  rowNo="26" BOXSN="499507026" />
+		<item  rowNo="27" BOXSN="499507027" />
+		<item  rowNo="28" BOXSN="499507028" />
+		<item  rowNo="29" BOXSN="499507029" />
+		<item  rowNo="30" BOXSN="499507030" />
+		<item  rowNo="31" BOXSN="499507031" />
+		<item  rowNo="32" BOXSN="499507032" />
+		<item  rowNo="33" BOXSN="499507033" />
+		<item  rowNo="34" BOXSN="499507034" />
+		<item  rowNo="35" BOXSN="499507035" />
+		<item  rowNo="36" BOXSN="499507036" />
+		<item  rowNo="37" BOXSN="499507037" />
+		<item  rowNo="38" BOXSN="499507038" />
+		<item  rowNo="39" BOXSN="499507039" />
+		<item  rowNo="40" BOXSN="499507040" />
+		<item  rowNo="41" BOXSN="499507041" />
+		<item  rowNo="42" BOXSN="499507042" />
+		<item  rowNo="43" BOXSN="499507043" />
+		<item  rowNo="44" BOXSN="499507044" />
+		<item  rowNo="45" BOXSN="499507045" />
+		<item  rowNo="46" BOXSN="499507046" />
+		<item  rowNo="47" BOXSN="499507047" />
+		<item  rowNo="48" BOXSN="499507048" />
+		<item  rowNo="49" BOXSN="499507049" />
+		<item  rowNo="50" BOXSN="499507050" />
+		<item  rowNo="51" BOXSN="499507051" />
+		<item  rowNo="52" BOXSN="499507052" />
+		<item  rowNo="53" BOXSN="499507053" />
+		<item  rowNo="54" BOXSN="499507054" />
+		<item  rowNo="55" BOXSN="499507055" />
+		<item  rowNo="56" BOXSN="499507056" />
+		<item  rowNo="57" BOXSN="499507057" />
+		<item  rowNo="58" BOXSN="499507058" />
+		<item  rowNo="59" BOXSN="499507059" />
+		<item  rowNo="60" BOXSN="499507060" />
+		<item  rowNo="61" BOXSN="499507061" />
+		<item  rowNo="62" BOXSN="499507062" />
+		<item  rowNo="63" BOXSN="499507063" />
+		<item  rowNo="64" BOXSN="499507064" />
+		<item  rowNo="65" BOXSN="499507065" />
+		<item  rowNo="66" BOXSN="499507066" />
+		<item  rowNo="67" BOXSN="499507067" />
+		<item  rowNo="68" BOXSN="499507068" />
+		<item  rowNo="69" BOXSN="499507069" />
+		<item  rowNo="70" BOXSN="499507070" />
+		<item  rowNo="71" BOXSN="499507071" />
+		<item  rowNo="72" BOXSN="499507072" />
+		<item  rowNo="73" BOXSN="499507073" />
+		<item  rowNo="74" BOXSN="499507074" />
+		<item  rowNo="75" BOXSN="499507075" />
+		<item  rowNo="76" BOXSN="499507076" />
+		<item  rowNo="77" BOXSN="499507077" />
+		<item  rowNo="78" BOXSN="499507078" />
+		<item  rowNo="79" BOXSN="499507079" />
+		<item  rowNo="80" BOXSN="499507080" />
+		<item  rowNo="81" BOXSN="499507081" />
+		<item  rowNo="82" BOXSN="499507082" />
+		<item  rowNo="83" BOXSN="499507083" />
+		<item  rowNo="84" BOXSN="499507084" />
+		<item  rowNo="85" BOXSN="499507085" />
+		<item  rowNo="86" BOXSN="499507086" />
+		<item  rowNo="87" BOXSN="499507087" />
+		<item  rowNo="88" BOXSN="499507088" />
+		<item  rowNo="89" BOXSN="499507089" />
+		<item  rowNo="90" BOXSN="499507090" />
+		<item  rowNo="91" BOXSN="499507091" />
+		<item  rowNo="92" BOXSN="499507092" />
+		<item  rowNo="93" BOXSN="499507093" />
+		<item  rowNo="94" BOXSN="499507094" />
+		<item  rowNo="95" BOXSN="499507095" />
+		<item  rowNo="96" BOXSN="499507096" />
+		<item  rowNo="97" BOXSN="499507097" />
+		<item  rowNo="98" BOXSN="499507098" />
+		<item  rowNo="99" BOXSN="499507099" />
+	</macs>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:找不到存储过程 'Bas_TestPalletSNImport'。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:12:00.074
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:8.0005
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:12:00.486
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:12:04.397
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Set_Meta.MetaId,
+	   Set_Meta.MetaCode,
+	   Set_Meta.MetaName,
+	   Set_Meta.IsViewPages,
+	   Set_Meta.ViewCountSqlType,
+	   Set_Meta.ViewCountSql,
+	   dbo.Set_Meta.ViewSqlType,
+	   Set_Meta.ViewSql,
+	   dbo.Set_Meta.MainSqlType,
+	   Set_Meta.MainSql,
+	   dbo.Set_Meta.DeleteSqlType,
+	   Set_Meta.DeleteSql,
+	   dbo.Set_Meta.SaveSqlType,
+	   Set_Meta.SaveSql,
+	   Set_Meta.MetaNote,
+	   Set_Meta.ColumnCount,
+	   Set_Meta.ParentMetaId,
+	   Set_Meta.IdColumnName,
+	   Set_Meta.TextColumnName,
+	   Set_Meta.TableId,
+	   Set_Table.SysTableName as TableName,
+	   Set_Meta.ViewWidth,
+	   Set_Meta.VersionColumnName
+FROM dbo.Set_Meta  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_Table  WITH(NOLOCK)  ON dbo.Set_Table.SysTableId = dbo.Set_Meta.TableId
+WHERE Set_Meta.MetaId=@metaId
+Params:
+@metaId=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:12:04.407
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:5.0002
+Sql:SELECT Set_MetaParam.MetaParamId,
+	   Set_MetaParam.MetaGroupId,
+	   Set_MetaParam.MetaParamCode,
+	   Set_MetaParam.MetaParamName,
+	   Set_MetaParam.MetaParamNote,
+	   Set_MetaParam.MetaParamLength,
+	   Set_ControlTypes.TypeName,
+	   Set_ControlTypes.FullName,
+	   Set_ControlTypes.Params,
+	   Set_MetaParam.ColumnSpan,
+	   Set_MetaParam.RowSpan,
+	   Set_MetaParam.IsEdit,
+	   Set_MetaParam.IsVisible,
+	   Set_MetaParam.IsNotEmpty,
+	   Set_MetaParam.DefaultValue,
+	   Set_MetaParam.DataSourceType,
+	   Set_MetaParam.DataSource,
+	   Set_MetaParam.IsQueryParam,
+	   Set_MetaParam.IsLinkParam,
+	   Set_MetaParam.IsNewRow
+FROM dbo.Set_MetaParam  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_ControlTypes  WITH(NOLOCK) ON Set_MetaParam.MetaParamType=Set_ControlTypes.TypeName
+LEFT JOIN dbo.Set_MetaGroup  WITH(NOLOCK)  ON dbo.Set_MetaGroup.MetaGroupId = dbo.Set_MetaParam.MetaGroupId
+WHERE Set_MetaGroup.MetaId=@metaId
+ORDER BY Set_MetaParam.Sequence
+
+Params:
+@metaId=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:12:04.417
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0002
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=51
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:12:04.427
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=183
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:12:04.437
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=185
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:12:06.847
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:4.0002
+Sql:SELECT TOP 200 Bas_MO.MOId,
+			   Bas_MO.MOCode,
+			   Bas_Item.ItemCode,
+			   Bas_Item.ItemName+'/'+Bas_Item.ItemDesc as 'ItemName',
+			   Bas_Order.OrderCode,
+			   Bas_Customer.CustomerCode
+FROM Bas_MO WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=ISNULL(@Id,Bas_MO.MOId)
+AND Bas_MO.MOCode LIKE '%'+ISNULL(@MOCode,Bas_MO.MOCode)+'%'
+AND (@ItemId IS NULL OR Bas_MO.ItemId=@ItemId)
+AND (ISNULL(@OrderCode,'')='' OR (ISNULL(@OrderCode,'')!='' AND Bas_Order.OrderCode LIKE '%'+ISNULL(@OrderCode,Bas_Order.OrderCode)+'%'))
+AND (@CustomerId IS NULL OR Bas_MO.CustomerId=@CustomerId)
+ORDER BY Bas_MO.MOCode
+Params:
+@Id=DBNull
+@MOCode=
+@ItemId=null
+@CustomerId=null
+@OrderCode=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:12:08.157
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Bas_MO.MOId,
+			   Bas_MO.MOCode,
+			   Bas_MO.OrderDetailId,
+			   Bas_MO.CustomerId,
+			   Bas_MO.ItemId,
+			   Bas_Item.ItemCode,
+			   Bas_Item.ItemDesc+'-'+Bas_Item.ItemSpecification as 'ItemDesc',
+			   dbo.Bas_Order.OrderCode,
+			   Bas_MO.Qty,
+			   Bas_MO.PlanStartDate,
+			   Bas_MO.PlanCompleteDate,
+			   Bas_MO.ActualStartDate,
+			   Bas_MO.ActualCompleteDate,
+			   Bas_MO.Status,
+			   Bas_MO.InputQty,
+			   Bas_MO.CompleteQty,
+			   Bas_MO.ErrorQty,
+			   Bas_MO.ScrapQty,
+			   Bas_MO.TurnInQty,
+			   Bas_MO.TurnOutQty,
+			   Bas_MO.WorkflowId,
+			   Bas_MO.IsCheckPowerSN,
+			   Bas_MO.PowerSNLength,
+			   Bas_MO.PowerSNPre,
+			   Bas_MO.IsCheckRemoteControlSN,
+			   Bas_MO.RemoteControlSNLength,
+			   Bas_MO.RemoteControlSNPre,
+			   Bas_MO.SpecSheet,
+			   Bas_MO.ChipScheme,
+			   Bas_MO.SoftwareVersion,
+			   Bas_MO.HardwareVersion,
+			   Bas_MO.AreaCode,
+			   Bas_MO.DeviceType,
+			   Bas_MO.IsCanVirtualInput,
+			   Bas_MO.SideAFeedingStationTableId,
+			   Bas_MO.SideBFeedingStationTableId,
+			   Bas_MO.RowVersion
+FROM Bas_MO WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+WHERE Bas_MO.MOId=ISNULL(@Id,Bas_MO.MOId)
+AND Bas_MO.MOCode=ISNULL(@Text,Bas_MO.MOCode)
+Params:
+@UserId=1
+@CpuID=BFEBFBFF000306C3
+@MacAddress=AA:BB:CC:DD:EE:FF
+@IPAddress=192.168.3.2
+@ComputerName=WANG-PC
+@LocalUserName=wang-PC\wang
+@ResourceId=76
+@SettingId=187
+@Id=147
+@Text=DBNull
+@ParentId=DBNull
+@Return_Message=DBNull
+@ReturnValue=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:12:37.385
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:4.0002
+Sql:Bas_TestPalletSNImport
+Params:
+@UserId=1
+@MOId=147
+@xml=<document>
+	<PalletSN>
+		<item  rowNo="1" BOXSN="499507001" />
+		<item  rowNo="2" BOXSN="499507002" />
+		<item  rowNo="3" BOXSN="499507003" />
+		<item  rowNo="4" BOXSN="499507004" />
+		<item  rowNo="5" BOXSN="499507005" />
+		<item  rowNo="6" BOXSN="499507006" />
+		<item  rowNo="7" BOXSN="499507007" />
+		<item  rowNo="8" BOXSN="499507008" />
+		<item  rowNo="9" BOXSN="499507009" />
+		<item  rowNo="10" BOXSN="499507010" />
+		<item  rowNo="11" BOXSN="499507011" />
+		<item  rowNo="12" BOXSN="499507012" />
+		<item  rowNo="13" BOXSN="499507013" />
+		<item  rowNo="14" BOXSN="499507014" />
+		<item  rowNo="15" BOXSN="499507015" />
+		<item  rowNo="16" BOXSN="499507016" />
+		<item  rowNo="17" BOXSN="499507017" />
+		<item  rowNo="18" BOXSN="499507018" />
+		<item  rowNo="19" BOXSN="499507019" />
+		<item  rowNo="20" BOXSN="499507020" />
+		<item  rowNo="21" BOXSN="499507021" />
+		<item  rowNo="22" BOXSN="499507022" />
+		<item  rowNo="23" BOXSN="499507023" />
+		<item  rowNo="24" BOXSN="499507024" />
+		<item  rowNo="25" BOXSN="499507025" />
+		<item  rowNo="26" BOXSN="499507026" />
+		<item  rowNo="27" BOXSN="499507027" />
+		<item  rowNo="28" BOXSN="499507028" />
+		<item  rowNo="29" BOXSN="499507029" />
+		<item  rowNo="30" BOXSN="499507030" />
+		<item  rowNo="31" BOXSN="499507031" />
+		<item  rowNo="32" BOXSN="499507032" />
+		<item  rowNo="33" BOXSN="499507033" />
+		<item  rowNo="34" BOXSN="499507034" />
+		<item  rowNo="35" BOXSN="499507035" />
+		<item  rowNo="36" BOXSN="499507036" />
+		<item  rowNo="37" BOXSN="499507037" />
+		<item  rowNo="38" BOXSN="499507038" />
+		<item  rowNo="39" BOXSN="499507039" />
+		<item  rowNo="40" BOXSN="499507040" />
+		<item  rowNo="41" BOXSN="499507041" />
+		<item  rowNo="42" BOXSN="499507042" />
+		<item  rowNo="43" BOXSN="499507043" />
+		<item  rowNo="44" BOXSN="499507044" />
+		<item  rowNo="45" BOXSN="499507045" />
+		<item  rowNo="46" BOXSN="499507046" />
+		<item  rowNo="47" BOXSN="499507047" />
+		<item  rowNo="48" BOXSN="499507048" />
+		<item  rowNo="49" BOXSN="499507049" />
+		<item  rowNo="50" BOXSN="499507050" />
+		<item  rowNo="51" BOXSN="499507051" />
+		<item  rowNo="52" BOXSN="499507052" />
+		<item  rowNo="53" BOXSN="499507053" />
+		<item  rowNo="54" BOXSN="499507054" />
+		<item  rowNo="55" BOXSN="499507055" />
+		<item  rowNo="56" BOXSN="499507056" />
+		<item  rowNo="57" BOXSN="499507057" />
+		<item  rowNo="58" BOXSN="499507058" />
+		<item  rowNo="59" BOXSN="499507059" />
+		<item  rowNo="60" BOXSN="499507060" />
+		<item  rowNo="61" BOXSN="499507061" />
+		<item  rowNo="62" BOXSN="499507062" />
+		<item  rowNo="63" BOXSN="499507063" />
+		<item  rowNo="64" BOXSN="499507064" />
+		<item  rowNo="65" BOXSN="499507065" />
+		<item  rowNo="66" BOXSN="499507066" />
+		<item  rowNo="67" BOXSN="499507067" />
+		<item  rowNo="68" BOXSN="499507068" />
+		<item  rowNo="69" BOXSN="499507069" />
+		<item  rowNo="70" BOXSN="499507070" />
+		<item  rowNo="71" BOXSN="499507071" />
+		<item  rowNo="72" BOXSN="499507072" />
+		<item  rowNo="73" BOXSN="499507073" />
+		<item  rowNo="74" BOXSN="499507074" />
+		<item  rowNo="75" BOXSN="499507075" />
+		<item  rowNo="76" BOXSN="499507076" />
+		<item  rowNo="77" BOXSN="499507077" />
+		<item  rowNo="78" BOXSN="499507078" />
+		<item  rowNo="79" BOXSN="499507079" />
+		<item  rowNo="80" BOXSN="499507080" />
+		<item  rowNo="81" BOXSN="499507081" />
+		<item  rowNo="82" BOXSN="499507082" />
+		<item  rowNo="83" BOXSN="499507083" />
+		<item  rowNo="84" BOXSN="499507084" />
+		<item  rowNo="85" BOXSN="499507085" />
+		<item  rowNo="86" BOXSN="499507086" />
+		<item  rowNo="87" BOXSN="499507087" />
+		<item  rowNo="88" BOXSN="499507088" />
+		<item  rowNo="89" BOXSN="499507089" />
+		<item  rowNo="90" BOXSN="499507090" />
+		<item  rowNo="91" BOXSN="499507091" />
+		<item  rowNo="92" BOXSN="499507092" />
+		<item  rowNo="93" BOXSN="499507093" />
+		<item  rowNo="94" BOXSN="499507094" />
+		<item  rowNo="95" BOXSN="499507095" />
+		<item  rowNo="96" BOXSN="499507096" />
+		<item  rowNo="97" BOXSN="499507097" />
+		<item  rowNo="98" BOXSN="499507098" />
+		<item  rowNo="99" BOXSN="499507099" />
+	</PalletSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:找不到存储过程 'Bas_TestPalletSNImport'。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:26:41.698
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Seconds:3.1081777.108.1777
+Sql:Bas_TestPalletSNImport
+Params:
+@UserId=1
+@MOId=147
+@xml=<document>
+	<PalletSN>
+		<item  rowNo="1" BOXSN="499507001" />
+		<item  rowNo="2" BOXSN="499507002" />
+		<item  rowNo="3" BOXSN="499507003" />
+		<item  rowNo="4" BOXSN="499507004" />
+		<item  rowNo="5" BOXSN="499507005" />
+		<item  rowNo="6" BOXSN="499507006" />
+		<item  rowNo="7" BOXSN="499507007" />
+		<item  rowNo="8" BOXSN="499507008" />
+		<item  rowNo="9" BOXSN="499507009" />
+		<item  rowNo="10" BOXSN="499507010" />
+		<item  rowNo="11" BOXSN="499507011" />
+		<item  rowNo="12" BOXSN="499507012" />
+		<item  rowNo="13" BOXSN="499507013" />
+		<item  rowNo="14" BOXSN="499507014" />
+		<item  rowNo="15" BOXSN="499507015" />
+		<item  rowNo="16" BOXSN="499507016" />
+		<item  rowNo="17" BOXSN="499507017" />
+		<item  rowNo="18" BOXSN="499507018" />
+		<item  rowNo="19" BOXSN="499507019" />
+		<item  rowNo="20" BOXSN="499507020" />
+		<item  rowNo="21" BOXSN="499507021" />
+		<item  rowNo="22" BOXSN="499507022" />
+		<item  rowNo="23" BOXSN="499507023" />
+		<item  rowNo="24" BOXSN="499507024" />
+		<item  rowNo="25" BOXSN="499507025" />
+		<item  rowNo="26" BOXSN="499507026" />
+		<item  rowNo="27" BOXSN="499507027" />
+		<item  rowNo="28" BOXSN="499507028" />
+		<item  rowNo="29" BOXSN="499507029" />
+		<item  rowNo="30" BOXSN="499507030" />
+		<item  rowNo="31" BOXSN="499507031" />
+		<item  rowNo="32" BOXSN="499507032" />
+		<item  rowNo="33" BOXSN="499507033" />
+		<item  rowNo="34" BOXSN="499507034" />
+		<item  rowNo="35" BOXSN="499507035" />
+		<item  rowNo="36" BOXSN="499507036" />
+		<item  rowNo="37" BOXSN="499507037" />
+		<item  rowNo="38" BOXSN="499507038" />
+		<item  rowNo="39" BOXSN="499507039" />
+		<item  rowNo="40" BOXSN="499507040" />
+		<item  rowNo="41" BOXSN="499507041" />
+		<item  rowNo="42" BOXSN="499507042" />
+		<item  rowNo="43" BOXSN="499507043" />
+		<item  rowNo="44" BOXSN="499507044" />
+		<item  rowNo="45" BOXSN="499507045" />
+		<item  rowNo="46" BOXSN="499507046" />
+		<item  rowNo="47" BOXSN="499507047" />
+		<item  rowNo="48" BOXSN="499507048" />
+		<item  rowNo="49" BOXSN="499507049" />
+		<item  rowNo="50" BOXSN="499507050" />
+		<item  rowNo="51" BOXSN="499507051" />
+		<item  rowNo="52" BOXSN="499507052" />
+		<item  rowNo="53" BOXSN="499507053" />
+		<item  rowNo="54" BOXSN="499507054" />
+		<item  rowNo="55" BOXSN="499507055" />
+		<item  rowNo="56" BOXSN="499507056" />
+		<item  rowNo="57" BOXSN="499507057" />
+		<item  rowNo="58" BOXSN="499507058" />
+		<item  rowNo="59" BOXSN="499507059" />
+		<item  rowNo="60" BOXSN="499507060" />
+		<item  rowNo="61" BOXSN="499507061" />
+		<item  rowNo="62" BOXSN="499507062" />
+		<item  rowNo="63" BOXSN="499507063" />
+		<item  rowNo="64" BOXSN="499507064" />
+		<item  rowNo="65" BOXSN="499507065" />
+		<item  rowNo="66" BOXSN="499507066" />
+		<item  rowNo="67" BOXSN="499507067" />
+		<item  rowNo="68" BOXSN="499507068" />
+		<item  rowNo="69" BOXSN="499507069" />
+		<item  rowNo="70" BOXSN="499507070" />
+		<item  rowNo="71" BOXSN="499507071" />
+		<item  rowNo="72" BOXSN="499507072" />
+		<item  rowNo="73" BOXSN="499507073" />
+		<item  rowNo="74" BOXSN="499507074" />
+		<item  rowNo="75" BOXSN="499507075" />
+		<item  rowNo="76" BOXSN="499507076" />
+		<item  rowNo="77" BOXSN="499507077" />
+		<item  rowNo="78" BOXSN="499507078" />
+		<item  rowNo="79" BOXSN="499507079" />
+		<item  rowNo="80" BOXSN="499507080" />
+		<item  rowNo="81" BOXSN="499507081" />
+		<item  rowNo="82" BOXSN="499507082" />
+		<item  rowNo="83" BOXSN="499507083" />
+		<item  rowNo="84" BOXSN="499507084" />
+		<item  rowNo="85" BOXSN="499507085" />
+		<item  rowNo="86" BOXSN="499507086" />
+		<item  rowNo="87" BOXSN="499507087" />
+		<item  rowNo="88" BOXSN="499507088" />
+		<item  rowNo="89" BOXSN="499507089" />
+		<item  rowNo="90" BOXSN="499507090" />
+		<item  rowNo="91" BOXSN="499507091" />
+		<item  rowNo="92" BOXSN="499507092" />
+		<item  rowNo="93" BOXSN="499507093" />
+		<item  rowNo="94" BOXSN="499507094" />
+		<item  rowNo="95" BOXSN="499507095" />
+		<item  rowNo="96" BOXSN="499507096" />
+		<item  rowNo="97" BOXSN="499507097" />
+		<item  rowNo="98" BOXSN="499507098" />
+		<item  rowNo="99" BOXSN="499507099" />
+	</PalletSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:27:31.113
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:8.0004
+Sql:Bas_TestPalletSNImport
+Params:
+@UserId=1
+@MOId=147
+@xml=<document>
+	<PalletSN>
+		<item  rowNo="1" BOXSN="499507001" />
+		<item  rowNo="2" BOXSN="499507002" />
+		<item  rowNo="3" BOXSN="499507003" />
+		<item  rowNo="4" BOXSN="499507004" />
+		<item  rowNo="5" BOXSN="499507005" />
+		<item  rowNo="6" BOXSN="499507006" />
+		<item  rowNo="7" BOXSN="499507007" />
+		<item  rowNo="8" BOXSN="499507008" />
+		<item  rowNo="9" BOXSN="499507009" />
+		<item  rowNo="10" BOXSN="499507010" />
+		<item  rowNo="11" BOXSN="499507011" />
+		<item  rowNo="12" BOXSN="499507012" />
+		<item  rowNo="13" BOXSN="499507013" />
+		<item  rowNo="14" BOXSN="499507014" />
+		<item  rowNo="15" BOXSN="499507015" />
+		<item  rowNo="16" BOXSN="499507016" />
+		<item  rowNo="17" BOXSN="499507017" />
+		<item  rowNo="18" BOXSN="499507018" />
+		<item  rowNo="19" BOXSN="499507019" />
+		<item  rowNo="20" BOXSN="499507020" />
+		<item  rowNo="21" BOXSN="499507021" />
+		<item  rowNo="22" BOXSN="499507022" />
+		<item  rowNo="23" BOXSN="499507023" />
+		<item  rowNo="24" BOXSN="499507024" />
+		<item  rowNo="25" BOXSN="499507025" />
+		<item  rowNo="26" BOXSN="499507026" />
+		<item  rowNo="27" BOXSN="499507027" />
+		<item  rowNo="28" BOXSN="499507028" />
+		<item  rowNo="29" BOXSN="499507029" />
+		<item  rowNo="30" BOXSN="499507030" />
+		<item  rowNo="31" BOXSN="499507031" />
+		<item  rowNo="32" BOXSN="499507032" />
+		<item  rowNo="33" BOXSN="499507033" />
+		<item  rowNo="34" BOXSN="499507034" />
+		<item  rowNo="35" BOXSN="499507035" />
+		<item  rowNo="36" BOXSN="499507036" />
+		<item  rowNo="37" BOXSN="499507037" />
+		<item  rowNo="38" BOXSN="499507038" />
+		<item  rowNo="39" BOXSN="499507039" />
+		<item  rowNo="40" BOXSN="499507040" />
+		<item  rowNo="41" BOXSN="499507041" />
+		<item  rowNo="42" BOXSN="499507042" />
+		<item  rowNo="43" BOXSN="499507043" />
+		<item  rowNo="44" BOXSN="499507044" />
+		<item  rowNo="45" BOXSN="499507045" />
+		<item  rowNo="46" BOXSN="499507046" />
+		<item  rowNo="47" BOXSN="499507047" />
+		<item  rowNo="48" BOXSN="499507048" />
+		<item  rowNo="49" BOXSN="499507049" />
+		<item  rowNo="50" BOXSN="499507050" />
+		<item  rowNo="51" BOXSN="499507051" />
+		<item  rowNo="52" BOXSN="499507052" />
+		<item  rowNo="53" BOXSN="499507053" />
+		<item  rowNo="54" BOXSN="499507054" />
+		<item  rowNo="55" BOXSN="499507055" />
+		<item  rowNo="56" BOXSN="499507056" />
+		<item  rowNo="57" BOXSN="499507057" />
+		<item  rowNo="58" BOXSN="499507058" />
+		<item  rowNo="59" BOXSN="499507059" />
+		<item  rowNo="60" BOXSN="499507060" />
+		<item  rowNo="61" BOXSN="499507061" />
+		<item  rowNo="62" BOXSN="499507062" />
+		<item  rowNo="63" BOXSN="499507063" />
+		<item  rowNo="64" BOXSN="499507064" />
+		<item  rowNo="65" BOXSN="499507065" />
+		<item  rowNo="66" BOXSN="499507066" />
+		<item  rowNo="67" BOXSN="499507067" />
+		<item  rowNo="68" BOXSN="499507068" />
+		<item  rowNo="69" BOXSN="499507069" />
+		<item  rowNo="70" BOXSN="499507070" />
+		<item  rowNo="71" BOXSN="499507071" />
+		<item  rowNo="72" BOXSN="499507072" />
+		<item  rowNo="73" BOXSN="499507073" />
+		<item  rowNo="74" BOXSN="499507074" />
+		<item  rowNo="75" BOXSN="499507075" />
+		<item  rowNo="76" BOXSN="499507076" />
+		<item  rowNo="77" BOXSN="499507077" />
+		<item  rowNo="78" BOXSN="499507078" />
+		<item  rowNo="79" BOXSN="499507079" />
+		<item  rowNo="80" BOXSN="499507080" />
+		<item  rowNo="81" BOXSN="499507081" />
+		<item  rowNo="82" BOXSN="499507082" />
+		<item  rowNo="83" BOXSN="499507083" />
+		<item  rowNo="84" BOXSN="499507084" />
+		<item  rowNo="85" BOXSN="499507085" />
+		<item  rowNo="86" BOXSN="499507086" />
+		<item  rowNo="87" BOXSN="499507087" />
+		<item  rowNo="88" BOXSN="499507088" />
+		<item  rowNo="89" BOXSN="499507089" />
+		<item  rowNo="90" BOXSN="499507090" />
+		<item  rowNo="91" BOXSN="499507091" />
+		<item  rowNo="92" BOXSN="499507092" />
+		<item  rowNo="93" BOXSN="499507093" />
+		<item  rowNo="94" BOXSN="499507094" />
+		<item  rowNo="95" BOXSN="499507095" />
+		<item  rowNo="96" BOXSN="499507096" />
+		<item  rowNo="97" BOXSN="499507097" />
+		<item  rowNo="98" BOXSN="499507098" />
+		<item  rowNo="99" BOXSN="499507099" />
+	</PalletSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:31:08.522
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:17.001
+Sql:Bas_TestPalletSNImport
+Params:
+@UserId=1
+@MOId=147
+@xml=<document>
+	<PalletSN>
+		<item  rowNo="1" BOXSN="499507001" />
+		<item  rowNo="2" BOXSN="499507002" />
+		<item  rowNo="3" BOXSN="499507003" />
+		<item  rowNo="4" BOXSN="499507004" />
+		<item  rowNo="5" BOXSN="499507005" />
+		<item  rowNo="6" BOXSN="499507006" />
+		<item  rowNo="7" BOXSN="499507007" />
+		<item  rowNo="8" BOXSN="499507008" />
+		<item  rowNo="9" BOXSN="499507009" />
+		<item  rowNo="10" BOXSN="499507010" />
+		<item  rowNo="11" BOXSN="499507011" />
+		<item  rowNo="12" BOXSN="499507012" />
+		<item  rowNo="13" BOXSN="499507013" />
+		<item  rowNo="14" BOXSN="499507014" />
+		<item  rowNo="15" BOXSN="499507015" />
+		<item  rowNo="16" BOXSN="499507016" />
+		<item  rowNo="17" BOXSN="499507017" />
+		<item  rowNo="18" BOXSN="499507018" />
+		<item  rowNo="19" BOXSN="499507019" />
+		<item  rowNo="20" BOXSN="499507020" />
+		<item  rowNo="21" BOXSN="499507021" />
+		<item  rowNo="22" BOXSN="499507022" />
+		<item  rowNo="23" BOXSN="499507023" />
+		<item  rowNo="24" BOXSN="499507024" />
+		<item  rowNo="25" BOXSN="499507025" />
+		<item  rowNo="26" BOXSN="499507026" />
+		<item  rowNo="27" BOXSN="499507027" />
+		<item  rowNo="28" BOXSN="499507028" />
+		<item  rowNo="29" BOXSN="499507029" />
+		<item  rowNo="30" BOXSN="499507030" />
+		<item  rowNo="31" BOXSN="499507031" />
+		<item  rowNo="32" BOXSN="499507032" />
+		<item  rowNo="33" BOXSN="499507033" />
+		<item  rowNo="34" BOXSN="499507034" />
+		<item  rowNo="35" BOXSN="499507035" />
+		<item  rowNo="36" BOXSN="499507036" />
+		<item  rowNo="37" BOXSN="499507037" />
+		<item  rowNo="38" BOXSN="499507038" />
+		<item  rowNo="39" BOXSN="499507039" />
+		<item  rowNo="40" BOXSN="499507040" />
+		<item  rowNo="41" BOXSN="499507041" />
+		<item  rowNo="42" BOXSN="499507042" />
+		<item  rowNo="43" BOXSN="499507043" />
+		<item  rowNo="44" BOXSN="499507044" />
+		<item  rowNo="45" BOXSN="499507045" />
+		<item  rowNo="46" BOXSN="499507046" />
+		<item  rowNo="47" BOXSN="499507047" />
+		<item  rowNo="48" BOXSN="499507048" />
+		<item  rowNo="49" BOXSN="499507049" />
+		<item  rowNo="50" BOXSN="499507050" />
+		<item  rowNo="51" BOXSN="499507051" />
+		<item  rowNo="52" BOXSN="499507052" />
+		<item  rowNo="53" BOXSN="499507053" />
+		<item  rowNo="54" BOXSN="499507054" />
+		<item  rowNo="55" BOXSN="499507055" />
+		<item  rowNo="56" BOXSN="499507056" />
+		<item  rowNo="57" BOXSN="499507057" />
+		<item  rowNo="58" BOXSN="499507058" />
+		<item  rowNo="59" BOXSN="499507059" />
+		<item  rowNo="60" BOXSN="499507060" />
+		<item  rowNo="61" BOXSN="499507061" />
+		<item  rowNo="62" BOXSN="499507062" />
+		<item  rowNo="63" BOXSN="499507063" />
+		<item  rowNo="64" BOXSN="499507064" />
+		<item  rowNo="65" BOXSN="499507065" />
+		<item  rowNo="66" BOXSN="499507066" />
+		<item  rowNo="67" BOXSN="499507067" />
+		<item  rowNo="68" BOXSN="499507068" />
+		<item  rowNo="69" BOXSN="499507069" />
+		<item  rowNo="70" BOXSN="499507070" />
+		<item  rowNo="71" BOXSN="499507071" />
+		<item  rowNo="72" BOXSN="499507072" />
+		<item  rowNo="73" BOXSN="499507073" />
+		<item  rowNo="74" BOXSN="499507074" />
+		<item  rowNo="75" BOXSN="499507075" />
+		<item  rowNo="76" BOXSN="499507076" />
+		<item  rowNo="77" BOXSN="499507077" />
+		<item  rowNo="78" BOXSN="499507078" />
+		<item  rowNo="79" BOXSN="499507079" />
+		<item  rowNo="80" BOXSN="499507080" />
+		<item  rowNo="81" BOXSN="499507081" />
+		<item  rowNo="82" BOXSN="499507082" />
+		<item  rowNo="83" BOXSN="499507083" />
+		<item  rowNo="84" BOXSN="499507084" />
+		<item  rowNo="85" BOXSN="499507085" />
+		<item  rowNo="86" BOXSN="499507086" />
+		<item  rowNo="87" BOXSN="499507087" />
+		<item  rowNo="88" BOXSN="499507088" />
+		<item  rowNo="89" BOXSN="499507089" />
+		<item  rowNo="90" BOXSN="499507090" />
+		<item  rowNo="91" BOXSN="499507091" />
+		<item  rowNo="92" BOXSN="499507092" />
+		<item  rowNo="93" BOXSN="499507093" />
+		<item  rowNo="94" BOXSN="499507094" />
+		<item  rowNo="95" BOXSN="499507095" />
+		<item  rowNo="96" BOXSN="499507096" />
+		<item  rowNo="97" BOXSN="499507097" />
+		<item  rowNo="98" BOXSN="499507098" />
+		<item  rowNo="99" BOXSN="499507099" />
+	</PalletSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:31:52.419
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:16.0009
+Sql:Bas_TestPalletSNImport
+Params:
+@UserId=1
+@MOId=147
+@xml=<document>
+	<PalletSN>
+		<item  rowNo="1" BOXSN="499507001" />
+		<item  rowNo="2" BOXSN="499507002" />
+		<item  rowNo="3" BOXSN="499507003" />
+		<item  rowNo="4" BOXSN="499507004" />
+		<item  rowNo="5" BOXSN="499507005" />
+		<item  rowNo="6" BOXSN="499507006" />
+		<item  rowNo="7" BOXSN="499507007" />
+		<item  rowNo="8" BOXSN="499507008" />
+		<item  rowNo="9" BOXSN="499507009" />
+		<item  rowNo="10" BOXSN="499507010" />
+		<item  rowNo="11" BOXSN="499507011" />
+		<item  rowNo="12" BOXSN="499507012" />
+		<item  rowNo="13" BOXSN="499507013" />
+		<item  rowNo="14" BOXSN="499507014" />
+		<item  rowNo="15" BOXSN="499507015" />
+		<item  rowNo="16" BOXSN="499507016" />
+		<item  rowNo="17" BOXSN="499507017" />
+		<item  rowNo="18" BOXSN="499507018" />
+		<item  rowNo="19" BOXSN="499507019" />
+		<item  rowNo="20" BOXSN="499507020" />
+		<item  rowNo="21" BOXSN="499507021" />
+		<item  rowNo="22" BOXSN="499507022" />
+		<item  rowNo="23" BOXSN="499507023" />
+		<item  rowNo="24" BOXSN="499507024" />
+		<item  rowNo="25" BOXSN="499507025" />
+		<item  rowNo="26" BOXSN="499507026" />
+		<item  rowNo="27" BOXSN="499507027" />
+		<item  rowNo="28" BOXSN="499507028" />
+		<item  rowNo="29" BOXSN="499507029" />
+		<item  rowNo="30" BOXSN="499507030" />
+		<item  rowNo="31" BOXSN="499507031" />
+		<item  rowNo="32" BOXSN="499507032" />
+		<item  rowNo="33" BOXSN="499507033" />
+		<item  rowNo="34" BOXSN="499507034" />
+		<item  rowNo="35" BOXSN="499507035" />
+		<item  rowNo="36" BOXSN="499507036" />
+		<item  rowNo="37" BOXSN="499507037" />
+		<item  rowNo="38" BOXSN="499507038" />
+		<item  rowNo="39" BOXSN="499507039" />
+		<item  rowNo="40" BOXSN="499507040" />
+		<item  rowNo="41" BOXSN="499507041" />
+		<item  rowNo="42" BOXSN="499507042" />
+		<item  rowNo="43" BOXSN="499507043" />
+		<item  rowNo="44" BOXSN="499507044" />
+		<item  rowNo="45" BOXSN="499507045" />
+		<item  rowNo="46" BOXSN="499507046" />
+		<item  rowNo="47" BOXSN="499507047" />
+		<item  rowNo="48" BOXSN="499507048" />
+		<item  rowNo="49" BOXSN="499507049" />
+		<item  rowNo="50" BOXSN="499507050" />
+		<item  rowNo="51" BOXSN="499507051" />
+		<item  rowNo="52" BOXSN="499507052" />
+		<item  rowNo="53" BOXSN="499507053" />
+		<item  rowNo="54" BOXSN="499507054" />
+		<item  rowNo="55" BOXSN="499507055" />
+		<item  rowNo="56" BOXSN="499507056" />
+		<item  rowNo="57" BOXSN="499507057" />
+		<item  rowNo="58" BOXSN="499507058" />
+		<item  rowNo="59" BOXSN="499507059" />
+		<item  rowNo="60" BOXSN="499507060" />
+		<item  rowNo="61" BOXSN="499507061" />
+		<item  rowNo="62" BOXSN="499507062" />
+		<item  rowNo="63" BOXSN="499507063" />
+		<item  rowNo="64" BOXSN="499507064" />
+		<item  rowNo="65" BOXSN="499507065" />
+		<item  rowNo="66" BOXSN="499507066" />
+		<item  rowNo="67" BOXSN="499507067" />
+		<item  rowNo="68" BOXSN="499507068" />
+		<item  rowNo="69" BOXSN="499507069" />
+		<item  rowNo="70" BOXSN="499507070" />
+		<item  rowNo="71" BOXSN="499507071" />
+		<item  rowNo="72" BOXSN="499507072" />
+		<item  rowNo="73" BOXSN="499507073" />
+		<item  rowNo="74" BOXSN="499507074" />
+		<item  rowNo="75" BOXSN="499507075" />
+		<item  rowNo="76" BOXSN="499507076" />
+		<item  rowNo="77" BOXSN="499507077" />
+		<item  rowNo="78" BOXSN="499507078" />
+		<item  rowNo="79" BOXSN="499507079" />
+		<item  rowNo="80" BOXSN="499507080" />
+		<item  rowNo="81" BOXSN="499507081" />
+		<item  rowNo="82" BOXSN="499507082" />
+		<item  rowNo="83" BOXSN="499507083" />
+		<item  rowNo="84" BOXSN="499507084" />
+		<item  rowNo="85" BOXSN="499507085" />
+		<item  rowNo="86" BOXSN="499507086" />
+		<item  rowNo="87" BOXSN="499507087" />
+		<item  rowNo="88" BOXSN="499507088" />
+		<item  rowNo="89" BOXSN="499507089" />
+		<item  rowNo="90" BOXSN="499507090" />
+		<item  rowNo="91" BOXSN="499507091" />
+		<item  rowNo="92" BOXSN="499507092" />
+		<item  rowNo="93" BOXSN="499507093" />
+		<item  rowNo="94" BOXSN="499507094" />
+		<item  rowNo="95" BOXSN="499507095" />
+		<item  rowNo="96" BOXSN="499507096" />
+		<item  rowNo="97" BOXSN="499507097" />
+		<item  rowNo="98" BOXSN="499507098" />
+		<item  rowNo="99" BOXSN="499507099" />
+	</PalletSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:32:05.230
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:12.0007
+Sql:Bas_TestPalletSNImport
+Params:
+@UserId=1
+@MOId=147
+@xml=<document>
+	<PalletSN>
+		<item  rowNo="1" BOXSN="499507001" />
+		<item  rowNo="2" BOXSN="499507002" />
+		<item  rowNo="3" BOXSN="499507003" />
+		<item  rowNo="4" BOXSN="499507004" />
+		<item  rowNo="5" BOXSN="499507005" />
+		<item  rowNo="6" BOXSN="499507006" />
+		<item  rowNo="7" BOXSN="499507007" />
+		<item  rowNo="8" BOXSN="499507008" />
+		<item  rowNo="9" BOXSN="499507009" />
+		<item  rowNo="10" BOXSN="499507010" />
+		<item  rowNo="11" BOXSN="499507011" />
+		<item  rowNo="12" BOXSN="499507012" />
+		<item  rowNo="13" BOXSN="499507013" />
+		<item  rowNo="14" BOXSN="499507014" />
+		<item  rowNo="15" BOXSN="499507015" />
+		<item  rowNo="16" BOXSN="499507016" />
+		<item  rowNo="17" BOXSN="499507017" />
+		<item  rowNo="18" BOXSN="499507018" />
+		<item  rowNo="19" BOXSN="499507019" />
+		<item  rowNo="20" BOXSN="499507020" />
+		<item  rowNo="21" BOXSN="499507021" />
+		<item  rowNo="22" BOXSN="499507022" />
+		<item  rowNo="23" BOXSN="499507023" />
+		<item  rowNo="24" BOXSN="499507024" />
+		<item  rowNo="25" BOXSN="499507025" />
+		<item  rowNo="26" BOXSN="499507026" />
+		<item  rowNo="27" BOXSN="499507027" />
+		<item  rowNo="28" BOXSN="499507028" />
+		<item  rowNo="29" BOXSN="499507029" />
+		<item  rowNo="30" BOXSN="499507030" />
+		<item  rowNo="31" BOXSN="499507031" />
+		<item  rowNo="32" BOXSN="499507032" />
+		<item  rowNo="33" BOXSN="499507033" />
+		<item  rowNo="34" BOXSN="499507034" />
+		<item  rowNo="35" BOXSN="499507035" />
+		<item  rowNo="36" BOXSN="499507036" />
+		<item  rowNo="37" BOXSN="499507037" />
+		<item  rowNo="38" BOXSN="499507038" />
+		<item  rowNo="39" BOXSN="499507039" />
+		<item  rowNo="40" BOXSN="499507040" />
+		<item  rowNo="41" BOXSN="499507041" />
+		<item  rowNo="42" BOXSN="499507042" />
+		<item  rowNo="43" BOXSN="499507043" />
+		<item  rowNo="44" BOXSN="499507044" />
+		<item  rowNo="45" BOXSN="499507045" />
+		<item  rowNo="46" BOXSN="499507046" />
+		<item  rowNo="47" BOXSN="499507047" />
+		<item  rowNo="48" BOXSN="499507048" />
+		<item  rowNo="49" BOXSN="499507049" />
+		<item  rowNo="50" BOXSN="499507050" />
+		<item  rowNo="51" BOXSN="499507051" />
+		<item  rowNo="52" BOXSN="499507052" />
+		<item  rowNo="53" BOXSN="499507053" />
+		<item  rowNo="54" BOXSN="499507054" />
+		<item  rowNo="55" BOXSN="499507055" />
+		<item  rowNo="56" BOXSN="499507056" />
+		<item  rowNo="57" BOXSN="499507057" />
+		<item  rowNo="58" BOXSN="499507058" />
+		<item  rowNo="59" BOXSN="499507059" />
+		<item  rowNo="60" BOXSN="499507060" />
+		<item  rowNo="61" BOXSN="499507061" />
+		<item  rowNo="62" BOXSN="499507062" />
+		<item  rowNo="63" BOXSN="499507063" />
+		<item  rowNo="64" BOXSN="499507064" />
+		<item  rowNo="65" BOXSN="499507065" />
+		<item  rowNo="66" BOXSN="499507066" />
+		<item  rowNo="67" BOXSN="499507067" />
+		<item  rowNo="68" BOXSN="499507068" />
+		<item  rowNo="69" BOXSN="499507069" />
+		<item  rowNo="70" BOXSN="499507070" />
+		<item  rowNo="71" BOXSN="499507071" />
+		<item  rowNo="72" BOXSN="499507072" />
+		<item  rowNo="73" BOXSN="499507073" />
+		<item  rowNo="74" BOXSN="499507074" />
+		<item  rowNo="75" BOXSN="499507075" />
+		<item  rowNo="76" BOXSN="499507076" />
+		<item  rowNo="77" BOXSN="499507077" />
+		<item  rowNo="78" BOXSN="499507078" />
+		<item  rowNo="79" BOXSN="499507079" />
+		<item  rowNo="80" BOXSN="499507080" />
+		<item  rowNo="81" BOXSN="499507081" />
+		<item  rowNo="82" BOXSN="499507082" />
+		<item  rowNo="83" BOXSN="499507083" />
+		<item  rowNo="84" BOXSN="499507084" />
+		<item  rowNo="85" BOXSN="499507085" />
+		<item  rowNo="86" BOXSN="499507086" />
+		<item  rowNo="87" BOXSN="499507087" />
+		<item  rowNo="88" BOXSN="499507088" />
+		<item  rowNo="89" BOXSN="499507089" />
+		<item  rowNo="90" BOXSN="499507090" />
+		<item  rowNo="91" BOXSN="499507091" />
+		<item  rowNo="92" BOXSN="499507092" />
+		<item  rowNo="93" BOXSN="499507093" />
+		<item  rowNo="94" BOXSN="499507094" />
+		<item  rowNo="95" BOXSN="499507095" />
+		<item  rowNo="96" BOXSN="499507096" />
+		<item  rowNo="97" BOXSN="499507097" />
+		<item  rowNo="98" BOXSN="499507098" />
+		<item  rowNo="99" BOXSN="499507099" />
+	</PalletSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:36:28.928
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:22.0012
+Sql:Bas_TestPalletSNImport
+Params:
+@UserId=1
+@MOId=147
+@xml=<document>
+	<PalletSN>
+		<item  rowNo="1" BOXSN="499507001" />
+		<item  rowNo="2" BOXSN="499507002" />
+		<item  rowNo="3" BOXSN="499507003" />
+		<item  rowNo="4" BOXSN="499507004" />
+		<item  rowNo="5" BOXSN="499507005" />
+		<item  rowNo="6" BOXSN="499507006" />
+		<item  rowNo="7" BOXSN="499507007" />
+		<item  rowNo="8" BOXSN="499507008" />
+		<item  rowNo="9" BOXSN="499507009" />
+		<item  rowNo="10" BOXSN="499507010" />
+		<item  rowNo="11" BOXSN="499507011" />
+		<item  rowNo="12" BOXSN="499507012" />
+		<item  rowNo="13" BOXSN="499507013" />
+		<item  rowNo="14" BOXSN="499507014" />
+		<item  rowNo="15" BOXSN="499507015" />
+		<item  rowNo="16" BOXSN="499507016" />
+		<item  rowNo="17" BOXSN="499507017" />
+		<item  rowNo="18" BOXSN="499507018" />
+		<item  rowNo="19" BOXSN="499507019" />
+		<item  rowNo="20" BOXSN="499507020" />
+		<item  rowNo="21" BOXSN="499507021" />
+		<item  rowNo="22" BOXSN="499507022" />
+		<item  rowNo="23" BOXSN="499507023" />
+		<item  rowNo="24" BOXSN="499507024" />
+		<item  rowNo="25" BOXSN="499507025" />
+		<item  rowNo="26" BOXSN="499507026" />
+		<item  rowNo="27" BOXSN="499507027" />
+		<item  rowNo="28" BOXSN="499507028" />
+		<item  rowNo="29" BOXSN="499507029" />
+		<item  rowNo="30" BOXSN="499507030" />
+		<item  rowNo="31" BOXSN="499507031" />
+		<item  rowNo="32" BOXSN="499507032" />
+		<item  rowNo="33" BOXSN="499507033" />
+		<item  rowNo="34" BOXSN="499507034" />
+		<item  rowNo="35" BOXSN="499507035" />
+		<item  rowNo="36" BOXSN="499507036" />
+		<item  rowNo="37" BOXSN="499507037" />
+		<item  rowNo="38" BOXSN="499507038" />
+		<item  rowNo="39" BOXSN="499507039" />
+		<item  rowNo="40" BOXSN="499507040" />
+		<item  rowNo="41" BOXSN="499507041" />
+		<item  rowNo="42" BOXSN="499507042" />
+		<item  rowNo="43" BOXSN="499507043" />
+		<item  rowNo="44" BOXSN="499507044" />
+		<item  rowNo="45" BOXSN="499507045" />
+		<item  rowNo="46" BOXSN="499507046" />
+		<item  rowNo="47" BOXSN="499507047" />
+		<item  rowNo="48" BOXSN="499507048" />
+		<item  rowNo="49" BOXSN="499507049" />
+		<item  rowNo="50" BOXSN="499507050" />
+		<item  rowNo="51" BOXSN="499507051" />
+		<item  rowNo="52" BOXSN="499507052" />
+		<item  rowNo="53" BOXSN="499507053" />
+		<item  rowNo="54" BOXSN="499507054" />
+		<item  rowNo="55" BOXSN="499507055" />
+		<item  rowNo="56" BOXSN="499507056" />
+		<item  rowNo="57" BOXSN="499507057" />
+		<item  rowNo="58" BOXSN="499507058" />
+		<item  rowNo="59" BOXSN="499507059" />
+		<item  rowNo="60" BOXSN="499507060" />
+		<item  rowNo="61" BOXSN="499507061" />
+		<item  rowNo="62" BOXSN="499507062" />
+		<item  rowNo="63" BOXSN="499507063" />
+		<item  rowNo="64" BOXSN="499507064" />
+		<item  rowNo="65" BOXSN="499507065" />
+		<item  rowNo="66" BOXSN="499507066" />
+		<item  rowNo="67" BOXSN="499507067" />
+		<item  rowNo="68" BOXSN="499507068" />
+		<item  rowNo="69" BOXSN="499507069" />
+		<item  rowNo="70" BOXSN="499507070" />
+		<item  rowNo="71" BOXSN="499507071" />
+		<item  rowNo="72" BOXSN="499507072" />
+		<item  rowNo="73" BOXSN="499507073" />
+		<item  rowNo="74" BOXSN="499507074" />
+		<item  rowNo="75" BOXSN="499507075" />
+		<item  rowNo="76" BOXSN="499507076" />
+		<item  rowNo="77" BOXSN="499507077" />
+		<item  rowNo="78" BOXSN="499507078" />
+		<item  rowNo="79" BOXSN="499507079" />
+		<item  rowNo="80" BOXSN="499507080" />
+		<item  rowNo="81" BOXSN="499507081" />
+		<item  rowNo="82" BOXSN="499507082" />
+		<item  rowNo="83" BOXSN="499507083" />
+		<item  rowNo="84" BOXSN="499507084" />
+		<item  rowNo="85" BOXSN="499507085" />
+		<item  rowNo="86" BOXSN="499507086" />
+		<item  rowNo="87" BOXSN="499507087" />
+		<item  rowNo="88" BOXSN="499507088" />
+		<item  rowNo="89" BOXSN="499507089" />
+		<item  rowNo="90" BOXSN="499507090" />
+		<item  rowNo="91" BOXSN="499507091" />
+		<item  rowNo="92" BOXSN="499507092" />
+		<item  rowNo="93" BOXSN="499507093" />
+		<item  rowNo="94" BOXSN="499507094" />
+		<item  rowNo="95" BOXSN="499507095" />
+		<item  rowNo="96" BOXSN="499507096" />
+		<item  rowNo="97" BOXSN="499507097" />
+		<item  rowNo="98" BOXSN="499507098" />
+		<item  rowNo="99" BOXSN="499507099" />
+	</PalletSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:列名或所提供值的数目与表定义不匹配。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:37:07.599
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:11.0006
+Sql:Bas_TestPalletSNImport
+Params:
+@UserId=1
+@MOId=147
+@xml=<document>
+	<PalletSN>
+		<item  rowNo="1" BOXSN="499507001" />
+		<item  rowNo="2" BOXSN="499507002" />
+		<item  rowNo="3" BOXSN="499507003" />
+		<item  rowNo="4" BOXSN="499507004" />
+		<item  rowNo="5" BOXSN="499507005" />
+		<item  rowNo="6" BOXSN="499507006" />
+		<item  rowNo="7" BOXSN="499507007" />
+		<item  rowNo="8" BOXSN="499507008" />
+		<item  rowNo="9" BOXSN="499507009" />
+		<item  rowNo="10" BOXSN="499507010" />
+		<item  rowNo="11" BOXSN="499507011" />
+		<item  rowNo="12" BOXSN="499507012" />
+		<item  rowNo="13" BOXSN="499507013" />
+		<item  rowNo="14" BOXSN="499507014" />
+		<item  rowNo="15" BOXSN="499507015" />
+		<item  rowNo="16" BOXSN="499507016" />
+		<item  rowNo="17" BOXSN="499507017" />
+		<item  rowNo="18" BOXSN="499507018" />
+		<item  rowNo="19" BOXSN="499507019" />
+		<item  rowNo="20" BOXSN="499507020" />
+		<item  rowNo="21" BOXSN="499507021" />
+		<item  rowNo="22" BOXSN="499507022" />
+		<item  rowNo="23" BOXSN="499507023" />
+		<item  rowNo="24" BOXSN="499507024" />
+		<item  rowNo="25" BOXSN="499507025" />
+		<item  rowNo="26" BOXSN="499507026" />
+		<item  rowNo="27" BOXSN="499507027" />
+		<item  rowNo="28" BOXSN="499507028" />
+		<item  rowNo="29" BOXSN="499507029" />
+		<item  rowNo="30" BOXSN="499507030" />
+		<item  rowNo="31" BOXSN="499507031" />
+		<item  rowNo="32" BOXSN="499507032" />
+		<item  rowNo="33" BOXSN="499507033" />
+		<item  rowNo="34" BOXSN="499507034" />
+		<item  rowNo="35" BOXSN="499507035" />
+		<item  rowNo="36" BOXSN="499507036" />
+		<item  rowNo="37" BOXSN="499507037" />
+		<item  rowNo="38" BOXSN="499507038" />
+		<item  rowNo="39" BOXSN="499507039" />
+		<item  rowNo="40" BOXSN="499507040" />
+		<item  rowNo="41" BOXSN="499507041" />
+		<item  rowNo="42" BOXSN="499507042" />
+		<item  rowNo="43" BOXSN="499507043" />
+		<item  rowNo="44" BOXSN="499507044" />
+		<item  rowNo="45" BOXSN="499507045" />
+		<item  rowNo="46" BOXSN="499507046" />
+		<item  rowNo="47" BOXSN="499507047" />
+		<item  rowNo="48" BOXSN="499507048" />
+		<item  rowNo="49" BOXSN="499507049" />
+		<item  rowNo="50" BOXSN="499507050" />
+		<item  rowNo="51" BOXSN="499507051" />
+		<item  rowNo="52" BOXSN="499507052" />
+		<item  rowNo="53" BOXSN="499507053" />
+		<item  rowNo="54" BOXSN="499507054" />
+		<item  rowNo="55" BOXSN="499507055" />
+		<item  rowNo="56" BOXSN="499507056" />
+		<item  rowNo="57" BOXSN="499507057" />
+		<item  rowNo="58" BOXSN="499507058" />
+		<item  rowNo="59" BOXSN="499507059" />
+		<item  rowNo="60" BOXSN="499507060" />
+		<item  rowNo="61" BOXSN="499507061" />
+		<item  rowNo="62" BOXSN="499507062" />
+		<item  rowNo="63" BOXSN="499507063" />
+		<item  rowNo="64" BOXSN="499507064" />
+		<item  rowNo="65" BOXSN="499507065" />
+		<item  rowNo="66" BOXSN="499507066" />
+		<item  rowNo="67" BOXSN="499507067" />
+		<item  rowNo="68" BOXSN="499507068" />
+		<item  rowNo="69" BOXSN="499507069" />
+		<item  rowNo="70" BOXSN="499507070" />
+		<item  rowNo="71" BOXSN="499507071" />
+		<item  rowNo="72" BOXSN="499507072" />
+		<item  rowNo="73" BOXSN="499507073" />
+		<item  rowNo="74" BOXSN="499507074" />
+		<item  rowNo="75" BOXSN="499507075" />
+		<item  rowNo="76" BOXSN="499507076" />
+		<item  rowNo="77" BOXSN="499507077" />
+		<item  rowNo="78" BOXSN="499507078" />
+		<item  rowNo="79" BOXSN="499507079" />
+		<item  rowNo="80" BOXSN="499507080" />
+		<item  rowNo="81" BOXSN="499507081" />
+		<item  rowNo="82" BOXSN="499507082" />
+		<item  rowNo="83" BOXSN="499507083" />
+		<item  rowNo="84" BOXSN="499507084" />
+		<item  rowNo="85" BOXSN="499507085" />
+		<item  rowNo="86" BOXSN="499507086" />
+		<item  rowNo="87" BOXSN="499507087" />
+		<item  rowNo="88" BOXSN="499507088" />
+		<item  rowNo="89" BOXSN="499507089" />
+		<item  rowNo="90" BOXSN="499507090" />
+		<item  rowNo="91" BOXSN="499507091" />
+		<item  rowNo="92" BOXSN="499507092" />
+		<item  rowNo="93" BOXSN="499507093" />
+		<item  rowNo="94" BOXSN="499507094" />
+		<item  rowNo="95" BOXSN="499507095" />
+		<item  rowNo="96" BOXSN="499507096" />
+		<item  rowNo="97" BOXSN="499507097" />
+		<item  rowNo="98" BOXSN="499507098" />
+		<item  rowNo="99" BOXSN="499507099" />
+	</PalletSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:列名 'BoxSN' 在目标表或视图中不存在。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:37:32.167
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:16.0009
+Sql:Bas_TestPalletSNImport
+Params:
+@UserId=1
+@MOId=147
+@xml=<document>
+	<PalletSN>
+		<item  rowNo="1" BOXSN="499507001" />
+		<item  rowNo="2" BOXSN="499507002" />
+		<item  rowNo="3" BOXSN="499507003" />
+		<item  rowNo="4" BOXSN="499507004" />
+		<item  rowNo="5" BOXSN="499507005" />
+		<item  rowNo="6" BOXSN="499507006" />
+		<item  rowNo="7" BOXSN="499507007" />
+		<item  rowNo="8" BOXSN="499507008" />
+		<item  rowNo="9" BOXSN="499507009" />
+		<item  rowNo="10" BOXSN="499507010" />
+		<item  rowNo="11" BOXSN="499507011" />
+		<item  rowNo="12" BOXSN="499507012" />
+		<item  rowNo="13" BOXSN="499507013" />
+		<item  rowNo="14" BOXSN="499507014" />
+		<item  rowNo="15" BOXSN="499507015" />
+		<item  rowNo="16" BOXSN="499507016" />
+		<item  rowNo="17" BOXSN="499507017" />
+		<item  rowNo="18" BOXSN="499507018" />
+		<item  rowNo="19" BOXSN="499507019" />
+		<item  rowNo="20" BOXSN="499507020" />
+		<item  rowNo="21" BOXSN="499507021" />
+		<item  rowNo="22" BOXSN="499507022" />
+		<item  rowNo="23" BOXSN="499507023" />
+		<item  rowNo="24" BOXSN="499507024" />
+		<item  rowNo="25" BOXSN="499507025" />
+		<item  rowNo="26" BOXSN="499507026" />
+		<item  rowNo="27" BOXSN="499507027" />
+		<item  rowNo="28" BOXSN="499507028" />
+		<item  rowNo="29" BOXSN="499507029" />
+		<item  rowNo="30" BOXSN="499507030" />
+		<item  rowNo="31" BOXSN="499507031" />
+		<item  rowNo="32" BOXSN="499507032" />
+		<item  rowNo="33" BOXSN="499507033" />
+		<item  rowNo="34" BOXSN="499507034" />
+		<item  rowNo="35" BOXSN="499507035" />
+		<item  rowNo="36" BOXSN="499507036" />
+		<item  rowNo="37" BOXSN="499507037" />
+		<item  rowNo="38" BOXSN="499507038" />
+		<item  rowNo="39" BOXSN="499507039" />
+		<item  rowNo="40" BOXSN="499507040" />
+		<item  rowNo="41" BOXSN="499507041" />
+		<item  rowNo="42" BOXSN="499507042" />
+		<item  rowNo="43" BOXSN="499507043" />
+		<item  rowNo="44" BOXSN="499507044" />
+		<item  rowNo="45" BOXSN="499507045" />
+		<item  rowNo="46" BOXSN="499507046" />
+		<item  rowNo="47" BOXSN="499507047" />
+		<item  rowNo="48" BOXSN="499507048" />
+		<item  rowNo="49" BOXSN="499507049" />
+		<item  rowNo="50" BOXSN="499507050" />
+		<item  rowNo="51" BOXSN="499507051" />
+		<item  rowNo="52" BOXSN="499507052" />
+		<item  rowNo="53" BOXSN="499507053" />
+		<item  rowNo="54" BOXSN="499507054" />
+		<item  rowNo="55" BOXSN="499507055" />
+		<item  rowNo="56" BOXSN="499507056" />
+		<item  rowNo="57" BOXSN="499507057" />
+		<item  rowNo="58" BOXSN="499507058" />
+		<item  rowNo="59" BOXSN="499507059" />
+		<item  rowNo="60" BOXSN="499507060" />
+		<item  rowNo="61" BOXSN="499507061" />
+		<item  rowNo="62" BOXSN="499507062" />
+		<item  rowNo="63" BOXSN="499507063" />
+		<item  rowNo="64" BOXSN="499507064" />
+		<item  rowNo="65" BOXSN="499507065" />
+		<item  rowNo="66" BOXSN="499507066" />
+		<item  rowNo="67" BOXSN="499507067" />
+		<item  rowNo="68" BOXSN="499507068" />
+		<item  rowNo="69" BOXSN="499507069" />
+		<item  rowNo="70" BOXSN="499507070" />
+		<item  rowNo="71" BOXSN="499507071" />
+		<item  rowNo="72" BOXSN="499507072" />
+		<item  rowNo="73" BOXSN="499507073" />
+		<item  rowNo="74" BOXSN="499507074" />
+		<item  rowNo="75" BOXSN="499507075" />
+		<item  rowNo="76" BOXSN="499507076" />
+		<item  rowNo="77" BOXSN="499507077" />
+		<item  rowNo="78" BOXSN="499507078" />
+		<item  rowNo="79" BOXSN="499507079" />
+		<item  rowNo="80" BOXSN="499507080" />
+		<item  rowNo="81" BOXSN="499507081" />
+		<item  rowNo="82" BOXSN="499507082" />
+		<item  rowNo="83" BOXSN="499507083" />
+		<item  rowNo="84" BOXSN="499507084" />
+		<item  rowNo="85" BOXSN="499507085" />
+		<item  rowNo="86" BOXSN="499507086" />
+		<item  rowNo="87" BOXSN="499507087" />
+		<item  rowNo="88" BOXSN="499507088" />
+		<item  rowNo="89" BOXSN="499507089" />
+		<item  rowNo="90" BOXSN="499507090" />
+		<item  rowNo="91" BOXSN="499507091" />
+		<item  rowNo="92" BOXSN="499507092" />
+		<item  rowNo="93" BOXSN="499507093" />
+		<item  rowNo="94" BOXSN="499507094" />
+		<item  rowNo="95" BOXSN="499507095" />
+		<item  rowNo="96" BOXSN="499507096" />
+		<item  rowNo="97" BOXSN="499507097" />
+		<item  rowNo="98" BOXSN="499507098" />
+		<item  rowNo="99" BOXSN="499507099" />
+	</PalletSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:列名或所提供值的数目与表定义不匹配。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:38:10.983
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:15.0009
+Sql:Bas_TestPalletSNImport
+Params:
+@UserId=1
+@MOId=147
+@xml=<document>
+	<PalletSN>
+		<item  rowNo="1" BOXSN="499507001" />
+		<item  rowNo="2" BOXSN="499507002" />
+		<item  rowNo="3" BOXSN="499507003" />
+		<item  rowNo="4" BOXSN="499507004" />
+		<item  rowNo="5" BOXSN="499507005" />
+		<item  rowNo="6" BOXSN="499507006" />
+		<item  rowNo="7" BOXSN="499507007" />
+		<item  rowNo="8" BOXSN="499507008" />
+		<item  rowNo="9" BOXSN="499507009" />
+		<item  rowNo="10" BOXSN="499507010" />
+		<item  rowNo="11" BOXSN="499507011" />
+		<item  rowNo="12" BOXSN="499507012" />
+		<item  rowNo="13" BOXSN="499507013" />
+		<item  rowNo="14" BOXSN="499507014" />
+		<item  rowNo="15" BOXSN="499507015" />
+		<item  rowNo="16" BOXSN="499507016" />
+		<item  rowNo="17" BOXSN="499507017" />
+		<item  rowNo="18" BOXSN="499507018" />
+		<item  rowNo="19" BOXSN="499507019" />
+		<item  rowNo="20" BOXSN="499507020" />
+		<item  rowNo="21" BOXSN="499507021" />
+		<item  rowNo="22" BOXSN="499507022" />
+		<item  rowNo="23" BOXSN="499507023" />
+		<item  rowNo="24" BOXSN="499507024" />
+		<item  rowNo="25" BOXSN="499507025" />
+		<item  rowNo="26" BOXSN="499507026" />
+		<item  rowNo="27" BOXSN="499507027" />
+		<item  rowNo="28" BOXSN="499507028" />
+		<item  rowNo="29" BOXSN="499507029" />
+		<item  rowNo="30" BOXSN="499507030" />
+		<item  rowNo="31" BOXSN="499507031" />
+		<item  rowNo="32" BOXSN="499507032" />
+		<item  rowNo="33" BOXSN="499507033" />
+		<item  rowNo="34" BOXSN="499507034" />
+		<item  rowNo="35" BOXSN="499507035" />
+		<item  rowNo="36" BOXSN="499507036" />
+		<item  rowNo="37" BOXSN="499507037" />
+		<item  rowNo="38" BOXSN="499507038" />
+		<item  rowNo="39" BOXSN="499507039" />
+		<item  rowNo="40" BOXSN="499507040" />
+		<item  rowNo="41" BOXSN="499507041" />
+		<item  rowNo="42" BOXSN="499507042" />
+		<item  rowNo="43" BOXSN="499507043" />
+		<item  rowNo="44" BOXSN="499507044" />
+		<item  rowNo="45" BOXSN="499507045" />
+		<item  rowNo="46" BOXSN="499507046" />
+		<item  rowNo="47" BOXSN="499507047" />
+		<item  rowNo="48" BOXSN="499507048" />
+		<item  rowNo="49" BOXSN="499507049" />
+		<item  rowNo="50" BOXSN="499507050" />
+		<item  rowNo="51" BOXSN="499507051" />
+		<item  rowNo="52" BOXSN="499507052" />
+		<item  rowNo="53" BOXSN="499507053" />
+		<item  rowNo="54" BOXSN="499507054" />
+		<item  rowNo="55" BOXSN="499507055" />
+		<item  rowNo="56" BOXSN="499507056" />
+		<item  rowNo="57" BOXSN="499507057" />
+		<item  rowNo="58" BOXSN="499507058" />
+		<item  rowNo="59" BOXSN="499507059" />
+		<item  rowNo="60" BOXSN="499507060" />
+		<item  rowNo="61" BOXSN="499507061" />
+		<item  rowNo="62" BOXSN="499507062" />
+		<item  rowNo="63" BOXSN="499507063" />
+		<item  rowNo="64" BOXSN="499507064" />
+		<item  rowNo="65" BOXSN="499507065" />
+		<item  rowNo="66" BOXSN="499507066" />
+		<item  rowNo="67" BOXSN="499507067" />
+		<item  rowNo="68" BOXSN="499507068" />
+		<item  rowNo="69" BOXSN="499507069" />
+		<item  rowNo="70" BOXSN="499507070" />
+		<item  rowNo="71" BOXSN="499507071" />
+		<item  rowNo="72" BOXSN="499507072" />
+		<item  rowNo="73" BOXSN="499507073" />
+		<item  rowNo="74" BOXSN="499507074" />
+		<item  rowNo="75" BOXSN="499507075" />
+		<item  rowNo="76" BOXSN="499507076" />
+		<item  rowNo="77" BOXSN="499507077" />
+		<item  rowNo="78" BOXSN="499507078" />
+		<item  rowNo="79" BOXSN="499507079" />
+		<item  rowNo="80" BOXSN="499507080" />
+		<item  rowNo="81" BOXSN="499507081" />
+		<item  rowNo="82" BOXSN="499507082" />
+		<item  rowNo="83" BOXSN="499507083" />
+		<item  rowNo="84" BOXSN="499507084" />
+		<item  rowNo="85" BOXSN="499507085" />
+		<item  rowNo="86" BOXSN="499507086" />
+		<item  rowNo="87" BOXSN="499507087" />
+		<item  rowNo="88" BOXSN="499507088" />
+		<item  rowNo="89" BOXSN="499507089" />
+		<item  rowNo="90" BOXSN="499507090" />
+		<item  rowNo="91" BOXSN="499507091" />
+		<item  rowNo="92" BOXSN="499507092" />
+		<item  rowNo="93" BOXSN="499507093" />
+		<item  rowNo="94" BOXSN="499507094" />
+		<item  rowNo="95" BOXSN="499507095" />
+		<item  rowNo="96" BOXSN="499507096" />
+		<item  rowNo="97" BOXSN="499507097" />
+		<item  rowNo="98" BOXSN="499507098" />
+		<item  rowNo="99" BOXSN="499507099" />
+	</PalletSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:列名或所提供值的数目与表定义不匹配。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:40:08.539
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:15.0009
+Sql:Bas_TestPalletSNImport
+Params:
+@UserId=1
+@MOId=147
+@xml=<document>
+	<PalletSN>
+		<item  rowNo="1" BOXSN="499507001" />
+		<item  rowNo="2" BOXSN="499507002" />
+		<item  rowNo="3" BOXSN="499507003" />
+		<item  rowNo="4" BOXSN="499507004" />
+		<item  rowNo="5" BOXSN="499507005" />
+		<item  rowNo="6" BOXSN="499507006" />
+		<item  rowNo="7" BOXSN="499507007" />
+		<item  rowNo="8" BOXSN="499507008" />
+		<item  rowNo="9" BOXSN="499507009" />
+		<item  rowNo="10" BOXSN="499507010" />
+		<item  rowNo="11" BOXSN="499507011" />
+		<item  rowNo="12" BOXSN="499507012" />
+		<item  rowNo="13" BOXSN="499507013" />
+		<item  rowNo="14" BOXSN="499507014" />
+		<item  rowNo="15" BOXSN="499507015" />
+		<item  rowNo="16" BOXSN="499507016" />
+		<item  rowNo="17" BOXSN="499507017" />
+		<item  rowNo="18" BOXSN="499507018" />
+		<item  rowNo="19" BOXSN="499507019" />
+		<item  rowNo="20" BOXSN="499507020" />
+		<item  rowNo="21" BOXSN="499507021" />
+		<item  rowNo="22" BOXSN="499507022" />
+		<item  rowNo="23" BOXSN="499507023" />
+		<item  rowNo="24" BOXSN="499507024" />
+		<item  rowNo="25" BOXSN="499507025" />
+		<item  rowNo="26" BOXSN="499507026" />
+		<item  rowNo="27" BOXSN="499507027" />
+		<item  rowNo="28" BOXSN="499507028" />
+		<item  rowNo="29" BOXSN="499507029" />
+		<item  rowNo="30" BOXSN="499507030" />
+		<item  rowNo="31" BOXSN="499507031" />
+		<item  rowNo="32" BOXSN="499507032" />
+		<item  rowNo="33" BOXSN="499507033" />
+		<item  rowNo="34" BOXSN="499507034" />
+		<item  rowNo="35" BOXSN="499507035" />
+		<item  rowNo="36" BOXSN="499507036" />
+		<item  rowNo="37" BOXSN="499507037" />
+		<item  rowNo="38" BOXSN="499507038" />
+		<item  rowNo="39" BOXSN="499507039" />
+		<item  rowNo="40" BOXSN="499507040" />
+		<item  rowNo="41" BOXSN="499507041" />
+		<item  rowNo="42" BOXSN="499507042" />
+		<item  rowNo="43" BOXSN="499507043" />
+		<item  rowNo="44" BOXSN="499507044" />
+		<item  rowNo="45" BOXSN="499507045" />
+		<item  rowNo="46" BOXSN="499507046" />
+		<item  rowNo="47" BOXSN="499507047" />
+		<item  rowNo="48" BOXSN="499507048" />
+		<item  rowNo="49" BOXSN="499507049" />
+		<item  rowNo="50" BOXSN="499507050" />
+		<item  rowNo="51" BOXSN="499507051" />
+		<item  rowNo="52" BOXSN="499507052" />
+		<item  rowNo="53" BOXSN="499507053" />
+		<item  rowNo="54" BOXSN="499507054" />
+		<item  rowNo="55" BOXSN="499507055" />
+		<item  rowNo="56" BOXSN="499507056" />
+		<item  rowNo="57" BOXSN="499507057" />
+		<item  rowNo="58" BOXSN="499507058" />
+		<item  rowNo="59" BOXSN="499507059" />
+		<item  rowNo="60" BOXSN="499507060" />
+		<item  rowNo="61" BOXSN="499507061" />
+		<item  rowNo="62" BOXSN="499507062" />
+		<item  rowNo="63" BOXSN="499507063" />
+		<item  rowNo="64" BOXSN="499507064" />
+		<item  rowNo="65" BOXSN="499507065" />
+		<item  rowNo="66" BOXSN="499507066" />
+		<item  rowNo="67" BOXSN="499507067" />
+		<item  rowNo="68" BOXSN="499507068" />
+		<item  rowNo="69" BOXSN="499507069" />
+		<item  rowNo="70" BOXSN="499507070" />
+		<item  rowNo="71" BOXSN="499507071" />
+		<item  rowNo="72" BOXSN="499507072" />
+		<item  rowNo="73" BOXSN="499507073" />
+		<item  rowNo="74" BOXSN="499507074" />
+		<item  rowNo="75" BOXSN="499507075" />
+		<item  rowNo="76" BOXSN="499507076" />
+		<item  rowNo="77" BOXSN="499507077" />
+		<item  rowNo="78" BOXSN="499507078" />
+		<item  rowNo="79" BOXSN="499507079" />
+		<item  rowNo="80" BOXSN="499507080" />
+		<item  rowNo="81" BOXSN="499507081" />
+		<item  rowNo="82" BOXSN="499507082" />
+		<item  rowNo="83" BOXSN="499507083" />
+		<item  rowNo="84" BOXSN="499507084" />
+		<item  rowNo="85" BOXSN="499507085" />
+		<item  rowNo="86" BOXSN="499507086" />
+		<item  rowNo="87" BOXSN="499507087" />
+		<item  rowNo="88" BOXSN="499507088" />
+		<item  rowNo="89" BOXSN="499507089" />
+		<item  rowNo="90" BOXSN="499507090" />
+		<item  rowNo="91" BOXSN="499507091" />
+		<item  rowNo="92" BOXSN="499507092" />
+		<item  rowNo="93" BOXSN="499507093" />
+		<item  rowNo="94" BOXSN="499507094" />
+		<item  rowNo="95" BOXSN="499507095" />
+		<item  rowNo="96" BOXSN="499507096" />
+		<item  rowNo="97" BOXSN="499507097" />
+		<item  rowNo="98" BOXSN="499507098" />
+		<item  rowNo="99" BOXSN="499507099" />
+	</PalletSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:列名或所提供值的数目与表定义不匹配。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:42:35.526
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:17.0009
+Sql:Bas_TestPalletSNImport
+Params:
+@UserId=1
+@MOId=147
+@xml=<document>
+	<PalletSN>
+		<item  rowNo="1" BOXSN="499507001" />
+		<item  rowNo="2" BOXSN="499507002" />
+		<item  rowNo="3" BOXSN="499507003" />
+		<item  rowNo="4" BOXSN="499507004" />
+		<item  rowNo="5" BOXSN="499507005" />
+		<item  rowNo="6" BOXSN="499507006" />
+		<item  rowNo="7" BOXSN="499507007" />
+		<item  rowNo="8" BOXSN="499507008" />
+		<item  rowNo="9" BOXSN="499507009" />
+		<item  rowNo="10" BOXSN="499507010" />
+		<item  rowNo="11" BOXSN="499507011" />
+		<item  rowNo="12" BOXSN="499507012" />
+		<item  rowNo="13" BOXSN="499507013" />
+		<item  rowNo="14" BOXSN="499507014" />
+		<item  rowNo="15" BOXSN="499507015" />
+		<item  rowNo="16" BOXSN="499507016" />
+		<item  rowNo="17" BOXSN="499507017" />
+		<item  rowNo="18" BOXSN="499507018" />
+		<item  rowNo="19" BOXSN="499507019" />
+		<item  rowNo="20" BOXSN="499507020" />
+		<item  rowNo="21" BOXSN="499507021" />
+		<item  rowNo="22" BOXSN="499507022" />
+		<item  rowNo="23" BOXSN="499507023" />
+		<item  rowNo="24" BOXSN="499507024" />
+		<item  rowNo="25" BOXSN="499507025" />
+		<item  rowNo="26" BOXSN="499507026" />
+		<item  rowNo="27" BOXSN="499507027" />
+		<item  rowNo="28" BOXSN="499507028" />
+		<item  rowNo="29" BOXSN="499507029" />
+		<item  rowNo="30" BOXSN="499507030" />
+		<item  rowNo="31" BOXSN="499507031" />
+		<item  rowNo="32" BOXSN="499507032" />
+		<item  rowNo="33" BOXSN="499507033" />
+		<item  rowNo="34" BOXSN="499507034" />
+		<item  rowNo="35" BOXSN="499507035" />
+		<item  rowNo="36" BOXSN="499507036" />
+		<item  rowNo="37" BOXSN="499507037" />
+		<item  rowNo="38" BOXSN="499507038" />
+		<item  rowNo="39" BOXSN="499507039" />
+		<item  rowNo="40" BOXSN="499507040" />
+		<item  rowNo="41" BOXSN="499507041" />
+		<item  rowNo="42" BOXSN="499507042" />
+		<item  rowNo="43" BOXSN="499507043" />
+		<item  rowNo="44" BOXSN="499507044" />
+		<item  rowNo="45" BOXSN="499507045" />
+		<item  rowNo="46" BOXSN="499507046" />
+		<item  rowNo="47" BOXSN="499507047" />
+		<item  rowNo="48" BOXSN="499507048" />
+		<item  rowNo="49" BOXSN="499507049" />
+		<item  rowNo="50" BOXSN="499507050" />
+		<item  rowNo="51" BOXSN="499507051" />
+		<item  rowNo="52" BOXSN="499507052" />
+		<item  rowNo="53" BOXSN="499507053" />
+		<item  rowNo="54" BOXSN="499507054" />
+		<item  rowNo="55" BOXSN="499507055" />
+		<item  rowNo="56" BOXSN="499507056" />
+		<item  rowNo="57" BOXSN="499507057" />
+		<item  rowNo="58" BOXSN="499507058" />
+		<item  rowNo="59" BOXSN="499507059" />
+		<item  rowNo="60" BOXSN="499507060" />
+		<item  rowNo="61" BOXSN="499507061" />
+		<item  rowNo="62" BOXSN="499507062" />
+		<item  rowNo="63" BOXSN="499507063" />
+		<item  rowNo="64" BOXSN="499507064" />
+		<item  rowNo="65" BOXSN="499507065" />
+		<item  rowNo="66" BOXSN="499507066" />
+		<item  rowNo="67" BOXSN="499507067" />
+		<item  rowNo="68" BOXSN="499507068" />
+		<item  rowNo="69" BOXSN="499507069" />
+		<item  rowNo="70" BOXSN="499507070" />
+		<item  rowNo="71" BOXSN="499507071" />
+		<item  rowNo="72" BOXSN="499507072" />
+		<item  rowNo="73" BOXSN="499507073" />
+		<item  rowNo="74" BOXSN="499507074" />
+		<item  rowNo="75" BOXSN="499507075" />
+		<item  rowNo="76" BOXSN="499507076" />
+		<item  rowNo="77" BOXSN="499507077" />
+		<item  rowNo="78" BOXSN="499507078" />
+		<item  rowNo="79" BOXSN="499507079" />
+		<item  rowNo="80" BOXSN="499507080" />
+		<item  rowNo="81" BOXSN="499507081" />
+		<item  rowNo="82" BOXSN="499507082" />
+		<item  rowNo="83" BOXSN="499507083" />
+		<item  rowNo="84" BOXSN="499507084" />
+		<item  rowNo="85" BOXSN="499507085" />
+		<item  rowNo="86" BOXSN="499507086" />
+		<item  rowNo="87" BOXSN="499507087" />
+		<item  rowNo="88" BOXSN="499507088" />
+		<item  rowNo="89" BOXSN="499507089" />
+		<item  rowNo="90" BOXSN="499507090" />
+		<item  rowNo="91" BOXSN="499507091" />
+		<item  rowNo="92" BOXSN="499507092" />
+		<item  rowNo="93" BOXSN="499507093" />
+		<item  rowNo="94" BOXSN="499507094" />
+		<item  rowNo="95" BOXSN="499507095" />
+		<item  rowNo="96" BOXSN="499507096" />
+		<item  rowNo="97" BOXSN="499507097" />
+		<item  rowNo="98" BOXSN="499507098" />
+		<item  rowNo="99" BOXSN="499507099" />
+	</PalletSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+ExceptionInfo:列名或所提供值的数目与表定义不匹配。
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:52:28.663
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:9.0005
+Sql:Bas_TestPalletSNImport
+Params:
+@UserId=1
+@MOId=147
+@xml=<document>
+	<PalletSN>
+		<item  rowNo="1" BOXSN="499507001" />
+		<item  rowNo="2" BOXSN="499507002" />
+		<item  rowNo="3" BOXSN="499507003" />
+		<item  rowNo="4" BOXSN="499507004" />
+		<item  rowNo="5" BOXSN="499507005" />
+		<item  rowNo="6" BOXSN="499507006" />
+		<item  rowNo="7" BOXSN="499507007" />
+		<item  rowNo="8" BOXSN="499507008" />
+		<item  rowNo="9" BOXSN="499507009" />
+		<item  rowNo="10" BOXSN="499507010" />
+		<item  rowNo="11" BOXSN="499507011" />
+		<item  rowNo="12" BOXSN="499507012" />
+		<item  rowNo="13" BOXSN="499507013" />
+		<item  rowNo="14" BOXSN="499507014" />
+		<item  rowNo="15" BOXSN="499507015" />
+		<item  rowNo="16" BOXSN="499507016" />
+		<item  rowNo="17" BOXSN="499507017" />
+		<item  rowNo="18" BOXSN="499507018" />
+		<item  rowNo="19" BOXSN="499507019" />
+		<item  rowNo="20" BOXSN="499507020" />
+		<item  rowNo="21" BOXSN="499507021" />
+		<item  rowNo="22" BOXSN="499507022" />
+		<item  rowNo="23" BOXSN="499507023" />
+		<item  rowNo="24" BOXSN="499507024" />
+		<item  rowNo="25" BOXSN="499507025" />
+		<item  rowNo="26" BOXSN="499507026" />
+		<item  rowNo="27" BOXSN="499507027" />
+		<item  rowNo="28" BOXSN="499507028" />
+		<item  rowNo="29" BOXSN="499507029" />
+		<item  rowNo="30" BOXSN="499507030" />
+		<item  rowNo="31" BOXSN="499507031" />
+		<item  rowNo="32" BOXSN="499507032" />
+		<item  rowNo="33" BOXSN="499507033" />
+		<item  rowNo="34" BOXSN="499507034" />
+		<item  rowNo="35" BOXSN="499507035" />
+		<item  rowNo="36" BOXSN="499507036" />
+		<item  rowNo="37" BOXSN="499507037" />
+		<item  rowNo="38" BOXSN="499507038" />
+		<item  rowNo="39" BOXSN="499507039" />
+		<item  rowNo="40" BOXSN="499507040" />
+		<item  rowNo="41" BOXSN="499507041" />
+		<item  rowNo="42" BOXSN="499507042" />
+		<item  rowNo="43" BOXSN="499507043" />
+		<item  rowNo="44" BOXSN="499507044" />
+		<item  rowNo="45" BOXSN="499507045" />
+		<item  rowNo="46" BOXSN="499507046" />
+		<item  rowNo="47" BOXSN="499507047" />
+		<item  rowNo="48" BOXSN="499507048" />
+		<item  rowNo="49" BOXSN="499507049" />
+		<item  rowNo="50" BOXSN="499507050" />
+		<item  rowNo="51" BOXSN="499507051" />
+		<item  rowNo="52" BOXSN="499507052" />
+		<item  rowNo="53" BOXSN="499507053" />
+		<item  rowNo="54" BOXSN="499507054" />
+		<item  rowNo="55" BOXSN="499507055" />
+		<item  rowNo="56" BOXSN="499507056" />
+		<item  rowNo="57" BOXSN="499507057" />
+		<item  rowNo="58" BOXSN="499507058" />
+		<item  rowNo="59" BOXSN="499507059" />
+		<item  rowNo="60" BOXSN="499507060" />
+		<item  rowNo="61" BOXSN="499507061" />
+		<item  rowNo="62" BOXSN="499507062" />
+		<item  rowNo="63" BOXSN="499507063" />
+		<item  rowNo="64" BOXSN="499507064" />
+		<item  rowNo="65" BOXSN="499507065" />
+		<item  rowNo="66" BOXSN="499507066" />
+		<item  rowNo="67" BOXSN="499507067" />
+		<item  rowNo="68" BOXSN="499507068" />
+		<item  rowNo="69" BOXSN="499507069" />
+		<item  rowNo="70" BOXSN="499507070" />
+		<item  rowNo="71" BOXSN="499507071" />
+		<item  rowNo="72" BOXSN="499507072" />
+		<item  rowNo="73" BOXSN="499507073" />
+		<item  rowNo="74" BOXSN="499507074" />
+		<item  rowNo="75" BOXSN="499507075" />
+		<item  rowNo="76" BOXSN="499507076" />
+		<item  rowNo="77" BOXSN="499507077" />
+		<item  rowNo="78" BOXSN="499507078" />
+		<item  rowNo="79" BOXSN="499507079" />
+		<item  rowNo="80" BOXSN="499507080" />
+		<item  rowNo="81" BOXSN="499507081" />
+		<item  rowNo="82" BOXSN="499507082" />
+		<item  rowNo="83" BOXSN="499507083" />
+		<item  rowNo="84" BOXSN="499507084" />
+		<item  rowNo="85" BOXSN="499507085" />
+		<item  rowNo="86" BOXSN="499507086" />
+		<item  rowNo="87" BOXSN="499507087" />
+		<item  rowNo="88" BOXSN="499507088" />
+		<item  rowNo="89" BOXSN="499507089" />
+		<item  rowNo="90" BOXSN="499507090" />
+		<item  rowNo="91" BOXSN="499507091" />
+		<item  rowNo="92" BOXSN="499507092" />
+		<item  rowNo="93" BOXSN="499507093" />
+		<item  rowNo="94" BOXSN="499507094" />
+		<item  rowNo="95" BOXSN="499507095" />
+		<item  rowNo="96" BOXSN="499507096" />
+		<item  rowNo="97" BOXSN="499507097" />
+		<item  rowNo="98" BOXSN="499507098" />
+		<item  rowNo="99" BOXSN="499507099" />
+	</PalletSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-07-25 16:52:34.860
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:8.0004
+Sql:Bas_TestPalletSNImport
+Params:
+@UserId=1
+@MOId=147
+@xml=<document>
+	<PalletSN>
+		<item  rowNo="1" BOXSN="499507001" />
+		<item  rowNo="2" BOXSN="499507002" />
+		<item  rowNo="3" BOXSN="499507003" />
+		<item  rowNo="4" BOXSN="499507004" />
+		<item  rowNo="5" BOXSN="499507005" />
+		<item  rowNo="6" BOXSN="499507006" />
+		<item  rowNo="7" BOXSN="499507007" />
+		<item  rowNo="8" BOXSN="499507008" />
+		<item  rowNo="9" BOXSN="499507009" />
+		<item  rowNo="10" BOXSN="499507010" />
+		<item  rowNo="11" BOXSN="499507011" />
+		<item  rowNo="12" BOXSN="499507012" />
+		<item  rowNo="13" BOXSN="499507013" />
+		<item  rowNo="14" BOXSN="499507014" />
+		<item  rowNo="15" BOXSN="499507015" />
+		<item  rowNo="16" BOXSN="499507016" />
+		<item  rowNo="17" BOXSN="499507017" />
+		<item  rowNo="18" BOXSN="499507018" />
+		<item  rowNo="19" BOXSN="499507019" />
+		<item  rowNo="20" BOXSN="499507020" />
+		<item  rowNo="21" BOXSN="499507021" />
+		<item  rowNo="22" BOXSN="499507022" />
+		<item  rowNo="23" BOXSN="499507023" />
+		<item  rowNo="24" BOXSN="499507024" />
+		<item  rowNo="25" BOXSN="499507025" />
+		<item  rowNo="26" BOXSN="499507026" />
+		<item  rowNo="27" BOXSN="499507027" />
+		<item  rowNo="28" BOXSN="499507028" />
+		<item  rowNo="29" BOXSN="499507029" />
+		<item  rowNo="30" BOXSN="499507030" />
+		<item  rowNo="31" BOXSN="499507031" />
+		<item  rowNo="32" BOXSN="499507032" />
+		<item  rowNo="33" BOXSN="499507033" />
+		<item  rowNo="34" BOXSN="499507034" />
+		<item  rowNo="35" BOXSN="499507035" />
+		<item  rowNo="36" BOXSN="499507036" />
+		<item  rowNo="37" BOXSN="499507037" />
+		<item  rowNo="38" BOXSN="499507038" />
+		<item  rowNo="39" BOXSN="499507039" />
+		<item  rowNo="40" BOXSN="499507040" />
+		<item  rowNo="41" BOXSN="499507041" />
+		<item  rowNo="42" BOXSN="499507042" />
+		<item  rowNo="43" BOXSN="499507043" />
+		<item  rowNo="44" BOXSN="499507044" />
+		<item  rowNo="45" BOXSN="499507045" />
+		<item  rowNo="46" BOXSN="499507046" />
+		<item  rowNo="47" BOXSN="499507047" />
+		<item  rowNo="48" BOXSN="499507048" />
+		<item  rowNo="49" BOXSN="499507049" />
+		<item  rowNo="50" BOXSN="499507050" />
+		<item  rowNo="51" BOXSN="499507051" />
+		<item  rowNo="52" BOXSN="499507052" />
+		<item  rowNo="53" BOXSN="499507053" />
+		<item  rowNo="54" BOXSN="499507054" />
+		<item  rowNo="55" BOXSN="499507055" />
+		<item  rowNo="56" BOXSN="499507056" />
+		<item  rowNo="57" BOXSN="499507057" />
+		<item  rowNo="58" BOXSN="499507058" />
+		<item  rowNo="59" BOXSN="499507059" />
+		<item  rowNo="60" BOXSN="499507060" />
+		<item  rowNo="61" BOXSN="499507061" />
+		<item  rowNo="62" BOXSN="499507062" />
+		<item  rowNo="63" BOXSN="499507063" />
+		<item  rowNo="64" BOXSN="499507064" />
+		<item  rowNo="65" BOXSN="499507065" />
+		<item  rowNo="66" BOXSN="499507066" />
+		<item  rowNo="67" BOXSN="499507067" />
+		<item  rowNo="68" BOXSN="499507068" />
+		<item  rowNo="69" BOXSN="499507069" />
+		<item  rowNo="70" BOXSN="499507070" />
+		<item  rowNo="71" BOXSN="499507071" />
+		<item  rowNo="72" BOXSN="499507072" />
+		<item  rowNo="73" BOXSN="499507073" />
+		<item  rowNo="74" BOXSN="499507074" />
+		<item  rowNo="75" BOXSN="499507075" />
+		<item  rowNo="76" BOXSN="499507076" />
+		<item  rowNo="77" BOXSN="499507077" />
+		<item  rowNo="78" BOXSN="499507078" />
+		<item  rowNo="79" BOXSN="499507079" />
+		<item  rowNo="80" BOXSN="499507080" />
+		<item  rowNo="81" BOXSN="499507081" />
+		<item  rowNo="82" BOXSN="499507082" />
+		<item  rowNo="83" BOXSN="499507083" />
+		<item  rowNo="84" BOXSN="499507084" />
+		<item  rowNo="85" BOXSN="499507085" />
+		<item  rowNo="86" BOXSN="499507086" />
+		<item  rowNo="87" BOXSN="499507087" />
+		<item  rowNo="88" BOXSN="499507088" />
+		<item  rowNo="89" BOXSN="499507089" />
+		<item  rowNo="90" BOXSN="499507090" />
+		<item  rowNo="91" BOXSN="499507091" />
+		<item  rowNo="92" BOXSN="499507092" />
+		<item  rowNo="93" BOXSN="499507093" />
+		<item  rowNo="94" BOXSN="499507094" />
+		<item  rowNo="95" BOXSN="499507095" />
+		<item  rowNo="96" BOXSN="499507096" />
+		<item  rowNo="97" BOXSN="499507097" />
+		<item  rowNo="98" BOXSN="499507098" />
+		<item  rowNo="99" BOXSN="499507099" />
+	</PalletSN>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+END===============================================================================================
+
+

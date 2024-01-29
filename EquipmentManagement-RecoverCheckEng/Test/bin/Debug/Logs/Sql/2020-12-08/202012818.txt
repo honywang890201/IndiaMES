@@ -1,0 +1,722 @@
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-12-08 18:08:29.327
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:9.0005
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-12-08 18:08:29.743
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-12-08 18:08:31.863
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT Set_Meta.MetaId,
+	   Set_Meta.MetaCode,
+	   Set_Meta.MetaName,
+	   Set_Meta.IsViewPages,
+	   Set_Meta.ViewCountSqlType,
+	   Set_Meta.ViewCountSql,
+	   dbo.Set_Meta.ViewSqlType,
+	   Set_Meta.ViewSql,
+	   dbo.Set_Meta.MainSqlType,
+	   Set_Meta.MainSql,
+	   dbo.Set_Meta.DeleteSqlType,
+	   Set_Meta.DeleteSql,
+	   dbo.Set_Meta.SaveSqlType,
+	   Set_Meta.SaveSql,
+	   Set_Meta.MetaNote,
+	   Set_Meta.ColumnCount,
+	   Set_Meta.ParentMetaId,
+	   Set_Meta.IdColumnName,
+	   Set_Meta.TextColumnName,
+	   Set_Meta.TableId,
+	   Set_Table.SysTableName as TableName,
+	   Set_Meta.ViewWidth,
+	   Set_Meta.VersionColumnName
+FROM dbo.Set_Meta  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_Table  WITH(NOLOCK)  ON dbo.Set_Table.SysTableId = dbo.Set_Meta.TableId
+WHERE Set_Meta.MetaId=@metaId
+Params:
+@metaId=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-12-08 18:08:31.874
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT Set_MetaParam.MetaParamId,
+	   Set_MetaParam.MetaGroupId,
+	   Set_MetaParam.MetaParamCode,
+	   Set_MetaParam.MetaParamName,
+	   Set_MetaParam.MetaParamNote,
+	   Set_MetaParam.MetaParamLength,
+	   Set_ControlTypes.TypeName,
+	   Set_ControlTypes.FullName,
+	   Set_ControlTypes.Params,
+	   Set_MetaParam.ColumnSpan,
+	   Set_MetaParam.RowSpan,
+	   Set_MetaParam.IsEdit,
+	   Set_MetaParam.IsVisible,
+	   Set_MetaParam.IsNotEmpty,
+	   Set_MetaParam.DefaultValue,
+	   Set_MetaParam.DataSourceType,
+	   Set_MetaParam.DataSource,
+	   Set_MetaParam.IsQueryParam,
+	   Set_MetaParam.IsLinkParam,
+	   Set_MetaParam.IsNewRow
+FROM dbo.Set_MetaParam  WITH(NOLOCK) 
+LEFT JOIN dbo.Set_ControlTypes  WITH(NOLOCK) ON Set_MetaParam.MetaParamType=Set_ControlTypes.TypeName
+LEFT JOIN dbo.Set_MetaGroup  WITH(NOLOCK)  ON dbo.Set_MetaGroup.MetaGroupId = dbo.Set_MetaParam.MetaGroupId
+WHERE Set_MetaGroup.MetaId=@metaId
+ORDER BY Set_MetaParam.Sequence
+
+Params:
+@metaId=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-12-08 18:08:31.884
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0001
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=51
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-12-08 18:08:31.894
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=183
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-12-08 18:08:31.905
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:1
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=185
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-12-08 18:08:34.815
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT TOP 200  Bas_MO.MOId,
+			   Bas_MO.MOCode,
+			   Bas_Item.ItemCode,
+			   Bas_Item.ItemName+'/'+Bas_Item.ItemDesc as 'ItemName',
+			   Bas_Order.OrderCode,
+			   Bas_Customer.CustomerCode
+FROM Bas_MO WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+LEFT JOIN dbo.Bas_Customer  WITH(NOLOCK) ON dbo.Bas_Customer.CustomerId = dbo.Bas_MO.CustomerId
+WHERE Bas_MO.MOId=ISNULL(@Id,Bas_MO.MOId)
+AND Bas_MO.MOCode LIKE '%'+ISNULL(@MOCode,Bas_MO.MOCode)+'%'
+AND (@ItemId IS NULL OR Bas_MO.ItemId=@ItemId)
+AND (ISNULL(@OrderCode,'')='' OR (ISNULL(@OrderCode,'')!='' AND Bas_Order.OrderCode LIKE '%'+ISNULL(@OrderCode,Bas_Order.OrderCode)+'%'))
+AND (@CustomerId IS NULL OR Bas_MO.CustomerId=@CustomerId)
+ORDER BY Bas_MO.CreateDateTime DESC
+Params:
+@Id=DBNull
+@MOCode=ou
+@ItemId=null
+@CustomerId=null
+@OrderCode=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-12-08 18:08:36.225
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:2.0002
+Sql:SELECT Bas_MO.MOId,
+			   Bas_MO.MOCode,
+			   Bas_MO.OrderDetailId,
+			   Bas_MO.CustomerId,
+			   Bas_MO.ItemId,
+			   Bas_Item.ItemCode,
+			   Bas_Item.ItemDesc+'-'+Bas_Item.ItemSpecification as 'ItemDesc',
+			   dbo.Bas_Order.OrderCode,
+			   Bas_MO.Qty,
+			   Bas_MO.PlanStartDate,
+			   Bas_MO.PlanCompleteDate,
+			   Bas_MO.ActualStartDate,
+			   Bas_MO.ActualCompleteDate,
+			   Bas_MO.Status,
+			   Bas_MO.InputQty,
+			   Bas_MO.CompleteQty,
+			   Bas_MO.ErrorQty,
+			   Bas_MO.ScrapQty,
+			   Bas_MO.TurnInQty,
+			   Bas_MO.TurnOutQty,
+			   Bas_MO.WorkflowId,
+			   Bas_MO.IsCheckPowerSN,
+			   Bas_MO.PowerSNLength,
+			   Bas_MO.PowerSNPre,
+			   Bas_MO.IsCheckRemoteControlSN,
+			   Bas_MO.RemoteControlSNLength,
+			   Bas_MO.RemoteControlSNPre,
+			   Bas_MO.SpecSheet,
+			   Bas_MO.ChipScheme,
+			   Bas_MO.SoftwareVersion,
+			   Bas_MO.HardwareVersion,
+			   Bas_MO.AreaCode,
+			   Bas_MO.DeviceType,
+			   Bas_MO.IsCanVirtualInput,
+			   Bas_MO.SideAFeedingStationTableId,
+			   Bas_MO.SideBFeedingStationTableId,
+			   Bas_MO.RowVersion,
+			   Bas_MO.NetWeight,
+			   Bas_MO.GrossWeight,
+			   Bas_MO.ZhiLiBegin,
+			   Bas_MO.ZhiLiEnd,
+			   Bas_MO.IsCheckTest,
+			   Bas_MO.IsDanShuang
+FROM Bas_MO WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Item  WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Bas_MO.ItemId
+LEFT JOIN dbo.Bas_OrderDetail  WITH(NOLOCK) ON dbo.Bas_OrderDetail.OrderDetailId = dbo.Bas_MO.OrderDetailId
+LEFT JOIN dbo.Bas_Order  WITH(NOLOCK) ON dbo.Bas_Order.OrderId = dbo.Bas_OrderDetail.OrderId
+WHERE Bas_MO.MOId=ISNULL(@Id,Bas_MO.MOId)
+AND Bas_MO.MOCode=ISNULL(@Text,Bas_MO.MOCode)
+Params:
+@UserId=1
+@CpuID=BFEBFBFF000306C3
+@MacAddress=AA:BB:CC:DD:EE:FF
+@IPAddress=192.168.2.4
+@ComputerName=WANG-PC
+@LocalUserName=wang-PC\wang
+@ResourceId=76
+@SettingId=187
+@Id=190
+@Text=DBNull
+@ParentId=DBNull
+@Return_Message=DBNull
+@ReturnValue=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-12-08 18:08:57.171
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:11.0006
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-12-08 18:08:57.582
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:Text
+TakeTime:Milliseconds:3.0002
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=187
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-12-08 18:09:09.698
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:89.0051
+Sql:Prd_MO_Mac_Update
+Params:
+@UserId=1
+@xml=<document>
+	<macs>
+		<item  rowNo="1" MAC="047E23DB9500" USERPASS="jL4GDsL[" />
+		<item  rowNo="2" MAC="047E23DB9508" USERPASS="XJZtVys&amp;" />
+		<item  rowNo="3" MAC="047E23DB9510" USERPASS="3fs7jYr)" />
+		<item  rowNo="4" MAC="047E23DB9518" USERPASS="cWz79Uk%" />
+		<item  rowNo="5" MAC="047E23DB9520" USERPASS="bcw9dQp{" />
+		<item  rowNo="6" MAC="047E23DB9528" USERPASS="dj9fpzp&amp;" />
+		<item  rowNo="7" MAC="047E23DB9530" USERPASS="WypVew7(" />
+		<item  rowNo="8" MAC="047E23DB9538" USERPASS="DyeYtRV!" />
+		<item  rowNo="9" MAC="047E23DB9540" USERPASS="PR5uC3y&lt;" />
+		<item  rowNo="10" MAC="047E23DB9548" USERPASS="Pjf9Zie&amp;" />
+		<item  rowNo="11" MAC="047E23DB9550" USERPASS="3upGrqG&lt;" />
+		<item  rowNo="12" MAC="047E23DB9558" USERPASS="YP26gr4^" />
+		<item  rowNo="13" MAC="047E23DB9560" USERPASS="9vriyCi[" />
+		<item  rowNo="14" MAC="047E23DB9568" USERPASS="riqfm4q&amp;" />
+		<item  rowNo="15" MAC="047E23DB9570" USERPASS="MhCes3F$" />
+		<item  rowNo="16" MAC="047E23DB9578" USERPASS="CRSbHQM$" />
+		<item  rowNo="17" MAC="047E23DB9580" USERPASS="NhqLxKy^" />
+		<item  rowNo="18" MAC="047E23DB9588" USERPASS="LCbWwD3%" />
+		<item  rowNo="19" MAC="047E23DB9590" USERPASS="TYfHXnJ{" />
+		<item  rowNo="20" MAC="047E23DB9598" USERPASS="s6e7Rfd$" />
+		<item  rowNo="21" MAC="047E23DB95A0" USERPASS="2GAbtwj!" />
+		<item  rowNo="22" MAC="047E23DB95A8" USERPASS="rbqcZrH&lt;" />
+		<item  rowNo="23" MAC="047E23DB95B0" USERPASS="JQut7uC}" />
+		<item  rowNo="24" MAC="047E23DB95B8" USERPASS="YJ5CRtj!" />
+		<item  rowNo="25" MAC="047E23DB95C0" USERPASS="73AJGud{" />
+		<item  rowNo="26" MAC="047E23DB95C8" USERPASS="UR9nSLj~" />
+		<item  rowNo="27" MAC="047E23DB95D0" USERPASS="Vb4ZpWZ&amp;" />
+		<item  rowNo="28" MAC="047E23DB95D8" USERPASS="vMmbsT9~" />
+		<item  rowNo="29" MAC="047E23DB95E0" USERPASS="unezPJy#" />
+		<item  rowNo="30" MAC="047E23DB95E8" USERPASS="WQt7pK3]" />
+		<item  rowNo="31" MAC="047E23DB95F0" USERPASS="5JXtHsM&lt;" />
+		<item  rowNo="32" MAC="047E23DB95F8" USERPASS="6NxDrzf#" />
+		<item  rowNo="33" MAC="047E23DB9600" USERPASS="hJeMm29[" />
+		<item  rowNo="34" MAC="047E23DB9608" USERPASS="daQ4KX3[" />
+		<item  rowNo="35" MAC="047E23DB9610" USERPASS="itpWJEW(" />
+		<item  rowNo="36" MAC="047E23DB9618" USERPASS="siuVmJQ{" />
+		<item  rowNo="37" MAC="047E23DB9620" USERPASS="WbmxRQi!" />
+		<item  rowNo="38" MAC="047E23DB9628" USERPASS="fqNgdtR?" />
+		<item  rowNo="39" MAC="047E23DB9630" USERPASS="v5WZXmT(" />
+		<item  rowNo="40" MAC="047E23DB9638" USERPASS="g5NWSNq&amp;" />
+		<item  rowNo="41" MAC="047E23DB9640" USERPASS="ibVX6Rb^" />
+		<item  rowNo="42" MAC="047E23DB9648" USERPASS="Aqri9Av&lt;" />
+		<item  rowNo="43" MAC="047E23DB9650" USERPASS="ur3CbgF&gt;" />
+		<item  rowNo="44" MAC="047E23DB9658" USERPASS="TQUVzw9~" />
+		<item  rowNo="45" MAC="047E23DB9660" USERPASS="ntN43A3^" />
+		<item  rowNo="46" MAC="047E23DB9668" USERPASS="esTJxJH$" />
+		<item  rowNo="47" MAC="047E23DB9670" USERPASS="q7mc3hC[" />
+		<item  rowNo="48" MAC="047E23DB9678" USERPASS="a2rTZPb#" />
+		<item  rowNo="49" MAC="047E23DB9680" USERPASS="pNjn5E2?" />
+		<item  rowNo="50" MAC="047E23DB9688" USERPASS="wLHkJLN?" />
+		<item  rowNo="51" MAC="047E23DB9690" USERPASS="VGtj7AR~" />
+		<item  rowNo="52" MAC="047E23DB9698" USERPASS="pX47Uj5^" />
+		<item  rowNo="53" MAC="047E23DB96A0" USERPASS="ZujADh7?" />
+		<item  rowNo="54" MAC="047E23DB96A8" USERPASS="dGbJqiW]" />
+		<item  rowNo="55" MAC="047E23DB96B0" USERPASS="QVkAgcX~" />
+		<item  rowNo="56" MAC="047E23DB96B8" USERPASS="QSYs2Ht}" />
+		<item  rowNo="57" MAC="047E23DB96C0" USERPASS="G9KeibF&lt;" />
+		<item  rowNo="58" MAC="047E23DB96C8" USERPASS="CnriDTf}" />
+		<item  rowNo="59" MAC="047E23DB96D0" USERPASS="j4npRwP#" />
+		<item  rowNo="60" MAC="047E23DB96D8" USERPASS="4LTKwPH)" />
+		<item  rowNo="61" MAC="047E23DB96E0" USERPASS="6w5S9A4&lt;" />
+		<item  rowNo="62" MAC="047E23DB96E8" USERPASS="v9cfGj9$" />
+		<item  rowNo="63" MAC="047E23DB96F0" USERPASS="pqSxDg6&amp;" />
+		<item  rowNo="64" MAC="047E23DB96F8" USERPASS="acrbLbv!" />
+		<item  rowNo="65" MAC="047E23DB9700" USERPASS="GZjywRz[" />
+		<item  rowNo="66" MAC="047E23DB9708" USERPASS="KmSqfxw[" />
+		<item  rowNo="67" MAC="047E23DB9710" USERPASS="yfTaKTJ*" />
+		<item  rowNo="68" MAC="047E23DB9718" USERPASS="Zg3nmJF@" />
+		<item  rowNo="69" MAC="047E23DB9720" USERPASS="z6fvZ3w&gt;" />
+		<item  rowNo="70" MAC="047E23DB9728" USERPASS="hyrGZJj$" />
+		<item  rowNo="71" MAC="047E23DB9730" USERPASS="HgWzwzw)" />
+		<item  rowNo="72" MAC="047E23DB9738" USERPASS="nifF3Yf)" />
+		<item  rowNo="73" MAC="047E23DB9740" USERPASS="mE6N2mj#" />
+		<item  rowNo="74" MAC="047E23DB9748" USERPASS="GdUgbqr!" />
+		<item  rowNo="75" MAC="047E23DB9750" USERPASS="9NeVy6a~" />
+		<item  rowNo="76" MAC="047E23DB9758" USERPASS="Lc5THfL$" />
+		<item  rowNo="77" MAC="047E23DB9760" USERPASS="zXrA347?" />
+		<item  rowNo="78" MAC="047E23DB9768" USERPASS="eP4pV3G^" />
+		<item  rowNo="79" MAC="047E23DB9770" USERPASS="qrEU79Y#" />
+		<item  rowNo="80" MAC="047E23DB9778" USERPASS="iaR5LE7?" />
+		<item  rowNo="81" MAC="047E23DB9780" USERPASS="UFNMgfw]" />
+		<item  rowNo="82" MAC="047E23DB9788" USERPASS="feSGz7i$" />
+		<item  rowNo="83" MAC="047E23DB9790" USERPASS="WKaiUgV$" />
+		<item  rowNo="84" MAC="047E23DB9798" USERPASS="FidXhYE?" />
+		<item  rowNo="85" MAC="047E23DB97A0" USERPASS="b73fw9q@" />
+		<item  rowNo="86" MAC="047E23DB97A8" USERPASS="wGENfVz$" />
+		<item  rowNo="87" MAC="047E23DB97B0" USERPASS="bXRLA9G#" />
+		<item  rowNo="88" MAC="047E23DB97B8" USERPASS="fLh3gFm]" />
+		<item  rowNo="89" MAC="047E23DB97C0" USERPASS="hQ4KSYK$" />
+		<item  rowNo="90" MAC="047E23DB97C8" USERPASS="7iwMgjM&lt;" />
+		<item  rowNo="91" MAC="047E23DB97D0" USERPASS="3XG6i3K[" />
+		<item  rowNo="92" MAC="047E23DB97D8" USERPASS="EkNPdSs{" />
+		<item  rowNo="93" MAC="047E23DB97E0" USERPASS="pbHr6XH%" />
+		<item  rowNo="94" MAC="047E23DB97E8" USERPASS="hiFHpGK}" />
+		<item  rowNo="95" MAC="047E23DB97F0" USERPASS="h4CRKXF@" />
+		<item  rowNo="96" MAC="047E23DB97F8" USERPASS="nc3MEqH)" />
+		<item  rowNo="97" MAC="047E23DB9800" USERPASS="XaHsDZ9*" />
+		<item  rowNo="98" MAC="047E23DB9808" USERPASS="rjx5fXe&gt;" />
+		<item  rowNo="99" MAC="047E23DB9810" USERPASS="mrgqDaw&amp;" />
+		<item  rowNo="100" MAC="047E23DB9818" USERPASS="SVnKzek]" />
+		<item  rowNo="101" MAC="047E23DB9820" USERPASS="v2Mszb2{" />
+		<item  rowNo="102" MAC="047E23DB9828" USERPASS="QnwcSwT^" />
+		<item  rowNo="103" MAC="047E23DB9830" USERPASS="JewSpsX^" />
+		<item  rowNo="104" MAC="047E23DB9838" USERPASS="uzEPfGT!" />
+		<item  rowNo="105" MAC="047E23DB9840" USERPASS="h6Ujebv@" />
+		<item  rowNo="106" MAC="047E23DB9848" USERPASS="fbCktmx%" />
+		<item  rowNo="107" MAC="047E23DB9850" USERPASS="U9gv3g4&amp;" />
+		<item  rowNo="108" MAC="047E23DB9858" USERPASS="phzMSkW!" />
+		<item  rowNo="109" MAC="047E23DB9860" USERPASS="TDfXEaz#" />
+		<item  rowNo="110" MAC="047E23DB9868" USERPASS="ZMXAhFc]" />
+		<item  rowNo="111" MAC="047E23DB9870" USERPASS="PSnF5sZ{" />
+		<item  rowNo="112" MAC="047E23DB9878" USERPASS="DFa5Qj4$" />
+		<item  rowNo="113" MAC="047E23DB9880" USERPASS="SDF3N4t$" />
+		<item  rowNo="114" MAC="047E23DB9888" USERPASS="gRCsjTY]" />
+		<item  rowNo="115" MAC="047E23DB9890" USERPASS="4uFi6C4[" />
+		<item  rowNo="116" MAC="047E23DB9898" USERPASS="D5GEgkL(" />
+		<item  rowNo="117" MAC="047E23DB98A0" USERPASS="awCrDf7[" />
+		<item  rowNo="118" MAC="047E23DB98A8" USERPASS="Lbpce6k#" />
+		<item  rowNo="119" MAC="047E23DB98B0" USERPASS="Xc9Jypd@" />
+		<item  rowNo="120" MAC="047E23DB98B8" USERPASS="TbVPYHu}" />
+		<item  rowNo="121" MAC="047E23DB98C0" USERPASS="zXEvUVi$" />
+		<item  rowNo="122" MAC="047E23DB98C8" USERPASS="uMbx6LJ{" />
+		<item  rowNo="123" MAC="047E23DB98D0" USERPASS="eRzfudy#" />
+		<item  rowNo="124" MAC="047E23DB98D8" USERPASS="kESRPwL(" />
+		<item  rowNo="125" MAC="047E23DB98E0" USERPASS="2dDjAFe&lt;" />
+		<item  rowNo="126" MAC="047E23DB98E8" USERPASS="ZYCfaVf?" />
+		<item  rowNo="127" MAC="047E23DB98F0" USERPASS="J5Fc6Ze&lt;" />
+		<item  rowNo="128" MAC="047E23DB98F8" USERPASS="bcHCF3G&gt;" />
+		<item  rowNo="129" MAC="047E23DB9900" USERPASS="Zectz5a@" />
+		<item  rowNo="130" MAC="047E23DB9908" USERPASS="XQn6tCX&lt;" />
+		<item  rowNo="131" MAC="047E23DB9910" USERPASS="jVLUajt(" />
+		<item  rowNo="132" MAC="047E23DB9918" USERPASS="HZQhjRh(" />
+		<item  rowNo="133" MAC="047E23DB9920" USERPASS="hjz3Jvp%" />
+		<item  rowNo="134" MAC="047E23DB9928" USERPASS="buL7XtQ#" />
+		<item  rowNo="135" MAC="047E23DB9930" USERPASS="qsQE7Az$" />
+		<item  rowNo="136" MAC="047E23DB9938" USERPASS="fERvzX3@" />
+		<item  rowNo="137" MAC="047E23DB9940" USERPASS="u74MHtR&amp;" />
+		<item  rowNo="138" MAC="047E23DB9948" USERPASS="YqXFiC4~" />
+		<item  rowNo="139" MAC="047E23DB9950" USERPASS="JzGU676#" />
+		<item  rowNo="140" MAC="047E23DB9958" USERPASS="CW3DaGJ)" />
+		<item  rowNo="141" MAC="047E23DB9960" USERPASS="ZwWqJ96^" />
+		<item  rowNo="142" MAC="047E23DB9968" USERPASS="FwYPykG~" />
+		<item  rowNo="143" MAC="047E23DB9970" USERPASS="5FyJbib$" />
+		<item  rowNo="144" MAC="047E23DB9978" USERPASS="Vn7ZPCK$" />
+		<item  rowNo="145" MAC="047E23DB9980" USERPASS="7tJy6SQ]" />
+		<item  rowNo="146" MAC="047E23DB9988" USERPASS="9zT5RDG$" />
+		<item  rowNo="147" MAC="047E23DB9990" USERPASS="Qw2NW6k~" />
+		<item  rowNo="148" MAC="047E23DB9998" USERPASS="GPYXEGu}" />
+		<item  rowNo="149" MAC="047E23DB99A0" USERPASS="SY6CtjM&gt;" />
+		<item  rowNo="150" MAC="047E23DB99A8" USERPASS="uMf3N2E}" />
+		<item  rowNo="151" MAC="047E23DB99B0" USERPASS="zPTqxKy#" />
+		<item  rowNo="152" MAC="047E23DB99B8" USERPASS="NcnbYJT&gt;" />
+		<item  rowNo="153" MAC="047E23DB99C0" USERPASS="ZxiU5FS[" />
+		<item  rowNo="154" MAC="047E23DB99C8" USERPASS="kgXTMEr*" />
+		<item  rowNo="155" MAC="047E23DB99D0" USERPASS="Q56Gzv5!" />
+		<item  rowNo="156" MAC="047E23DB99D8" USERPASS="fscFJN5^" />
+		<item  rowNo="157" MAC="047E23DB99E0" USERPASS="vRphmLY&gt;" />
+		<item  rowNo="158" MAC="047E23DB99E8" USERPASS="7hziQfz&lt;" />
+		<item  rowNo="159" MAC="047E23DB99F0" USERPASS="wz4LCsc&amp;" />
+		<item  rowNo="160" MAC="047E23DB99F8" USERPASS="muK3UU6^" />
+		<item  rowNo="161" MAC="047E23DB9A00" USERPASS="dtm2qfG{" />
+		<item  rowNo="162" MAC="047E23DB9A08" USERPASS="mXCHuym}" />
+		<item  rowNo="163" MAC="047E23DB9A10" USERPASS="dCrMPeD~" />
+		<item  rowNo="164" MAC="047E23DB9A18" USERPASS="JtmdiRk&lt;" />
+		<item  rowNo="165" MAC="047E23DB9A20" USERPASS="e2YtQuv?" />
+		<item  rowNo="166" MAC="047E23DB9A28" USERPASS="DaPkVNK[" />
+		<item  rowNo="167" MAC="047E23DB9A30" USERPASS="qgif53G{" />
+		<item  rowNo="168" MAC="047E23DB9A38" USERPASS="YWxfyje!" />
+		<item  rowNo="169" MAC="047E23DB9A40" USERPASS="R5erNgH(" />
+		<item  rowNo="170" MAC="047E23DB9A48" USERPASS="4vDmhdp?" />
+		<item  rowNo="171" MAC="047E23DB9A50" USERPASS="WFQAa97#" />
+		<item  rowNo="172" MAC="047E23DB9A58" USERPASS="YMynK2P]" />
+		<item  rowNo="173" MAC="047E23DB9A60" USERPASS="uErzarU&lt;" />
+		<item  rowNo="174" MAC="047E23DB9A68" USERPASS="EhVqiGC@" />
+		<item  rowNo="175" MAC="047E23DB9A70" USERPASS="r9hqP43%" />
+		<item  rowNo="176" MAC="047E23DB9A78" USERPASS="VPiwFJ3(" />
+		<item  rowNo="177" MAC="047E23DB9A80" USERPASS="aQKe3kp!" />
+		<item  rowNo="178" MAC="047E23DB9A88" USERPASS="zUAvMGV&gt;" />
+		<item  rowNo="179" MAC="047E23DB9A90" USERPASS="xrHRpSq!" />
+		<item  rowNo="180" MAC="047E23DB9A98" USERPASS="a4qXUJR(" />
+		<item  rowNo="181" MAC="047E23DB9AA0" USERPASS="2UTAYbN#" />
+		<item  rowNo="182" MAC="047E23DB9AA8" USERPASS="56jP7MZ#" />
+		<item  rowNo="183" MAC="047E23DB9AB0" USERPASS="7KVLpZr&lt;" />
+		<item  rowNo="184" MAC="047E23DB9AB8" USERPASS="ZwNACZn(" />
+		<item  rowNo="185" MAC="047E23DB9AC0" USERPASS="zwDcNJg%" />
+		<item  rowNo="186" MAC="047E23DB9AC8" USERPASS="cGLrikq{" />
+		<item  rowNo="187" MAC="047E23DB9AD0" USERPASS="iEDJkrV&amp;" />
+		<item  rowNo="188" MAC="047E23DB9AD8" USERPASS="CJNRTvp&amp;" />
+		<item  rowNo="189" MAC="047E23DB9AE0" USERPASS="RTgqDxW(" />
+		<item  rowNo="190" MAC="047E23DB9AE8" USERPASS="ETtC7L4?" />
+		<item  rowNo="191" MAC="047E23DB9AF0" USERPASS="DLnA6uU$" />
+		<item  rowNo="192" MAC="047E23DB9AF8" USERPASS="7GWAy9s{" />
+		<item  rowNo="193" MAC="047E23DB9B00" USERPASS="LrV6Kid?" />
+		<item  rowNo="194" MAC="047E23DB9B08" USERPASS="WGNaCQ6&lt;" />
+		<item  rowNo="195" MAC="047E23DB9B10" USERPASS="HudFWK6(" />
+		<item  rowNo="196" MAC="047E23DB9B18" USERPASS="Q7V5Utx!" />
+		<item  rowNo="197" MAC="047E23DB9B20" USERPASS="SFWRpZX]" />
+		<item  rowNo="198" MAC="047E23DB9B28" USERPASS="32fXFw6*" />
+		<item  rowNo="199" MAC="047E23DB9B30" USERPASS="j5zdfpU[" />
+	</macs>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-12-08 18:10:13.914
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:87.0049
+Sql:Prd_MO_Mac_Update
+Params:
+@UserId=1
+@xml=<document>
+	<macs>
+		<item  rowNo="1" MAC="047E23DB9500" USERPASS="jL4GDsL[" />
+		<item  rowNo="2" MAC="047E23DB9508" USERPASS="XJZtVys&amp;" />
+		<item  rowNo="3" MAC="047E23DB9510" USERPASS="3fs7jYr)" />
+		<item  rowNo="4" MAC="047E23DB9518" USERPASS="cWz79Uk%" />
+		<item  rowNo="5" MAC="047E23DB9520" USERPASS="bcw9dQp{" />
+		<item  rowNo="6" MAC="047E23DB9528" USERPASS="dj9fpzp&amp;" />
+		<item  rowNo="7" MAC="047E23DB9530" USERPASS="WypVew7(" />
+		<item  rowNo="8" MAC="047E23DB9538" USERPASS="DyeYtRV!" />
+		<item  rowNo="9" MAC="047E23DB9540" USERPASS="PR5uC3y&lt;" />
+		<item  rowNo="10" MAC="047E23DB9548" USERPASS="Pjf9Zie&amp;" />
+		<item  rowNo="11" MAC="047E23DB9550" USERPASS="3upGrqG&lt;" />
+		<item  rowNo="12" MAC="047E23DB9558" USERPASS="YP26gr4^" />
+		<item  rowNo="13" MAC="047E23DB9560" USERPASS="9vriyCi[" />
+		<item  rowNo="14" MAC="047E23DB9568" USERPASS="riqfm4q&amp;" />
+		<item  rowNo="15" MAC="047E23DB9570" USERPASS="MhCes3F$" />
+		<item  rowNo="16" MAC="047E23DB9578" USERPASS="CRSbHQM$" />
+		<item  rowNo="17" MAC="047E23DB9580" USERPASS="NhqLxKy^" />
+		<item  rowNo="18" MAC="047E23DB9588" USERPASS="LCbWwD3%" />
+		<item  rowNo="19" MAC="047E23DB9590" USERPASS="TYfHXnJ{" />
+		<item  rowNo="20" MAC="047E23DB9598" USERPASS="s6e7Rfd$" />
+		<item  rowNo="21" MAC="047E23DB95A0" USERPASS="2GAbtwj!" />
+		<item  rowNo="22" MAC="047E23DB95A8" USERPASS="rbqcZrH&lt;" />
+		<item  rowNo="23" MAC="047E23DB95B0" USERPASS="JQut7uC}" />
+		<item  rowNo="24" MAC="047E23DB95B8" USERPASS="YJ5CRtj!" />
+		<item  rowNo="25" MAC="047E23DB95C0" USERPASS="73AJGud{" />
+		<item  rowNo="26" MAC="047E23DB95C8" USERPASS="UR9nSLj~" />
+		<item  rowNo="27" MAC="047E23DB95D0" USERPASS="Vb4ZpWZ&amp;" />
+		<item  rowNo="28" MAC="047E23DB95D8" USERPASS="vMmbsT9~" />
+		<item  rowNo="29" MAC="047E23DB95E0" USERPASS="unezPJy#" />
+		<item  rowNo="30" MAC="047E23DB95E8" USERPASS="WQt7pK3]" />
+		<item  rowNo="31" MAC="047E23DB95F0" USERPASS="5JXtHsM&lt;" />
+		<item  rowNo="32" MAC="047E23DB95F8" USERPASS="6NxDrzf#" />
+		<item  rowNo="33" MAC="047E23DB9600" USERPASS="hJeMm29[" />
+		<item  rowNo="34" MAC="047E23DB9608" USERPASS="daQ4KX3[" />
+		<item  rowNo="35" MAC="047E23DB9610" USERPASS="itpWJEW(" />
+		<item  rowNo="36" MAC="047E23DB9618" USERPASS="siuVmJQ{" />
+		<item  rowNo="37" MAC="047E23DB9620" USERPASS="WbmxRQi!" />
+		<item  rowNo="38" MAC="047E23DB9628" USERPASS="fqNgdtR?" />
+		<item  rowNo="39" MAC="047E23DB9630" USERPASS="v5WZXmT(" />
+		<item  rowNo="40" MAC="047E23DB9638" USERPASS="g5NWSNq&amp;" />
+		<item  rowNo="41" MAC="047E23DB9640" USERPASS="ibVX6Rb^" />
+		<item  rowNo="42" MAC="047E23DB9648" USERPASS="Aqri9Av&lt;" />
+		<item  rowNo="43" MAC="047E23DB9650" USERPASS="ur3CbgF&gt;" />
+		<item  rowNo="44" MAC="047E23DB9658" USERPASS="TQUVzw9~" />
+		<item  rowNo="45" MAC="047E23DB9660" USERPASS="ntN43A3^" />
+		<item  rowNo="46" MAC="047E23DB9668" USERPASS="esTJxJH$" />
+		<item  rowNo="47" MAC="047E23DB9670" USERPASS="q7mc3hC[" />
+		<item  rowNo="48" MAC="047E23DB9678" USERPASS="a2rTZPb#" />
+		<item  rowNo="49" MAC="047E23DB9680" USERPASS="pNjn5E2?" />
+		<item  rowNo="50" MAC="047E23DB9688" USERPASS="wLHkJLN?" />
+		<item  rowNo="51" MAC="047E23DB9690" USERPASS="VGtj7AR~" />
+		<item  rowNo="52" MAC="047E23DB9698" USERPASS="pX47Uj5^" />
+		<item  rowNo="53" MAC="047E23DB96A0" USERPASS="ZujADh7?" />
+		<item  rowNo="54" MAC="047E23DB96A8" USERPASS="dGbJqiW]" />
+		<item  rowNo="55" MAC="047E23DB96B0" USERPASS="QVkAgcX~" />
+		<item  rowNo="56" MAC="047E23DB96B8" USERPASS="QSYs2Ht}" />
+		<item  rowNo="57" MAC="047E23DB96C0" USERPASS="G9KeibF&lt;" />
+		<item  rowNo="58" MAC="047E23DB96C8" USERPASS="CnriDTf}" />
+		<item  rowNo="59" MAC="047E23DB96D0" USERPASS="j4npRwP#" />
+		<item  rowNo="60" MAC="047E23DB96D8" USERPASS="4LTKwPH)" />
+		<item  rowNo="61" MAC="047E23DB96E0" USERPASS="6w5S9A4&lt;" />
+		<item  rowNo="62" MAC="047E23DB96E8" USERPASS="v9cfGj9$" />
+		<item  rowNo="63" MAC="047E23DB96F0" USERPASS="pqSxDg6&amp;" />
+		<item  rowNo="64" MAC="047E23DB96F8" USERPASS="acrbLbv!" />
+		<item  rowNo="65" MAC="047E23DB9700" USERPASS="GZjywRz[" />
+		<item  rowNo="66" MAC="047E23DB9708" USERPASS="KmSqfxw[" />
+		<item  rowNo="67" MAC="047E23DB9710" USERPASS="yfTaKTJ*" />
+		<item  rowNo="68" MAC="047E23DB9718" USERPASS="Zg3nmJF@" />
+		<item  rowNo="69" MAC="047E23DB9720" USERPASS="z6fvZ3w&gt;" />
+		<item  rowNo="70" MAC="047E23DB9728" USERPASS="hyrGZJj$" />
+		<item  rowNo="71" MAC="047E23DB9730" USERPASS="HgWzwzw)" />
+		<item  rowNo="72" MAC="047E23DB9738" USERPASS="nifF3Yf)" />
+		<item  rowNo="73" MAC="047E23DB9740" USERPASS="mE6N2mj#" />
+		<item  rowNo="74" MAC="047E23DB9748" USERPASS="GdUgbqr!" />
+		<item  rowNo="75" MAC="047E23DB9750" USERPASS="9NeVy6a~" />
+		<item  rowNo="76" MAC="047E23DB9758" USERPASS="Lc5THfL$" />
+		<item  rowNo="77" MAC="047E23DB9760" USERPASS="zXrA347?" />
+		<item  rowNo="78" MAC="047E23DB9768" USERPASS="eP4pV3G^" />
+		<item  rowNo="79" MAC="047E23DB9770" USERPASS="qrEU79Y#" />
+		<item  rowNo="80" MAC="047E23DB9778" USERPASS="iaR5LE7?" />
+		<item  rowNo="81" MAC="047E23DB9780" USERPASS="UFNMgfw]" />
+		<item  rowNo="82" MAC="047E23DB9788" USERPASS="feSGz7i$" />
+		<item  rowNo="83" MAC="047E23DB9790" USERPASS="WKaiUgV$" />
+		<item  rowNo="84" MAC="047E23DB9798" USERPASS="FidXhYE?" />
+		<item  rowNo="85" MAC="047E23DB97A0" USERPASS="b73fw9q@" />
+		<item  rowNo="86" MAC="047E23DB97A8" USERPASS="wGENfVz$" />
+		<item  rowNo="87" MAC="047E23DB97B0" USERPASS="bXRLA9G#" />
+		<item  rowNo="88" MAC="047E23DB97B8" USERPASS="fLh3gFm]" />
+		<item  rowNo="89" MAC="047E23DB97C0" USERPASS="hQ4KSYK$" />
+		<item  rowNo="90" MAC="047E23DB97C8" USERPASS="7iwMgjM&lt;" />
+		<item  rowNo="91" MAC="047E23DB97D0" USERPASS="3XG6i3K[" />
+		<item  rowNo="92" MAC="047E23DB97D8" USERPASS="EkNPdSs{" />
+		<item  rowNo="93" MAC="047E23DB97E0" USERPASS="pbHr6XH%" />
+		<item  rowNo="94" MAC="047E23DB97E8" USERPASS="hiFHpGK}" />
+		<item  rowNo="95" MAC="047E23DB97F0" USERPASS="h4CRKXF@" />
+		<item  rowNo="96" MAC="047E23DB97F8" USERPASS="nc3MEqH)" />
+		<item  rowNo="97" MAC="047E23DB9800" USERPASS="XaHsDZ9*" />
+		<item  rowNo="98" MAC="047E23DB9808" USERPASS="rjx5fXe&gt;" />
+		<item  rowNo="99" MAC="047E23DB9810" USERPASS="mrgqDaw&amp;" />
+		<item  rowNo="100" MAC="047E23DB9818" USERPASS="SVnKzek]" />
+		<item  rowNo="101" MAC="047E23DB9820" USERPASS="v2Mszb2{" />
+		<item  rowNo="102" MAC="047E23DB9828" USERPASS="QnwcSwT^" />
+		<item  rowNo="103" MAC="047E23DB9830" USERPASS="JewSpsX^" />
+		<item  rowNo="104" MAC="047E23DB9838" USERPASS="uzEPfGT!" />
+		<item  rowNo="105" MAC="047E23DB9840" USERPASS="h6Ujebv@" />
+		<item  rowNo="106" MAC="047E23DB9848" USERPASS="fbCktmx%" />
+		<item  rowNo="107" MAC="047E23DB9850" USERPASS="U9gv3g4&amp;" />
+		<item  rowNo="108" MAC="047E23DB9858" USERPASS="phzMSkW!" />
+		<item  rowNo="109" MAC="047E23DB9860" USERPASS="TDfXEaz#" />
+		<item  rowNo="110" MAC="047E23DB9868" USERPASS="ZMXAhFc]" />
+		<item  rowNo="111" MAC="047E23DB9870" USERPASS="PSnF5sZ{" />
+		<item  rowNo="112" MAC="047E23DB9878" USERPASS="DFa5Qj4$" />
+		<item  rowNo="113" MAC="047E23DB9880" USERPASS="SDF3N4t$" />
+		<item  rowNo="114" MAC="047E23DB9888" USERPASS="gRCsjTY]" />
+		<item  rowNo="115" MAC="047E23DB9890" USERPASS="4uFi6C4[" />
+		<item  rowNo="116" MAC="047E23DB9898" USERPASS="D5GEgkL(" />
+		<item  rowNo="117" MAC="047E23DB98A0" USERPASS="awCrDf7[" />
+		<item  rowNo="118" MAC="047E23DB98A8" USERPASS="Lbpce6k#" />
+		<item  rowNo="119" MAC="047E23DB98B0" USERPASS="Xc9Jypd@" />
+		<item  rowNo="120" MAC="047E23DB98B8" USERPASS="TbVPYHu}" />
+		<item  rowNo="121" MAC="047E23DB98C0" USERPASS="zXEvUVi$" />
+		<item  rowNo="122" MAC="047E23DB98C8" USERPASS="uMbx6LJ{" />
+		<item  rowNo="123" MAC="047E23DB98D0" USERPASS="eRzfudy#" />
+		<item  rowNo="124" MAC="047E23DB98D8" USERPASS="kESRPwL(" />
+		<item  rowNo="125" MAC="047E23DB98E0" USERPASS="2dDjAFe&lt;" />
+		<item  rowNo="126" MAC="047E23DB98E8" USERPASS="ZYCfaVf?" />
+		<item  rowNo="127" MAC="047E23DB98F0" USERPASS="J5Fc6Ze&lt;" />
+		<item  rowNo="128" MAC="047E23DB98F8" USERPASS="bcHCF3G&gt;" />
+		<item  rowNo="129" MAC="047E23DB9900" USERPASS="Zectz5a@" />
+		<item  rowNo="130" MAC="047E23DB9908" USERPASS="XQn6tCX&lt;" />
+		<item  rowNo="131" MAC="047E23DB9910" USERPASS="jVLUajt(" />
+		<item  rowNo="132" MAC="047E23DB9918" USERPASS="HZQhjRh(" />
+		<item  rowNo="133" MAC="047E23DB9920" USERPASS="hjz3Jvp%" />
+		<item  rowNo="134" MAC="047E23DB9928" USERPASS="buL7XtQ#" />
+		<item  rowNo="135" MAC="047E23DB9930" USERPASS="qsQE7Az$" />
+		<item  rowNo="136" MAC="047E23DB9938" USERPASS="fERvzX3@" />
+		<item  rowNo="137" MAC="047E23DB9940" USERPASS="u74MHtR&amp;" />
+		<item  rowNo="138" MAC="047E23DB9948" USERPASS="YqXFiC4~" />
+		<item  rowNo="139" MAC="047E23DB9950" USERPASS="JzGU676#" />
+		<item  rowNo="140" MAC="047E23DB9958" USERPASS="CW3DaGJ)" />
+		<item  rowNo="141" MAC="047E23DB9960" USERPASS="ZwWqJ96^" />
+		<item  rowNo="142" MAC="047E23DB9968" USERPASS="FwYPykG~" />
+		<item  rowNo="143" MAC="047E23DB9970" USERPASS="5FyJbib$" />
+		<item  rowNo="144" MAC="047E23DB9978" USERPASS="Vn7ZPCK$" />
+		<item  rowNo="145" MAC="047E23DB9980" USERPASS="7tJy6SQ]" />
+		<item  rowNo="146" MAC="047E23DB9988" USERPASS="9zT5RDG$" />
+		<item  rowNo="147" MAC="047E23DB9990" USERPASS="Qw2NW6k~" />
+		<item  rowNo="148" MAC="047E23DB9998" USERPASS="GPYXEGu}" />
+		<item  rowNo="149" MAC="047E23DB99A0" USERPASS="SY6CtjM&gt;" />
+		<item  rowNo="150" MAC="047E23DB99A8" USERPASS="uMf3N2E}" />
+		<item  rowNo="151" MAC="047E23DB99B0" USERPASS="zPTqxKy#" />
+		<item  rowNo="152" MAC="047E23DB99B8" USERPASS="NcnbYJT&gt;" />
+		<item  rowNo="153" MAC="047E23DB99C0" USERPASS="ZxiU5FS[" />
+		<item  rowNo="154" MAC="047E23DB99C8" USERPASS="kgXTMEr*" />
+		<item  rowNo="155" MAC="047E23DB99D0" USERPASS="Q56Gzv5!" />
+		<item  rowNo="156" MAC="047E23DB99D8" USERPASS="fscFJN5^" />
+		<item  rowNo="157" MAC="047E23DB99E0" USERPASS="vRphmLY&gt;" />
+		<item  rowNo="158" MAC="047E23DB99E8" USERPASS="7hziQfz&lt;" />
+		<item  rowNo="159" MAC="047E23DB99F0" USERPASS="wz4LCsc&amp;" />
+		<item  rowNo="160" MAC="047E23DB99F8" USERPASS="muK3UU6^" />
+		<item  rowNo="161" MAC="047E23DB9A00" USERPASS="dtm2qfG{" />
+		<item  rowNo="162" MAC="047E23DB9A08" USERPASS="mXCHuym}" />
+		<item  rowNo="163" MAC="047E23DB9A10" USERPASS="dCrMPeD~" />
+		<item  rowNo="164" MAC="047E23DB9A18" USERPASS="JtmdiRk&lt;" />
+		<item  rowNo="165" MAC="047E23DB9A20" USERPASS="e2YtQuv?" />
+		<item  rowNo="166" MAC="047E23DB9A28" USERPASS="DaPkVNK[" />
+		<item  rowNo="167" MAC="047E23DB9A30" USERPASS="qgif53G{" />
+		<item  rowNo="168" MAC="047E23DB9A38" USERPASS="YWxfyje!" />
+		<item  rowNo="169" MAC="047E23DB9A40" USERPASS="R5erNgH(" />
+		<item  rowNo="170" MAC="047E23DB9A48" USERPASS="4vDmhdp?" />
+		<item  rowNo="171" MAC="047E23DB9A50" USERPASS="WFQAa97#" />
+		<item  rowNo="172" MAC="047E23DB9A58" USERPASS="YMynK2P]" />
+		<item  rowNo="173" MAC="047E23DB9A60" USERPASS="uErzarU&lt;" />
+		<item  rowNo="174" MAC="047E23DB9A68" USERPASS="EhVqiGC@" />
+		<item  rowNo="175" MAC="047E23DB9A70" USERPASS="r9hqP43%" />
+		<item  rowNo="176" MAC="047E23DB9A78" USERPASS="VPiwFJ3(" />
+		<item  rowNo="177" MAC="047E23DB9A80" USERPASS="aQKe3kp!" />
+		<item  rowNo="178" MAC="047E23DB9A88" USERPASS="zUAvMGV&gt;" />
+		<item  rowNo="179" MAC="047E23DB9A90" USERPASS="xrHRpSq!" />
+		<item  rowNo="180" MAC="047E23DB9A98" USERPASS="a4qXUJR(" />
+		<item  rowNo="181" MAC="047E23DB9AA0" USERPASS="2UTAYbN#" />
+		<item  rowNo="182" MAC="047E23DB9AA8" USERPASS="56jP7MZ#" />
+		<item  rowNo="183" MAC="047E23DB9AB0" USERPASS="7KVLpZr&lt;" />
+		<item  rowNo="184" MAC="047E23DB9AB8" USERPASS="ZwNACZn(" />
+		<item  rowNo="185" MAC="047E23DB9AC0" USERPASS="zwDcNJg%" />
+		<item  rowNo="186" MAC="047E23DB9AC8" USERPASS="cGLrikq{" />
+		<item  rowNo="187" MAC="047E23DB9AD0" USERPASS="iEDJkrV&amp;" />
+		<item  rowNo="188" MAC="047E23DB9AD8" USERPASS="CJNRTvp&amp;" />
+		<item  rowNo="189" MAC="047E23DB9AE0" USERPASS="RTgqDxW(" />
+		<item  rowNo="190" MAC="047E23DB9AE8" USERPASS="ETtC7L4?" />
+		<item  rowNo="191" MAC="047E23DB9AF0" USERPASS="DLnA6uU$" />
+		<item  rowNo="192" MAC="047E23DB9AF8" USERPASS="7GWAy9s{" />
+		<item  rowNo="193" MAC="047E23DB9B00" USERPASS="LrV6Kid?" />
+		<item  rowNo="194" MAC="047E23DB9B08" USERPASS="WGNaCQ6&lt;" />
+		<item  rowNo="195" MAC="047E23DB9B10" USERPASS="HudFWK6(" />
+		<item  rowNo="196" MAC="047E23DB9B18" USERPASS="Q7V5Utx!" />
+		<item  rowNo="197" MAC="047E23DB9B20" USERPASS="SFWRpZX]" />
+		<item  rowNo="198" MAC="047E23DB9B28" USERPASS="32fXFw6*" />
+		<item  rowNo="199" MAC="047E23DB9B30" USERPASS="j5zdfpU[" />
+	</macs>
+</document>
+@Return_Message=DBNull
+@return_value=DBNull
+END===============================================================================================
+
+

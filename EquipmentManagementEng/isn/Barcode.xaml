@@ -1,0 +1,15 @@
+﻿<u:UserVendor x:Class="BoxPrint_M.Barcode"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:u="clr-namespace:Component.Controls.User;assembly=Component"
+             xmlns:uc="clr-namespace:Component.Controls.User.GenerateControl;assembly=Component" 
+             xmlns:ug="clr-namespace:Component.Controls.GridControl;assembly=Component" Loaded="UserVendor_Loade">
+
+    <Grid Name="root" Height="241" Width="948">
+        
+        <Button Content="选择订单" HorizontalAlignment="Left" Height="28" Margin="91,32,0,0" VerticalAlignment="Top" Width="80" Click="Button_Click" DragEnter="DragEnter"/>
+        <Button Content="Button" HorizontalAlignment="Left" Height="28" Margin="241,32,0,0" VerticalAlignment="Top" Width="75" DragOver="Drag"/>
+    </Grid>
+</u:UserVendor>

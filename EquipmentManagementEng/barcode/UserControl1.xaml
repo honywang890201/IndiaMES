@@ -1,0 +1,30 @@
+﻿<u:UserVendor x:Class="barcode.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:u="clr-namespace:Component.Controls.User;assembly=Component"
+             xmlns:uc="clr-namespace:Component.Controls.User.GenerateControl;assembly=Component" 
+             xmlns:ug="clr-namespace:Component.Controls.GridControl;assembly=Component" Loaded="UserVendor_Loaded" Unloaded="UserVendor_Unloaded">
+
+    <Grid Name="root">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="1" Height="auto" Width="auto">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="四达条码补打"  FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,20,0,0"/>
+            <Button Content="选择订单" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="50,120,500,290" FontWeight="Bold" FontSize="16" Height="28" Width="80" Click="Button_Click_1"></Button>
+            <TextBlock x:Name="TempletResult" Text="mo" Margin="150,120,20,290" FontSize="24" FontWeight="Bold" Width="auto"></TextBlock>
+            <TextBox x:Name="OneCode" AcceptsReturn="True" Height="auto" Width="auto" Margin="50,161,50,189" FontSize="36" KeyUp="TextBox_KeyUp"></TextBox>
+        </Grid>
+    </Grid>
+
+
+</u:UserVendor>
+    
+    
+    

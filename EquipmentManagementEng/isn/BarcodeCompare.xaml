@@ -1,0 +1,34 @@
+﻿<u:UserVendor x:Class="BoxPrint_BarcodeCompare.BarcodeCompare"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:u="clr-namespace:Component.Controls.User;assembly=Component"
+             xmlns:uc="clr-namespace:Component.Controls.User.GenerateControl;assembly=Component" 
+             xmlns:ug="clr-namespace:Component.Controls.GridControl;assembly=Component" Loaded="UserVendor_Loaded">
+    <Grid Name="root" Width="auto" Height="auto"  >
+        <Grid  Width="702" Height="720" >
+            <Button Content="选择订单" HorizontalAlignment="Left" Height="28" Margin="52,65,0,0" VerticalAlignment="Top" Width="80" Click="Button_Click" />
+            <TextBox x:Name="OneCode" HorizontalAlignment="Left" Height="230" Margin="52,247,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="226" FontSize="14" KeyDown="CodeKeyDown" KeyUp="CodeKeyUp"/>
+            <RichTextBox x:Name="TwoCode" HorizontalAlignment="Left" Height="230" Margin="330,247,0,0" VerticalAlignment="Top" Width="306" FontSize="14" UndoLimit="197" AutomationProperties.HelpText="qrcode" KeyUp="CodeKeyUp"/>
+            <Label Content="机身号码" HorizontalAlignment="Left" Margin="56,221,0,0" VerticalAlignment="Top" FontSize="14" Width="114"/>
+            <Label Content="盒子界面二维码" HorizontalAlignment="Left" Margin="334,221,0,0" VerticalAlignment="Top" FontSize="14"/>
+            <Label x:Name="OrderTip" Content="号码对比" Height="51" Margin="0,10,0,0" VerticalAlignment="Top" Width="auto" FontSize="20" HorizontalAlignment="Center" Background="{x:Null}"/>
+            <Label x:Name="CompareResultTip" Content="" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="176,535,139,0" VerticalAlignment="Top" Width="387" FontSize="72" Foreground="#FFF9F6F6" BorderBrush="Black"/>
+            <RadioButton x:Name="StandType" Content="标清" HorizontalAlignment="Left" Margin="58,194,0,0" VerticalAlignment="Top" FontSize="14" Checked="CheckRadio" Visibility="Hidden"/>
+            <RadioButton x:Name="HdmiType" Content="高清" HorizontalAlignment="Left" Margin="147,194,0,0" VerticalAlignment="Top" FontSize="14" Checked="CheckRadio" Visibility="Hidden"/>
+            <Label x:Name="ErrorTip" Content="" HorizontalAlignment="Left" Margin="10,500,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="682" Height="35"/>
+            <Label x:Name="OrderNum" Content="" HorizontalAlignment="Left" Height="30" Margin="147,66,0,0" VerticalAlignment="Top" Width="auto" RenderTransformOrigin="0.077,0.6" FontSize="16"/>
+            <CheckBox x:Name="CheckVSCID" Content="是否判断VSCID范围" HorizontalAlignment="Left" Margin="54,155,0,0" VerticalAlignment="Top" LostFocus="TextLostFocus" Visibility="Hidden"/>
+            <TextBox x:Name="VscStart" HorizontalAlignment="Left" Height="23" Margin="265,157,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="147" LostFocus="TextLostFocus" Visibility="Hidden"/>
+            <Label x:Name="LableStar" Content="起始值" HorizontalAlignment="Left" Margin="217,155,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+            <TextBox x:Name="VscEnd" HorizontalAlignment="Left" Height="23" Margin="487,157,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="147" LostFocus="TextLostFocus" Visibility="Hidden"/>
+            <Label x:Name="LableEnd" Content="结束值" HorizontalAlignment="Left" Margin="441,155,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+            <ComboBox x:Name="CustomerComBox" HorizontalAlignment="Left" Margin="134,112,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="1.467,0.182" SelectionChanged="CustomerSelectChange" Visibility="Hidden">
+                <ComboBoxItem Content="华电" HorizontalAlignment="Left" Width="118"/>
+                <ComboBoxItem Content="四达" HorizontalAlignment="Left" Width="118"/>
+            </ComboBox>
+            <Label Content="选择客户" HorizontalAlignment="Left" Margin="60,111,0,0" VerticalAlignment="Top" Width="67" Visibility="Hidden"/>
+        </Grid>
+    </Grid>
+</u:UserVendor>

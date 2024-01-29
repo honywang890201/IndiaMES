@@ -1,0 +1,153 @@
+﻿<u:UserVendor x:Class="TestMacImport.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+            xmlns:c="clr-namespace:ICSharpCode.AvalonEdit;assembly=ICSharpCode.AvalonEdit"
+             xmlns:u="clr-namespace:Component.Controls.User;assembly=Component"
+             xmlns:ud="clr-namespace:Component.Controls.User.GenerateControl;assembly=Component" >
+    <AdornerDecorator>
+
+        <Grid Name="root">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="MAC导入" FontWeight="Bold" HorizontalAlignment="Center" FontSize="30" Foreground="Green"/>
+
+            <TabControl Grid.Row="1" Name="control">
+                <TabItem Header="导入">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Text="工单：" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                            <ud:TextBoxQuery Grid.Column="1" Name="tbMO" metaId="187" HorizontalAlignment="Left" Width="200"/>
+                        </Grid>
+
+                        <StackPanel Grid.Row="1" HorizontalAlignment="Center" Orientation="Horizontal">
+                            <TextBlock Text="导入列选择：" VerticalAlignment="Center"/>
+                            <CheckBox Name="ckbMAC" Content="Mac" IsChecked="True"/>
+                            <CheckBox Name="ckbMacStart" Content="MacStart" IsChecked="True"/>
+                            <CheckBox Name="ckbMacEnd" Content="MacEnd" IsChecked="True"/>
+                            <CheckBox Name="ckbGponSN" Content="GponSN" IsChecked="True"/>
+                            <CheckBox Name="ckbDeviceSerialNumber" Content="DeviceSerialNumber" IsChecked="True"/>
+                            <CheckBox Name="ckbDSN" Content="DSN" IsChecked="True"/>
+                        </StackPanel>
+
+                        <ud:DataGrid Grid.Row="2" IsCanLoadFromExcel="True" 
+                                 IsEdit="True" MaskElement="{Binding ElementName=control}"
+                                 Name="dataGrid">
+
+                        </ud:DataGrid>
+                        <Button Grid.Row="3"  Width="100" Content="保存" Visibility="Visible" Name="btnSave" Click="btnSave_Click"/>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="查询">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <Grid >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="HeaderCode:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" Width="400" Name="tbQueryHeaderCode"/>
+
+                                <TextBlock Grid.Row="1" Grid.Column="0" Text="工单:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                <ud:TextBoxQuery Grid.Row="1" Grid.Column="1" Width="200" Name="tbQueryMO" HorizontalAlignment="Left" metaId="187"/>
+
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="MAC起始:"  HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" Width="200" Name="tbMacStart" HorizontalAlignment="Left"/>
+
+                                <TextBlock Grid.Row="3" Grid.Column="0" Text="MAC截止:"  HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                <TextBox Grid.Row="3" Grid.Column="1" Width="200" Name="tbMacEnd" HorizontalAlignment="Left"/>
+                            </Grid>
+
+                            <Button Content="查询" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Margin="20,0,20,0" Name="btnQuery" Click="btnQuery_Click">
+
+                            </Button>
+
+                            <Button  Content="导出" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Height="30" Width="50" Margin="0,0,5,0" Name="btnExport" Click="btnExport_Click">
+
+                            </Button>
+                        </Grid>
+
+                        <DataGrid  Grid.Row="1" Name="dataGridQuery"  AlternationCount="2" AlternatingRowBackground="#FFE2E7EC" 
+                          AutoGenerateColumns="True" Style="{x:Null}"  CanUserAddRows="False"
+                      FontSize="12" FontWeight="Normal" BorderThickness="0" BorderBrush="{x:Null}" 
+                          HorizontalGridLinesBrush="#FFAEC3DC" VerticalGridLinesBrush="#FFAEC3DC"
+                      IsReadOnly="True" SelectionUnit="Cell" UseLayoutRounding="False" RowHeaderStyle="{x:Null}" LoadingRow="dataGridQuery_LoadingRow"/>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="更新个性化数据">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <ud:DataGrid Grid.Row="0" IsCanLoadFromExcel="True" 
+                                 IsEdit="True" MaskElement="{Binding ElementName=control}"
+                                 Name="dataGridUpdate" MaxHeight="5000">
+
+                        </ud:DataGrid>
+                        <Button Grid.Row="1"  Width="100" Content="保存" Visibility="Visible" Name="btnUpdateSave" Click="btnUpdateSave_Click" Margin="51,0"/>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="删除">
+                    <StackPanel>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Grid.Column="0" Text="HeaderCode：" HorizontalAlignment="Right"/>
+                            <TextBox Grid.Column="1" Name="tbDeleteHeaderCode" Width="400" HorizontalAlignment="Left"/>
+
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="删除备注：" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="1" Grid.Column="1" Name="tbDeleteNote" Width="800"  HorizontalAlignment="Left"/>
+                        </Grid>
+                        <Button Content="删除" Width="80" Height="50" Name="btnDelete" Click="btnDelete_Click"/>
+                    </StackPanel>
+                </TabItem>
+            </TabControl>
+        </Grid>
+    </AdornerDecorator>
+</u:UserVendor>

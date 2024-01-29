@@ -1,0 +1,67 @@
+﻿<mesex:Window x:Class="EquipmentManagement.Selector.SelectorPartWareHouse"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="选择部件出入库单" 
+        xmlns:mes="http://www.mes.com"
+        xmlns:mesex="http://www.mesex.com">
+    <AdornerDecorator>
+        <Grid x:Name="grid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <mesex:ListGrid Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock x:Name="tbCode" Text="单据"/>
+                    <mesex:TextBox x:Name="txtPartWareHouseCode"/>
+
+                    <TextBlock Text="状态"/>
+                    <mesex:ComboBox x:Name="cmbStatus"/>
+
+                    <TextBlock Text="过账开始时间"/>
+                    <mesex:DatePicker x:Name="txtStartSureDateTime" FormatString="yyyy-MM-dd HH:mm:ss"/>
+
+                    <TextBlock Text="过账截止时间"/>
+                    <mesex:DatePicker x:Name="txtEndSureDateTime" FormatString="yyyy-MM-dd HH:mm:ss"/>
+
+                    <TextBlock Text="创建开始时间"/>
+                    <mesex:DatePicker x:Name="txtStartCreateDateTime" FormatString="yyyy-MM-dd HH:mm:ss"/>
+
+                    <TextBlock Text="创建截止时间"/>
+                    <mesex:DatePicker x:Name="txtEndCreateDateTime" FormatString="yyyy-MM-dd HH:mm:ss"/>
+
+                </mesex:ListGrid>
+
+                <mesex:CircleImageButton x:Name="btnQuery" Grid.Column="1" ImageSource="/EquipmentManagement;component/Images/query.png" Margin="15,0,15,0" Click="btnQuery_Click"/>
+            </Grid>
+
+            <mesex:GridControl x:Name="matrix" Grid.Row="1" >
+                <mesex:GridControl.Columns>
+                    <mesex:GridLinkColumn x:Name="colCode" Header="单据" Binding="{Binding PartWareHouseCode}" LinkClick="GridLinkColumn_LinkClick"/>
+                    <mesex:GridColumn Header="状态" Binding="{Binding StatusName}"/>
+                    <mesex:GridColumn Header="备注" Binding="{Binding PartWareHouseDesc}"/>
+                    <mesex:GridColumn Header="过账人" Binding="{Binding SureUserName}"/>
+                    <mesex:GridDatePickerColumn Header="过账时间" Binding="{Binding SureDateTime}" FormatString="yyyy-MM-dd HH:mm:ss"/>
+                    <mesex:GridColumn Header="创建人" Binding="{Binding CreateUserName}"/>
+                    <mesex:GridDatePickerColumn Header="创建时间" Binding="{Binding CreateDateTime}" FormatString="yyyy-MM-dd HH:mm:ss"/>
+                </mesex:GridControl.Columns>
+            </mesex:GridControl>
+
+            <mesex:Pager Grid.Row="2" x:Name="pager" UpdateSource="pager_UpdateSource"/>
+        </Grid>
+    </AdornerDecorator>
+</mesex:Window>

@@ -1,0 +1,26 @@
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2020-06-05 10:51:12.507
+UseService:True
+ConnectionName:
+NetCode:NETOFFICE
+ExecuteType:StoredProcedure
+TakeTime:Milliseconds:32.0019
+Sql:Prd_Inp_BindingProductSN_NoMove
+Params:
+@LotSN=DDEFS01000020
+@GetCode=0500a0113971661c
+@MOId=111
+@LineId=27
+@ResId=346
+@ShiftTypeId=7
+@UserId=1
+@OPId=85
+@PluginId=0
+@Comment=2020-06-05 10:51:12
+@FocusedParam=null
+@Return_Message=null
+@ReturnValue=null
+END===============================================================================================
+
+

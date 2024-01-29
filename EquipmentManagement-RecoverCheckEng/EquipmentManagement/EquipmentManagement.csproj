@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1DDCB90A-A9EE-4DE3-BAC4-445C5BCA06E8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EquipmentManagement</RootNamespace>
+    <AssemblyName>EquipmentManagement</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Component, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Files\Component.dll</HintPath>
+    </Reference>
+    <Reference Include="Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Files\Data.dll</HintPath>
+    </Reference>
+    <Reference Include="DB, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Files\DB.dll</HintPath>
+    </Reference>
+    <Reference Include="DBCommon">
+      <HintPath>..\Files\DBCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v15.2.Core">
+      <HintPath>..\Sample\bin\Debug\DevExpress.Charts.v15.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v15.2">
+      <HintPath>..\Sample\bin\Debug\DevExpress.Data.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Diagram.v15.2.Core">
+      <HintPath>..\Sample\bin\Debug\DevExpress.Diagram.v15.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Images.v15.2">
+      <HintPath>..\Sample\bin\Debug\DevExpress.Images.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Mvvm.v15.2">
+      <HintPath>..\Sample\bin\Debug\DevExpress.Mvvm.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v15.2.Core">
+      <HintPath>..\Sample\bin\Debug\DevExpress.Printing.v15.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Charts.v15.2">
+      <HintPath>..\Sample\bin\Debug\DevExpress.Xpf.Charts.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Core.v15.2">
+      <HintPath>..\Sample\bin\Debug\DevExpress.Xpf.Core.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Diagram.v15.2">
+      <HintPath>..\Sample\bin\Debug\DevExpress.Xpf.Diagram.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Docking.v15.2">
+      <HintPath>..\Sample\bin\Debug\DevExpress.Xpf.Docking.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Grid.v15.2">
+      <HintPath>..\Sample\bin\Debug\DevExpress.Xpf.Grid.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Grid.v15.2.Core">
+      <HintPath>..\Sample\bin\Debug\DevExpress.Xpf.Grid.v15.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Printing.v15.2">
+      <HintPath>..\Sample\bin\Debug\DevExpress.Xpf.Printing.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport">
+      <HintPath>..\Sample\bin\Debug\FastReport.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Bars">
+      <HintPath>..\Sample\bin\Debug\FastReport.Bars.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Editor">
+      <HintPath>..\Sample\bin\Debug\FastReport.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Install">
+      <HintPath>..\Sample\bin\Debug\FastReport.Install.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.VSDesign">
+      <HintPath>..\Sample\bin\Debug\FastReport.VSDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Web">
+      <HintPath>..\Sample\bin\Debug\FastReport.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Files\Framework.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.AvalonEdit">
+      <HintPath>..\Sample\bin\Debug\ICSharpCode.AvalonEdit.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\Sample\bin\Debug\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Log, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Files\Log.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Barcodes">
+      <HintPath>..\Sample\bin\Debug\MindFusion.Barcodes.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Common.Wpf">
+      <HintPath>..\Sample\bin\Debug\MindFusion.Common.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Diagramming.Wpf">
+      <HintPath>..\Sample\bin\Debug\MindFusion.Diagramming.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Graphs">
+      <HintPath>..\Sample\bin\Debug\MindFusion.Graphs.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Licensing">
+      <HintPath>..\Sample\bin\Debug\MindFusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Scripting">
+      <HintPath>..\Sample\bin\Debug\MindFusion.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Vsx">
+      <HintPath>..\Sample\bin\Debug\MindFusion.Vsx.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\Sample\bin\Debug\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>..\Sample\bin\Debug\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>..\Sample\bin\Debug\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>..\Sample\bin\Debug\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WinAPI, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Files\WinAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.Toolkit">
+      <HintPath>..\Sample\bin\Debug\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Edit\EquipmentRepairIn_EditScrap.xaml.cs">
+      <DependentUpon>EquipmentRepairIn_EditScrap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Edit\Scrap_EditSureComment.xaml.cs">
+      <DependentUpon>Scrap_EditSureComment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Edit\EquipmentRepair_EditMaintenanceParts.xaml.cs">
+      <DependentUpon>EquipmentRepair_EditMaintenanceParts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EquipmentChecking.xaml.cs">
+      <DependentUpon>EquipmentChecking.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EquipmentMaintenance.xaml.cs">
+      <DependentUpon>EquipmentMaintenance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RepairOutSourcing.xaml.cs">
+      <DependentUpon>RepairOutSourcing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Scrap.xaml.cs">
+      <DependentUpon>Scrap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RepairOutSourcings.xaml.cs">
+      <DependentUpon>RepairOutSourcings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Scraps.xaml.cs">
+      <DependentUpon>Scraps.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Selector\SelectorRepairOutSourcing.xaml.cs">
+      <DependentUpon>SelectorRepairOutSourcing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Selector\SelectorScrap.xaml.cs">
+      <DependentUpon>SelectorScrap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SendScrap.xaml.cs">
+      <DependentUpon>SendScrap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SendRepair.xaml.cs">
+      <DependentUpon>SendRepair.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EquipmentSpotChecking.xaml.cs">
+      <DependentUpon>EquipmentSpotChecking.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartWareHouseOut.xaml.cs">
+      <DependentUpon>PartWareHouseOut.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartWareHouseOuts.xaml.cs">
+      <DependentUpon>PartWareHouseOuts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartWareHouseIns.xaml.cs">
+      <DependentUpon>PartWareHouseIns.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartWareHouseIn.xaml.cs">
+      <DependentUpon>PartWareHouseIn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Edit\PartWareHouse_EditDetail.xaml.cs">
+      <DependentUpon>PartWareHouse_EditDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Edit\EquipmentRepair_EditRepairParts.xaml.cs">
+      <DependentUpon>EquipmentRepair_EditRepairParts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Edit\EquipmentRepair_EditRepairLocation.xaml.cs">
+      <DependentUpon>EquipmentRepair_EditRepairLocation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Edit\EquipmentRepairIn_EditNotAgree.xaml.cs">
+      <DependentUpon>EquipmentRepairIn_EditNotAgree.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Edit\EquipmentRepairIn_EditOutSourcing.xaml.cs">
+      <DependentUpon>EquipmentRepairIn_EditOutSourcing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Edit\EquipmentRepairIn_EditReDelegate.xaml.cs">
+      <DependentUpon>EquipmentRepairIn_EditReDelegate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Edit\EquipmentRepairIn_AddAssistRepairUser.xaml.cs">
+      <DependentUpon>EquipmentRepairIn_AddAssistRepairUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Edit\EquipmentRepairIn_EditReject.xaml.cs">
+      <DependentUpon>EquipmentRepairIn_EditReject.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Edit\EquipmentRepairIn_EditDelegate.xaml.cs">
+      <DependentUpon>EquipmentRepairIn_EditDelegate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EquipmentRepair.xaml.cs">
+      <DependentUpon>EquipmentRepair.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="EquipmentRepairIns.xaml.cs">
+      <DependentUpon>EquipmentRepairIns.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EquipmentRepairIn.xaml.cs">
+      <DependentUpon>EquipmentRepairIn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Selector\SelectorEquipment.xaml.cs">
+      <DependentUpon>SelectorEquipment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Selector\SelectorPartWareHouse.xaml.cs">
+      <DependentUpon>SelectorPartWareHouse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Selector\SelectorEquipmentRepair.xaml.cs">
+      <DependentUpon>SelectorEquipmentRepair.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Selector\SelectorEquipmentRepairIn.xaml.cs">
+      <DependentUpon>SelectorEquipmentRepairIn.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Edit\EquipmentRepairIn_EditScrap.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Edit\Scrap_EditSureComment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Edit\EquipmentRepair_EditMaintenanceParts.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EquipmentChecking.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EquipmentMaintenance.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RepairOutSourcing.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Scrap.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RepairOutSourcings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Scraps.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Selector\SelectorRepairOutSourcing.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Selector\SelectorScrap.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SendScrap.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SendRepair.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EquipmentSpotChecking.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PartWareHouseOut.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PartWareHouseOuts.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PartWareHouseIns.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PartWareHouseIn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Edit\PartWareHouse_EditDetail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Edit\EquipmentRepair_EditRepairParts.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Edit\EquipmentRepair_EditRepairLocation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Edit\EquipmentRepairIn_EditNotAgree.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Edit\EquipmentRepairIn_EditOutSourcing.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Edit\EquipmentRepairIn_EditReDelegate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Edit\EquipmentRepairIn_AddAssistRepairUser.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Edit\EquipmentRepairIn_EditReject.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Edit\EquipmentRepairIn_EditDelegate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EquipmentRepair.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EquipmentRepairIns.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EquipmentRepairIn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Selector\SelectorEquipment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Selector\SelectorPartWareHouse.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Selector\SelectorEquipmentRepair.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Selector\SelectorEquipmentRepairIn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\add.png" />
+    <Resource Include="Images\cancel.png" />
+    <Resource Include="Images\clear.png" />
+    <Resource Include="Images\delete.png" />
+    <Resource Include="Images\edit.png" />
+    <Resource Include="Images\inspection.png" />
+    <Resource Include="Images\print.png" />
+    <Resource Include="Images\query.png" />
+    <Resource Include="Images\save.png" />
+    <Resource Include="Images\view.png" />
+    <Resource Include="Images\yes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\reduce.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

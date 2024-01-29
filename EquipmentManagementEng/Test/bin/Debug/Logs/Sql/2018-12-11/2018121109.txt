@@ -1,0 +1,31 @@
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-11 09:52:31.484
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:28.9834
+Sql:
+SELECT Code,Name
+FROM dbo.Set_SystemType WITH(NOLOCK) 
+WHERE TypeCode='EquipmentRepairResult' AND Code!='WaitRepair'
+ORDER BY Sequence
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-11 09:57:17.248
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:35.9828
+Sql:SELECT Code,Name
+FROM dbo.Set_SystemType WITH(NOLOCK) 
+WHERE TypeCode='PartWareHouseStatus'
+ORDER BY Sequence
+END===============================================================================================
+
+

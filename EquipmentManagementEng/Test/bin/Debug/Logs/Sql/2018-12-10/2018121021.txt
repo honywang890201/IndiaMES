@@ -1,0 +1,614 @@
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 21:01:33.933
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:29.9928
+Sql:
+SELECT Code,Name
+FROM dbo.Set_SystemType WITH(NOLOCK) 
+WHERE TypeCode='EquipmentRepairResult' AND Code!='WaitRepair'
+ORDER BY Sequence
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 21:01:41.564
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:42.9945
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=283
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 21:01:41.582
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:17.9864
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=25
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 21:01:52.395
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:18.9828
+Sql:DECLARE @t TABLE(rowIndex INT,String NVARCHAR(50))
+INSERT INTO @t
+SELECT rowIndex,String FROM dbo.Ftn_GetTableFromString(@Code,',')
+
+SELECT Code,Name
+FROM dbo.Set_SystemType WITH(NOLOCK) 
+WHERE TypeCode='EquipmentRepairInStatus'
+AND (NOT EXISTS(SELECT * FROM @t) OR EXISTS(SELECT * FROM @t WHERE String=Set_SystemType.Code))
+ORDER BY Sequence
+Params:
+@Code=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 21:01:52.419
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:12.9786
+Sql:SELECT Code,Name
+FROM dbo.Set_SystemType WITH(NOLOCK) 
+WHERE TypeCode='EquipmentRepairInType'
+ORDER BY Sequence
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 21:01:52.431
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:13.0201
+Sql:SELECT RepairTypeId,
+	   RepairTypeCode+'-'+ISNULL(RepairTypeName,'') AS RepairTypeName
+FROM dbo.Bas_RepairType
+ORDER BY RepairTypeCode
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 21:01:52.544
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:17.9897
+Sql:DECLARE @t TABLE(rowIndex INT,String NVARCHAR(50))
+INSERT INTO @t
+SELECT rowIndex,String FROM dbo.Ftn_GetTableFromString(@Code,',')
+
+SELECT Code,Name
+FROM dbo.Set_SystemType WITH(NOLOCK) 
+WHERE TypeCode='EquipmentRepairResult'
+AND (NOT EXISTS(SELECT * FROM @t) OR EXISTS(SELECT * FROM @t WHERE String=Set_SystemType.Code))
+ORDER BY Sequence
+Params:
+@Code=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 21:04:59.838
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:29.9995
+Sql:
+SELECT Code,Name
+FROM dbo.Set_SystemType WITH(NOLOCK) 
+WHERE TypeCode='EquipmentRepairResult' AND Code!='WaitRepair'
+ORDER BY Sequence
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 21:05:06.894
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:37.0338
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=283
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 21:05:07.021
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:16.9974
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=25
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 21:05:07.035
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:17.9894
+Sql:DECLARE @t TABLE(rowIndex INT,String NVARCHAR(50))
+INSERT INTO @t
+SELECT rowIndex,String FROM dbo.Ftn_GetTableFromString(@Code,',')
+
+SELECT Code,Name
+FROM dbo.Set_SystemType WITH(NOLOCK) 
+WHERE TypeCode='EquipmentRepairInStatus'
+AND (NOT EXISTS(SELECT * FROM @t) OR EXISTS(SELECT * FROM @t WHERE String=Set_SystemType.Code))
+ORDER BY Sequence
+Params:
+@Code=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 21:05:07.048
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:13.9931
+Sql:SELECT Code,Name
+FROM dbo.Set_SystemType WITH(NOLOCK) 
+WHERE TypeCode='EquipmentRepairInType'
+ORDER BY Sequence
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 21:05:07.162
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:20.0047
+Sql:DECLARE @t TABLE(rowIndex INT,String NVARCHAR(50))
+INSERT INTO @t
+SELECT rowIndex,String FROM dbo.Ftn_GetTableFromString(@Code,',')
+
+SELECT Code,Name
+FROM dbo.Set_SystemType WITH(NOLOCK) 
+WHERE TypeCode='EquipmentRepairResult'
+AND (NOT EXISTS(SELECT * FROM @t) OR EXISTS(SELECT * FROM @t WHERE String=Set_SystemType.Code))
+ORDER BY Sequence
+Params:
+@Code=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 21:07:13.585
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:29.1004
+Sql:SELECT COUNT(*) FROM dbo.Inp_EquipmentRepair WITH(NOLOCK) 
+LEFT JOIN dbo.Inp_EquipmentRepairInDetail WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.EquipmentRepairInDetailId=Inp_EquipmentRepair.EquipmentRepairInDetailId
+LEFT JOIN dbo.Inp_EquipmentRepairIn WITH(NOLOCK) ON dbo.Inp_EquipmentRepairIn.EquipmentRepairInId = dbo.Inp_EquipmentRepairInDetail.EquipmentRepairInId
+LEFT JOIN dbo.Bas_Equipment WITH(NOLOCK) ON dbo.Bas_Equipment.EquipmentId = dbo.Inp_EquipmentRepair.EquipmentId
+LEFT JOIN dbo.Bas_RepairType WITH(NOLOCK) ON dbo.Bas_RepairType.RepairTypeId = dbo.Inp_EquipmentRepair.RepairTypeId
+LEFT JOIN dbo.Set_User SendRepairUser WITH(NOLOCK) ON Inp_EquipmentRepairIn.SendRepairUserId=SendRepairUser.SysUserId
+LEFT JOIN dbo.Set_User MainRepairUser WITH(NOLOCK) ON Inp_EquipmentRepair.MainRepairUserId=MainRepairUser.SysUserId WHERE 1=1 
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 21:07:13.698
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:20.1
+Sql:WITH temp AS (
+SELECT ROW_NUMBER()OVER(ORDER BY Inp_EquipmentRepairIn.EquipmentRepairInCode DESC) AS RowIndex,
+	   Inp_EquipmentRepair.EquipmentRepairId,
+	   Inp_EquipmentRepairInDetail.EquipmentRepairInId,
+	   Inp_EquipmentRepair.EquipmentRepairInDetailId,
+	   Inp_EquipmentRepair.EquipmentId,
+	   Inp_EquipmentRepairIn.EquipmentRepairInCode,
+	   Inp_EquipmentRepairIn.Type,
+	   Inp_EquipmentRepairIn.SoureId,
+	   dbo.Ftn_GetStatusName(Inp_EquipmentRepairIn.Type,'EquipmentRepairInType') AS TypeName,
+	   Bas_Equipment.EquipmentCode,
+	   Bas_Equipment.EquipmentDesc,
+	   Inp_EquipmentRepair.RepairTypeId,
+	   Bas_RepairType.RepairTypeCode+'-'+ISNULL(Bas_RepairType.RepairTypeName,'') AS RepairTypeName,
+	   dbo.Inp_EquipmentRepairInDetail.Status AS DetailStatus,
+	   Inp_EquipmentRepair.Status,
+	   dbo.Ftn_GetStatusName(Inp_EquipmentRepair.Status,'EquipmentRepairInStatus') AS StatusName,
+	   MainRepairUser.SysUserId AS MainRepairUserId,
+	   MainRepairUser.SysUserCode+'-'+ISNULL(MainRepairUser.SysUserName,'') AS MainRepairUserName,
+	   STUFF((
+				SELECT ';'+CAST(Inp_EquipmentRepairInDetail_AssistRepairUser.AssistRepairUserId AS NVARCHAR(50))
+				FROM dbo.Inp_EquipmentRepairInDetail_AssistRepairUser WITH(NOLOCK) 
+				WHERE Inp_EquipmentRepairInDetail_AssistRepairUser.EquipmentRepairInDetailId=Inp_EquipmentRepairInDetail.EquipmentRepairInDetailId
+				FOR XML PATH('')
+		),1,1,'') AS AssistRepairUserId,
+	   STUFF((
+				SELECT ';'+dbo.Set_User.SysUserCode+'-'+ISNULL(dbo.Set_User.SysUserName,'')
+				FROM dbo.Inp_EquipmentRepairInDetail_AssistRepairUser WITH(NOLOCK) 
+				LEFT JOIN dbo.Set_User WITH(NOLOCK) ON Inp_EquipmentRepairInDetail_AssistRepairUser.AssistRepairUserId=Set_User.SysUserId
+				WHERE Inp_EquipmentRepairInDetail_AssistRepairUser.EquipmentRepairInDetailId=Inp_EquipmentRepairInDetail.EquipmentRepairInDetailId
+				FOR XML PATH('')
+		),1,1,'') AS AssistRepairUserName,
+	   DelegateUser.SysUserId AS DelegateUserId,
+	   DelegateUser.SysUserCode+'-'+ISNULL(DelegateUser.SysUserName,'') AS DelegateUserName,
+	   Inp_EquipmentRepairInDetail.DelegateDateTime,
+	   ReceiveUser.SysUserId AS ReceiveUserId,
+	   ReceiveUser.SysUserCode+'-'+ISNULL(ReceiveUser.SysUserName,'') AS ReceiveUserName,
+	   Inp_EquipmentRepairInDetail.ReceiveDateTime,
+	   RepairCompleteUser.SysUserId AS RepairCompleteUserId,
+	   RepairCompleteUser.SysUserCode+'-'+ISNULL(RepairCompleteUser.SysUserName,'') AS RepairCompleteUserName,
+	   Inp_EquipmentRepairInDetail.RepairCompleteDateTime,
+	   SendRepairUser.SysUserId AS SendRepairUserId,
+	   SendRepairUser.SysUserCode+'-'+ISNULL(SendRepairUser.SysUserName,'') AS SendRepairUserName,
+	   Inp_EquipmentRepairIn.SendRepairDateTime,
+	   Inp_EquipmentRepairInDetail.SendRepairComment,
+	   Inp_EquipmentRepairInDetail.DelegateComment,
+	   Inp_EquipmentRepairInDetail.RejectDateTime,
+	   Inp_EquipmentRepairInDetail.RejectComment,
+	   Inp_EquipmentRepairInDetail.ReDelegateDateTime,
+	   Inp_EquipmentRepairInDetail.ReDelegateComment,
+	   Inp_EquipmentRepairInDetail.OutSourcingDateTime,
+	   Inp_EquipmentRepairInDetail.OutSourcingComment,
+	   SureUser.SysUserId AS SureUserId,
+	   SureUser.SysUserCode+'-'+ISNULL(SureUser.SysUserName,'') AS SureUserName,
+	   Inp_EquipmentRepairInDetail.SureDateTime,
+	   Inp_EquipmentRepairInDetail.NotAgreeComment,
+	   Inp_EquipmentRepair.Summarize,
+	   Inp_EquipmentRepair.Result,
+	   dbo.Ftn_GetStatusName(Inp_EquipmentRepair.Result,'EquipmentRepairResult') AS ResultName,
+	   Inp_EquipmentRepair.StartRepairDateTime,
+	   Inp_EquipmentRepair.EndRepairDateTime
+FROM dbo.Inp_EquipmentRepair WITH(NOLOCK) 
+LEFT JOIN dbo.Inp_EquipmentRepairInDetail WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.EquipmentRepairInDetailId=Inp_EquipmentRepair.EquipmentRepairInDetailId
+LEFT JOIN dbo.Inp_EquipmentRepairIn WITH(NOLOCK) ON dbo.Inp_EquipmentRepairIn.EquipmentRepairInId = dbo.Inp_EquipmentRepairInDetail.EquipmentRepairInId
+LEFT JOIN dbo.Bas_Equipment WITH(NOLOCK) ON dbo.Bas_Equipment.EquipmentId = dbo.Inp_EquipmentRepair.EquipmentId
+LEFT JOIN dbo.Bas_RepairType WITH(NOLOCK) ON dbo.Bas_RepairType.RepairTypeId = dbo.Inp_EquipmentRepair.RepairTypeId
+LEFT JOIN dbo.Set_User SendRepairUser WITH(NOLOCK) ON Inp_EquipmentRepairIn.SendRepairUserId=SendRepairUser.SysUserId
+LEFT JOIN dbo.Set_User MainRepairUser WITH(NOLOCK) ON Inp_EquipmentRepair.MainRepairUserId=MainRepairUser.SysUserId
+LEFT JOIN dbo.Set_User DelegateUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.DelegateUserId=DelegateUser.SysUserId
+LEFT JOIN dbo.Set_User ReceiveUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.ReceiveUserId=ReceiveUser.SysUserId
+LEFT JOIN dbo.Set_User RepairCompleteUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.RepairCompleteUserId=RepairCompleteUser.SysUserId
+LEFT JOIN dbo.Set_User SureUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.SureUserId=SureUser.SysUserId
+WHERE 1=1 
+)
+
+SELECT * 
+FROM temp
+WHERE temp.RowIndex BETWEEN @IndexStart AND @IndexEnd
+ORDER BY RowIndex
+Params:
+@IndexStart=1
+@IndexEnd=20
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 21:09:12.597
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:10.9932
+Sql:SELECT COUNT(*) FROM dbo.Inp_EquipmentRepair WITH(NOLOCK) 
+LEFT JOIN dbo.Inp_EquipmentRepairInDetail WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.EquipmentRepairInDetailId=Inp_EquipmentRepair.EquipmentRepairInDetailId
+LEFT JOIN dbo.Inp_EquipmentRepairIn WITH(NOLOCK) ON dbo.Inp_EquipmentRepairIn.EquipmentRepairInId = dbo.Inp_EquipmentRepairInDetail.EquipmentRepairInId
+LEFT JOIN dbo.Bas_Equipment WITH(NOLOCK) ON dbo.Bas_Equipment.EquipmentId = dbo.Inp_EquipmentRepair.EquipmentId
+LEFT JOIN dbo.Bas_RepairType WITH(NOLOCK) ON dbo.Bas_RepairType.RepairTypeId = dbo.Inp_EquipmentRepair.RepairTypeId
+LEFT JOIN dbo.Set_User SendRepairUser WITH(NOLOCK) ON Inp_EquipmentRepairIn.SendRepairUserId=SendRepairUser.SysUserId
+LEFT JOIN dbo.Set_User MainRepairUser WITH(NOLOCK) ON Inp_EquipmentRepair.MainRepairUserId=MainRepairUser.SysUserId WHERE 1=1 
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 21:10:10.559
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:36.064
+Sql:WITH temp AS (
+SELECT ROW_NUMBER()OVER(ORDER BY Inp_EquipmentRepairIn.EquipmentRepairInCode DESC) AS RowIndex,
+	   Inp_EquipmentRepair.EquipmentRepairId,
+	   Inp_EquipmentRepairInDetail.EquipmentRepairInId,
+	   Inp_EquipmentRepair.EquipmentRepairInDetailId,
+	   Inp_EquipmentRepair.EquipmentId,
+	   Inp_EquipmentRepairIn.EquipmentRepairInCode,
+	   Inp_EquipmentRepairIn.Type,
+	   Inp_EquipmentRepairIn.SoureId,
+	   dbo.Ftn_GetStatusName(Inp_EquipmentRepairIn.Type,'EquipmentRepairInType') AS TypeName,
+	   Bas_Equipment.EquipmentCode,
+	   Bas_Equipment.EquipmentDesc,
+	   Inp_EquipmentRepair.RepairTypeId,
+	   Bas_RepairType.RepairTypeCode+'-'+ISNULL(Bas_RepairType.RepairTypeName,'') AS RepairTypeName,
+	   dbo.Inp_EquipmentRepairInDetail.Status AS DetailStatus,
+	   Inp_EquipmentRepair.Status,
+	   dbo.Ftn_GetStatusName(Inp_EquipmentRepair.Status,'EquipmentRepairInStatus') AS StatusName,
+	   MainRepairUser.SysUserId AS MainRepairUserId,
+	   MainRepairUser.SysUserCode+'-'+ISNULL(MainRepairUser.SysUserName,'') AS MainRepairUserName,
+	   STUFF((
+				SELECT ';'+CAST(Inp_EquipmentRepairInDetail_AssistRepairUser.AssistRepairUserId AS NVARCHAR(50))
+				FROM dbo.Inp_EquipmentRepairInDetail_AssistRepairUser WITH(NOLOCK) 
+				WHERE Inp_EquipmentRepairInDetail_AssistRepairUser.EquipmentRepairInDetailId=Inp_EquipmentRepairInDetail.EquipmentRepairInDetailId
+				FOR XML PATH('')
+		),1,1,'') AS AssistRepairUserId,
+	   STUFF((
+				SELECT ';'+dbo.Set_User.SysUserCode+'-'+ISNULL(dbo.Set_User.SysUserName,'')
+				FROM dbo.Inp_EquipmentRepairInDetail_AssistRepairUser WITH(NOLOCK) 
+				LEFT JOIN dbo.Set_User WITH(NOLOCK) ON Inp_EquipmentRepairInDetail_AssistRepairUser.AssistRepairUserId=Set_User.SysUserId
+				WHERE Inp_EquipmentRepairInDetail_AssistRepairUser.EquipmentRepairInDetailId=Inp_EquipmentRepairInDetail.EquipmentRepairInDetailId
+				FOR XML PATH('')
+		),1,1,'') AS AssistRepairUserName,
+	   DelegateUser.SysUserId AS DelegateUserId,
+	   DelegateUser.SysUserCode+'-'+ISNULL(DelegateUser.SysUserName,'') AS DelegateUserName,
+	   Inp_EquipmentRepairInDetail.DelegateDateTime,
+	   ReceiveUser.SysUserId AS ReceiveUserId,
+	   ReceiveUser.SysUserCode+'-'+ISNULL(ReceiveUser.SysUserName,'') AS ReceiveUserName,
+	   Inp_EquipmentRepairInDetail.ReceiveDateTime,
+	   RepairCompleteUser.SysUserId AS RepairCompleteUserId,
+	   RepairCompleteUser.SysUserCode+'-'+ISNULL(RepairCompleteUser.SysUserName,'') AS RepairCompleteUserName,
+	   Inp_EquipmentRepairInDetail.RepairCompleteDateTime,
+	   SendRepairUser.SysUserId AS SendRepairUserId,
+	   SendRepairUser.SysUserCode+'-'+ISNULL(SendRepairUser.SysUserName,'') AS SendRepairUserName,
+	   Inp_EquipmentRepairIn.SendRepairDateTime,
+	   Inp_EquipmentRepairInDetail.SendRepairComment,
+	   Inp_EquipmentRepairInDetail.DelegateComment,
+	   Inp_EquipmentRepairInDetail.RejectDateTime,
+	   Inp_EquipmentRepairInDetail.RejectComment,
+	   Inp_EquipmentRepairInDetail.ReDelegateDateTime,
+	   Inp_EquipmentRepairInDetail.ReDelegateComment,
+	   Inp_EquipmentRepairInDetail.OutSourcingDateTime,
+	   Inp_EquipmentRepairInDetail.OutSourcingComment,
+	   SureUser.SysUserId AS SureUserId,
+	   SureUser.SysUserCode+'-'+ISNULL(SureUser.SysUserName,'') AS SureUserName,
+	   Inp_EquipmentRepairInDetail.SureDateTime,
+	   Inp_EquipmentRepairInDetail.NotAgreeComment,
+	   Inp_EquipmentRepair.Summarize,
+	   Inp_EquipmentRepair.Result,
+	   dbo.Ftn_GetStatusName(Inp_EquipmentRepair.Result,'EquipmentRepairResult') AS ResultName,
+	   Inp_EquipmentRepair.StartRepairDateTime,
+	   Inp_EquipmentRepair.EndRepairDateTime
+FROM dbo.Inp_EquipmentRepair WITH(NOLOCK) 
+LEFT JOIN dbo.Inp_EquipmentRepairInDetail WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.EquipmentRepairInDetailId=Inp_EquipmentRepair.EquipmentRepairInDetailId
+LEFT JOIN dbo.Inp_EquipmentRepairIn WITH(NOLOCK) ON dbo.Inp_EquipmentRepairIn.EquipmentRepairInId = dbo.Inp_EquipmentRepairInDetail.EquipmentRepairInId
+LEFT JOIN dbo.Bas_Equipment WITH(NOLOCK) ON dbo.Bas_Equipment.EquipmentId = dbo.Inp_EquipmentRepair.EquipmentId
+LEFT JOIN dbo.Bas_RepairType WITH(NOLOCK) ON dbo.Bas_RepairType.RepairTypeId = dbo.Inp_EquipmentRepair.RepairTypeId
+LEFT JOIN dbo.Set_User SendRepairUser WITH(NOLOCK) ON Inp_EquipmentRepairIn.SendRepairUserId=SendRepairUser.SysUserId
+LEFT JOIN dbo.Set_User MainRepairUser WITH(NOLOCK) ON Inp_EquipmentRepair.MainRepairUserId=MainRepairUser.SysUserId
+LEFT JOIN dbo.Set_User DelegateUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.DelegateUserId=DelegateUser.SysUserId
+LEFT JOIN dbo.Set_User ReceiveUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.ReceiveUserId=ReceiveUser.SysUserId
+LEFT JOIN dbo.Set_User RepairCompleteUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.RepairCompleteUserId=RepairCompleteUser.SysUserId
+LEFT JOIN dbo.Set_User SureUser WITH(NOLOCK) ON Inp_EquipmentRepairInDetail.SureUserId=SureUser.SysUserId
+WHERE 1=1 
+)
+
+SELECT * 
+FROM temp
+WHERE temp.RowIndex BETWEEN @IndexStart AND @IndexEnd
+ORDER BY RowIndex
+Params:
+@IndexStart=1
+@IndexEnd=20
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 21:10:46.986
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:10.9936
+Sql:SELECT 0 AS Flag,
+	   Inp_EquipmentRepairDetail.EquipmentRepairDetailId,
+	   Inp_EquipmentRepairDetail.RepairAreaId,
+	   Bas_RepairArea.RepairAreaCode+'-'+ISNULL(Bas_RepairArea.RepairAreaName,'') AS RepairAreaName,
+	   Inp_EquipmentRepairDetail.RepairAreaLocationId,
+	   Bas_RepairArea_Location.RepairAreaLocationCode+'-'+ISNULL(Bas_RepairArea_Location.RepairAreaLocationName,'') AS RepairAreaLocationName,
+	   Inp_EquipmentRepairDetail.Summarize
+FROM Inp_EquipmentRepairDetail WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_RepairArea WITH(NOLOCK) ON dbo.Bas_RepairArea.RepairAreaId = dbo.Inp_EquipmentRepairDetail.RepairAreaId
+LEFT JOIN dbo.Bas_RepairArea_Location WITH(NOLOCK) ON dbo.Bas_RepairArea_Location.RepairAreaLocationId = dbo.Inp_EquipmentRepairDetail.RepairAreaLocationId
+WHERE Inp_EquipmentRepairDetail.EquipmentRepairId=@EquipmentRepairId
+
+Params:
+@EquipmentRepairId=8
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 21:10:46.998
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:6.9973
+Sql:SELECT 0 AS Flag,
+	   Inp_EquipmentRepair_Parts.EquipmentRepairPartsId,
+	   Inp_EquipmentRepair_Parts.ItemId,
+	   Bas_Item.ItemCode,
+	   Bas_Item.ItemSpecification,
+	   Inp_EquipmentRepair_Parts.Qty
+FROM dbo.Inp_EquipmentRepair_Parts WITH(NOLOCK) 
+LEFT JOIN dbo.Bas_Item WITH(NOLOCK) ON dbo.Bas_Item.ItemId = dbo.Inp_EquipmentRepair_Parts.ItemId
+WHERE Inp_EquipmentRepair_Parts.EquipmentRepairId=@EquipmentRepairId
+
+Params:
+@EquipmentRepairId=8
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 21:10:47.009
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:7.9938
+Sql:SELECT Inp_Equipment_SpotCheckingDetail.EquipmentSpotCheckingItemCode AS Code,
+	   Inp_Equipment_SpotCheckingDetail.EquipmentSpotCheckingItemDesc AS [Desc],
+	   Inp_Equipment_SpotCheckingDetail.Summarize AS Summarize
+FROM Inp_Equipment_SpotCheckingDetail WITH(NOLOCK) 
+WHERE Inp_Equipment_SpotCheckingDetail.EquipmentSpotCheckingId=@EquipmentSpotCheckingId
+AND Inp_Equipment_SpotCheckingDetail.EquipmentId=@EquipmentId
+AND Inp_Equipment_SpotCheckingDetail.Result='NG'
+Params:
+@EquipmentSpotCheckingId=14
+@EquipmentId=11
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 21:11:00.776
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:19.9723
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=283
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 21:11:00.809
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:19.9834
+Sql:SELECT IdColumnName,TextColumnName,MainSqlType,MainSql,MetaName FROM dbo.Set_Meta WHERE MetaId=@Id
+Params:
+@Id=25
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 21:11:00.927
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:29.0675
+Sql:DECLARE @t TABLE(rowIndex INT,String NVARCHAR(50))
+INSERT INTO @t
+SELECT rowIndex,String FROM dbo.Ftn_GetTableFromString(@Code,',')
+
+SELECT Code,Name
+FROM dbo.Set_SystemType WITH(NOLOCK) 
+WHERE TypeCode='EquipmentRepairInStatus'
+AND (NOT EXISTS(SELECT * FROM @t) OR EXISTS(SELECT * FROM @t WHERE String=Set_SystemType.Code))
+ORDER BY Sequence
+Params:
+@Code=null
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 21:11:00.939
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:13.0394
+Sql:SELECT Code,Name
+FROM dbo.Set_SystemType WITH(NOLOCK) 
+WHERE TypeCode='EquipmentRepairInType'
+ORDER BY Sequence
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 21:11:00.951
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:14.0263
+Sql:SELECT RepairTypeId,
+	   RepairTypeCode+'-'+ISNULL(RepairTypeName,'') AS RepairTypeName
+FROM dbo.Bas_RepairType
+ORDER BY RepairTypeCode
+END===============================================================================================
+
+
+BEGIN=============================================================================================
+LogMessageType:SqlError
+DateTime:2018-12-10 21:11:00.963
+UseService:True
+ConnectionName:
+NetCode:Net0
+ExecuteType:Text
+TakeTime:Milliseconds:17.1293
+Sql:DECLARE @t TABLE(rowIndex INT,String NVARCHAR(50))
+INSERT INTO @t
+SELECT rowIndex,String FROM dbo.Ftn_GetTableFromString(@Code,',')
+
+SELECT Code,Name
+FROM dbo.Set_SystemType WITH(NOLOCK) 
+WHERE TypeCode='EquipmentRepairResult'
+AND (NOT EXISTS(SELECT * FROM @t) OR EXISTS(SELECT * FROM @t WHERE String=Set_SystemType.Code))
+ORDER BY Sequence
+Params:
+@Code=null
+END===============================================================================================
+
+
