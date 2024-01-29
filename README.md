@@ -1,4 +1,4 @@
 # IndiaMES
 ForIndiaMES
-These 2 project open with VS2017 
+These 2 projects open with VS2017 
 
